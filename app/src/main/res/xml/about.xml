@@ -1,0 +1,90 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- A 'parent' preference, which enables/disables child preferences (below)
+         when checked/unchecked. -->
+
+    <!-- Allows the user to choose a ringtone in the 'notification' category. -->
+    <!-- NOTE: This preference will be enabled only when the checkbox above is checked. -->
+    <!-- NOTE: RingtonePreference's summary should be set to its value by the activity code. -->
+
+    <!-- NOTE: This preference will be enabled only when the checkbox above is checked. -->
+
+    <Preference
+        android:defaultValue="Default value"
+        android:editable="false"
+        android:key="edit_text_preference_1"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:summary="@string/app_description"
+        android:title="@string/app_name" />
+    <Preference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="Default value"
+        android:editable="false"
+        android:key="edit_text_preference_2"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:summary="..."
+        android:title="@string/text_version" />
+    <Preference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="Default value"
+        android:editable="false"
+        android:key="edit_text_preference_3"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:summary="@string/github_link"
+        android:title="@string/about_opensource">
+        <intent android:action="android.intent.action.VIEW"
+            android:data="https://github.com/fei0316/StreakAlarm" />
+    </Preference>
+    <Preference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="Default value"
+        android:editable="false"
+        android:key="edit_text_preference_6"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:title="@string/about_license" >
+        <intent android:action="android.intent.action.VIEW"
+            android:data="https://githubbbbb.com/fei0316/StreakAlarm/asdsdsadsa" />
+    </Preference>
+    <Preference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="Default value"
+        android:editable="false"
+        android:key="edit_text_preference_5"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:summary="@string/developed_by"
+        android:title="@string/title_developed" />
+    <Preference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="Default value"
+        android:editable="false"
+        android:key="edit_text_preference_4"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:summary="@string/iatfei_link"
+        android:title="@string/about_mysite">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://iatfei.com" />
+    </Preference>
+    <Preference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="Default value"
+        android:editable="false"
+        android:key="edit_text_preference_7"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:summary="@string/restart"
+        android:title="@string/about_restart" />
+</PreferenceScreen>

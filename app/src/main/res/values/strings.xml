@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Streak Alarm</string>
+    <string name="last_streak">Time since last streak:</string>
+    <string name="title_activity_about">About</string>
+    <string name="app_description">Helps you keep streaks. Only works if you have friends.</string>
+    <string name="text_version">Version</string>
+    <string name="about_opensource">Source Code</string>
+    <string name="github_link">https://github.com/fei0316/StreakAlarm</string>
+    <string name="about_mysite">Visit my site</string>
+    <string name="iatfei_link">https://iatfei.com</string>
+    <string name="about_license">Open Source Licenses</string>
+    <string name="title_developed">Developed by</string>
+    <string name="developed_by">Fei Kuan on KDE neon and Android Studio.</string>
+    <string name="about_restart">RE:START #1</string>
+    <string name="restart">"What you think is the right thing to do, is usually not."</string>
+    <string name="menu_justnow">Sent streak just now</string>
+    <string name="menu_customtime">Sent streak some time earlier</string>
+    <string name="menu_remindinterval">Set reminder interval</string>
+    <string name="menu_opensnapchat">Open Snapchat</string>
+    <string name="menu_cancel">Stop Alarm</string>
+    <string name="nosnapapp">Snapchat not installed!</string>
+    <string name="snapbefore_title">Pick the time of last streak. Convert to current timezone if changed.</string>
+    <string name="snapbefore_cancel">Cancel</string>
+    <string name="snapbefore_ok">OK</string>
+    <string name="notif_body">Losing Streak in %1$d hours!</string>
+    <string name="notif_title">Time to Streak!</string>
+    <string name="channel_description">Reminds you to Keep Streaks</string>
+    <string name="channel_name">Streak Reminder</string>
+</resources>
