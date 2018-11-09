@@ -4,6 +4,7 @@
 
     <item
         android:id="@+id/menu_stopalarm"
+        android:checkable="true"
         android:title="@string/menu_cancel" />
     <item
         android:id="@+id/menu_setinterval"
@@ -11,4 +12,14 @@
     <item
         android:id="@+id/about"
         android:title="@string/title_activity_about" />
+    <!--<item android:title="Ðébúg">
+        <menu>
+            <item
+                android:id="@+id/debug_1"
+                android:title="§þá®þ §é®ví©é" />
+            <item
+                android:id="@+id/debug_2"
+                android:title="§þóö §é®ví©é" />
+        </menu>
+    </item>-->
 </menu>

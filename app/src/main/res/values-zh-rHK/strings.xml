@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Streak Alarm</string>
+    <string name="last_streak">上一次儲火:</string>
+    <string name="title_activity_about">關於</string>
+    <string name="app_description">幫你儲火。有朋友才能發揮效用。</string>
+    <string name="text_version">版本</string>
+    <string name="about_opensource">開放原始碼</string>
+    <string name="about_mysite">訪問我的網站</string>
+    <string name="about_license">開放原始碼授權</string>
+    <string name="title_developed">開發</string>
+    <string name="developed_by">由 Fei Kuan 在 KDE neon 運行的 Android Studio 開發。</string>
+    <string name="menu_justnow">剛剛才發送儲火</string>
+    <string name="menu_customtime">之前發送的儲火</string>
+    <string name="menu_remindinterval">設定提示間隔</string>
+    <string name="menu_opensnapchat">開啓 Snapchat</string>
+    <string name="menu_cancel">提示功能</string>
+    <string name="nosnapapp">沒有安裝 Snapchat！</string>
+    <string name="snapbefore_title">選取上次儲火的時間。如果有改變時區請先進行轉換。</string>
+    <string name="snapbefore_cancel">取消</string>
+    <string name="snapbefore_ok">確定</string>
+    <string name="notif_body">將在 %1$d 小時後斷火！</string>
+    <string name="notif_title">係時候儲火啦！</string>
+    <string name="channel_description">提醒你儲火</string>
+    <string name="channel_name">儲火提示</string>
+    <string name="main_tip">請使用下方按鈕及功能選單操作。</string>
+    <string name="picker_invalid_time">時間無效</string>
+    <string name="interval_title">提示間隔（小時）</string>
+    <string name="interval_set">你將會每 %1$d 小時收到提示，直至你發送了儲火。（或已經斷火）</string>
+    <string name="main_interval">你將會每 %1$d 收到儲火通知。</string>
+    <string name="menu_service_disable">提示功能已停用。</string>
+    <string name="menu_service_enabled">提示功能已啓用。</string>
+    <string name="main_service_enable">提示功能已啓用。</string>
+    <string name="main_service_disable">提示功能已停用。</string>
 </resources>

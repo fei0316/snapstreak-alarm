@@ -1,21 +1,28 @@
 package com.iatfei.streakalarm;
 
+import android.app.IntentService;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
+import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Build;
+import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 
-public class NewMakeNotif extends BroadcastReceiver {
+public class NewMakeNotif extends IntentService {
+
+    public NewMakeNotif() {
+        super("NewMakeNotif");
+    }
 
     @Override
-    public void onReceive(Context context, Intent intent) {
+    protected void onHandleIntent(Intent intent) {
+        Context context = getApplicationContext();
         long millis_now = System.currentTimeMillis();
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         long time_last = pref.getLong("lastsnaptime", 0);

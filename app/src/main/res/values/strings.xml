@@ -5,19 +5,19 @@
     <string name="app_description">Helps you keep streaks. Only works if you have friends.</string>
     <string name="text_version">Version</string>
     <string name="about_opensource">Source Code</string>
-    <string name="github_link">https://github.com/fei0316/StreakAlarm</string>
+    <string name="github_link" translatable="false">https://github.com/fei0316/StreakAlarm</string>
     <string name="about_mysite">Visit my site</string>
-    <string name="iatfei_link">https://iatfei.com</string>
+    <string name="iatfei_link" translatable="false">https://iatfei.com</string>
     <string name="about_license">Open Source Licenses</string>
     <string name="title_developed">Developed by</string>
-    <string name="developed_by">Fei Kuan on KDE neon and Android Studio.</string>
-    <string name="about_restart">RE:START #1</string>
-    <string name="restart">"What you think is the right thing to do, is usually not."</string>
+    <string name="developed_by">Fei Kuan on Android Studio, running on KDE neon.</string>
+    <string name="about_restart" translatable="false">RE:START #1</string>
+    <string name="restart" translatable="false">The past is in the past.</string>
     <string name="menu_justnow">Sent streak just now</string>
     <string name="menu_customtime">Sent streak some time earlier</string>
     <string name="menu_remindinterval">Set reminder interval</string>
     <string name="menu_opensnapchat">Open Snapchat</string>
-    <string name="menu_cancel">Stop Alarm</string>
+    <string name="menu_cancel">Reminder Switch</string>
     <string name="nosnapapp">Snapchat not installed!</string>
     <string name="snapbefore_title">Pick the time of last streak. Convert to current timezone if changed.</string>
     <string name="snapbefore_cancel">Cancel</string>
@@ -26,4 +26,13 @@
     <string name="notif_title">Time to Streak!</string>
     <string name="channel_description">Reminds you to Keep Streaks</string>
     <string name="channel_name">Streak Reminder</string>
+    <string name="main_tip">Please use the button below and menu above to get started.</string>
+    <string name="picker_invalid_time">Invalid Time</string>
+    <string name="interval_title">How often to be reminded (hours)</string>
+    <string name="interval_set">You will be reminded every %1$d hours for streaks, until you sent a streak or if you lost them.</string>
+    <string name="main_interval">You will be reminded for streaks every %1$d hours.</string>
+    <string name="menu_service_disable">Reminder Deactivated.</string>
+    <string name="menu_service_enabled">Reminder Activated.</string>
+    <string name="main_service_enable">Reminder Enabled.</string>
+    <string name="main_service_disable">Reminder Disabled. Use the menu above to enable.</string>
 </resources>
