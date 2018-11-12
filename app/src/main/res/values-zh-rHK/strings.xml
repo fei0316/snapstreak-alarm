@@ -32,4 +32,7 @@
     <string name="menu_service_enabled">提示功能已啓用。</string>
     <string name="main_service_enable">提示功能已啓用。</string>
     <string name="main_service_disable">提示功能已停用。</string>
+    <string name="main_setinterval_prompt">請使用上方功能鍵設定提示間隔。</string>
+    <string name="main_unknown">未知</string>
+    <string name="main_reset_time">重設時間！</string>
 </resources>

@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         if (Time.IntInterval(getApplicationContext()) != 0)
             interval.setText(getString(R.string.main_interval, Time.IntInterval(getApplicationContext())));
         else
-            interval.setText("Please set a reminder interval using the menu above."); //todo:string
+            interval.setText(getString(R.string.main_setinterval_prompt));
         if (readService()){
             TextView enabled = findViewById(R.id.textView5);
             enabled.setText(getString(R.string.main_service_enable));
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         new MaterialTapTargetPrompt.Builder(this)
                 .setTarget(R.id.menu)
                 .setPrimaryText("Set Time Here")
-                .setSecondaryText("Set the time you sent your last streak here. You could also do the same thing on the notification.")
+                .setSecondaryText("Set the time you sent your last streak here. You could also do the same thing on the notification.") //todo: string
                 .show();
     }
 

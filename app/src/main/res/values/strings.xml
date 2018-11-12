@@ -35,4 +35,7 @@
     <string name="menu_service_enabled">Reminder Activated.</string>
     <string name="main_service_enable">Reminder Enabled.</string>
     <string name="main_service_disable">Reminder Disabled. Use the menu above to enable.</string>
+    <string name="main_setinterval_prompt">Please set a reminder interval using the menu above.</string>
+    <string name="main_unknown">Unknown</string>
+    <string name="main_reset_time">Reset Time!</string>
 </resources>

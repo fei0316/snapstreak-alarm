@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import java.util.concurrent.TimeUnit;
 
-public class Time {
+public class Time extends MainActivity{
     public static void ResetTime (Context c) {
         long saveLongTime = System.currentTimeMillis();
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
@@ -23,9 +23,9 @@ public class Time {
         long time_last = ReadTime(c);
         long time_till = System.currentTimeMillis() - time_last;
         if (time_till > 604800000)
-            formatted = "Unknown"; //todo:string value
+            formatted = c.getResources().getString(R.string.main_unknown);
         else if (time_till < 0)
-            formatted = "Reset time!"; //todo:string
+            formatted = c.getResources().getString(R.string.main_reset_time);
         else {
             formatted = String.format("%02d:%02d:%02d",
                     TimeUnit.MILLISECONDS.toHours(time_till),
