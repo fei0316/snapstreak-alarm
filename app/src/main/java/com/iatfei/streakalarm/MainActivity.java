@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
                     Time.SetTime(getApplicationContext(), millis);
                     setupClock();
                 } else {
-                    invalidTime();
+                    invalidTime(); //todo: prevent long ago times (>interval)
                 }
             }
 
@@ -245,13 +245,20 @@ public class MainActivity extends AppCompatActivity {
                         Time.SetInterval(c, numberPicker.getValue());
                         int s = Time.IntInterval(c);
                         setupClock();
-                        Snackbar.make(view, getString(R.string.interval_set, s), 5000).show();
+                        if (readService()){
+                            CancelNotif();
+                            MakeNotif();
+                            Snackbar.make(view, getString(R.string.interval_set, s), 5000).show();
+                        }
+                        else{
+                            Snackbar.make(view, getString(R.string.interval_set_disabled, s), 5000).show();
+                        }
                     }
                 })
                 .show();
     }
 
-    public void MakeNotif() {
+    public void MakeNotif() { //todo: time management wrong: see Keep.
         Intent intent1 = new Intent(MainActivity.this, AlarmReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager am = (AlarmManager) this.getSystemService(this.ALARM_SERVICE);

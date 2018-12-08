@@ -38,4 +38,5 @@
     <string name="main_setinterval_prompt">Please set a reminder interval using the menu above.</string>
     <string name="main_unknown">Unknown</string>
     <string name="main_reset_time">Reset Time!</string>
+    <string name="interval_set_disabled">Reminder not on. You woul be reminded every %1$d hours.</string>
 </resources>

@@ -12,7 +12,7 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
         long lastnotif = Time.getLastFire(context);
         long notifint = Time.LongInterval(context);
         long nextFire;
-        if (System.currentTimeMillis()-lastnotif < Time.LongInterval(context)){
+        if ((System.currentTimeMillis()-lastnotif) < notifint){
             nextFire = notifint-(System.currentTimeMillis()-lastnotif);}
         else
             nextFire = (10 * 60 * 1000);
@@ -20,7 +20,7 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
         Intent intent1 = new Intent(context.getApplicationContext(), AlarmReceiver.class);
         AlarmManager am = (AlarmManager) context.getSystemService(context.ALARM_SERVICE);
         PendingIntent pendingIntentDelay = PendingIntent.getBroadcast(context, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 1), pendingIntentDelay);
+        am.setRepeating(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + nextFire), notifint, pendingIntentDelay);
 
     }
 }
