@@ -71,4 +71,17 @@ public class Time extends MainActivity{
         return l;
     }
 
+    public static void setLastFire (Context c, long millis){
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putLong("nextnotif", millis);
+        editor.apply();
+    }
+
+    public static long getLastFire (Context c){
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
+        long l = pref.getLong("nextnotif", 0);
+        return l;
+    }
+
 }

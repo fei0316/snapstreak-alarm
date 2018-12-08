@@ -29,6 +29,8 @@ import java.util.Date;
 
 import biz.kasual.materialnumberpicker.MaterialNumberPicker;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
+import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetSequence;
+import uk.co.samuelwall.materialtaptargetprompt.extras.focals.CirclePromptFocal;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -37,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.inflateMenu(R.menu.main_menu);
 
         //fab-related
         FloatingActionButton fabcustom = findViewById(R.id.menu_customtime);
@@ -55,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Time.ResetTime(getApplicationContext());
                 setupClock();
+                closeNotif();
             }
         });
         fabsnap.setOnClickListener(new View.OnClickListener() {
@@ -70,11 +77,13 @@ public class MainActivity extends AppCompatActivity {
         });
         }
 
-    @Override
+
+   @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
         return true;
+
     }
 
     @Override
@@ -123,10 +132,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showHelp() {
-        new MaterialTapTargetPrompt.Builder(this)
-                .setTarget(R.id.menu)
-                .setPrimaryText("Set Time Here")
-                .setSecondaryText("Set the time you sent your last streak here. You could also do the same thing on the notification.") //todo: string
+        final MaterialTapTargetPrompt.Builder menuHelpBuilder = new MaterialTapTargetPrompt.Builder(this)
+                .setPrimaryText("Enable Here")
+                .setSecondaryText("Use this menu to enable reminder (through notifications) and set how often to be reminded.")
+                .setIcon(R.drawable.ic_more_vert);
+        final Toolbar tb = this.findViewById(R.id.toolbar);
+        final View child = tb.getChildAt(2);
+        if (child instanceof ActionMenuView)
+        {
+            final ActionMenuView actionMenuView = ((ActionMenuView) child);
+            menuHelpBuilder.setTarget(actionMenuView.getChildAt(actionMenuView.getChildCount() - 1));
+        }
+        else
+        {
+            Toast.makeText(this, "No Menu!!", Toast.LENGTH_SHORT)
+            .show();
+        }
+
+        new MaterialTapTargetSequence()
+                .addPrompt(new MaterialTapTargetPrompt.Builder(this)
+                        .setTarget(R.id.menu_justnow)
+                        .setPrimaryText("Set Time Here")
+                        .setSecondaryText("Press this button after you sent streaks.") //todo: string
+                        .create())
+                .addPrompt(menuHelpBuilder)
                 .show();
     }
 
@@ -222,11 +251,14 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    public void TestMakeNotif() {
+    public void MakeNotif() {
         Intent intent1 = new Intent(MainActivity.this, AlarmReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager am = (AlarmManager) this.getSystemService(this.ALARM_SERVICE);
         am.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 1000 * 30, Time.LongInterval(getApplicationContext()), pendingIntent);
+
+        PendingIntent pendingIntent23 = PendingIntent.getBroadcast(this, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+        am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 23), pendingIntent23);
     }
 
     public void CancelNotif() {
@@ -240,6 +272,12 @@ public class MainActivity extends AppCompatActivity {
         pendingIntent.cancel();
     }
 
+    public void closeNotif() {
+        NotificationManager notif =
+                (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
+        notif.cancel(2);
+    }
+
     public void setService() {
         boolean enabled = readService();
         if (enabled) {
@@ -247,7 +285,7 @@ public class MainActivity extends AppCompatActivity {
             Snackbar.make(findViewById(R.id.menu), R.string.menu_service_disable, Snackbar.LENGTH_SHORT).show();
         }
         else {
-            TestMakeNotif();
+            MakeNotif();
             Snackbar.make(findViewById(R.id.menu), R.string.menu_service_enabled, Snackbar.LENGTH_SHORT).show();        }
         }
 
