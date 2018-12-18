@@ -35,11 +35,11 @@ public class AlarmReceiver extends BroadcastReceiver {
                 .setOngoing(true)
                 .setWhen(when)
                 .setContentIntent(pendingApp)
-                .addAction(R.drawable.ic_close_black_24dp, "Snap Sent", pendingReset);
+                .addAction(R.drawable.ic_close_black_24dp, context.getString(R.string.notif_sent), pendingReset);
 //todo: delay button
         if (openSnap != null){
             PendingIntent pendingSnap = PendingIntent.getActivity(context, 1, openSnap, 0);
-            nBuilder.addAction(R.drawable.ic_close_black_24dp, "opensnapchat", pendingSnap); //todo:string resource
+            nBuilder.addAction(R.drawable.ic_close_black_24dp, context.getString(R.string.menu_opensnapchat), pendingSnap); //todo:string resource
         }
         if (showHours <= 0){
             nBuilder.setContentText(context.getString(R.string.notif_body_already));

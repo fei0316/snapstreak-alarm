@@ -44,4 +44,5 @@
     <string name="notif_body_delay_unusedfornow">Don\'t forget to send streaks! Losing streaks in %1$d hours.</string>
     <string name="notif_body_almost">You are about to lose your streaks!!!!! Send streaks now!!!!</string>
     <string name="notif_body_already">You may have lost your streaks. Send it immediately or stop the reminder in the app.</string>
+    <string name="notif_sent">Snap Sent</string>
 </resources>
