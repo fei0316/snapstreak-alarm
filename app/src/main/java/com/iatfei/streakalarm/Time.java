@@ -11,6 +11,7 @@ public class Time extends MainActivity{
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
         SharedPreferences.Editor editor = pref.edit();
         editor.putLong("lastsnaptime", saveLongTime);
+        editor.putInt("notifcount",1);
         editor.apply();
     }
     public static long ReadTime (Context c) {
@@ -18,6 +19,21 @@ public class Time extends MainActivity{
         long time_last = settings.getLong("lastsnaptime", 0);
         return time_last;
     }
+
+    public static int ReadNotifCount (Context c) {
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
+        int count = settings.getInt("notifcount", 0);
+        return count;
+    }
+
+    public static void NotifCountTally (Context c) {
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
+        int count = settings.getInt("notifcount", 0);
+        count++;
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putInt("notifcount", count);
+    }
+
     public static String ReadFormatTime (Context c) {
         String formatted;
         long time_last = ReadTime(c);
@@ -83,5 +99,4 @@ public class Time extends MainActivity{
         long l = pref.getLong("nextnotif", 0);
         return l;
     }
-
 }

@@ -293,10 +293,10 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             MakeNotif();
-            Snackbar.make(findViewById(R.id.menu), R.string.menu_service_enabled, Snackbar.LENGTH_SHORT).show();        }
+            Snackbar.make(findViewById(R.id.menu), R.string.menu_service_enabled, Snackbar.LENGTH_SHORT).show();}
         }
 
-    public boolean readService() {
+    public boolean readService() { //todo:check other requestcodes as well.
         return (PendingIntent.getBroadcast(this, 0,
                 new Intent(MainActivity.this, AlarmReceiver.class),
                 PendingIntent.FLAG_NO_CREATE) != null);

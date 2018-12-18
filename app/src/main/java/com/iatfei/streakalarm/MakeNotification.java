@@ -11,6 +11,7 @@ import android.os.Build;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 
+//not currently used.
 
 public class MakeNotification extends IntentService {
 
@@ -36,7 +37,7 @@ public class MakeNotification extends IntentService {
         NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(this, "1")
                 .setSmallIcon(R.drawable.ic_close_black_24dp) //for now
                 .setContentTitle(getString(R.string.notif_title))
-                .setContentText(getString(R.string.notif_body, showHours))
+                .setContentText(getString(R.string.notif_body_one, showHours))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setOngoing(true)
                 .setContentIntent(pendingApp);

@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 
+//IN USE!!!!
 
 public class AlarmReceiver extends BroadcastReceiver {
     @Override
@@ -20,6 +21,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         initChannels(context);
 
         int showHours = Time.NotifTime(context);
+        int notifCount = Time.ReadNotifCount(context);
 
         Intent openApp = new Intent(context, MainActivity.class);
         Intent openSnap = context.getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
@@ -29,7 +31,6 @@ public class AlarmReceiver extends BroadcastReceiver {
         NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(context, "streak")
                 .setSmallIcon(R.drawable.ic_close_black_24dp) //for now
                 .setContentTitle(context.getString(R.string.notif_title))
-                .setContentText(context.getString(R.string.notif_body, showHours))
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setOngoing(true)
                 .setWhen(when)
@@ -40,8 +41,24 @@ public class AlarmReceiver extends BroadcastReceiver {
             PendingIntent pendingSnap = PendingIntent.getActivity(context, 1, openSnap, 0);
             nBuilder.addAction(R.drawable.ic_close_black_24dp, "opensnapchat", pendingSnap); //todo:string resource
         }
+        if (showHours <= 0){
+            nBuilder.setContentText(context.getString(R.string.notif_body_already));
+        }
+        else if (showHours < 1.8){
+            nBuilder.setContentText(context.getString(R.string.notif_body_almost));
+        }
+        else if (notifCount == 1){
+            nBuilder.setContentText(context.getString(R.string.notif_body_one, showHours));
+        }
+        else if (notifCount == 2){
+            nBuilder.setContentText(context.getString(R.string.notif_body_two, showHours));
+        }
+        else {
+            nBuilder.setContentText(context.getString(R.string.notif_body_multi, notifCount, showHours));
+        }
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(2, nBuilder.build());
+        Time.NotifCountTally(context);
     }
 
     public void initChannels(Context context) {

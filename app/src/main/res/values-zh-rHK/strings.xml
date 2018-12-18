@@ -19,7 +19,7 @@
     <string name="snapbefore_title">選取上次儲火的時間。如果有改變時區請先進行轉換。</string>
     <string name="snapbefore_cancel">取消</string>
     <string name="snapbefore_ok">確定</string>
-    <string name="notif_body">將在 %1$d 小時後斷火！</string>
+    <string name="notif_body_one">請現在發送 snap，將在 %1$d 小時後斷火。</string>
     <string name="notif_title">係時候儲火啦！</string>
     <string name="channel_description">提醒你儲火</string>
     <string name="channel_name">儲火提示</string>
@@ -35,4 +35,10 @@
     <string name="main_setinterval_prompt">請使用上方功能鍵設定提示間隔。</string>
     <string name="main_unknown">未知</string>
     <string name="main_reset_time">重設時間！</string>
+    <string name="interval_set_disabled">提示已關閉。提示間隔設定爲 %1$d 小時。</string>
+    <string name="notif_body_two">你錯過了一個通知！將在 %1$d 小時後斷火。</string>
+    <string name="notif_body_multi">你已經錯過了 %1$d 通知！將在 %2$d 小時後斷火。</string>
+    <string name="notif_body_delay_unusedfornow">別忘了儲火！將在 %1$d 小時後斷火。</string>
+    <string name="notif_body_almost">將要斷火！！！</string>
+    <string name="notif_body_already">可能已經斷火。立即發送 Snap 或者關閉提示功能。</string>
 </resources>

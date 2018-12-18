@@ -4,15 +4,15 @@ import android.app.IntentService;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Build;
-import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
+
+//not in use.
 
 public class NewMakeNotif extends IntentService {
 
@@ -39,7 +39,7 @@ public class NewMakeNotif extends IntentService {
         NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(context, "1")
                 .setSmallIcon(R.drawable.ic_close_black_24dp) //for now
                 .setContentTitle(Resources.getSystem().getString(R.string.notif_title))
-                .setContentText(Resources.getSystem().getString(R.string.notif_body, showHours))
+                .setContentText(Resources.getSystem().getString(R.string.notif_body_one, showHours))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setOngoing(true)
                 .setContentIntent(pendingApp);

@@ -22,7 +22,7 @@
     <string name="snapbefore_title">Pick the time of last streak. Convert to current timezone if changed.</string>
     <string name="snapbefore_cancel">Cancel</string>
     <string name="snapbefore_ok">OK</string>
-    <string name="notif_body">Losing Streak in %1$d hours!</string>
+    <string name="notif_body_one">Send streaks now. Losing Streak in %1$d hours.</string>
     <string name="notif_title">Time to Streak!</string>
     <string name="channel_description">Reminds you to Keep Streaks</string>
     <string name="channel_name">Streak Reminder</string>
@@ -38,5 +38,10 @@
     <string name="main_setinterval_prompt">Please set a reminder interval using the menu above.</string>
     <string name="main_unknown">Unknown</string>
     <string name="main_reset_time">Reset Time!</string>
-    <string name="interval_set_disabled">Reminder not on. You woul be reminded every %1$d hours.</string>
+    <string name="interval_set_disabled">Reminder not on. Reminder interval is set to %1$d hours.</string>
+    <string name="notif_body_two">You missed a notification! Losing Streak in %1$d hours!</string>
+    <string name="notif_body_multi">You already missed %1$d notifications! Losing Streak in %2$d hours.</string>
+    <string name="notif_body_delay_unusedfornow">Don\'t forget to send streaks! Losing streaks in %1$d hours.</string>
+    <string name="notif_body_almost">You are about to lose your streaks!!!!! Send streaks now!!!!</string>
+    <string name="notif_body_already">You may have lost your streaks. Send it immediately or stop the reminder in the app.</string>
 </resources>
