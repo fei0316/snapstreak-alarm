@@ -258,25 +258,50 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    public void MakeNotif() { //todo: time management wrong: see Keep.
+    public void MakeNotif() {
+        long lastnotif = Time.getLastFire(getApplicationContext());
+        long notifint = Time.LongInterval(getApplicationContext());
+        long nextFire;
+        if ((System.currentTimeMillis()-lastnotif) < notifint){
+            nextFire = notifint-(System.currentTimeMillis()-lastnotif);}
+        else
+            nextFire = notifint;
+
         Intent intent1 = new Intent(MainActivity.this, AlarmReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager am = (AlarmManager) this.getSystemService(this.ALARM_SERVICE);
-        am.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 1000 * 30, Time.LongInterval(getApplicationContext()), pendingIntent);
+        am.setRepeating(AlarmManager.RTC_WAKEUP, nextFire, Time.LongInterval(getApplicationContext()), pendingIntent);
 
-        PendingIntent pendingIntent23 = PendingIntent.getBroadcast(this, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 23), pendingIntent23);
+        PendingIntent pendingIntent225 = PendingIntent.getBroadcast(this, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+        am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 23 - 1000 * 60 * 30), pendingIntent225);
+
+        PendingIntent pendingIntent235 = PendingIntent.getBroadcast(this, 2, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+        am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 24 - 1000 * 60 * 30), pendingIntent235);
+
+        PendingIntent pendingIntent245 = PendingIntent.getBroadcast(this, 3, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+        am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 25 - 1000 * 60 * 30), pendingIntent245);
     }
 
     public void CancelNotif() {
         Intent intent1 = new Intent(MainActivity.this, AlarmReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent225 = PendingIntent.getBroadcast(this, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent235 = PendingIntent.getBroadcast(this, 2, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent245 = PendingIntent.getBroadcast(this, 3, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+
         AlarmManager am = (AlarmManager) this.getSystemService(this.ALARM_SERVICE);
         am.cancel(pendingIntent);
+        am.cancel(pendingIntent225);
+        am.cancel(pendingIntent235);
+        am.cancel(pendingIntent245);
+
         NotificationManager notif =
                 (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
         notif.cancel(2);
         pendingIntent.cancel();
+        pendingIntent225.cancel();
+        pendingIntent235.cancel();
+        pendingIntent245.cancel();
     }
 
     public void closeNotif() {
@@ -296,9 +321,7 @@ public class MainActivity extends AppCompatActivity {
             Snackbar.make(findViewById(R.id.menu), R.string.menu_service_enabled, Snackbar.LENGTH_SHORT).show();}
         }
 
-    public boolean readService() { //todo:check other requestcodes as well.
-        return (PendingIntent.getBroadcast(this, 0,
-                new Intent(MainActivity.this, AlarmReceiver.class),
-                PendingIntent.FLAG_NO_CREATE) != null);
+    public boolean readService() {
+        return ReadService.status(this);
     }
 }

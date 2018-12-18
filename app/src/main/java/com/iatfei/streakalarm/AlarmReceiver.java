@@ -57,6 +57,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             nBuilder.setContentText(context.getString(R.string.notif_body_multi, notifCount, showHours));
         }
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.cancel(2);
         notificationManager.notify(2, nBuilder.build());
         Time.NotifCountTally(context);
     }
