@@ -39,7 +39,7 @@
         android:summary="@string/github_link"
         android:title="@string/about_opensource">
         <intent android:action="android.intent.action.VIEW"
-            android:data="https://github.com/fei0316/StreakAlarm" />
+            android:data="https://github.com/fei0316/snapstreak-alarm" />
     </Preference>
     <Preference
         android:layout_width="wrap_content"
@@ -50,8 +50,6 @@
         android:selectAllOnFocus="true"
         android:singleLine="false"
         android:title="@string/about_license" >
-        <intent android:action="android.intent.action.VIEW"
-            android:data="https://githubbbbb.com/fei0316/StreakAlarm/asdsdsadsa" />
     </Preference>
     <Preference
         android:layout_width="wrap_content"

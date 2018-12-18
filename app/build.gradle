@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.android.gms.oss-licenses-plugin'
 
 android {
     compileSdkVersion 27
@@ -32,4 +33,5 @@ dependencies {
     implementation 'com.github.Kunzisoft:Android-SwitchDateTimePicker:2.0'
     implementation 'biz.kasual:materialnumberpicker:1.2.1'
     implementation 'uk.co.samuelwall:material-tap-target-prompt:2.14.0'
+    implementation 'com.google.android.gms:play-services-oss-licenses:16.0.1'
 }

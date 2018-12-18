@@ -32,6 +32,7 @@ public class Time extends MainActivity{
         count++;
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt("notifcount", count);
+        editor.apply();
     }
 
     public static String ReadFormatTime (Context c) {
