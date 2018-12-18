@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         if(!previouslyStarted) {
             SharedPreferences.Editor edit = prefs.edit();
             edit.putBoolean("previous_started", Boolean.TRUE);
-            edit.commit();
+            edit.apply();
             showHelp();
         }
         setupClock();
@@ -166,9 +166,10 @@ public class MainActivity extends AppCompatActivity {
                 getString(R.string.snapbefore_cancel)
         );
         long now = System.currentTimeMillis();
+        final long period = Time.LongInterval(this);
         dateTimeDialogFragment.startAtTimeView();
         dateTimeDialogFragment.set24HoursMode(true);
-        dateTimeDialogFragment.setMinimumDateTime(new Date(now - 1000L * 60L * 60L * 25L));
+        dateTimeDialogFragment.setMinimumDateTime(new Date(now - period));
         dateTimeDialogFragment.setMaximumDateTime(new Date(now));
         dateTimeDialogFragment.setDefaultDateTime(new Date(now));
         dateTimeDialogFragment.setOnButtonClickListener(new SwitchDateTimeDialogFragment.OnButtonClickListener() {
@@ -176,11 +177,11 @@ public class MainActivity extends AppCompatActivity {
             public void onPositiveButtonClick(Date date) {
                 long now = System.currentTimeMillis();
                 long millis = date.getTime();
-                if (millis < now) {
+                if (millis < (now - period)) {
                     Time.SetTime(getApplicationContext(), millis);
                     setupClock();
                 } else {
-                    invalidTime(); //todo: prevent long ago times (>interval)
+                    invalidTime();
                 }
             }
 
@@ -269,7 +270,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent1 = new Intent(MainActivity.this, AlarmReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        AlarmManager am = (AlarmManager) this.getSystemService(this.ALARM_SERVICE);
+        AlarmManager am = (AlarmManager) this.getSystemService(ALARM_SERVICE);
         am.setRepeating(AlarmManager.RTC_WAKEUP, nextFire, Time.LongInterval(getApplicationContext()), pendingIntent);
 
         PendingIntent pendingIntent225 = PendingIntent.getBroadcast(this, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -289,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
         PendingIntent pendingIntent235 = PendingIntent.getBroadcast(this, 2, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
         PendingIntent pendingIntent245 = PendingIntent.getBroadcast(this, 3, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        AlarmManager am = (AlarmManager) this.getSystemService(this.ALARM_SERVICE);
+        AlarmManager am = (AlarmManager) this.getSystemService(ALARM_SERVICE);
         am.cancel(pendingIntent);
         am.cancel(pendingIntent225);
         am.cancel(pendingIntent235);

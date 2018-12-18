@@ -1,15 +1,23 @@
 package com.iatfei.streakalarm;
 
 import android.app.AlarmManager;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.RequiresPermission;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.os.BuildCompat;
 
 public class BootBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
+        boolean bootCompleted = Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction());
+        if (!bootCompleted) {
+            return;
+        }
+
         if (ReadService.status(context)) {
             long lastnotif = Time.getLastFire(context);
             long notifint = Time.LongInterval(context);
@@ -21,7 +29,7 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
                     nextFire = (10 * 60 * 1000);
 
                 Intent intent1 = new Intent(context, AlarmReceiver.class);
-                AlarmManager am = (AlarmManager) context.getSystemService(context.ALARM_SERVICE);
+                AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
                 am.setRepeating(AlarmManager.RTC_WAKEUP, nextFire, Time.LongInterval(context), pendingIntent);
@@ -36,7 +44,21 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
                 am.set(AlarmManager.RTC_WAKEUP, (lastnotif + 1000 * 60 * 60 * 25 - 1000 * 60 * 30), pendingIntent245);
             }
             else {
-                //todo:make notification about lost streak.
+                Intent openApp = new Intent(context, MainActivity.class);
+                PendingIntent pendingApp = PendingIntent.getActivity(context, 0, openApp, 0);
+
+                NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(context, "streak")
+                        .setSmallIcon(R.drawable.ic_close_black_24dp) //todo:for now
+                        .setContentTitle(context.getString(R.string.notif_lost_streak_title))
+                        .setContentText(context.getString(R.string.notif_lost_streak_content))
+                        .setPriority(NotificationCompat.PRIORITY_HIGH)
+                        .setOngoing(false)
+                        .setWhen(System.currentTimeMillis())
+                        .setContentIntent(pendingApp);
+                NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+                notificationManager.notify(2, nBuilder.build());
+
+
             }
         }
     }

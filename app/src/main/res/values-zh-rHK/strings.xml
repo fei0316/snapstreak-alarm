@@ -46,4 +46,6 @@
     <string name="tutor_menu_content">使用此功能表來打開儲火提示和設定通知的頻率。</string>
     <string name="tutor_button_title">別忘記！</string>
     <string name="tutor_button_content">每次發送儲火 Snap 後請按此按鈕。也可以使用通知裏的按鈕。</string>
+    <string name="notif_lost_streak_title">斷火！！</string>
+    <string name="notif_lost_streak_content">可能已經斷火。立即發送 Snap！</string>
 </resources>

@@ -29,7 +29,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         PendingIntent pendingApp = PendingIntent.getActivity(context, 0, openApp, 0);
         PendingIntent pendingReset = PendingIntent.getService(context, 0, resetTime, PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(context, "streak")
-                .setSmallIcon(R.drawable.ic_close_black_24dp) //for now
+                .setSmallIcon(R.drawable.ic_close_black_24dp) //todo:proper icon
                 .setContentTitle(context.getString(R.string.notif_title))
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setOngoing(true)
@@ -41,6 +41,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             PendingIntent pendingSnap = PendingIntent.getActivity(context, 1, openSnap, 0);
             nBuilder.addAction(R.drawable.ic_close_black_24dp, context.getString(R.string.menu_opensnapchat), pendingSnap);
         }
+
         if (showHours <= 0){
             nBuilder.setContentText(context.getString(R.string.notif_body_already));
         }

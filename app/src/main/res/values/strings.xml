@@ -49,4 +49,6 @@
     <string name="tutor_menu_content">Use this menu to enable reminder for streaks, and set how often to be reminded.</string>
     <string name="tutor_button_title">Don\'t forget!</string>
     <string name="tutor_button_content">Press this button after you sent every streaks. You can also do it in notifications that pop up.</string>
+    <string name="notif_lost_streak_title">Lost Streaks!</string>
+    <string name="notif_lost_streak_content">You may have lost your streaks. Please send it immediately.</string>
 </resources>

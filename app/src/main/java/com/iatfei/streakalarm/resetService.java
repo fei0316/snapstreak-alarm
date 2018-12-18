@@ -22,7 +22,7 @@ public class resetService extends IntentService {
         notif.cancel(2);
 
         Intent intent1 = new Intent(getApplicationContext(), AlarmReceiver.class);
-        AlarmManager am = (AlarmManager) this.getSystemService(this.ALARM_SERVICE);
+        AlarmManager am = (AlarmManager) this.getSystemService(ALARM_SERVICE);
         PendingIntent pendingIntent225 = PendingIntent.getBroadcast(this, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
         am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 23 - 1000 * 60 * 30), pendingIntent225);
 
