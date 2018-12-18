@@ -39,7 +39,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 //todo: delay button
         if (openSnap != null){
             PendingIntent pendingSnap = PendingIntent.getActivity(context, 1, openSnap, 0);
-            nBuilder.addAction(R.drawable.ic_close_black_24dp, context.getString(R.string.menu_opensnapchat), pendingSnap); //todo:string resource
+            nBuilder.addAction(R.drawable.ic_close_black_24dp, context.getString(R.string.menu_opensnapchat), pendingSnap);
         }
         if (showHours <= 0){
             nBuilder.setContentText(context.getString(R.string.notif_body_already));

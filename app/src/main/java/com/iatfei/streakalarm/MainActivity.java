@@ -133,8 +133,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void showHelp() {
         final MaterialTapTargetPrompt.Builder menuHelpBuilder = new MaterialTapTargetPrompt.Builder(this)
-                .setPrimaryText("Enable Here")
-                .setSecondaryText("Use this menu to enable reminder (through notifications) and set how often to be reminded.")
+                .setPrimaryText(this.getString(R.string.tutor_menu_title))
+                .setSecondaryText(this.getString(R.string.tutor_menu_content))
                 .setIcon(R.drawable.ic_more_vert);
         final Toolbar tb = this.findViewById(R.id.toolbar);
         final View child = tb.getChildAt(2);
@@ -150,12 +150,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         new MaterialTapTargetSequence()
+                .addPrompt(menuHelpBuilder)
                 .addPrompt(new MaterialTapTargetPrompt.Builder(this)
                         .setTarget(R.id.menu_justnow)
-                        .setPrimaryText("Set Time Here")
-                        .setSecondaryText("Press this button after you sent streaks.") //todo: string
+                        .setPrimaryText(this.getString(R.string.tutor_button_title))
+                        .setSecondaryText(this.getString(R.string.tutor_button_content))
                         .create())
-                .addPrompt(menuHelpBuilder)
                 .show();
     }
 
