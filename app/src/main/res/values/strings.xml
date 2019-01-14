@@ -5,7 +5,7 @@
     <string name="app_description">Helps you keep streaks. Only works if you have friends.</string>
     <string name="text_version">Version</string>
     <string name="about_opensource">Source Code</string>
-    <string name="github_link" translatable="false">https://github.com/fei0316/StreakAlarm</string>
+    <string name="github_link" translatable="false">https://github.com/fei0316/snapstreak-alarm</string>
     <string name="about_mysite">Visit my site</string>
     <string name="iatfei_link" translatable="false">https://iatfei.com</string>
     <string name="about_license">Open Source Licenses</string>
@@ -46,7 +46,7 @@
     <string name="notif_body_already">You may have lost your streaks. Send it immediately or stop the reminder in the app.</string>
     <string name="notif_sent">Snap Sent</string>
     <string name="tutor_menu_title">Start Here!</string>
-    <string name="tutor_menu_content">Use this menu to enable reminder for streaks, and set how often to be reminded.</string>
+    <string name="tutor_menu_content">Enable reminder for streaks, and set how often to be reminded.</string>
     <string name="tutor_button_title">Don\'t forget!</string>
     <string name="tutor_button_content">Press this button after you sent every streaks. You can also do it in notifications that pop up.</string>
     <string name="notif_lost_streak_title">Lost Streaks!</string>

@@ -18,12 +18,19 @@
             </intent-filter>
         </activity>
         <activity android:name=".NewAboutActivity" android:label="@string/title_activity_about">
-        android:parentActivityName=".MainActivity" >
+                android:parentActivityName=".MainActivity" >
         <!-- Parent activity meta-data to support 4.0 and lower -->
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".MainActivity" />
         </activity>
+
+        <activity android:name=".OpenSourceActivity" android:label="@string/about_license">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".NewAboutActivity" />
+        </activity>
+
         <receiver
             android:name=".AlarmReceiver"
             android:enabled="true" />

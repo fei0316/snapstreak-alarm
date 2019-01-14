@@ -7,24 +7,34 @@ import android.preference.PreferenceFragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
-
-import com.google.android.gms.oss.licenses.OssLicensesMenuActivity;
+import android.support.v7.widget.Toolbar;
 
 public class NewAboutActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setupActionBar();
+        setContentView(R.layout.about_frame);
+        //setupActionBar();
+
+        final Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        //todo:remove if unnecessary.
+        ActionBar ab = getSupportActionBar();
+        if (ab != null) {
+            ab.setDisplayHomeAsUpEnabled(true);
+        }
+
         getFragmentManager().beginTransaction()
-                .replace(android.R.id.content, new AboutFragment())
+                .add(R.id.container, new AboutFragment())
                 .commit();
     }
-    private void setupActionBar() {
+    /*private void setupActionBar() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-    }
+    }*/
     public ActionBar getSupportActionBar() {
         return getDelegate().getSupportActionBar();
     }
@@ -43,7 +53,7 @@ public class NewAboutActivity extends AppCompatActivity {
             Preference ver = findPreference("edit_text_preference_2");
             ver.setSummary(BuildConfig.VERSION_NAME);
             Preference license = findPreference("edit_text_preference_6");
-            license.setIntent(new Intent(getActivity(),OssLicensesMenuActivity.class));
+            license.setIntent(new Intent(getActivity(),OpenSourceActivity.class));
     }
 
     }
