@@ -7,9 +7,6 @@ import android.support.v7.widget.Toolbar;
 
 import com.mikepenz.aboutlibraries.LibsBuilder;
 import com.mikepenz.aboutlibraries.ui.LibsFragment;
-import com.mikepenz.aboutlibraries.ui.LibsSupportFragment;
-
-import java.lang.reflect.Field;
 
 public class OpenSourceActivity extends AppCompatActivity {
     @Override
@@ -29,11 +26,12 @@ public class OpenSourceActivity extends AppCompatActivity {
 
         LibsFragment fragment = new LibsBuilder()
                 .withFields(R.string.class.getFields())
-                //.withLicenseShown(true)
+                .withLibraries("FloatingActionButton") //todo:autodetect at github, numberpicker and datetime are from custom xml files. Pull request!!
+                .withLicenseShown(true)
                 //.withVersionShown(true)
-                                //.withAboutIconShown(true)
-                //.withAboutVersionShown(true)
-                //.withAboutDescription("I'm impressed you would actually click into this! You must be super interested in my app! Drop me an email!")
+                .withAboutIconShown(true)
+                .withAboutVersionShown(true)
+                .withAboutDescription("I'm impressed you would actually click into this! Hoped you enjoyed my first app.<br>Drop me an email!<br><br>¯\\\\_(ツ)_/¯<br>讓一切成爲往事。") //todo:string
                 .fragment();
 
         getFragmentManager().beginTransaction()

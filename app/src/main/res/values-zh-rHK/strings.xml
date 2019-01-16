@@ -9,7 +9,7 @@
     <string name="about_mysite">訪問我的網站</string>
     <string name="about_license">開放原始碼授權</string>
     <string name="title_developed">開發</string>
-    <string name="developed_by">由 Fei Kuan 在 KDE neon 運行的 Android Studio 開發。</string>
+    <string name="developed_by">由 Fei Kuan 在 KDE neon 和 Manjaro 運行的 Android Studio 開發。</string>
     <string name="menu_justnow">剛剛才發送儲火</string>
     <string name="menu_customtime">之前發送的儲火</string>
     <string name="menu_remindinterval">設定提示間隔</string>
@@ -48,4 +48,5 @@
     <string name="tutor_button_content">每次發送儲火 Snap 後請按此按鈕。也可以使用通知裏的按鈕。</string>
     <string name="notif_lost_streak_title">斷火！！</string>
     <string name="notif_lost_streak_content">可能已經斷火。立即發送 Snap！</string>
+    <string name="about_contact">聯絡我</string>
 </resources>

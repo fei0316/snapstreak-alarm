@@ -11,7 +11,7 @@ import android.os.Build;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 
-//not currently used.
+//todo:not currently used.
 
 public class MakeNotification extends IntentService {
 

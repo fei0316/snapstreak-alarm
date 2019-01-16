@@ -80,6 +80,20 @@
         android:layout_height="wrap_content"
         android:defaultValue="Default value"
         android:editable="false"
+        android:key="edit_text_preference_8"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:summary="@string/about_email"
+        android:title="@string/about_contact">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="mailto:kuan@iatfei.com" />
+    </Preference>
+    <Preference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="Default value"
+        android:editable="false"
         android:key="edit_text_preference_7"
         android:selectAllOnFocus="true"
         android:singleLine="false"

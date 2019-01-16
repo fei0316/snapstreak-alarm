@@ -159,14 +159,14 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    public void PickTime() {
+    public void PickTime() { //todo:REWORK!! REMOVE TIMEPICKER ENTIRELY AND CHANGE TO SIMPLE HOURS AGO! (maybe with 15min-increments ACCURACY IS NOT THAT IMPORTANT!!
         final SwitchDateTimeDialogFragment dateTimeDialogFragment = SwitchDateTimeDialogFragment.newInstance(
                 getString(R.string.snapbefore_title),
                 getString(R.string.snapbefore_ok),
                 getString(R.string.snapbefore_cancel)
         );
         long now = System.currentTimeMillis();
-        final long period = Time.LongInterval(this);
+        long period = Time.LongInterval(this);
         dateTimeDialogFragment.startAtTimeView();
         dateTimeDialogFragment.set24HoursMode(true);
         dateTimeDialogFragment.setMinimumDateTime(new Date(now - period));
@@ -176,8 +176,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPositiveButtonClick(Date date) {
                 long now = System.currentTimeMillis();
+                long period = Time.LongInterval(getApplicationContext());
                 long millis = date.getTime();
-                if (millis < (now - period)) {
+                if (millis < (now - period) || millis > now) {
                     Time.SetTime(getApplicationContext(), millis);
                     setupClock();
                 } else {
