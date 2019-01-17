@@ -15,7 +15,7 @@ public class OpenSourceActivity extends AppCompatActivity {
         setContentView(R.layout.about_frame);
         //setupActionBar();
 
-        final Toolbar toolbar = findViewById(R.id.toolbar);
+        final Toolbar toolbar = findViewById(R.id.toolbar_bar);
         setSupportActionBar(toolbar);
 
         //todo:remove if unnecessary.
@@ -31,7 +31,7 @@ public class OpenSourceActivity extends AppCompatActivity {
                 //.withVersionShown(true)
                 .withAboutIconShown(true)
                 .withAboutVersionShown(true)
-                .withAboutDescription("I'm impressed you would actually click into this! Hoped you enjoyed my first app.<br>Drop me an email!<br><br>¯\\\\_(ツ)_/¯<br>讓一切成爲往事。") //todo:string
+                .withAboutDescription("I'm impressed you would actually click into this! Hoped you enjoyed my first app.<br>Drop me an email!<br><br>¯\\_(ツ)_/¯<br>讓一切成爲往事。") //todo:string
                 .fragment();
 
         getFragmentManager().beginTransaction()

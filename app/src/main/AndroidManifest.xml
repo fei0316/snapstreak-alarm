@@ -35,10 +35,12 @@
             android:enabled="true" />
 
         <receiver
-            android:name="com.iatfei.streakalarm.BootBroadcastReceiver"
+            android:name=".BootBroadcastReceiver"
             android:enabled="true" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </receiver>
 

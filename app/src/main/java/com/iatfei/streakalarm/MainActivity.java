@@ -159,7 +159,53 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    public void PickTime() { //todo:REWORK!! REMOVE TIMEPICKER ENTIRELY AND CHANGE TO SIMPLE HOURS AGO! (maybe with 15min-increments ACCURACY IS NOT THAT IMPORTANT!!
+    public void PickTime() {
+
+        MaterialNumberPicker materialNumberPicker = new MaterialNumberPicker.Builder(this)
+                .minValue(0)
+                .maxValue(24)
+                .defaultValue(2)
+                .backgroundColor(Color.WHITE)
+                .separatorColor(getResources().getColor(R.color.colorPrimary))
+                .textColor(Color.BLACK)
+                .textSize(20)
+                .enableFocusability(false)
+                .wrapSelectorWheel(false)
+                .build();
+        View view = findViewById(R.id.menu);
+        PickTimeApply(materialNumberPicker,view);
+    }
+
+    public void PickTimeApply(final MaterialNumberPicker numberPicker, final View view) {
+        new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.snapbefore_title))
+                .setView(numberPicker)
+                .setPositiveButton(getString(android.R.string.ok), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Context c = getApplicationContext();
+                        int hoursago = numberPicker.getValue();
+                        int interval = Time.IntInterval(c);
+                        if (hoursago >= interval){
+                            Snackbar.make(view, getString(R.string.picker_invalid_time), 5000).show();
+                        }
+                        else if (hoursago > 0){
+                            long setTime = System.currentTimeMillis() - (hoursago * 1000 * 60 * 60 + 2160000);
+                            Time.SetTime(c,setTime);
+                            setupClock();
+                        }
+                    }
+                })
+                .setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        setupClock();
+                    }
+                })
+                .show();
+    }
+
+    /*public void PickTime() { //todo:REWORK!! REMOVE TIMEPICKER ENTIRELY AND CHANGE TO SIMPLE HOURS AGO! (maybe with 15min-increments ACCURACY IS NOT THAT IMPORTANT!!
         final SwitchDateTimeDialogFragment dateTimeDialogFragment = SwitchDateTimeDialogFragment.newInstance(
                 getString(R.string.snapbefore_title),
                 getString(R.string.snapbefore_ok),
@@ -194,6 +240,13 @@ public class MainActivity extends AppCompatActivity {
         dateTimeDialogFragment.show(getSupportFragmentManager(), "dialog_time");
     }
 
+
+    public void invalidTime() {
+        Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.picker_invalid_time), Toast.LENGTH_SHORT);
+        toast.show();
+    }
+    */
+
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
@@ -215,11 +268,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void invalidTime() {
-        Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.picker_invalid_time), Toast.LENGTH_SHORT);
-        toast.show();
-    }
-
     public void IntSelMake() {
         MaterialNumberPicker numberPicker = new MaterialNumberPicker.Builder(this)
                 .minValue(1)
@@ -230,7 +278,7 @@ public class MainActivity extends AppCompatActivity {
                 .textColor(Color.BLACK)
                 .textSize(20)
                 .enableFocusability(false)
-                .wrapSelectorWheel(true)
+                .wrapSelectorWheel(false)
                 .build();
         View view = findViewById(R.id.menu);
         IntSel(numberPicker, view);

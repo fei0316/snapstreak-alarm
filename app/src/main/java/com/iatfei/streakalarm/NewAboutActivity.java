@@ -14,12 +14,10 @@ public class NewAboutActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about_frame);
-        //setupActionBar();
 
-        final Toolbar toolbar = findViewById(R.id.toolbar);
+        final Toolbar toolbar = findViewById(R.id.toolbar_bar);
         setSupportActionBar(toolbar);
 
-        //todo:remove if unnecessary.
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
             ab.setDisplayHomeAsUpEnabled(true);
@@ -29,12 +27,7 @@ public class NewAboutActivity extends AppCompatActivity {
                 .add(R.id.container, new AboutFragment())
                 .commit();
     }
-    /*private void setupActionBar() {
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
-    }*/
+
     public ActionBar getSupportActionBar() {
         return getDelegate().getSupportActionBar();
     }

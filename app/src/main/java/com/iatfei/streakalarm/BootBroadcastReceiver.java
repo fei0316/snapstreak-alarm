@@ -13,53 +13,44 @@ import android.support.v4.os.BuildCompat;
 public class BootBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        boolean bootCompleted = Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction());
-        if (!bootCompleted) {
-            return;
+        long lastnotif = Time.getLastFire(context);
+        long notifint = Time.LongInterval(context);
+        long nextFire;
+        if ((System.currentTimeMillis() - lastnotif) < 82800000) {
+            if ((System.currentTimeMillis() - lastnotif) < notifint) {
+                nextFire = notifint - (System.currentTimeMillis() - lastnotif);
+            } else
+                nextFire = (10 * 60 * 1000);
+
+            Intent intent1 = new Intent(context, AlarmReceiver.class);
+            AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+            am.setRepeating(AlarmManager.RTC_WAKEUP, nextFire, Time.LongInterval(context), pendingIntent);
+
+            PendingIntent pendingIntent225 = PendingIntent.getBroadcast(context, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+            am.set(AlarmManager.RTC_WAKEUP, (lastnotif + 1000 * 60 * 60 * 23 - 1000 * 60 * 30), pendingIntent225);
+
+            PendingIntent pendingIntent235 = PendingIntent.getBroadcast(context, 2, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+            am.set(AlarmManager.RTC_WAKEUP, (lastnotif + 1000 * 60 * 60 * 24 - 1000 * 60 * 30), pendingIntent235);
+
+            PendingIntent pendingIntent245 = PendingIntent.getBroadcast(context, 3, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+            am.set(AlarmManager.RTC_WAKEUP, (lastnotif + 1000 * 60 * 60 * 25 - 1000 * 60 * 30), pendingIntent245);
         }
+        else {
+            Intent openApp = new Intent(context, MainActivity.class);
+            PendingIntent pendingApp = PendingIntent.getActivity(context, 0, openApp, 0);
 
-        if (ReadService.status(context)) {
-            long lastnotif = Time.getLastFire(context);
-            long notifint = Time.LongInterval(context);
-            long nextFire;
-            if ((System.currentTimeMillis() - lastnotif) < 82800000) {
-                if ((System.currentTimeMillis() - lastnotif) < notifint) {
-                    nextFire = notifint - (System.currentTimeMillis() - lastnotif);
-                } else
-                    nextFire = (10 * 60 * 1000);
-
-                Intent intent1 = new Intent(context, AlarmReceiver.class);
-                AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-
-                PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-                am.setRepeating(AlarmManager.RTC_WAKEUP, nextFire, Time.LongInterval(context), pendingIntent);
-
-                PendingIntent pendingIntent225 = PendingIntent.getBroadcast(context, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-                am.set(AlarmManager.RTC_WAKEUP, (lastnotif + 1000 * 60 * 60 * 23 - 1000 * 60 * 30), pendingIntent225);
-
-                PendingIntent pendingIntent235 = PendingIntent.getBroadcast(context, 2, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-                am.set(AlarmManager.RTC_WAKEUP, (lastnotif + 1000 * 60 * 60 * 24 - 1000 * 60 * 30), pendingIntent235);
-
-                PendingIntent pendingIntent245 = PendingIntent.getBroadcast(context, 3, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-                am.set(AlarmManager.RTC_WAKEUP, (lastnotif + 1000 * 60 * 60 * 25 - 1000 * 60 * 30), pendingIntent245);
-            }
-            else {
-                Intent openApp = new Intent(context, MainActivity.class);
-                PendingIntent pendingApp = PendingIntent.getActivity(context, 0, openApp, 0);
-
-                NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(context, "streak")
-                        .setSmallIcon(R.drawable.ic_close_black_24dp) //todo:for now
-                        .setContentTitle(context.getString(R.string.notif_lost_streak_title))
-                        .setContentText(context.getString(R.string.notif_lost_streak_content))
-                        .setPriority(NotificationCompat.PRIORITY_HIGH)
-                        .setOngoing(false)
-                        .setWhen(System.currentTimeMillis())
-                        .setContentIntent(pendingApp);
-                NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-                notificationManager.notify(2, nBuilder.build());
-
-
-            }
+            NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(context, "streak")
+                    .setSmallIcon(R.drawable.ic_close_black_24dp) //todo:for now
+                    .setContentTitle(context.getString(R.string.notif_lost_streak_title))
+                    .setContentText(context.getString(R.string.notif_lost_streak_content))
+                    .setPriority(NotificationCompat.PRIORITY_HIGH)
+                    .setOngoing(false)
+                    .setWhen(System.currentTimeMillis())
+                    .setContentIntent(pendingApp);
+            NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.notify(2, nBuilder.build());
         }
     }
 }

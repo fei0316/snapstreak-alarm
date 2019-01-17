@@ -10,6 +10,9 @@
 
     <!-- NOTE: This preference will be enabled only when the checkbox above is checked. -->
 
+    <PreferenceCategory android:title="@string/about_app">
+
+    </PreferenceCategory>
     <Preference
         android:defaultValue="Default value"
         android:editable="false"
@@ -28,29 +31,9 @@
         android:singleLine="false"
         android:summary="..."
         android:title="@string/text_version" />
-    <Preference
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:defaultValue="Default value"
-        android:editable="false"
-        android:key="edit_text_preference_3"
-        android:selectAllOnFocus="true"
-        android:singleLine="false"
-        android:summary="@string/github_link"
-        android:title="@string/about_opensource">
-        <intent android:action="android.intent.action.VIEW"
-            android:data="https://github.com/fei0316/snapstreak-alarm" />
-    </Preference>
-    <Preference
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:defaultValue="Default value"
-        android:editable="false"
-        android:key="edit_text_preference_6"
-        android:selectAllOnFocus="true"
-        android:singleLine="false"
-        android:title="@string/about_license" >
-    </Preference>
+    <PreferenceCategory android:title="@string/about_developer">
+
+    </PreferenceCategory>
     <Preference
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,6 +72,32 @@
             android:action="android.intent.action.VIEW"
             android:data="mailto:kuan@iatfei.com" />
     </Preference>
+    <Preference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="Default value"
+        android:editable="false"
+        android:key="edit_text_preference_3"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:summary="@string/about_this_license_details"
+        android:title="@string/about_this_license" >
+        <intent android:action="android.intent.action.VIEW"
+            android:data="https://github.com/fei0316/snapstreak-alarm" />
+    </Preference>
+    <Preference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="Default value"
+        android:editable="false"
+        android:key="edit_text_preference_6"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:title="@string/about_license" >
+    </Preference>
+    <PreferenceCategory android:title="@string/about_restart_title">
+
+    </PreferenceCategory>
     <Preference
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

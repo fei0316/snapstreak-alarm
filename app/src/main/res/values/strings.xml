@@ -19,7 +19,7 @@
     <string name="menu_opensnapchat">Open Snapchat</string>
     <string name="menu_cancel">Reminder Switch</string>
     <string name="nosnapapp">Snapchat not installed!</string>
-    <string name="snapbefore_title">Pick the time of last streak. Convert to current timezone if changed.</string>
+    <string name="snapbefore_title">How many hours ago? If around half an hour, select 0.</string>
     <string name="snapbefore_cancel">Cancel</string>
     <string name="snapbefore_ok">OK</string>
     <string name="notif_body_one">Send streaks now. Losing Streak in %1$d hours.</string>
@@ -27,7 +27,7 @@
     <string name="channel_description">Reminds you to Keep Streaks</string>
     <string name="channel_name">Streak Reminder</string>
     <string name="main_tip">Please use the button below and menu above to get started.</string>
-    <string name="picker_invalid_time">Invalid Time</string>
+    <string name="picker_invalid_time">Too long ago! Send a snap now!</string>
     <string name="interval_title">How often to be reminded (hours)</string>
     <string name="interval_set">You will be reminded every %1$d hours for streaks, until you sent a streak or if you lost them.</string>
     <string name="main_interval">You will be reminded for streaks every %1$d hours.</string>
@@ -52,5 +52,10 @@
     <string name="notif_lost_streak_title">Lost Streaks!</string>
     <string name="notif_lost_streak_content">You may have lost your streaks. Please send it immediately.</string>
     <string name="about_contact">Contact me</string>
-    <string name="about_email">kuan@iatfei.com</string>
+    <string name="about_email" translatable="false">kuan@iatfei.com</string>
+    <string name="about_this_license">This is Free Software</string>
+    <string name="about_this_license_details">This application is made available under the GNU General Public License Version 3 or later. You are free to redistribute and/or modify it under this license. Click to visit my GitHub page for source code and license details.</string>
+    <string name="about_app">About this App</string>
+    <string name="about_developer">Development</string>
+    <string name="about_restart_title" translatable="false">RE:START</string>
 </resources>
