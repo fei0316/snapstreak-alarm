@@ -100,11 +100,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setupClock() {
-        String time = Time.ReadFormatTime(getApplicationContext());
+        Context c = getApplicationContext();
+        String time = Time.ReadFormatTime(c);
+        long longtime = Time.ReadTime(c);
         TextView clock = findViewById(R.id.textView2);
         clock.setText(time);
+        if (longtime >= 86400000){
+            clock.setTextColor(getResources().getColor(R.color.red_warning));
+        }
+        else if (longtime > 72000000)
+            clock.setTextColor(getResources().getColor(R.color.orange_warning)); //todo: color to xml
+
         TextView interval = findViewById(R.id.textView4);
-        if (Time.IntInterval(getApplicationContext()) != 0)
+        if (Time.IntInterval(c) != 0)
             interval.setText(getString(R.string.main_interval, Time.IntInterval(getApplicationContext())));
         else
             interval.setText(getString(R.string.main_setinterval_prompt));
@@ -309,6 +317,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void MakeNotif() {
+        //todo:testing NotificationManage
+        NotificationManage.MakeNotif(this);
+        /*
         long lastnotif = Time.getLastFire(getApplicationContext());
         long notifint = Time.LongInterval(getApplicationContext());
         long nextFire;
@@ -330,10 +341,13 @@ public class MainActivity extends AppCompatActivity {
 
         PendingIntent pendingIntent245 = PendingIntent.getBroadcast(this, 3, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
         am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 25 - 1000 * 60 * 30), pendingIntent245);
+    */
     }
 
     public void CancelNotif() {
-        Intent intent1 = new Intent(MainActivity.this, AlarmReceiver.class);
+        NotificationManage.CancelNotif(this);
+        //todo: testing for replacing to NotificationManage
+        /*Intent intent1 = new Intent(MainActivity.this, AlarmReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
         PendingIntent pendingIntent225 = PendingIntent.getBroadcast(this, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
         PendingIntent pendingIntent235 = PendingIntent.getBroadcast(this, 2, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -351,7 +365,7 @@ public class MainActivity extends AppCompatActivity {
         pendingIntent.cancel();
         pendingIntent225.cancel();
         pendingIntent235.cancel();
-        pendingIntent245.cancel();
+        pendingIntent245.cancel(); */
     }
 
     public void closeNotif() {

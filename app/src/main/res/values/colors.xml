@@ -8,5 +8,7 @@
     <color name="white">#ffffff</color>
     <color name="white_pressed">#999999</color>
     <color name="half_black">#555555</color>
+    <color name="orange_warning">#FF6D00</color>
+    <color name="red_warning">#D50000</color>
 
 </resources>
