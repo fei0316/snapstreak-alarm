@@ -24,7 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionButton;
-import com.kunzisoft.switchdatetime.SwitchDateTimeDialogFragment;
+//import com.kunzisoft.switchdatetime.SwitchDateTimeDialogFragment;
 
 import java.util.Date;
 

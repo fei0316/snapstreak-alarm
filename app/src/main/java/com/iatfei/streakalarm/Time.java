@@ -22,7 +22,7 @@ public class Time extends MainActivity{
 
     public static int ReadNotifCount (Context c) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
-        int count = settings.getInt("notifcount", 0);
+        int count = settings.getInt("notifcount", 1);
         return count;
     }
 
@@ -55,6 +55,7 @@ public class Time extends MainActivity{
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
         SharedPreferences.Editor editor = pref.edit();
         editor.putLong("lastsnaptime", millis);
+        editor.putInt("notifcount",1);
         editor.apply();
     }
 
