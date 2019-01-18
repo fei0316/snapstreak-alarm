@@ -10,7 +10,7 @@ public class NotificationManage extends MainActivity {
     public static void MakeNotif (Context c) {
         long laststreak = Time.ReadTime(c);
         long notifint = Time.LongInterval(c);
-        if (laststreak==0 || notifint == 0)
+        if (laststreak == 0 || notifint == 0)
             return;
         long nextFire;
         if ((System.currentTimeMillis()-laststreak) < notifint){

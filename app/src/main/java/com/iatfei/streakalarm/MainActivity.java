@@ -104,12 +104,13 @@ public class MainActivity extends AppCompatActivity {
         Context c = getApplicationContext();
         String time = Time.ReadFormatTime(c);
         long longtime = Time.ReadTime(c);
+        long now = System.currentTimeMillis();
         TextView clock = findViewById(R.id.textView2);
         clock.setText(time);
-        if (longtime >= 86400000){
+        if (( now - longtime ) >= 86400000){
             clock.setTextColor(getResources().getColor(R.color.red_warning));
         }
-        else if (longtime > 72000000)
+        else if ((now-longtime) > 72000000)
             clock.setTextColor(getResources().getColor(R.color.orange_warning));
         else
             clock.setTextColor(Color.BLACK);
@@ -383,6 +384,7 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = pref.edit();
             editor.putBoolean("serviceEnabled", true);
+            editor.apply();
     }
 
     public void disableService() {
@@ -391,6 +393,7 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = pref.edit();
             editor.putBoolean("serviceEnabled", false);
+            editor.apply();
     }
 
     public boolean readService() {
