@@ -8,13 +8,15 @@ import android.content.Intent;
 
 public class NotificationManage extends MainActivity {
     public static void MakeNotif (Context c) {
-        long lastnotif = Time.getLastFire(c);
+        long laststreak = Time.ReadTime(c);
         long notifint = Time.LongInterval(c);
+        if (laststreak==0 || notifint == 0)
+            return;
         long nextFire;
-        if ((System.currentTimeMillis()-lastnotif) < notifint){
-            nextFire = notifint-(System.currentTimeMillis()-lastnotif);}
+        if ((System.currentTimeMillis()-laststreak) < notifint){
+            nextFire = laststreak + notifint;}
         else
-            nextFire = notifint;
+            nextFire = System.currentTimeMillis();
 
         Intent intent1 = new Intent(c, AlarmReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(c, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -22,13 +24,13 @@ public class NotificationManage extends MainActivity {
         am.setRepeating(AlarmManager.RTC_WAKEUP, nextFire, Time.LongInterval(c), pendingIntent);
 
         PendingIntent pendingIntent225 = PendingIntent.getBroadcast(c, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 23 - 1000 * 60 * 30), pendingIntent225);
+        am.set(AlarmManager.RTC_WAKEUP, (laststreak + 1000 * 60 * 60 * 23 - 1000 * 60 * 30), pendingIntent225);
 
         PendingIntent pendingIntent235 = PendingIntent.getBroadcast(c, 2, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 24 - 1000 * 60 * 30), pendingIntent235);
+        am.set(AlarmManager.RTC_WAKEUP, (laststreak + 1000 * 60 * 60 * 24 - 1000 * 60 * 30), pendingIntent235);
 
         PendingIntent pendingIntent245 = PendingIntent.getBroadcast(c, 3, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 25 - 1000 * 60 * 30), pendingIntent245);
+        am.set(AlarmManager.RTC_WAKEUP, (laststreak + 1000 * 60 * 60 * 25 - 1000 * 60 * 30), pendingIntent245);
     }
     public static void CancelNotif (Context c) {
         Intent intent1 = new Intent(c, AlarmReceiver.class);
@@ -52,6 +54,6 @@ public class NotificationManage extends MainActivity {
         pendingIntent245.cancel();
     }
     public static void ResumeNotif () {
-
+        //todo:maybe not needed??
     }
 }

@@ -78,17 +78,18 @@ public class Time extends MainActivity{
 
     public static int IntInterval (Context c) {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
-        int t = pref.getInt("intervalInt", 0);
+        int t = pref.getInt("intervalInt", 8);
         return t;
     }
 
     public static long LongInterval (Context c) {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
-        long l = pref.getLong("intervalLong", 0);
+        long l = pref.getLong("intervalLong", 28800000);
         return l;
     }
 
-    public static void setLastFire (Context c, long millis){
+    //todo:may not need anymore
+    /*public static void setLastFire (Context c, long millis){
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
         SharedPreferences.Editor editor = pref.edit();
         editor.putLong("nextnotif", millis);
@@ -99,5 +100,5 @@ public class Time extends MainActivity{
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
         long l = pref.getLong("nextnotif", 0);
         return l;
-    }
+    }*/
 }

@@ -11,7 +11,7 @@ public class NotificationServiceSet extends IntentService {
     public NotificationServiceSet() {
         super("NotificationServiceSet");
     }
-
+//todo:not currently in use.
     @Override
     protected void onHandleIntent(Intent intent) {
         //NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);

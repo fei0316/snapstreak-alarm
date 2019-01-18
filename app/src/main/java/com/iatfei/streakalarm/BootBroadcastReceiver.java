@@ -6,6 +6,8 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.RequiresPermission;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.os.BuildCompat;
@@ -13,7 +15,16 @@ import android.support.v4.os.BuildCompat;
 public class BootBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        long lastnotif = Time.getLastFire(context);
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
+        boolean isEnabled = settings.getBoolean("serviceEnabled", false);
+
+        if (isEnabled){
+            NotificationManage.MakeNotif(context);
+        }
+
+
+        //todo:COMPLETE REFORM!!! ALL INTEGRATED!!!
+        /*long lastnotif = Time.getLastFire(context);
         long notifint = Time.LongInterval(context);
         long nextFire;
         if ((System.currentTimeMillis() - lastnotif) < 82800000) {
@@ -51,6 +62,6 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
                     .setContentIntent(pendingApp);
             NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
             notificationManager.notify(2, nBuilder.build());
-        }
+        } */
     }
 }

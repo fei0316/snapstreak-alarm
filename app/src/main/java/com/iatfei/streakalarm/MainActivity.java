@@ -1,6 +1,7 @@
 package com.iatfei.streakalarm;
 
 import android.app.AlarmManager;
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -60,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Time.ResetTime(getApplicationContext());
+                enableService();
                 setupClock();
-                closeNotif();
             }
         });
         fabsnap.setOnClickListener(new View.OnClickListener() {
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onPrepareOptionsMenu(Menu menu) {
         boolean serviceEnabled = readService();
         MenuItem stopAlarm = menu.findItem(R.id.menu_stopalarm);
-        stopAlarm.setChecked(serviceEnabled);
+        stopAlarm.setEnabled(serviceEnabled);
         return true;
     }
 
@@ -109,7 +110,9 @@ public class MainActivity extends AppCompatActivity {
             clock.setTextColor(getResources().getColor(R.color.red_warning));
         }
         else if (longtime > 72000000)
-            clock.setTextColor(getResources().getColor(R.color.orange_warning)); //todo: color to xml
+            clock.setTextColor(getResources().getColor(R.color.orange_warning));
+        else
+            clock.setTextColor(Color.BLACK);
 
         TextView interval = findViewById(R.id.textView4);
         if (Time.IntInterval(c) != 0)
@@ -124,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
             TextView enabled = findViewById(R.id.textView5);
             enabled.setText(getString(R.string.main_service_disable));
         }
+        invalidateOptionsMenu();
     }
 
     public void onResume() {
@@ -158,12 +162,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         new MaterialTapTargetSequence()
-                .addPrompt(menuHelpBuilder)
                 .addPrompt(new MaterialTapTargetPrompt.Builder(this)
-                        .setTarget(R.id.menu_justnow)
-                        .setPrimaryText(this.getString(R.string.tutor_button_title))
-                        .setSecondaryText(this.getString(R.string.tutor_button_content))
-                        .create())
+                    .setTarget(R.id.menu_justnow)
+                    .setPrimaryText(this.getString(R.string.tutor_button_title))
+                    .setSecondaryText(this.getString(R.string.tutor_button_content))
+                    .create())
+                .addPrompt(menuHelpBuilder)
                 .show();
     }
 
@@ -200,6 +204,7 @@ public class MainActivity extends AppCompatActivity {
                         else if (hoursago > 0){
                             long setTime = System.currentTimeMillis() - (hoursago * 1000 * 60 * 60 + 2160000);
                             Time.SetTime(c,setTime);
+                            enableService();
                             setupClock();
                         }
                     }
@@ -259,10 +264,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.menu_stopalarm:
-                boolean serviceEnabled;
-                serviceEnabled = ! menuItem.isChecked();
-                menuItem.setChecked(serviceEnabled);
-                setService();
+                disableService();
                 setupClock();
                 return true;
             case R.id.menu_setinterval:
@@ -304,8 +306,8 @@ public class MainActivity extends AppCompatActivity {
                         int s = Time.IntInterval(c);
                         setupClock();
                         if (readService()){
-                            CancelNotif();
-                            MakeNotif();
+                            CancelNotif(); //special case (don't wanna disable then enable one after the other)
+                            enableService();
                             Snackbar.make(view, getString(R.string.interval_set, s), 5000).show();
                         }
                         else{
@@ -368,22 +370,28 @@ public class MainActivity extends AppCompatActivity {
         pendingIntent245.cancel(); */
     }
 
-    public void closeNotif() {
+    //todo:may not be needed anymore...
+    /*public void closeNotif() {
         NotificationManager notif =
                 (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
         notif.cancel(2);
+    }*/
+
+    public void enableService() {
+            MakeNotif();
+            Snackbar.make(findViewById(R.id.menu), R.string.menu_service_enabled, Snackbar.LENGTH_SHORT).show();
+            SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putBoolean("serviceEnabled", true);
     }
 
-    public void setService() {
-        boolean enabled = readService();
-        if (enabled) {
+    public void disableService() {
             CancelNotif();
             Snackbar.make(findViewById(R.id.menu), R.string.menu_service_disable, Snackbar.LENGTH_SHORT).show();
-        }
-        else {
-            MakeNotif();
-            Snackbar.make(findViewById(R.id.menu), R.string.menu_service_enabled, Snackbar.LENGTH_SHORT).show();}
-        }
+            SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putBoolean("serviceEnabled", false);
+    }
 
     public boolean readService() {
         return ReadService.status(this);

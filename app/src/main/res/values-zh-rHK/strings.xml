@@ -14,7 +14,7 @@
     <string name="menu_customtime">之前發送的儲火</string>
     <string name="menu_remindinterval">設定提示間隔</string>
     <string name="menu_opensnapchat">開啓 Snapchat</string>
-    <string name="menu_cancel">提示功能</string>
+    <string name="menu_cancel">關閉提示</string>
     <string name="nosnapapp">沒有安裝 Snapchat！</string>
     <string name="snapbefore_title">Snapchat 顯示是多少小時前？如果是大約半小時前，請選擇 0 。</string>
     <string name="snapbefore_cancel">取消</string>
@@ -29,9 +29,9 @@
     <string name="interval_set">你將會每 %1$d 小時收到提示，直至你發送了儲火。（或已經斷火）</string>
     <string name="main_interval">你將會每 %1$d 收到儲火通知。</string>
     <string name="menu_service_disable">提示功能已停用。</string>
-    <string name="menu_service_enabled">提示功能已啓用。</string>
+    <string name="menu_service_enabled">已設定時間。提示功已啓用。</string>
     <string name="main_service_enable">提示功能已啓用。</string>
-    <string name="main_service_disable">提示功能已停用。</string>
+    <string name="main_service_disable">提示功能已停用。發送 Snap 後使用下方的按鈕以啓用。</string>
     <string name="main_setinterval_prompt">請使用上方功能鍵設定提示間隔。</string>
     <string name="main_unknown">未知</string>
     <string name="main_reset_time">重設時間！</string>
@@ -42,9 +42,9 @@
     <string name="notif_body_almost">將要斷火！！！</string>
     <string name="notif_body_already">可能已經斷火。立即發送 Snap 或者關閉提示功能。</string>
     <string name="notif_sent">已儲火</string>
-    <string name="tutor_menu_title">由此開始！</string>
-    <string name="tutor_menu_content">使用此功能表來開啓儲火提示和設定通知的頻率。</string>
-    <string name="tutor_button_title">別忘記！</string>
+    <string name="tutor_menu_title">其他設定</string>
+    <string name="tutor_menu_content">使用此功能表來關閉儲火提示和設定通知的頻率。預設是八小時。</string>
+    <string name="tutor_button_title">由此開始！</string>
     <string name="tutor_button_content">每次發送儲火 Snap 後請按此按鈕。也可以使用通知裏的按鈕。</string>
     <string name="notif_lost_streak_title">斷火！！</string>
     <string name="notif_lost_streak_content">可能已經斷火。立即發送 Snap！</string>

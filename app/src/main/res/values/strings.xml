@@ -17,7 +17,6 @@
     <string name="menu_customtime">Sent streak some time earlier</string>
     <string name="menu_remindinterval">Set reminder interval</string>
     <string name="menu_opensnapchat">Open Snapchat</string>
-    <string name="menu_cancel">Reminder Switch</string>
     <string name="nosnapapp">Snapchat not installed!</string>
     <string name="snapbefore_title">How many hours ago? If around half an hour, select 0.</string>
     <string name="snapbefore_cancel">Cancel</string>
@@ -32,9 +31,9 @@
     <string name="interval_set">You will be reminded every %1$d hours for streaks, until you sent a streak or if you lost them.</string>
     <string name="main_interval">You will be reminded for streaks every %1$d hours.</string>
     <string name="menu_service_disable">Reminder Deactivated.</string>
-    <string name="menu_service_enabled">Reminder Activated.</string>
+    <string name="menu_service_enabled">Time Set. Reminder Activated.</string>
     <string name="main_service_enable">Reminder Enabled.</string>
-    <string name="main_service_disable">Reminder Disabled. Use the menu above to enable.</string>
+    <string name="main_service_disable">Reminder Disabled. Send a streak and use the menu below to enable.</string>
     <string name="main_setinterval_prompt">Please set a reminder interval using the menu above.</string>
     <string name="main_unknown">Unknown</string>
     <string name="main_reset_time">Reset Time!</string>
@@ -45,9 +44,9 @@
     <string name="notif_body_almost">You are about to lose your streaks!!!!! Send streaks now!!!!</string>
     <string name="notif_body_already">You may have lost your streaks. Send it immediately or stop the reminder in the app.</string>
     <string name="notif_sent">Snap Sent</string>
-    <string name="tutor_menu_title">Start Here!</string>
-    <string name="tutor_menu_content">Enable reminder for streaks, and set how often to be reminded.</string>
-    <string name="tutor_button_title">Don\'t forget!</string>
+    <string name="tutor_menu_title">Other options</string>
+    <string name="tutor_menu_content">Disable reminder or set how often to be reminded here. The default is 8 hours.</string>
+    <string name="tutor_button_title">Start Here!</string>
     <string name="tutor_button_content">Press this button after you sent every streaks. You can also do it in notifications that pop up.</string>
     <string name="notif_lost_streak_title">Lost Streaks!</string>
     <string name="notif_lost_streak_content">You may have lost your streaks. Please send it immediately.</string>
@@ -58,4 +57,5 @@
     <string name="about_app">About this App</string>
     <string name="about_developer">Development</string>
     <string name="about_restart_title" translatable="false">RE:START</string>
+    <string name="menu_cancel">Stop Reminder</string>
 </resources>
