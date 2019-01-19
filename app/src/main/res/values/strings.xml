@@ -59,4 +59,8 @@
     <string name="about_restart_title" translatable="false">RE:START</string>
     <string name="menu_cancel">Stop Reminder</string>
     <string name="about_opensource_logolicense_title">Logo Licenses</string>
+    <string name="dialog_battery_title">Reminders can be unrealiable</string>
+    <string name="dialog_battery_message">Your device prevents Streak Alarm from reminding you of streaks accurately. Please go to Settings to disable battery optimization by whitelisting this app.</string>
+    <string name="dialog_battery_button_negative">Ignore</string>
+    <string name="dialog_battery_button_positive">Go to Setings</string>
 </resources>

@@ -16,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ActionMenuView;
 import android.support.v7.widget.Toolbar;
+import android.text.AlteredCharSequence;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -76,6 +77,16 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        boolean previouslyStarted = prefs.getBoolean("previous_started", false);
+        if(!previouslyStarted) {
+            SharedPreferences.Editor edit = prefs.edit();
+            edit.putBoolean("previous_started", Boolean.TRUE);
+            edit.apply();
+            showHelp();
+            aggresiveWarning();
+        }
         }
 
 
@@ -133,15 +144,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void onResume() {
         super.onResume();
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        boolean previouslyStarted = prefs.getBoolean("previous_started", false);
-        if(!previouslyStarted) {
-            SharedPreferences.Editor edit = prefs.edit();
-            edit.putBoolean("previous_started", Boolean.TRUE);
-            edit.apply();
-            showHelp();
-        }
         setupClock();
+
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean configEnabled = settings.getBoolean("serviceEnabled", false);
+        boolean actualEnabled = readService();
+        if (configEnabled && !actualEnabled){
+            final AlertDialog dialog = BatteryOptimizationUtil.getBatteryOptimizationDialog(this);
+            if(dialog != null)
+                dialog.show();
+        }
+        else if (!configEnabled && actualEnabled){
+            SharedPreferences.Editor edit = settings.edit();
+            edit.putBoolean("serviceEnabled", Boolean.TRUE);
+            edit.apply();
+        }
+
     }
 
     public void showHelp() {
@@ -398,5 +416,15 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean readService() {
         return ReadService.status(this);
+    }
+
+    public void aggresiveWarning() {
+        String deviceMan = android.os.Build.MANUFACTURER;
+        if (deviceMan.equalsIgnoreCase("huawei")){
+            final AlertDialog dialog = BatteryOptimizationUtil.getBatteryOptimizationDialog(this);
+            if(dialog != null)
+                dialog.show();
+        }
+
     }
 }
