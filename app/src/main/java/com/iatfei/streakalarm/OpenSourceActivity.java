@@ -28,12 +28,13 @@ public class OpenSourceActivity extends AppCompatActivity {
         LibsFragment fragment = new LibsBuilder()
                 .withFields(R.string.class.getFields())
                 .withLibraries("FloatingActionButton") //Wait for update...
-                .withExcludedLibraries("Android-Iconics","FastAdapter")
                 .withLicenseShown(true)
                 //.withVersionShown(true)
                 .withAboutIconShown(true)
                 .withAboutVersionShown(true)
-                .withAboutDescription(getResources().getString(R.string.about_opensource_desc))
+                .withAboutSpecial1(getResources().getString(R.string.about_opensource_logolicense_title))
+                .withAboutSpecial1Description("The graphics used in this app are from or adapted from: <br><b>Material Design icons by Google</b>, released under the Apache License Version 2.0. <br><b>Material Design Icons</b> by Austin Andrews (@templarian), released under the MIT License.")
+                .withAboutDescription("I'm impressed you would actually click into this! Hoped you enjoyed my first app.<br>Drop me an email!<br><br>¯\\_(ツ)_/¯<br>讓一切成爲往事。")
                 .fragment();
 
         getFragmentManager().beginTransaction()

@@ -53,4 +53,5 @@
     <string name="about_this_license_details">本軟件以 GNU 通用公共許可證條款第三版發佈，或者自由選擇其更新的版本。你可以在此條款下重新發佈和修改本軟件。請點選以進入本程式的 GitHub 頁面獲得原始碼和版權資訊。</string>
     <string name="about_app">關於此軟件</string>
     <string name="about_developer">開發</string>
+    <string name="about_opensource_logolicense_title">圖示授權條款</string>
 </resources>

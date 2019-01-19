@@ -122,6 +122,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_gravity="end|bottom"
+        android:paddingRight="5px"
+        android:paddingBottom="5px"
         app:layout_anchorGravity="bottom|right|end"
         fab:menu_animationDelayPerItem="30"
         fab:menu_backgroundColor="@android:color/transparent"
