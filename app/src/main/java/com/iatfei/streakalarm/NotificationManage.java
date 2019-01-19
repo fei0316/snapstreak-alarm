@@ -53,7 +53,9 @@ public class NotificationManage extends MainActivity {
         pendingIntent235.cancel();
         pendingIntent245.cancel();
     }
+
+    /*
     public static void ResumeNotif () {
-        //todo:maybe not needed??
-    }
+        //maybe not needed??
+    } */
 }

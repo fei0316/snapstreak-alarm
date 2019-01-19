@@ -23,7 +23,8 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
         }
 
 
-        //todo:COMPLETE REFORM!!! ALL INTEGRATED!!!
+        //COMPLETE REFORM!!! ALL INTEGRATED!!!
+
         /*long lastnotif = Time.getLastFire(context);
         long notifint = Time.LongInterval(context);
         long nextFire;
@@ -53,7 +54,7 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
             PendingIntent pendingApp = PendingIntent.getActivity(context, 0, openApp, 0);
 
             NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(context, "streak")
-                    .setSmallIcon(R.drawable.ic_close_black_24dp) //todo:for now
+                    .setSmallIcon(R.drawable.ic_close_black_24dp) //for now
                     .setContentTitle(context.getString(R.string.notif_lost_streak_title))
                     .setContentText(context.getString(R.string.notif_lost_streak_content))
                     .setPriority(NotificationCompat.PRIORITY_HIGH)

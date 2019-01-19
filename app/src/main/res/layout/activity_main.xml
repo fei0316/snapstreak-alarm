@@ -143,7 +143,7 @@
             android:id="@+id/menu_opensnapchat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_camera_black_24dp"
+            android:src="@drawable/snapchat"
             app:fab_colorNormal="@color/colorAccent"
             app:fab_colorPressed="@color/colorAccent"
             app:fab_colorRipple="@color/colorAccentLight"

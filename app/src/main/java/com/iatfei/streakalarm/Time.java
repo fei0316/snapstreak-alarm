@@ -89,7 +89,9 @@ public class Time extends MainActivity{
         return l;
     }
 
-    //todo:may not need anymore
+
+    //may not need anymore...
+
     /*public static void setLastFire (Context c, long millis){
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
         SharedPreferences.Editor editor = pref.edit();

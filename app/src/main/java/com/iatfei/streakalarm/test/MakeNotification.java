@@ -1,4 +1,4 @@
-package com.iatfei.streakalarm;
+package com.iatfei.streakalarm.test;
 
 import android.app.IntentService;
 import android.app.NotificationChannel;
@@ -11,7 +11,10 @@ import android.os.Build;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 
-//todo:not currently used.
+import com.iatfei.streakalarm.MainActivity;
+import com.iatfei.streakalarm.R;
+
+//not currently used.
 
 public class MakeNotification extends IntentService {
 

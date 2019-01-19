@@ -18,20 +18,22 @@ public class OpenSourceActivity extends AppCompatActivity {
         final Toolbar toolbar = findViewById(R.id.toolbar_bar);
         setSupportActionBar(toolbar);
 
-        //todo:remove if unnecessary.
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
             ab.setDisplayHomeAsUpEnabled(true);
         }
 
+        String[] exclude = new String[2];
+
         LibsFragment fragment = new LibsBuilder()
                 .withFields(R.string.class.getFields())
-                .withLibraries("FloatingActionButton") //todo:autodetect at github, numberpicker and datetime are from custom xml files. Pull request!!
+                .withLibraries("FloatingActionButton") //Wait for update...
+                .withExcludedLibraries("Android-Iconics","FastAdapter")
                 .withLicenseShown(true)
                 //.withVersionShown(true)
                 .withAboutIconShown(true)
                 .withAboutVersionShown(true)
-                .withAboutDescription("I'm impressed you would actually click into this! Hoped you enjoyed my first app.<br>Drop me an email!<br><br>¯\\_(ツ)_/¯<br>讓一切成爲往事。") //todo:string
+                .withAboutDescription(getResources().getString(R.string.about_opensource_desc))
                 .fragment();
 
         getFragmentManager().beginTransaction()

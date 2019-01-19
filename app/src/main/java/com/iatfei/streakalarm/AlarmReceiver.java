@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.content.ContextCompat;
 
 //IN USE!!!!
 
@@ -28,17 +29,18 @@ public class AlarmReceiver extends BroadcastReceiver {
         PendingIntent pendingApp = PendingIntent.getActivity(context, 0, openApp, 0);
         PendingIntent pendingReset = PendingIntent.getService(context, 0, resetTime, PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(context, "streak")
-                .setSmallIcon(R.drawable.ic_close_black_24dp) //todo:proper icon
+                .setSmallIcon(R.drawable.timer_sand)
                 .setContentTitle(context.getString(R.string.notif_title))
+                .setColor(ContextCompat.getColor(context, R.color.colorAccentDark))
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setOngoing(true)
                 .setWhen(when)
                 .setContentIntent(pendingApp)
-                .addAction(R.drawable.ic_close_black_24dp, context.getString(R.string.notif_sent), pendingReset);
+                .addAction(R.drawable.ic_done_black_24dp, context.getString(R.string.notif_sent), pendingReset);
 
         if (openSnap != null){
             PendingIntent pendingSnap = PendingIntent.getActivity(context, 1, openSnap, 0);
-            nBuilder.addAction(R.drawable.ic_close_black_24dp, context.getString(R.string.menu_opensnapchat), pendingSnap);
+            nBuilder.addAction(R.drawable.snapchat, context.getString(R.string.menu_opensnapchat), pendingSnap);
         }
 
         if (showHours <= 0){

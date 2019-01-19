@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
         final MaterialTapTargetPrompt.Builder menuHelpBuilder = new MaterialTapTargetPrompt.Builder(this)
                 .setPrimaryText(this.getString(R.string.tutor_menu_title))
                 .setSecondaryText(this.getString(R.string.tutor_menu_content))
-                .setIcon(R.drawable.ic_more_vert);
+                .setIcon(R.drawable.ic_more_vert_black_24dp);
         final Toolbar tb = this.findViewById(R.id.toolbar);
         final View child = tb.getChildAt(2);
         if (child instanceof ActionMenuView)
@@ -219,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    /*public void PickTime() { //todo:REWORK!! REMOVE TIMEPICKER ENTIRELY AND CHANGE TO SIMPLE HOURS AGO! (maybe with 15min-increments ACCURACY IS NOT THAT IMPORTANT!!
+    /*public void PickTime() {
         final SwitchDateTimeDialogFragment dateTimeDialogFragment = SwitchDateTimeDialogFragment.newInstance(
                 getString(R.string.snapbefore_title),
                 getString(R.string.snapbefore_ok),
@@ -320,7 +320,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void MakeNotif() {
-        //todo:testing NotificationManage
+        //testing NotificationManage
         NotificationManage.MakeNotif(this);
         /*
         long lastnotif = Time.getLastFire(getApplicationContext());
@@ -349,7 +349,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void CancelNotif() {
         NotificationManage.CancelNotif(this);
-        //todo: testing for replacing to NotificationManage
+        //testing for replacing to NotificationManage
         /*Intent intent1 = new Intent(MainActivity.this, AlarmReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
         PendingIntent pendingIntent225 = PendingIntent.getBroadcast(this, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -371,7 +371,7 @@ public class MainActivity extends AppCompatActivity {
         pendingIntent245.cancel(); */
     }
 
-    //todo:may not be needed anymore...
+    //may not be needed anymore...
     /*public void closeNotif() {
         NotificationManager notif =
                 (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
