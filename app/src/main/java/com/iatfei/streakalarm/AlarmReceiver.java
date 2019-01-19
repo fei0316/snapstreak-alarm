@@ -64,7 +64,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         Time.NotifCountTally(context);
     }
 
-    public void initChannels(Context context) {
+    private void initChannels(Context context) {
         if (Build.VERSION.SDK_INT < 26) {
             return;
         }

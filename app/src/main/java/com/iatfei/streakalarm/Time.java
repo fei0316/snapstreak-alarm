@@ -3,9 +3,14 @@ package com.iatfei.streakalarm;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class Time extends MainActivity{
+
+    //todo:Implement RTL instead of disabling it
+
     public static void ResetTime (Context c) {
         long saveLongTime = System.currentTimeMillis();
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
@@ -16,14 +21,12 @@ public class Time extends MainActivity{
     }
     public static long ReadTime (Context c) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
-        long time_last = settings.getLong("lastsnaptime", 0);
-        return time_last;
+        return settings.getLong("lastsnaptime", 0);
     }
 
     public static int ReadNotifCount (Context c) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
-        int count = settings.getInt("notifcount", 1);
-        return count;
+        return settings.getInt("notifcount", 1);
     }
 
     public static void NotifCountTally (Context c) {
@@ -44,10 +47,12 @@ public class Time extends MainActivity{
         else if (time_till < 0)
             formatted = c.getResources().getString(R.string.main_reset_time);
         else {
-            formatted = String.format("%02d:%02d:%02d",
+            formatted = String.format(
+                    Locale.ENGLISH,
+                    "%02d:%02d:%02d",
                     TimeUnit.MILLISECONDS.toHours(time_till),
                     TimeUnit.MILLISECONDS.toMinutes(time_till) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time_till)),
-                    TimeUnit.MILLISECONDS.toSeconds(time_till) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(time_till)));
+                    TimeUnit.MILLISECONDS.toSeconds(time_till) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(time_till))); //todo:not RTL/Arabic/Israeli friendly!
         }
         return formatted;
     }
@@ -64,8 +69,7 @@ public class Time extends MainActivity{
         long time_last = pref.getLong("lastsnaptime", 0);
         long time_to_send = (time_last + 86400000) - System.currentTimeMillis();
         long longHours = (time_to_send / 1000 / 60 / 60);
-        int showHours = (int) Math.floor(longHours);
-        return showHours;
+        return (int) Math.floor(longHours);
     }
 
     public static void SetInterval (Context c, int hours){
@@ -79,14 +83,12 @@ public class Time extends MainActivity{
 
     public static int IntInterval (Context c) {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
-        int t = pref.getInt("intervalInt", 8);
-        return t;
+        return pref.getInt("intervalInt", 8);
     }
 
     public static long LongInterval (Context c) {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
-        long l = pref.getLong("intervalLong", 28800000);
-        return l;
+        return pref.getLong("intervalLong", 28800000);
     }
 
 

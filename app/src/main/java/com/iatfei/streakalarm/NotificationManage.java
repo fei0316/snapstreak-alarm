@@ -7,6 +7,9 @@ import android.content.Context;
 import android.content.Intent;
 
 public class NotificationManage extends MainActivity {
+
+    //todo:Next Release: add postpone notification option
+
     public static void MakeNotif (Context c) {
         long laststreak = Time.ReadTime(c);
         long notifint = Time.LongInterval(c);
@@ -53,9 +56,4 @@ public class NotificationManage extends MainActivity {
         pendingIntent235.cancel();
         pendingIntent245.cancel();
     }
-
-    /*
-    public static void ResumeNotif () {
-        //maybe not needed??
-    } */
 }

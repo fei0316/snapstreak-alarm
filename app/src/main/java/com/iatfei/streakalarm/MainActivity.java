@@ -1,9 +1,5 @@
 package com.iatfei.streakalarm;
 
-import android.app.AlarmManager;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ActionMenuView;
 import android.support.v7.widget.Toolbar;
-import android.text.AlteredCharSequence;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -25,14 +20,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionButton;
-//import com.kunzisoft.switchdatetime.SwitchDateTimeDialogFragment;
 
-import java.util.Date;
+import java.util.Locale;
 
 import biz.kasual.materialnumberpicker.MaterialNumberPicker;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetSequence;
-import uk.co.samuelwall.materialtaptargetprompt.extras.focals.CirclePromptFocal;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -106,12 +99,12 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    public void intentAbout() {
+    private void intentAbout() {
         Intent intent = new Intent(this, NewAboutActivity.class);
         startActivity(intent);
     }
 
-    public void setupClock() {
+    private void setupClock() {
         Context c = getApplicationContext();
         String time = Time.ReadFormatTime(c);
         long longtime = Time.ReadTime(c);
@@ -128,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView interval = findViewById(R.id.textView4);
         if (Time.IntInterval(c) != 0)
-            interval.setText(getString(R.string.main_interval, Time.IntInterval(getApplicationContext())));
+            interval.setText(convertToEnglishDigits.convert(getString(R.string.main_interval, Time.IntInterval(getApplicationContext()))));
         else
             interval.setText(getString(R.string.main_setinterval_prompt));
         if (readService()){
@@ -162,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void showHelp() {
+    private void showHelp() {
         final MaterialTapTargetPrompt.Builder menuHelpBuilder = new MaterialTapTargetPrompt.Builder(this)
                 .setPrimaryText(this.getString(R.string.tutor_menu_title))
                 .setSecondaryText(this.getString(R.string.tutor_menu_content))
@@ -190,8 +183,7 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    public void PickTime() {
-
+    private void PickTime() {
         MaterialNumberPicker materialNumberPicker = new MaterialNumberPicker.Builder(this)
                 .minValue(0)
                 .maxValue(24)
@@ -207,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
         PickTimeApply(materialNumberPicker,view);
     }
 
-    public void PickTimeApply(final MaterialNumberPicker numberPicker, final View view) {
+    private void PickTimeApply(final MaterialNumberPicker numberPicker, final View view) {
         new AlertDialog.Builder(this)
                 .setTitle(getString(R.string.snapbefore_title))
                 .setView(numberPicker)
@@ -237,48 +229,6 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    /*public void PickTime() {
-        final SwitchDateTimeDialogFragment dateTimeDialogFragment = SwitchDateTimeDialogFragment.newInstance(
-                getString(R.string.snapbefore_title),
-                getString(R.string.snapbefore_ok),
-                getString(R.string.snapbefore_cancel)
-        );
-        long now = System.currentTimeMillis();
-        long period = Time.LongInterval(this);
-        dateTimeDialogFragment.startAtTimeView();
-        dateTimeDialogFragment.set24HoursMode(true);
-        dateTimeDialogFragment.setMinimumDateTime(new Date(now - period));
-        dateTimeDialogFragment.setMaximumDateTime(new Date(now));
-        dateTimeDialogFragment.setDefaultDateTime(new Date(now));
-        dateTimeDialogFragment.setOnButtonClickListener(new SwitchDateTimeDialogFragment.OnButtonClickListener() {
-            @Override
-            public void onPositiveButtonClick(Date date) {
-                long now = System.currentTimeMillis();
-                long period = Time.LongInterval(getApplicationContext());
-                long millis = date.getTime();
-                if (millis < (now - period) || millis > now) {
-                    Time.SetTime(getApplicationContext(), millis);
-                    setupClock();
-                } else {
-                    invalidTime();
-                }
-            }
-
-            @Override
-            public void onNegativeButtonClick(Date date) {
-                setupClock();
-            }
-        });
-        dateTimeDialogFragment.show(getSupportFragmentManager(), "dialog_time");
-    }
-
-
-    public void invalidTime() {
-        Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.picker_invalid_time), Toast.LENGTH_SHORT);
-        toast.show();
-    }
-    */
-
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
@@ -297,7 +247,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void IntSelMake() {
+    private void IntSelMake() {
         MaterialNumberPicker numberPicker = new MaterialNumberPicker.Builder(this)
                 .minValue(1)
                 .maxValue(11)
@@ -313,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
         IntSel(numberPicker, view);
     }
 
-    public void IntSel(final MaterialNumberPicker numberPicker, final View view) {
+    private void IntSel(final MaterialNumberPicker numberPicker, final View view) {
         new AlertDialog.Builder(this)
                 .setTitle(getString(R.string.interval_title))
                 .setView(numberPicker)
@@ -327,7 +277,7 @@ public class MainActivity extends AppCompatActivity {
                         if (readService()){
                             CancelNotif(); //special case (don't wanna disable then enable one after the other)
                             enableService();
-                            Snackbar.make(view, getString(R.string.interval_set, s), 5000).show();
+                            Snackbar.make(view, convertToEnglishDigits.convert(getString(R.string.interval_set, s)), 5000).show();
                         }
                         else{
                             Snackbar.make(view, getString(R.string.interval_set_disabled, s), 5000).show();
@@ -338,65 +288,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void MakeNotif() {
-        //testing NotificationManage
+        //todo:call NotificationManage directly in next release
         NotificationManage.MakeNotif(this);
-        /*
-        long lastnotif = Time.getLastFire(getApplicationContext());
-        long notifint = Time.LongInterval(getApplicationContext());
-        long nextFire;
-        if ((System.currentTimeMillis()-lastnotif) < notifint){
-            nextFire = notifint-(System.currentTimeMillis()-lastnotif);}
-        else
-            nextFire = notifint;
-
-        Intent intent1 = new Intent(MainActivity.this, AlarmReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        AlarmManager am = (AlarmManager) this.getSystemService(ALARM_SERVICE);
-        am.setRepeating(AlarmManager.RTC_WAKEUP, nextFire, Time.LongInterval(getApplicationContext()), pendingIntent);
-
-        PendingIntent pendingIntent225 = PendingIntent.getBroadcast(this, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 23 - 1000 * 60 * 30), pendingIntent225);
-
-        PendingIntent pendingIntent235 = PendingIntent.getBroadcast(this, 2, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 24 - 1000 * 60 * 30), pendingIntent235);
-
-        PendingIntent pendingIntent245 = PendingIntent.getBroadcast(this, 3, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 25 - 1000 * 60 * 30), pendingIntent245);
-    */
     }
 
     public void CancelNotif() {
+        //todo:call NotificationManage directly in next release
         NotificationManage.CancelNotif(this);
-        //testing for replacing to NotificationManage
-        /*Intent intent1 = new Intent(MainActivity.this, AlarmReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        PendingIntent pendingIntent225 = PendingIntent.getBroadcast(this, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        PendingIntent pendingIntent235 = PendingIntent.getBroadcast(this, 2, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        PendingIntent pendingIntent245 = PendingIntent.getBroadcast(this, 3, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-
-        AlarmManager am = (AlarmManager) this.getSystemService(ALARM_SERVICE);
-        am.cancel(pendingIntent);
-        am.cancel(pendingIntent225);
-        am.cancel(pendingIntent235);
-        am.cancel(pendingIntent245);
-
-        NotificationManager notif =
-                (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
-        notif.cancel(2);
-        pendingIntent.cancel();
-        pendingIntent225.cancel();
-        pendingIntent235.cancel();
-        pendingIntent245.cancel(); */
     }
 
-    //may not be needed anymore...
-    /*public void closeNotif() {
-        NotificationManager notif =
-                (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
-        notif.cancel(2);
-    }*/
-
-    public void enableService() {
+    private void enableService() {
             MakeNotif();
             Snackbar.make(findViewById(R.id.menu), R.string.menu_service_enabled, Snackbar.LENGTH_SHORT).show();
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
@@ -405,7 +306,7 @@ public class MainActivity extends AppCompatActivity {
             editor.apply();
     }
 
-    public void disableService() {
+    private void disableService() {
             CancelNotif();
             Snackbar.make(findViewById(R.id.menu), R.string.menu_service_disable, Snackbar.LENGTH_SHORT).show();
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
@@ -414,11 +315,11 @@ public class MainActivity extends AppCompatActivity {
             editor.apply();
     }
 
-    public boolean readService() {
+    private boolean readService() {
         return ReadService.status(this);
     }
 
-    public void aggresiveWarning() {
+    private void aggresiveWarning() {
         String deviceMan = android.os.Build.MANUFACTURER;
         if (deviceMan.equalsIgnoreCase("huawei")){
             final AlertDialog dialog = BatteryOptimizationUtil.getBatteryOptimizationDialog(this);
