@@ -48,19 +48,24 @@ public class AlarmReceiver extends BroadcastReceiver {
         }
 
         if (showHours <= 0){
-            nBuilder.setContentText(context.getString(R.string.notif_body_already));
+            nBuilder.setContentText(context.getString(R.string.notif_body_already))
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.notif_body_already)));
         }
         else if (showHours < 1.8){
-            nBuilder.setContentText(context.getString(R.string.notif_body_almost));
+            nBuilder.setContentText(context.getString(R.string.notif_body_almost))
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.notif_body_almost)));
         }
         else if (notifCount == 1){
-            nBuilder.setContentText(context.getString(R.string.notif_body_one, showHours));
+            nBuilder.setContentText(context.getString(R.string.notif_body_one, showHours))
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.notif_body_one, showHours)));
         }
         else if (notifCount == 2){
-            nBuilder.setContentText(context.getString(R.string.notif_body_two, showHours));
+            nBuilder.setContentText(context.getString(R.string.notif_body_two, showHours))
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.notif_body_two, showHours)));
         }
         else {
-            nBuilder.setContentText(context.getString(R.string.notif_body_multi, notifCount, showHours));
+            nBuilder.setContentText(context.getString(R.string.notif_body_multi, notifCount, showHours))
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.notif_body_multi, notifCount, showHours)));
         }
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.cancel(2);
