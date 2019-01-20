@@ -38,11 +38,11 @@ public class Time extends MainActivity{
         editor.apply();
     }
 
-    public static void resetTally (Context c) {
+    public static void setTally (Context c, int count) {
         //Only for reboot/update to prevent excessive notifications count
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
         SharedPreferences.Editor editor = settings.edit();
-        editor.putInt("notifcount", 0);
+        editor.putInt("notifcount", count);
         editor.apply();
     }
 

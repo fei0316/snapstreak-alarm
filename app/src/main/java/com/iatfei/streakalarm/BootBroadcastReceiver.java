@@ -13,7 +13,17 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
         boolean isEnabled = settings.getBoolean("serviceEnabled", false);
 
         if (isEnabled){
-            Time.resetTally(context);
+            //todo:Dumb attempt to "solve" an inexistent issue. Remove after some testing. Revive if I was smart...
+            /*
+            long interval = Time.LongInterval(context);
+            long now = System.currentTimeMillis();
+            long last = Time.ReadTime(context);
+            if (now - last >= interval){
+                Time.setTally(context, 0);
+                NotificationManage.MakeNotif(context);
+            } */
+
+            Time.setTally(context, 1);
             NotificationManage.MakeNotif(context);
         }
     }
