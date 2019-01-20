@@ -13,6 +13,7 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
         boolean isEnabled = settings.getBoolean("serviceEnabled", false);
 
         if (isEnabled){
+            Time.resetTally(context);
             NotificationManage.MakeNotif(context);
         }
     }

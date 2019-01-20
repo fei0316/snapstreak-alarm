@@ -64,7 +64,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                     .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.notif_body_two, showHours)));
         }
         else {
-            nBuilder.setContentText(context.getString(R.string.notif_body_multi, notifCount, showHours))
+            nBuilder.setContentText(context.getString(R.string.notif_body_multi, (notifCount - 1), showHours))
                     .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.notif_body_multi, notifCount, showHours)));
         }
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);

@@ -1,6 +1,9 @@
 package com.iatfei.streakalarm;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
@@ -8,6 +11,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
+
+import java.util.List;
 
 public class NewAboutActivity extends AppCompatActivity {
     @Override
@@ -47,8 +52,27 @@ public class NewAboutActivity extends AppCompatActivity {
             ver.setSummary(BuildConfig.VERSION_NAME);
             Preference license = findPreference("edit_text_preference_6");
             license.setIntent(new Intent(getActivity(),OpenSourceActivity.class));
-    }
 
+            Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+            emailIntent.setType("text/html");
+            PackageManager packageManager = getActivity().getPackageManager();
+
+            List<ResolveInfo> list = packageManager.queryIntentActivities(emailIntent, 0);
+
+            if(list.size() == 0){
+                Preference mail = findPreference("edit_text_preference_8");
+                mail.setIntent(null);
+            }
+
+            Intent webpageIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"));
+
+            List<ResolveInfo> wlist = packageManager.queryIntentActivities(webpageIntent, 1);
+
+            if(wlist.size() == 0) {
+                Preference web = findPreference("edit_text_preference_4");
+                web.setIntent(null);
+            }
+        }
     }
 }
 
