@@ -26,7 +26,7 @@
     <string name="channel_description">Reminds you to Keep Streaks</string>
     <string name="channel_name">Streak Reminder</string>
     <string name="main_tip">Please use the button below and menu above to get started.</string>
-    <string name="picker_invalid_time">Too long ago! Send a snap now!</string>
+    <string name="picker_invalid_time">Too long ago! Send a streak now!</string>
     <string name="interval_title">How often to be reminded (hours)</string>
     <string name="interval_set">You will be reminded every %1$d hours for streaks, until you sent a streak or if you lost them.</string>
     <string name="main_interval">You will be reminded for streaks every %1$d hours.</string>
