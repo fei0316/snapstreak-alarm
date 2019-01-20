@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Time.ResetTime(getApplicationContext());
+                CancelNotif();
                 enableService();
                 setupClock();
             }
@@ -213,6 +214,7 @@ public class MainActivity extends AppCompatActivity {
                         else if (hoursago > 0){
                             long setTime = System.currentTimeMillis() - (hoursago * 1000 * 60 * 60 + 2160000);
                             Time.SetTime(c,setTime);
+                            CancelNotif();
                             enableService();
                             setupClock();
                         }

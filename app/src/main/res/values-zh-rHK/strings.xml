@@ -35,7 +35,7 @@
         <item quantity="other">你將會每 %1$d 小時收到儲火通知。</item>
     </plurals>
     <string name="menu_service_disable">提示功能已停用。</string>
-    <string name="menu_service_enabled">已設定時間。提示功已啓用。</string>
+    <string name="menu_service_enabled">已設定時間。提示功能已啓用。</string>
     <string name="main_service_enable">提示功能已啓用。</string>
     <string name="main_service_disable">提示功能已停用。發送 Snap 後使用下方的按鈕以啓用。</string>
     <string name="main_setinterval_prompt">請使用上方功能鍵設定提示間隔。</string>

@@ -18,6 +18,11 @@ public class resetService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
         Time.ResetTime(getApplicationContext());
+        NotificationManage.CancelNotif(getApplicationContext());
+        NotificationManage.MakeNotif(getApplicationContext());
+
+        //todo:To be deleted
+        /*
         NotificationManager notif =
                 (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
         Objects.requireNonNull(notif).cancel(2);
@@ -32,5 +37,6 @@ public class resetService extends IntentService {
 
         PendingIntent pendingIntent245 = PendingIntent.getBroadcast(this, 3, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
         am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 25 - 1000 * 60 * 30), pendingIntent245);
+        */
     }
 }
