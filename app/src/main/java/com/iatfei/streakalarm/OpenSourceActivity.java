@@ -23,8 +23,6 @@ public class OpenSourceActivity extends AppCompatActivity {
             ab.setDisplayHomeAsUpEnabled(true);
         }
 
-        String[] exclude = new String[2];
-
         LibsFragment fragment = new LibsBuilder()
                 .withFields(R.string.class.getFields())
                 .withLibraries("FloatingActionButton") //Wait for update...

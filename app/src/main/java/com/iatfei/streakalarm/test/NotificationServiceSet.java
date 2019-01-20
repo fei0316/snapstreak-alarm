@@ -7,6 +7,8 @@ import android.content.Intent;
 
 import com.iatfei.streakalarm.AlarmReceiver;
 
+import java.util.Objects;
+
 public class NotificationServiceSet extends IntentService {
     public NotificationServiceSet() {
         super("NotificationServiceSet");
@@ -20,7 +22,7 @@ public class NotificationServiceSet extends IntentService {
         Intent alarmInt = new Intent(this, AlarmReceiver.class);
         PendingIntent pi = PendingIntent.getBroadcast(this, 0, alarmInt, 0);
         AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
-        am.set(AlarmManager.RTC_WAKEUP, trigger_time, pi);
+        Objects.requireNonNull(am).set(AlarmManager.RTC_WAKEUP, trigger_time, pi);
     }
 
 }

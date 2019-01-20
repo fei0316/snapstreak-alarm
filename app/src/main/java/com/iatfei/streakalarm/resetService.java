@@ -7,6 +7,8 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 
+import java.util.Objects;
+
 public class resetService extends IntentService {
 
     public resetService() {
@@ -18,12 +20,12 @@ public class resetService extends IntentService {
         Time.ResetTime(getApplicationContext());
         NotificationManager notif =
                 (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
-        notif.cancel(2);
+        Objects.requireNonNull(notif).cancel(2);
 
         Intent intent1 = new Intent(getApplicationContext(), AlarmReceiver.class);
         AlarmManager am = (AlarmManager) this.getSystemService(ALARM_SERVICE);
         PendingIntent pendingIntent225 = PendingIntent.getBroadcast(this, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 23 - 1000 * 60 * 30), pendingIntent225);
+        Objects.requireNonNull(am).set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 23 - 1000 * 60 * 30), pendingIntent225);
 
         PendingIntent pendingIntent235 = PendingIntent.getBroadcast(this, 2, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
         am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 60 * 24 - 1000 * 60 * 30), pendingIntent235);

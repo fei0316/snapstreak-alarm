@@ -6,9 +6,12 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
+
+import java.util.Objects;
 
 //IN USE!!!!
 
@@ -47,6 +50,8 @@ public class AlarmReceiver extends BroadcastReceiver {
             nBuilder.addAction(R.drawable.snapchat, context.getString(R.string.menu_opensnapchat), pendingSnap);
         }
 
+        Resources res = context.getResources();
+
         if (showHours <= 0){
             nBuilder.setContentText(context.getString(R.string.notif_body_already))
                     .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.notif_body_already)));
@@ -56,16 +61,16 @@ public class AlarmReceiver extends BroadcastReceiver {
                     .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.notif_body_almost)));
         }
         else if (notifCount == 1){
-            nBuilder.setContentText(context.getString(R.string.notif_body_one, showHours))
-                    .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.notif_body_one, showHours)));
+            nBuilder.setContentText(convertToEnglishDigits.convert(res.getQuantityString(R.plurals.notif_body_one, showHours, showHours)))
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText(convertToEnglishDigits.convert(res.getQuantityString(R.plurals.notif_body_one, showHours, showHours))));
         }
         else if (notifCount == 2){
-            nBuilder.setContentText(context.getString(R.string.notif_body_two, showHours))
-                    .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.notif_body_two, showHours)));
+            nBuilder.setContentText(convertToEnglishDigits.convert(res.getQuantityString(R.plurals.notif_body_two, showHours, showHours)))
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText(convertToEnglishDigits.convert(res.getQuantityString(R.plurals.notif_body_two, showHours, showHours))));
         }
         else {
-            nBuilder.setContentText(context.getString(R.string.notif_body_multi, (notifCount - 1), showHours))
-                    .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.notif_body_multi, notifCount, showHours)));
+            nBuilder.setContentText(convertToEnglishDigits.convert(res.getQuantityString(R.plurals.notif_body_multi, showHours, (notifCount - 1), showHours)))
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText(convertToEnglishDigits.convert(res.getQuantityString(R.plurals.notif_body_multi, showHours, (notifCount - 1), showHours))));
         }
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.cancel(2);
@@ -82,6 +87,6 @@ public class AlarmReceiver extends BroadcastReceiver {
         NotificationChannel channel = new NotificationChannel("streak", context.getString(R.string.channel_name),
                 NotificationManager.IMPORTANCE_HIGH);
         channel.setDescription(context.getString(R.string.channel_description));
-        notificationManager.createNotificationChannel(channel);
+        Objects.requireNonNull(notificationManager).createNotificationChannel(channel);
     }
 }

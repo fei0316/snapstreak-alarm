@@ -19,15 +19,21 @@
     <string name="snapbefore_title">Snapchat 顯示是多少小時前？如果是大約半小時前，請選擇 0</string>
     <string name="snapbefore_cancel">取消</string>
     <string name="snapbefore_ok">確定</string>
-    <string name="notif_body_one">請現在發送 Snap，將在 %1$d 小時後失去 Snap 連環炮。</string>
+    <plurals name="notif_body_one">
+        <item quantity="other">請現在發送 Snap，將在 %1$d 小時後失去 Snap 連環炮。</item>
+    </plurals>
     <string name="notif_title">是時候發送 Snap 啦！</string>
     <string name="channel_description">提醒你保著 Snap 連環炮</string>
     <string name="channel_name">Snap 連環炮提示</string>
     <string name="main_tip">請使用下方按鈕及功能選單操作。</string>
     <string name="picker_invalid_time">太久以前了！先發個 Snap 吧！</string>
     <string name="interval_title">提示間隔（小時）</string>
-    <string name="interval_set">你將會每 %1$d 小時收到提示，直至你發送了 Snap。（或已經斷火）</string>
-    <string name="main_interval">你將會每 %1$d 收到 Snap 連環炮通知。</string>
+    <plurals name="interval_set">
+        <item quantity="other">你將會每 %1$d 小時收到提示，直至你發送了 Snap。（或已經失去 Snap 連環炮）</item>
+    </plurals>
+    <plurals name="main_interval">
+        <item quantity="other">你將會每 %1$d 收到 Snap 連環炮通知。</item>
+    </plurals>
     <string name="menu_service_disable">提示功能已停用。</string>
     <string name="menu_service_enabled">已設定時間。提示功已啓用。</string>
     <string name="main_service_enable">提示功能已啓用。</string>
@@ -35,10 +41,18 @@
     <string name="main_setinterval_prompt">請使用上方功能鍵設定提示間隔。</string>
     <string name="main_unknown">未知</string>
     <string name="main_reset_time">重設時間！</string>
-    <string name="interval_set_disabled">提示已關閉。提示間隔設定爲 %1$d 小時。</string>
-    <string name="notif_body_two">你錯過了一個通知！將在 %1$d 小時後失去 Snap 連環炮。</string>
-    <string name="notif_body_multi">你已經錯過了 %1$d 通知！將在 %2$d 小時後失去 Snap 連環炮。</string>
-    <string name="notif_body_delay_unusedfornow">別忘了發送 Snap！將在 %1$d 小時後失去 Snap 連環炮。</string>
+    <plurals name="interval_set_disabled">
+        <item quantity="other">提示已關閉。提示間隔設定爲 %1$d 小時。</item>
+    </plurals>
+    <plurals name="notif_body_two">
+        <item quantity="other">你錯過了一個通知！將在 %1$d 小時後失去 Snap 連環炮。</item>
+    </plurals>
+    <plurals name="notif_body_multi">
+        <item quantity="other">你已經錯過了 %1$d 通知！將在 %2$d 小時後失去 Snap 連環炮。</item>
+    </plurals>
+    <plurals name="notif_body_delay_unusedfornow">
+        <item quantity="other">別忘了發送 Snap！將在 %1$d 小時後失去 Snap 連環炮。</item>
+    </plurals>
     <string name="notif_body_almost">將要失去 Snap 連環炮！！</string>
     <string name="notif_body_already">可能已經失去 Snap 連環炮。立即發送 Snap 或者關閉提示功能。</string>
     <string name="notif_sent">已發送 Snap</string>
@@ -55,7 +69,7 @@
     <string name="about_developer">開發</string>
     <string name="about_opensource_logolicense_title">圖示授權條款</string>
     <string name="dialog_battery_title">提示功能可能會不穩定</string>
-    <string name="dialog_battery_message">你的裝置設定使本軟件不能準確地發送 Snap 連環炮通知。請前往設定關閉本軟件的電池優化功能（白名單）。如果你的裝置剛剛重新啓動或更新，請忽略此警告。</string>
+    <string name="dialog_battery_message">你的裝置設定使本軟件不能準確地發送失去 Snap 連環炮通知。請前往設定關閉本軟件的電池優化功能（白名單）。如果你的裝置剛剛重新啓動或更新，請忽略此警告。</string>
     <string name="dialog_battery_button_negative">忽略</string>
     <string name="dialog_battery_button_positive">前往設定</string>
 </resources>

@@ -14,6 +14,8 @@ import android.support.v4.app.NotificationCompat;
 import com.iatfei.streakalarm.MainActivity;
 import com.iatfei.streakalarm.R;
 
+import java.util.Objects;
+
 //not currently used.
 
 public class MakeNotification extends IntentService {
@@ -59,10 +61,10 @@ public class MakeNotification extends IntentService {
             int importance = NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel channel = new NotificationChannel("1", name, importance);
             channel.setDescription(description);
-            notificationManager.createNotificationChannel(channel);
+            Objects.requireNonNull(notificationManager).createNotificationChannel(channel);
             startForeground(1, nBuilder.build());
         }
-            notificationManager.notify(1, nBuilder.build());
+            Objects.requireNonNull(notificationManager).notify(1, nBuilder.build());
     }
 
 

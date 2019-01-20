@@ -21,15 +21,24 @@
     <string name="snapbefore_title">How many hours ago? If around half an hour, select 0.</string>
     <string name="snapbefore_cancel">Cancel</string>
     <string name="snapbefore_ok">OK</string>
-    <string name="notif_body_one">Send streaks now. Losing Streak in %1$d hours.</string>
+    <plurals name="notif_body_one">
+        <item quantity="one">Send streaks now. Losing Streak in %1$d hour.</item>
+        <item quantity="other">Send streaks now. Losing Streak in %1$d hours.</item>
+    </plurals>
     <string name="notif_title">Time to Streak!</string>
     <string name="channel_description">Reminds you to Keep Streaks</string>
     <string name="channel_name">Streak Reminder</string>
     <string name="main_tip">Please use the button below and menu above to get started.</string>
     <string name="picker_invalid_time">Too long ago! Send a streak now!</string>
     <string name="interval_title">How often to be reminded (hours)</string>
-    <string name="interval_set">You will be reminded every %1$d hours for streaks, until you sent a streak or if you lost them.</string>
-    <string name="main_interval">You will be reminded for streaks every %1$d hours.</string>
+    <plurals name="interval_set">
+        <item quantity="one">You will be reminded every hour for streaks, until you sent a streak or if you lost them.</item>
+        <item quantity="other">You will be reminded every %1$d hours for streaks, until you sent a streak or if you lost them.</item>
+    </plurals>
+    <plurals name="main_interval">
+        <item quantity="one">You will be reminded for streaks every hour.</item>
+        <item quantity="other">You will be reminded for streaks every %1$d hours.</item>
+    </plurals>
     <string name="menu_service_disable">Reminder Deactivated.</string>
     <string name="menu_service_enabled">Time Set. Reminder Activated.</string>
     <string name="main_service_enable">Reminder Enabled.</string>
@@ -37,10 +46,22 @@
     <string name="main_setinterval_prompt">Please set a reminder interval using the menu above.</string>
     <string name="main_unknown">Unknown</string>
     <string name="main_reset_time">Reset Time!</string>
-    <string name="interval_set_disabled">Reminder not on. Reminder interval is set to %1$d hours.</string>
-    <string name="notif_body_two">You missed a notification! Losing Streak in %1$d hours!</string>
-    <string name="notif_body_multi">You already missed %1$d notifications! Losing Streak in %2$d hours.</string>
-    <string name="notif_body_delay_unusedfornow">Don\'t forget to send streaks! Losing streaks in %1$d hours.</string>
+    <plurals name="interval_set_disabled">
+        <item quantity="one">Reminder not on. Reminder interval is set to %1$d hour.</item>
+        <item quantity="other">Reminder not on. Reminder interval is set to %1$d hours.</item>
+    </plurals>
+    <plurals name="notif_body_two">
+        <item quantity="one">You missed a notification! Losing Streak in %1$d hour!</item>
+        <item quantity="other">You missed a notification! Losing Streak in %1$d hours!</item>
+    </plurals>
+    <plurals name="notif_body_multi">
+        <item quantity="one">You already missed %1$d notifications! Losing Streak in %2$d hour.</item>
+        <item quantity="other">You already missed %1$d notifications! Losing Streak in %2$d hours.</item>
+    </plurals>
+    <plurals name="notif_body_delay_unusedfornow">
+        <item quantity="one">Don\'t forget to send streaks! Losing streaks in %1$d hour.</item>
+        <item quantity="other">Don\'t forget to send streaks! Losing streaks in %1$d hours.</item>
+    </plurals>
     <string name="notif_body_almost">You are about to lose your streaks!!!!! Send streaks now!!!!</string>
     <string name="notif_body_already">You may have lost your streaks. Send it immediately or stop the reminder in the app.</string>
     <string name="notif_sent">Snap Sent</string>

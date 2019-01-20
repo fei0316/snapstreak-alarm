@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
@@ -37,6 +38,7 @@ public class NewAboutActivity extends AppCompatActivity {
         return getDelegate().getSupportActionBar();
     }
     private AppCompatDelegate mDelegate;
+    @NonNull
     public AppCompatDelegate getDelegate() {
         if (mDelegate == null) {
             mDelegate = AppCompatDelegate.create(this,null);
@@ -66,7 +68,7 @@ public class NewAboutActivity extends AppCompatActivity {
 
             Intent webpageIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"));
 
-            List<ResolveInfo> wlist = packageManager.queryIntentActivities(webpageIntent, 1);
+            List<ResolveInfo> wlist = packageManager.queryIntentActivities(webpageIntent, 0);
 
             if(wlist.size() == 0) {
                 Preference web = findPreference("edit_text_preference_4");

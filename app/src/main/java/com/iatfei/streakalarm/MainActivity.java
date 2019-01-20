@@ -21,8 +21,6 @@ import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionButton;
 
-import java.util.Locale;
-
 import biz.kasual.materialnumberpicker.MaterialNumberPicker;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetSequence;
@@ -80,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             showHelp();
             aggresiveWarning();
         }
-        }
+    }
 
 
    @Override
@@ -121,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView interval = findViewById(R.id.textView4);
         if (Time.IntInterval(c) != 0)
-            interval.setText(convertToEnglishDigits.convert(getString(R.string.main_interval, Time.IntInterval(getApplicationContext()))));
+            interval.setText(convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.main_interval, Time.IntInterval(getApplicationContext()), Time.IntInterval(getApplicationContext()))));
         else
             interval.setText(getString(R.string.main_setinterval_prompt));
         if (readService()){
@@ -277,22 +275,22 @@ public class MainActivity extends AppCompatActivity {
                         if (readService()){
                             CancelNotif(); //special case (don't wanna disable then enable one after the other)
                             enableService();
-                            Snackbar.make(view, convertToEnglishDigits.convert(getString(R.string.interval_set, s)), 5000).show();
+                            Snackbar.make(view, convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set, s, s)), 5000).show();
                         }
                         else{
-                            Snackbar.make(view, getString(R.string.interval_set_disabled, s), 5000).show();
+                            Snackbar.make(view, convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set_disabled, s, s)), 5000).show();
                         }
                     }
                 })
                 .show();
     }
 
-    public void MakeNotif() {
+    private void MakeNotif() {
         //todo:call NotificationManage directly in next release
         NotificationManage.MakeNotif(this);
     }
 
-    public void CancelNotif() {
+    private void CancelNotif() {
         //todo:call NotificationManage directly in next release
         NotificationManage.CancelNotif(this);
     }

@@ -6,6 +6,8 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 
+import java.util.Objects;
+
 public class NotificationManage extends MainActivity {
 
     //todo:Next Release: add postpone notification option
@@ -24,7 +26,7 @@ public class NotificationManage extends MainActivity {
         Intent intent1 = new Intent(c, AlarmReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(c, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager am = (AlarmManager) c.getSystemService(ALARM_SERVICE);
-        am.setRepeating(AlarmManager.RTC_WAKEUP, nextFire, Time.LongInterval(c), pendingIntent);
+        Objects.requireNonNull(am).setRepeating(AlarmManager.RTC_WAKEUP, nextFire, Time.LongInterval(c), pendingIntent);
 
         PendingIntent pendingIntent225 = PendingIntent.getBroadcast(c, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
         am.set(AlarmManager.RTC_WAKEUP, (laststreak + 1000 * 60 * 60 * 23 - 1000 * 60 * 30), pendingIntent225);
@@ -43,14 +45,14 @@ public class NotificationManage extends MainActivity {
         PendingIntent pendingIntent245 = PendingIntent.getBroadcast(c, 3, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
 
         AlarmManager am = (AlarmManager) c.getSystemService(ALARM_SERVICE);
-        am.cancel(pendingIntent);
+        Objects.requireNonNull(am).cancel(pendingIntent);
         am.cancel(pendingIntent225);
         am.cancel(pendingIntent235);
         am.cancel(pendingIntent245);
 
         NotificationManager notif =
                 (NotificationManager) c.getSystemService(Context.NOTIFICATION_SERVICE);
-        notif.cancel(2);
+        Objects.requireNonNull(notif).cancel(2);
         pendingIntent.cancel();
         pendingIntent225.cancel();
         pendingIntent235.cancel();
