@@ -23,6 +23,10 @@ public class AlarmReceiver extends BroadcastReceiver {
         int showHours = Time.NotifTime(context);
         int notifCount = Time.ReadNotifCount(context);
 
+        //TBD if it works
+        if (showHours < -6)
+            NotificationManage.CancelNotif(context);
+
         Intent openApp = new Intent(context, MainActivity.class);
         Intent openSnap = context.getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
         Intent resetTime = new Intent(context, resetService.class);
