@@ -96,9 +96,11 @@ public class BatteryOptimizationUtil {
      * @param context Context
      * @return true if battery optimization is available
      */
-    public static boolean isBatteryOptimizationAvailable(final Context context) {
-        return getResolveableComponentName(context) != null;
-    }
+
+    // commented out by Fei during code cleanup
+    //public static boolean isBatteryOptimizationAvailable(final Context context) {
+    //    return getResolveableComponentName(context) != null;
+    //}
 
     @Nullable
     private static ComponentName getResolveableComponentName(final Context context) {

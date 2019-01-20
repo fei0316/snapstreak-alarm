@@ -13,8 +13,6 @@ import android.support.v4.content.ContextCompat;
 
 import java.util.Objects;
 
-//IN USE!!!!
-
 public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -54,7 +52,8 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         if (showHours <= 0){
             nBuilder.setContentText(context.getString(R.string.notif_body_already))
-                    .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.notif_body_already)));
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.notif_body_already)))
+                    .setContentTitle(context.getString(R.string.notif_lost_streak_title));
         }
         else if (showHours < 1.8){
             nBuilder.setContentText(context.getString(R.string.notif_body_almost))
@@ -73,7 +72,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                     .setStyle(new NotificationCompat.BigTextStyle().bigText(convertToEnglishDigits.convert(res.getQuantityString(R.plurals.notif_body_multi, showHours, (notifCount - 1), showHours))));
         }
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.cancel(2);
+        Objects.requireNonNull(notificationManager).cancel(2);
         notificationManager.notify(2, nBuilder.build());
         Time.NotifCountTally(context);
     }
