@@ -71,6 +71,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             nBuilder.setContentText(convertToEnglishDigits.convert(res.getQuantityString(R.plurals.notif_body_multi, showHours, (notifCount - 1), showHours)))
                     .setStyle(new NotificationCompat.BigTextStyle().bigText(convertToEnglishDigits.convert(res.getQuantityString(R.plurals.notif_body_multi, showHours, (notifCount - 1), showHours))));
         }
+
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         Objects.requireNonNull(notificationManager).cancel(2);
         notificationManager.notify(2, nBuilder.build());

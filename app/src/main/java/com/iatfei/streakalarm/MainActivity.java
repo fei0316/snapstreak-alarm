@@ -326,6 +326,5 @@ public class MainActivity extends AppCompatActivity {
             if(dialog != null)
                 dialog.show();
         }
-
     }
 }

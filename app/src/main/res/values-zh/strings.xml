@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Streak Alarm</string>
-    <string name="last_streak">上一次儲火:</string>
+    <string name="last_streak">上一次 Snap：</string>
     <string name="title_activity_about">關於</string>
     <string name="app_description">幫你保著 Snap 連環炮。有朋友才能發揮效用。</string>
     <string name="text_version">版本</string>
