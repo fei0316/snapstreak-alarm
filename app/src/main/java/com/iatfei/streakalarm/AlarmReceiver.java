@@ -6,8 +6,10 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Build;
+import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 
@@ -25,8 +27,13 @@ public class AlarmReceiver extends BroadcastReceiver {
         int notifCount = Time.ReadNotifCount(context);
 
         //todo:TBD if it works
-        if (showHours < -6)
+        if (showHours < -6){
             NotificationManage.CancelNotif(context);
+            SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putBoolean("serviceEnabled", false);
+            editor.apply();
+        }
 
         Intent openApp = new Intent(context, MainActivity.class);
         Intent openSnap = context.getPackageManager().getLaunchIntentForPackage("com.snapchat.android");

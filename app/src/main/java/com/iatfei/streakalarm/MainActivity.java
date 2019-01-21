@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Time.ResetTime(getApplicationContext());
-                CancelNotif();
+                NotificationManage.CancelNotif(getApplicationContext());
                 enableService();
                 setupClock();
             }
@@ -214,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
                         else if (hoursago > 0){
                             long setTime = System.currentTimeMillis() - (hoursago * 1000 * 60 * 60 + 2160000);
                             Time.SetTime(c,setTime);
-                            CancelNotif();
+                            NotificationManage.CancelNotif(getApplicationContext());
                             enableService();
                             setupClock();
                         }
@@ -275,7 +275,7 @@ public class MainActivity extends AppCompatActivity {
                         int s = Time.IntInterval(c);
                         setupClock();
                         if (readService()){
-                            CancelNotif(); //special case (don't wanna disable then enable one after the other)
+                            NotificationManage.CancelNotif(getApplicationContext());
                             enableService();
                             Snackbar.make(view, convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set, s, s)), 5000).show();
                         }
@@ -287,18 +287,8 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    private void MakeNotif() {
-        //todo:call NotificationManage directly in next release
-        NotificationManage.MakeNotif(this);
-    }
-
-    private void CancelNotif() {
-        //todo:call NotificationManage directly in next release
-        NotificationManage.CancelNotif(this);
-    }
-
     private void enableService() {
-            MakeNotif();
+            NotificationManage.MakeNotif(this);
             Snackbar.make(findViewById(R.id.menu), R.string.menu_service_enabled, Snackbar.LENGTH_SHORT).show();
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = pref.edit();
@@ -307,7 +297,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void disableService() {
-            CancelNotif();
+            NotificationManage.CancelNotif(this);
             Snackbar.make(findViewById(R.id.menu), R.string.menu_service_disable, Snackbar.LENGTH_SHORT).show();
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = pref.edit();
