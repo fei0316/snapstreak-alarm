@@ -72,4 +72,5 @@
     <string name="dialog_battery_message">你的裝置設定使本軟件不能準確地發送儲火通知。請前往設定關閉本軟件的電池優化功能（白名單）。如果你的裝置剛剛重新啓動或更新，請忽略此警告。</string>
     <string name="dialog_battery_button_negative">忽略</string>
     <string name="dialog_battery_button_positive">前往設定</string>
+    <string name="notif_turnoff_reminder">關閉提示</string>
 </resources>

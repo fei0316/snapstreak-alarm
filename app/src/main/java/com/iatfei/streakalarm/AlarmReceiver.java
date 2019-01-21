@@ -58,9 +58,12 @@ public class AlarmReceiver extends BroadcastReceiver {
         Resources res = context.getResources();
 
         if (showHours <= 0){
+            Intent turnoffNotif = new Intent(context, reminderOff.class);
+            PendingIntent turnoffP = PendingIntent.getService(context, 2, turnoffNotif, PendingIntent.FLAG_UPDATE_CURRENT);
             nBuilder.setContentText(context.getString(R.string.notif_body_already))
                     .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.notif_body_already)))
-                    .setContentTitle(context.getString(R.string.notif_lost_streak_title));
+                    .setContentTitle(context.getString(R.string.notif_lost_streak_title))
+                    .addAction(R.drawable.ic_close_black_24dp, context.getString(R.string.notif_turnoff_reminder), turnoffP);
         }
         else if (showHours < 1.8){
             nBuilder.setContentText(context.getString(R.string.notif_body_almost))

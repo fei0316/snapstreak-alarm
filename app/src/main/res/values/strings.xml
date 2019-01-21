@@ -63,7 +63,7 @@
         <item quantity="other">Don\'t forget to send streaks! Losing streaks in %1$d hours.</item>
     </plurals>
     <string name="notif_body_almost">You are about to lose your streaks!! Send streaks now!</string>
-    <string name="notif_body_already">You may have lost your streaks. Send it immediately or stop the reminder in the app.</string>
+    <string name="notif_body_already">You may have lost your streaks. Send a Snap now or stop the reminder.</string>
     <string name="notif_sent">Snap Sent</string>
     <string name="tutor_menu_title">Other options</string>
     <string name="tutor_menu_content">Disable reminder or set how often to be reminded here. The default is 8 hours.</string>
@@ -84,4 +84,5 @@
     <string name="dialog_battery_message">Your device prevents Streak Alarm from reminding you of streaks accurately. Please go to Settings to disable battery optimization by whitelisting this app. If you have just rebooted or updated this app, please ignore this warning.</string>
     <string name="dialog_battery_button_negative">Ignore</string>
     <string name="dialog_battery_button_positive">Go to Setings</string>
+    <string name="notif_turnoff_reminder">Turn Off Reminder</string>
 </resources>
