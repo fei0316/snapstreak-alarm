@@ -48,6 +48,7 @@
         </receiver>
 
         <service android:name=".resetService"/>
+        <service android:name=".reminderOff"/>
 
     </application>
 

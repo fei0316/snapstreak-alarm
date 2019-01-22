@@ -108,4 +108,17 @@
         android:singleLine="false"
         android:summary="@string/restart"
         android:title="@string/about_restart" />
+    <PreferenceCategory android:title="@string/legal">
+
+    </PreferenceCategory>
+    <Preference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="Default value"
+        android:editable="false"
+        android:key="edit_text_preference_9"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:summary="@string/trademark"
+        android:title="@string/about_trademark" />
 </PreferenceScreen>

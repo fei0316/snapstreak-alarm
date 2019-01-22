@@ -85,4 +85,7 @@
     <string name="dialog_battery_button_negative">Ignore</string>
     <string name="dialog_battery_button_positive">Go to Setings</string>
     <string name="notif_turnoff_reminder">Turn Off Reminder</string>
+    <string name="legal" translatable="false">Legal</string>
+    <string name="about_trademark" translatable="false">Trademark</string>
+    <string name="trademark" translatable="false">The trademark Snapchat is a owned by Snap Inc. This project is in no way affiliated with, sponsored, or endorsed by Snap Inc.</string>
 </resources>
