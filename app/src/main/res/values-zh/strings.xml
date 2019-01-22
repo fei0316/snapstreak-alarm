@@ -16,7 +16,7 @@
     <string name="menu_opensnapchat">開啓 Snapchat</string>
     <string name="menu_cancel">關閉提示</string>
     <string name="nosnapapp">沒有安裝 Snapchat！</string>
-    <string name="snapbefore_title">Snapchat 顯示是多少小時前？如果是大約半小時前，請選擇 0</string>
+    <string name="snapbefore_title">多少小時前？</string>
     <string name="snapbefore_cancel">取消</string>
     <string name="snapbefore_ok">確定</string>
     <plurals name="notif_body_one">

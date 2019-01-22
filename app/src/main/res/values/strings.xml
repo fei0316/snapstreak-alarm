@@ -18,7 +18,7 @@
     <string name="menu_remindinterval">Set reminder interval</string>
     <string name="menu_opensnapchat">Open Snapchat</string>
     <string name="nosnapapp">Snapchat not installed!</string>
-    <string name="snapbefore_title">How many hours ago? If around half an hour, select 0.</string>
+    <string name="snapbefore_title">How many hours ago?</string>
     <string name="snapbefore_cancel">Cancel</string>
     <string name="snapbefore_ok">OK</string>
     <plurals name="notif_body_one">

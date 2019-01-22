@@ -182,9 +182,9 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    private void PickTime() {
+    private void PickTime() { //todo:revise, especially whether to include minutes or not
         MaterialNumberPicker materialNumberPicker = new MaterialNumberPicker.Builder(this)
-                .minValue(0)
+                .minValue(1)
                 .maxValue(24)
                 .defaultValue(2)
                 .backgroundColor(Color.WHITE)
