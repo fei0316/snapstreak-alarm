@@ -1,5 +1,6 @@
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- A 'parent' preference, which enables/disables child preferences (below)
          when checked/unchecked. -->
@@ -10,7 +11,8 @@
 
     <!-- NOTE: This preference will be enabled only when the checkbox above is checked. -->
 
-    <PreferenceCategory android:title="@string/about_app">
+    <PreferenceCategory android:title="@string/about_app"
+        app:iconSpaceReserved="false">
 
     </PreferenceCategory>
     <Preference
@@ -19,6 +21,7 @@
         android:key="edit_text_preference_1"
         android:selectAllOnFocus="true"
         android:singleLine="false"
+        app:iconSpaceReserved="false"
         android:summary="@string/app_description"
         android:title="@string/app_name" />
     <Preference
@@ -29,10 +32,11 @@
         android:key="edit_text_preference_2"
         android:selectAllOnFocus="true"
         android:singleLine="false"
+        app:iconSpaceReserved="false"
         android:summary="..."
         android:title="@string/text_version" />
-    <PreferenceCategory android:title="@string/about_developer">
-
+    <PreferenceCategory android:title="@string/about_developer"
+        app:iconSpaceReserved="false">
     </PreferenceCategory>
     <Preference
         android:layout_width="wrap_content"
@@ -42,6 +46,7 @@
         android:key="edit_text_preference_5"
         android:selectAllOnFocus="true"
         android:singleLine="false"
+        app:iconSpaceReserved="false"
         android:summary="@string/developed_by"
         android:title="@string/title_developed" />
     <Preference
@@ -52,6 +57,7 @@
         android:key="edit_text_preference_4"
         android:selectAllOnFocus="true"
         android:singleLine="false"
+        app:iconSpaceReserved="false"
         android:summary="@string/iatfei_link"
         android:title="@string/about_mysite">
         <intent
@@ -66,6 +72,7 @@
         android:key="edit_text_preference_8"
         android:selectAllOnFocus="true"
         android:singleLine="false"
+        app:iconSpaceReserved="false"
         android:summary="@string/about_email"
         android:title="@string/about_contact">
         <intent
@@ -80,6 +87,7 @@
         android:key="edit_text_preference_3"
         android:selectAllOnFocus="true"
         android:singleLine="false"
+        app:iconSpaceReserved="false"
         android:summary="@string/about_this_license_details"
         android:title="@string/about_this_license" >
         <intent android:action="android.intent.action.VIEW"
@@ -93,10 +101,11 @@
         android:key="edit_text_preference_6"
         android:selectAllOnFocus="true"
         android:singleLine="false"
+        app:iconSpaceReserved="false"
         android:title="@string/about_license" >
     </Preference>
-    <PreferenceCategory android:title="@string/about_restart_title">
-
+    <PreferenceCategory android:title="@string/about_restart_title"
+        app:iconSpaceReserved="false">
     </PreferenceCategory>
     <Preference
         android:layout_width="wrap_content"
@@ -106,9 +115,11 @@
         android:key="edit_text_preference_7"
         android:selectAllOnFocus="true"
         android:singleLine="false"
+        app:iconSpaceReserved="false"
         android:summary="@string/restart"
         android:title="@string/about_restart" />
-    <PreferenceCategory android:title="@string/legal">
+    <PreferenceCategory android:title="@string/legal"
+        app:iconSpaceReserved="false">
 
     </PreferenceCategory>
     <Preference
@@ -119,6 +130,7 @@
         android:key="edit_text_preference_9"
         android:selectAllOnFocus="true"
         android:singleLine="false"
+        app:iconSpaceReserved="false"
         android:summary="@string/trademark"
         android:title="@string/about_trademark" />
 </PreferenceScreen>

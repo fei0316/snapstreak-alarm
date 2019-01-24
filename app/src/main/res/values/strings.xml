@@ -18,9 +18,13 @@
     <string name="menu_remindinterval">Set reminder interval</string>
     <string name="menu_opensnapchat">Open Snapchat</string>
     <string name="nosnapapp">Snapchat not installed!</string>
-    <string name="snapbefore_title">How many hours ago?</string>
+    <string name="snapbefore_title">How long ago? (as shown on Snapchat)</string>
     <string name="snapbefore_cancel">Cancel</string>
     <string name="snapbefore_ok">OK</string>
+    <plurals name="snapbefore_hours">
+        <item quantity="one"> Hour</item>
+        <item quantity="other"> Hours</item>
+    </plurals>
     <plurals name="notif_body_one">
         <item quantity="one">Send streaks now. Losing Streak in %1$d hour.</item>
         <item quantity="other">Send streaks now. Losing Streak in %1$d hours.</item>

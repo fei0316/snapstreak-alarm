@@ -5,23 +5,29 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Typeface;
+import android.os.Build;
+import android.os.StrictMode;
 import android.preference.PreferenceManager;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.ActionMenuView;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.ActionMenuView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionButton;
 
-import biz.kasual.materialnumberpicker.MaterialNumberPicker;
+import com.github.stephenvinouze.materialnumberpickercore.MaterialNumberPicker;
+
+import androidx.core.content.ContextCompat;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetSequence;
 
@@ -31,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         final Toolbar toolbar = findViewById(R.id.toolbar);
@@ -182,23 +189,27 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    private void PickTime() { //todo:revise, especially whether to include minutes or not
-        MaterialNumberPicker materialNumberPicker = new MaterialNumberPicker.Builder(this)
-                .minValue(1)
-                .maxValue(24)
-                .defaultValue(2)
-                .backgroundColor(Color.WHITE)
-                .separatorColor(getResources().getColor(R.color.colorPrimary))
-                .textColor(Color.BLACK)
-                .textSize(20)
-                .enableFocusability(false)
-                .wrapSelectorWheel(false)
-                .build();
-        View view = findViewById(R.id.menu);
-        PickTimeApply(materialNumberPicker,view);
-    }
+    private void PickTime() {
+        final MaterialNumberPicker numberPicker = new MaterialNumberPicker(
+                this,
+                1,
+                24,
+                2,
+                ContextCompat.getColor(this, R.color.colorPrimaryDark), //separator color
+                Color.BLACK, //textcolor
+                35,
+                Typeface.NORMAL,
+                false,
+                false,
+                null,
+                new NumberPicker.Formatter() {
+                    @Override
+                    public String format(int value) {
+                        return value + " " + (getResources().getQuantityString(R.plurals.snapbefore_hours, value));
+                    }
+                }
+        );
 
-    private void PickTimeApply(final MaterialNumberPicker numberPicker, final View view) {
         new AlertDialog.Builder(this)
                 .setTitle(getString(R.string.snapbefore_title))
                 .setView(numberPicker)
@@ -209,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
                         int hoursago = numberPicker.getValue();
                         int interval = Time.IntInterval(c);
                         if (hoursago >= interval){
-                            Snackbar.make(view, getString(R.string.picker_invalid_time), 5000).show();
+                            Snackbar.make(findViewById(R.id.menu), getString(R.string.picker_invalid_time), 5000).show();
                         }
                         else if (hoursago > 0){
                             long setTime = System.currentTimeMillis() - (hoursago * 1000 * 60 * 60 + 2160000);
@@ -228,6 +239,7 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .show();
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
@@ -248,22 +260,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void IntSelMake() {
-        MaterialNumberPicker numberPicker = new MaterialNumberPicker.Builder(this)
-                .minValue(1)
-                .maxValue(11)
-                .defaultValue(8)
-                .backgroundColor(Color.WHITE)
-                .separatorColor(Color.TRANSPARENT)
-                .textColor(Color.BLACK)
-                .textSize(20)
-                .enableFocusability(false)
-                .wrapSelectorWheel(false)
-                .build();
-        View view = findViewById(R.id.menu);
-        IntSel(numberPicker, view);
-    }
-
-    private void IntSel(final MaterialNumberPicker numberPicker, final View view) {
+        TextView tv = findViewById(R.id.textView4);
+        final MaterialNumberPicker numberPicker = new MaterialNumberPicker(
+                this,
+                1,
+                11,
+                8,
+                Color.TRANSPARENT, //separator color
+                Color.BLACK, //textcolor
+                35,
+                Typeface.NORMAL,
+                false,
+                false,
+                null,
+                new NumberPicker.Formatter() {
+                    @Override
+                    public String format(int value) {
+                        return value + " " + getResources().getQuantityString(R.plurals.snapbefore_hours, value);
+                    }
+                }
+        );
         new AlertDialog.Builder(this)
                 .setTitle(getString(R.string.interval_title))
                 .setView(numberPicker)
@@ -274,13 +290,12 @@ public class MainActivity extends AppCompatActivity {
                         Time.SetInterval(c, numberPicker.getValue());
                         int s = Time.IntInterval(c);
                         setupClock();
-                        if (readService()){
+                        if (readService()) {
                             NotificationManage.CancelNotif(getApplicationContext());
                             enableService();
-                            Snackbar.make(view, convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set, s, s)), 5000).show();
-                        }
-                        else{
-                            Snackbar.make(view, convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set_disabled, s, s)), 5000).show();
+                            Snackbar.make(findViewById(R.id.menu), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set, s, s)), 5000).show();
+                        } else {
+                            Snackbar.make(findViewById(R.id.menu), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set_disabled, s, s)), 5000).show();
                         }
                     }
                 })

@@ -5,13 +5,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.iatfei.streakalarm.R;
 
 /**
  * Get a dialog that informs the user to disable battery optimization for your app.
@@ -55,7 +53,7 @@ public class BatteryOptimizationUtil {
      * @return the dialog or null if battery optimization is not available on this device
      */
     @Nullable
-    public static AlertDialog getBatteryOptimizationDialog(
+    private static AlertDialog getBatteryOptimizationDialog(
             final Context context,
             @Nullable final OnBatteryOptimizationAccepted positiveCallback,
             @Nullable final OnBatteryOptimizationCanceled negativeCallback) {

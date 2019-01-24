@@ -5,13 +5,13 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.PreferenceFragment;
-import android.support.annotation.NonNull;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AppCompatDelegate;
-import android.support.v7.widget.Toolbar;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.List;
 
@@ -29,7 +29,7 @@ public class NewAboutActivity extends AppCompatActivity {
             ab.setDisplayHomeAsUpEnabled(true);
         }
 
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .add(R.id.container, new AboutFragment())
                 .commit();
     }
@@ -45,10 +45,9 @@ public class NewAboutActivity extends AppCompatActivity {
         }
         return mDelegate;
     }
-    public static class AboutFragment extends PreferenceFragment {
+    public static class AboutFragment extends PreferenceFragmentCompat {
         @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
+        public void onCreatePreferences(Bundle bundle, String s) {
             addPreferencesFromResource(R.xml.about);
             Preference ver = findPreference("edit_text_preference_2");
             ver.setSummary(BuildConfig.VERSION_NAME);

@@ -16,9 +16,12 @@
     <string name="menu_opensnapchat">開啓 Snapchat</string>
     <string name="menu_cancel">關閉提示</string>
     <string name="nosnapapp">沒有安裝 Snapchat！</string>
-    <string name="snapbefore_title">多少小時前？</string>
+    <string name="snapbefore_title">Snapchat 顯示多久之前？</string>
     <string name="snapbefore_cancel">取消</string>
     <string name="snapbefore_ok">確定</string>
+    <plurals name="snapbefore_hours">
+        <item quantity="other"> 小時</item>
+    </plurals>
     <plurals name="notif_body_one">
         <item quantity="other">請現在發送 Snap，將在 %1$d 小時後失去 Snap 連環炮。</item>
     </plurals>
