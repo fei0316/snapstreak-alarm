@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.os.Build;
-import android.os.StrictMode;
 import android.preference.PreferenceManager;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AlertDialog;
@@ -26,6 +24,8 @@ import android.widget.Toast;
 import com.github.clans.fab.FloatingActionButton;
 
 import com.github.stephenvinouze.materialnumberpickercore.MaterialNumberPicker;
+
+import java.util.Locale;
 
 import androidx.core.content.ContextCompat;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
             edit.apply();
             showHelp();
             aggresiveWarning();
+            chineseWarning();
         }
     }
 
@@ -260,7 +261,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void IntSelMake() {
-        TextView tv = findViewById(R.id.textView4);
         final MaterialNumberPicker numberPicker = new MaterialNumberPicker(
                 this,
                 1,
@@ -331,5 +331,22 @@ public class MainActivity extends AppCompatActivity {
             if(dialog != null)
                 dialog.show();
         }
+    }
+
+    private void chineseWarning() {
+        String loca = Locale.getDefault().toString();
+        if (loca.equalsIgnoreCase("zh_TW") || loca.equalsIgnoreCase("zh_CN")) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Delete entry")
+                    .setMessage("Are you sure you want to delete this entry?")
+                    .setPositiveButton(R.string.snapbefore_ok, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // do nothing
+                        }
+                    })
+                    .show();
+
+        }
+
     }
 }

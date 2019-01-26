@@ -92,4 +92,6 @@
     <string name="legal" translatable="false">Legal</string>
     <string name="about_trademark" translatable="false">Trademark</string>
     <string name="trademark" translatable="false">The trademark Snapchat is a owned by Snap Inc. This project is in no way affiliated with, sponsored, or endorsed by Snap Inc.</string>
+    <string name="chineseHK_title">不是儲火嗎？</string>
+    <string name="chineseHK_content">如果你是香港澳門用戶，你將你的語言設定爲台灣中文或者簡體中文了，建議在設定改爲香港中文，否則用語可能比較奇怪。</string>
 </resources>
