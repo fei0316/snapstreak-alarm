@@ -6,8 +6,8 @@ android {
         applicationId "com.iatfei.streakalarm"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 5
-        versionName "0.2.0-internaltest"
+        versionCode 6
+        versionName "0.2.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -15,9 +15,21 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig null
+            versionNameSuffix "-release"
         }
         debug {
-
+            debuggable true
+            versionNameSuffix "-debug"
+        }
+    }
+    flavorDimensions "app"
+    productFlavors {
+        play {
+            dimension "app"
+            applicationIdSuffix ".play"
+        }
+        free {
+            dimension "app"
         }
     }
 }
