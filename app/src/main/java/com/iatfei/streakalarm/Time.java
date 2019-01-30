@@ -21,7 +21,7 @@ public class Time extends MainActivity{
     }
     public static long ReadTime (Context c) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
-        return settings.getLong("lastsnaptime", 0);
+        return settings.getLong("lastsnaptime", 123);
     }
 
     public static int ReadNotifCount (Context c) {
@@ -50,8 +50,10 @@ public class Time extends MainActivity{
         String formatted;
         long time_last = ReadTime(c);
         long time_till = System.currentTimeMillis() - time_last;
-        if (time_till > 604800000)
-            formatted = c.getResources().getString(R.string.main_unknown);
+        if (time_last == 2)
+            formatted = c.getResources().getString(R.string.main_new);
+        else if (time_till > 172800000)
+            formatted = c.getResources().getString(R.string.main_long_ago);
         else if (time_till < 0)
             formatted = c.getResources().getString(R.string.main_reset_time);
         else {
