@@ -77,9 +77,9 @@ public class Time extends MainActivity{
     public static int NotifTime (Context c){
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
         long time_last = pref.getLong("lastsnaptime", 0);
-        long time_to_send = (time_last + 86400000) - System.currentTimeMillis();
-        long longHours = (time_to_send / 1000 / 60 / 60);
-        return (int) Math.floor(longHours);
+        long time_to_send = (time_last + 86700000) - System.currentTimeMillis();
+        double Hours = (double) (time_to_send / 1000 / 60 / 60);
+        return (int) Hours;
     }
 
     public static void SetInterval (Context c, int hours){

@@ -131,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
             interval.setText(convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.main_interval, Time.IntInterval(getApplicationContext()), Time.IntInterval(getApplicationContext()))));
         else
             interval.setText(getString(R.string.main_setinterval_prompt));
+
         if (readService()){
             TextView enabled = findViewById(R.id.textView5);
             enabled.setText(getString(R.string.main_service_enable));

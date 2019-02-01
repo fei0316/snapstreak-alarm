@@ -26,7 +26,6 @@ public class AlarmReceiver extends BroadcastReceiver {
         int showHours = Time.NotifTime(context);
         int notifCount = Time.ReadNotifCount(context);
 
-        //todo:TBD if it works
         if (showHours <= -5){
             NotificationManage.CancelNotif(context);
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
