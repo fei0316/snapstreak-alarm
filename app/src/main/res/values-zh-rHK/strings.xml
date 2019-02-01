@@ -9,7 +9,7 @@
     <string name="about_mysite">我的網站</string>
     <string name="about_license">開放原始碼授權</string>
     <string name="title_developed">開發</string>
-    <string name="developed_by">由 Fei Kuan 在 KDE neon 和 Manjaro 運行的 Android Studio 開發。</string>
+    <string name="developed_by">由 Fei 在 KDE neon 和 Manjaro 運行的 Android Studio 開發。</string>
     <string name="menu_justnow">剛剛才發送儲火</string>
     <string name="menu_customtime">之前發送的儲火</string>
     <string name="menu_remindinterval">設定提示間隔</string>
