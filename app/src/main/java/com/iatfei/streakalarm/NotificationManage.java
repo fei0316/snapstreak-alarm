@@ -57,6 +57,21 @@ public class NotificationManage extends MainActivity {
         PendingIntent pendingIntent245 = PendingIntent.getBroadcast(c, 3, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
         am.set(AlarmManager.RTC_WAKEUP, (laststreak + 1000 * 60 * 60 * 25 - 1000 * 60 * 30), pendingIntent245);
     }
+
+    public static void Snooze (Context c) {
+        Intent intent = new Intent(c, AlarmReceiver.class);
+        AlarmManager am = (AlarmManager) c.getSystemService(ALARM_SERVICE);
+
+        PendingIntent pendingSnooze = PendingIntent.getBroadcast(c, 4, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 30), pendingSnooze);
+    }
+
+    public static void CloseNotif (Context c) {
+        NotificationManager notif =
+                (NotificationManager) c.getSystemService(Context.NOTIFICATION_SERVICE);
+        notif.cancel(2);
+    }
+
     public static void CancelNotif (Context c) {
         Intent intent1 = new Intent(c, AlarmReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(c, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);

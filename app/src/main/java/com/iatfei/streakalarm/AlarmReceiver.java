@@ -37,8 +37,12 @@ public class AlarmReceiver extends BroadcastReceiver {
             Intent openApp = new Intent(context, MainActivity.class);
             Intent openSnap = context.getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
             Intent resetTime = new Intent(context, resetService.class);
+            Intent snooze = new Intent(context, SnoozeService.class);
+
             PendingIntent pendingApp = PendingIntent.getActivity(context, 0, openApp, 0);
             PendingIntent pendingReset = PendingIntent.getService(context, 0, resetTime, PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent pendingSnooze = PendingIntent.getService(context, 1, snooze, PendingIntent.FLAG_UPDATE_CURRENT);
+
             NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(context, "streak")
                     .setSmallIcon(R.drawable.timer_sand)
                     .setContentTitle(context.getString(R.string.notif_title))
@@ -47,7 +51,8 @@ public class AlarmReceiver extends BroadcastReceiver {
                     .setOngoing(true)
                     .setWhen(when)
                     .setContentIntent(pendingApp)
-                    .addAction(R.drawable.ic_done_black_24dp, context.getString(R.string.notif_sent), pendingReset);
+                    .addAction(R.drawable.ic_done_black_24dp, context.getString(R.string.notif_sent), pendingReset)
+                    .addAction(R.drawable.ic_snooze_black_24dp, context.getString(R.string.notif_snooze), pendingSnooze);
 
             if (openSnap != null) {
                 PendingIntent pendingSnap = PendingIntent.getActivity(context, 1, openSnap, 0);
@@ -76,7 +81,6 @@ public class AlarmReceiver extends BroadcastReceiver {
                 nBuilder.setContentText(convertToEnglishDigits.convert(res.getQuantityString(R.plurals.notif_body_multi, showHours, (notifCount - 1), showHours)))
                         .setStyle(new NotificationCompat.BigTextStyle().bigText(convertToEnglishDigits.convert(res.getQuantityString(R.plurals.notif_body_multi, showHours, (notifCount - 1), showHours))));
             }
-
             NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
             Objects.requireNonNull(notificationManager).cancel(2);
             notificationManager.notify(2, nBuilder.build());
