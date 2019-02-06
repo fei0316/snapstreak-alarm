@@ -49,6 +49,7 @@
 
         <service android:name=".resetService"/>
         <service android:name=".reminderOff"/>
+        <service android:name=".SnoozeService"/>
 
     </application>
 
