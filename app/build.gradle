@@ -10,6 +10,12 @@ android {
         versionName "1.0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -20,6 +26,7 @@ android {
         debug {
             debuggable true
             versionNameSuffix "-debug"
+            applicationIdSuffix ".debug"
         }
     }
     flavorDimensions "app"
@@ -46,5 +53,5 @@ dependencies {
     implementation 'com.github.clans:fab:1.6.4'
     implementation 'com.github.StephenVinouze:MaterialNumberPicker:1.0.7'
     implementation 'uk.co.samuelwall:material-tap-target-prompt:2.14.0'
-    implementation 'com.mikepenz:aboutlibraries:6.2.1'
+    implementation 'com.mikepenz:aboutlibraries:6.2.2'
 }
