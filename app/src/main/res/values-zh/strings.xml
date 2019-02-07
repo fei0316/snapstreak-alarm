@@ -77,4 +77,5 @@
     <string name="dialog_battery_button_positive">前往設定</string>
     <string name="notif_turnoff_reminder">關閉提示</string>
     <string name="main_new">不明</string>
+    <string name="notif_snooze">稍後通知</string>
 </resources>
