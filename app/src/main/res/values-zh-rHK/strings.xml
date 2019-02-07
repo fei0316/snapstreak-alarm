@@ -66,8 +66,8 @@
     <string name="notif_lost_streak_title">斷火！！</string>
     <string name="notif_lost_streak_content">可能已經斷火。立即發送 Snap！</string>
     <string name="about_contact">聯絡我</string>
-    <string name="about_this_license">本程式是自由軟件</string>
-    <string name="about_this_license_details">本軟件以 GNU 通用公共許可證條款第三版發佈，或者自由選擇其更新的版本。你可以在此條款下重新發佈和修改本軟件。請點選以進入本程式的 GitHub 頁面獲得原始碼和版權資訊。</string>
+    <string name="about_this_license">原始碼</string>
+    <string name="about_this_license_details">本軟件以 GNU 通用公共許可證條款第三版發佈（或更新版本）。你可以在此條款下重新發佈和修改本軟件。請點選以進入本程式的 GitHub 頁面獲得原始碼和版權資訊。</string>
     <string name="about_app">關於此軟件</string>
     <string name="about_developer">開發</string>
     <string name="about_opensource_logolicense_title">圖示授權條款</string>
