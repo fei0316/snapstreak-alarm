@@ -30,8 +30,6 @@ import java.util.Objects;
 
 public class NotificationManage extends MainActivity {
 
-    //todo:Next Release: add postpone notification option
-
     public static void MakeNotif (Context c) {
         long laststreak = Time.ReadTime(c);
         long notifint = Time.LongInterval(c);

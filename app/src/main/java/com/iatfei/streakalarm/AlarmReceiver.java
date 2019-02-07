@@ -50,14 +50,15 @@ public class AlarmReceiver extends BroadcastReceiver {
                     .setPriority(NotificationCompat.PRIORITY_HIGH)
                     .setOngoing(true)
                     .setWhen(when)
-                    .setContentIntent(pendingApp)
-                    .addAction(R.drawable.ic_done_black_24dp, context.getString(R.string.notif_sent), pendingReset)
-                    .addAction(R.drawable.ic_snooze_black_24dp, context.getString(R.string.notif_snooze), pendingSnooze);
+                    .setContentIntent(pendingApp);
 
             if (openSnap != null) {
                 PendingIntent pendingSnap = PendingIntent.getActivity(context, 1, openSnap, 0);
                 nBuilder.addAction(R.drawable.snapchat, context.getString(R.string.menu_opensnapchat), pendingSnap);
             }
+
+            nBuilder.addAction(R.drawable.ic_done_black_24dp, context.getString(R.string.notif_sent), pendingReset)
+                    .addAction(R.drawable.ic_snooze_black_24dp, context.getString(R.string.notif_snooze), pendingSnooze);
 
             Resources res = context.getResources();
 
