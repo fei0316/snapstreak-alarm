@@ -4,10 +4,12 @@ Never lose streaks again with Streak Alarm!
 
 <a href='https://play.google.com/store/apps/details?id=com.iatfei.streakalarm.play'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height=60/></a>
 <a href='http://www.amazon.com/gp/mas/dl/android?p=com.iatfei.streakalarm'><img alt='Get it on Amazon Appstore' src='https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png' height=50/></a>
+[<img src="https://f-droid.org/badge/get-it-on.png"       alt="Get it on F-Droid"       height="80">](https://f-droid.org/app/com.iatfei.streakalarm)
+
 
 GitHub free download: <a href='https://github.com/fei0316/snapstreak-alarm/releases'>https://github.com/fei0316/snapstreak-alarm/releases</a>
 
-F-Droid free download coming soon!
+
 
 Note:
 
