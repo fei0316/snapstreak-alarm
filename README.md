@@ -10,12 +10,11 @@ Never lose streaks again with Streak Alarm!
 GitHub free download: <a href='https://github.com/fei0316/snapstreak-alarm/releases'>https://github.com/fei0316/snapstreak-alarm/releases</a>
 
 
-
 Note:
 
- * Releases in Google Play have a different package name compared to all other releases. Though you can install both at the same time, there is no functional differences other than supporting me by paying. 
+ * Google Play releases have a different package name than other releases. You can install both at the same time, but there are no planned functional differences other than supporting me by paying. 
 
- * Though Amazon, GitHub, and F-Droid releases have the same package name, they are signed by different keys and cannot cross-update without removing the app first.
+ * Amazon, GitHub, and F-Droid releases have the same package name, but they are signed by different keys and cannot cross-update without removing the app first.
 
 
 My first app project :) At least I got it done before 18!
