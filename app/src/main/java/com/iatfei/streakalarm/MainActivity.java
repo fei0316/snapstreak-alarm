@@ -285,7 +285,7 @@ public class MainActivity extends AppCompatActivity {
         final MaterialNumberPicker numberPicker = new MaterialNumberPicker(
                 this,
                 1,
-                11,
+                11, //todo:allow up to 22 hours (don't assume at least 2 notifications!)
                 8,
                 Color.TRANSPARENT, //separator color
                 Color.BLACK, //textcolor

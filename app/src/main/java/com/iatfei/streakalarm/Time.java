@@ -37,7 +37,7 @@ public class Time extends MainActivity {
         SharedPreferences.Editor editor = pref.edit();
         editor.putLong("lastsnaptime", saveLongTime);
         editor.putInt("notifcount", 1);
-        editor.apply();
+        editor.commit();
     }
 
     public static long ReadTime(Context c) {
@@ -64,7 +64,7 @@ public class Time extends MainActivity {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt("notifcount", count);
-        editor.apply();
+        editor.commit();
     }
 
     public static String ReadFormatTime(Context c) {
@@ -110,7 +110,7 @@ public class Time extends MainActivity {
         SharedPreferences.Editor editor = pref.edit();
         editor.putLong("intervalLong", Lhours);
         editor.putInt("intervalInt", hours);
-        editor.apply();
+        editor.commit();
     }
 
     public static int IntInterval(Context c) {
