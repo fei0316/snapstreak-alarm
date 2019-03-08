@@ -4,16 +4,17 @@ Never lose streaks again with Streak Alarm!
 
 <a href='https://play.google.com/store/apps/details?id=com.iatfei.streakalarm.play'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height=60/></a>
 <a href='http://www.amazon.com/gp/mas/dl/android?p=com.iatfei.streakalarm'><img alt='Get it on Amazon Appstore' src='https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png' height=50/></a>
+[<img src="https://f-droid.org/badge/get-it-on.png"       alt="Get it on F-Droid"       height="80">](https://f-droid.org/app/com.iatfei.streakalarm)
+
 
 GitHub free download: <a href='https://github.com/fei0316/snapstreak-alarm/releases'>https://github.com/fei0316/snapstreak-alarm/releases</a>
 
-F-Droid free download coming soon!
 
 Note:
 
- * Releases in Google Play have a different package name compared to all other releases. Though you can install both at the same time, there is no functional differences other than supporting me by paying. 
+ * Google Play releases have a different package name than other releases. You can install both at the same time, but there are no planned functional differences other than supporting me by paying. 
 
- * Though Amazon, GitHub, and F-Droid releases have the same package name, they are signed by different keys and cannot cross-update without removing the app first.
+ * Amazon, GitHub, and F-Droid releases have the same package name, but they are signed by different keys and cannot cross-update without removing the app first.
 
 
 My first app project :) At least I got it done before 18!
