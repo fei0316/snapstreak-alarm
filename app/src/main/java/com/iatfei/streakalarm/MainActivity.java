@@ -115,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
         return true;
-
     }
 
     @Override
@@ -273,6 +272,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_setinterval:
                 IntSelMake();
                 return true;
+            case R.id.menu_snooze:
+                SnoozeLengthSet();
+                return true;
             case R.id.about:
                 intentAbout();
                 return true;
@@ -285,7 +287,7 @@ public class MainActivity extends AppCompatActivity {
         final MaterialNumberPicker numberPicker = new MaterialNumberPicker(
                 this,
                 1,
-                11, //todo:allow up to 22 hours (don't assume at least 2 notifications!)
+                22,
                 8,
                 Color.TRANSPARENT, //separator color
                 Color.BLACK, //textcolor
@@ -368,6 +370,29 @@ public class MainActivity extends AppCompatActivity {
                     .show();
 
         }
+    }
+    private void SnoozeLengthSet() {
+        String[] numbers = new String[360/30];
+        for (int i=0; i<numbers.length; i++)
+            numbers[i] = Integer.toString(i*30+30);
+        NumberPicker np = new NumberPicker(this);
+        np.setDisplayedValues(numbers);
+        np.setMaxValue(numbers.length-1);
+        np.setMinValue(1);
+        np.setWrapSelectorWheel(false);
 
+        new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.snooze_length_title))
+                .setView(np)
+                .setPositiveButton(getString(android.R.string.ok), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Context c = getApplicationContext();
+                        Time.setSnooze(c, np.getValue());
+                        int mins = Time.getSnooze(c);
+                        Snackbar.make(findViewById(R.id.menu), convertToEnglishDigits.convert(getString(R.string.snooze_set, mins)), Snackbar.LENGTH_LONG).show();
+                    }
+                })
+                .show();
     }
 }

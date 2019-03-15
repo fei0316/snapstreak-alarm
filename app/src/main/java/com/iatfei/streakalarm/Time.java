@@ -122,4 +122,17 @@ public class Time extends MainActivity {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
         return pref.getLong("intervalLong", 28800000);
     }
+
+    public static void setSnooze(Context c, int halfhrs) {
+        int mins = (halfhrs * 30 + 30);
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putInt("snoozeInt", mins);
+        editor.commit();
+    }
+
+    public static int getSnooze(Context c) {
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
+        return pref.getInt("snoozeInt", 60);
+    }
 }

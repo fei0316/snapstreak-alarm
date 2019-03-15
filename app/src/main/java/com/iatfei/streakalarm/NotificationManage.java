@@ -59,9 +59,9 @@ public class NotificationManage extends MainActivity {
     public static void Snooze (Context c) {
         Intent intent = new Intent(c, AlarmReceiver.class);
         AlarmManager am = (AlarmManager) c.getSystemService(ALARM_SERVICE);
-
+        int snoozeduration = Time.getSnooze(c);
         PendingIntent pendingSnooze = PendingIntent.getBroadcast(c, 4, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * 30), pendingSnooze); //todo:custom interval
+        am.set(AlarmManager.RTC_WAKEUP, (System.currentTimeMillis() + 1000 * 60 * snoozeduration), pendingSnooze); //todo:custom interval
     }
 
     public static void CloseNotif (Context c) {

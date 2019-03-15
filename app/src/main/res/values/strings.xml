@@ -96,4 +96,7 @@
     <string name="main_long_ago">Long ago...</string>
     <string name="main_new">Unknown</string>
     <string name="notif_snooze">Snooze</string>
+    <string name="menu_snooze">Set snooze duration</string>
+    <string name="snooze_length_title">How long should snooze last (in minutes)?</string>
+    <string name="snooze_set">Your reminder will be deferred for %1$d minutes when you press the Snooze button.</string>
 </resources>

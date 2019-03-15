@@ -78,4 +78,7 @@
     <string name="notif_turnoff_reminder">關閉提示</string>
     <string name="main_new">不明</string>
     <string name="notif_snooze">稍後通知</string>
+    <string name="menu_snooze">設定稍後通知時長</string>
+    <string name="snooze_length_title">按下稍後通知後，多久後再提示？（分鐘）</string>
+    <string name="snooze_set">按下「稍後提醒」按鈕時，會在 %1$d 分鐘後再提醒你。</string>
 </resources>

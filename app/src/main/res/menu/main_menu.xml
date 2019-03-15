@@ -10,6 +10,9 @@
         android:id="@+id/menu_setinterval"
         android:title="@string/menu_remindinterval" />
     <item
+        android:id="@+id/menu_snooze"
+        android:title="@string/menu_snooze" />
+    <item
         android:id="@+id/about"
         android:title="@string/title_activity_about" />
     <!--<item android:title="Ðébúg">
