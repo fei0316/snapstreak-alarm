@@ -378,7 +378,7 @@ public class MainActivity extends AppCompatActivity {
         NumberPicker np = new NumberPicker(this);
         np.setDisplayedValues(numbers);
         np.setMaxValue(numbers.length-1);
-        np.setMinValue(1);
+        np.setMinValue(0);
         np.setWrapSelectorWheel(false);
 
         new AlertDialog.Builder(this)
