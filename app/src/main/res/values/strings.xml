@@ -40,8 +40,8 @@
         <item quantity="other">You will be reminded every %1$d hours for streaks, until you sent a streak or if you lost them.</item>
     </plurals>
     <plurals name="main_interval">
-        <item quantity="one">You will be reminded for streaks every hour.</item>
-        <item quantity="other">You will be reminded for streaks every %1$d hours.</item>
+        <item quantity="one">Reminder every hour. Snooze lasts %2$d minutes.</item>
+        <item quantity="other">Reminder every %1$d hours. Snooze lasts %2$d minutes.</item>
     </plurals>
     <string name="menu_service_disable">Reminder Deactivated.</string>
     <string name="menu_service_enabled">Time Set. Reminder Activated.</string>

@@ -51,7 +51,7 @@ import androidx.core.content.ContextCompat;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetSequence;
 
-
+//todo: context reuse
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView interval = findViewById(R.id.textView4);
         if (Time.IntInterval(c) != 0)
-            interval.setText(convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.main_interval, Time.IntInterval(getApplicationContext()), Time.IntInterval(getApplicationContext()))));
+            interval.setText(convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.main_interval, Time.IntInterval(getApplicationContext()), Time.IntInterval(getApplicationContext()), Time.getSnooze(getApplicationContext()))));
         else
             interval.setText(getString(R.string.main_setinterval_prompt));
 
@@ -394,5 +394,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .show();
+        setupClock();
     }
 }
