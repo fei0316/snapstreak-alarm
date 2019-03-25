@@ -20,11 +20,13 @@ Note:
 My first app project :) At least I got it done before 18!
 
 ## Features
-* Custom reminder interval from 1 to 11 hours
+* Custom reminder interval from 1 to 22 hours
 * Notification stays until streaks are sent so you won't miss it
-* Mark streaks sent (also directly in notification)
+* Snooze reminder for custom amount of time
+* Mark streaks sent (directly in notification)
 * Mark streaks sent some time earlier
 * Open Snapchat (also in notification)
+* Automatically disable notifications if ignored for long time
 * Drop me an email if you have any suggestions!
 
 ## Want to help?
