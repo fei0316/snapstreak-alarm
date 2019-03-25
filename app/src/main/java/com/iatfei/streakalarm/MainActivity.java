@@ -51,7 +51,6 @@ import androidx.core.content.ContextCompat;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetSequence;
 
-//todo: context reuse
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -79,8 +78,9 @@ public class MainActivity extends AppCompatActivity {
         fabnow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Time.ResetTime(getApplicationContext());
-                NotificationManage.CancelNotif(getApplicationContext());
+                Context c = getApplicationContext();
+                Time.ResetTime(c);
+                NotificationManage.CancelNotif(c);
                 enableService();
                 setupClock();
             }
@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView interval = findViewById(R.id.textView4);
         if (Time.IntInterval(c) != 0)
-            interval.setText(convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.main_interval, Time.IntInterval(getApplicationContext()), Time.IntInterval(getApplicationContext()), Time.getSnooze(getApplicationContext()))));
+            interval.setText(convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.main_interval, Time.IntInterval(c), Time.IntInterval(c), Time.getSnooze(c))));
         else
             interval.setText(getString(R.string.main_setinterval_prompt));
 
@@ -246,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
                         else if (hoursago > 0){
                             long setTime = System.currentTimeMillis() - (hoursago * 1000 * 60 * 60 + 2160000);
                             Time.SetTime(c,setTime);
-                            NotificationManage.CancelNotif(getApplicationContext());
+                            NotificationManage.CancelNotif(c);
                             enableService();
                             setupClock();
                         }
@@ -314,7 +314,7 @@ public class MainActivity extends AppCompatActivity {
                         int s = Time.IntInterval(c);
                         setupClock();
                         if (readService()) {
-                            NotificationManage.CancelNotif(getApplicationContext());
+                            NotificationManage.CancelNotif(c);
                             enableService();
                             Snackbar.make(findViewById(R.id.menu), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set, s, s)), 5000).show();
                         } else {
