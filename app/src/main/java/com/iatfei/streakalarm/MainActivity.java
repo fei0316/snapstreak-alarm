@@ -391,9 +391,9 @@ public class MainActivity extends AppCompatActivity {
                         Time.setSnooze(c, np.getValue());
                         int mins = Time.getSnooze(c);
                         Snackbar.make(findViewById(R.id.menu), convertToEnglishDigits.convert(getString(R.string.snooze_set, mins)), Snackbar.LENGTH_LONG).show();
+                        setupClock();
                     }
                 })
                 .show();
-        setupClock();
     }
 }
