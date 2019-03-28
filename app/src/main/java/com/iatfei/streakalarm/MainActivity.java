@@ -69,31 +69,20 @@ public class MainActivity extends AppCompatActivity {
         FloatingActionButton fabsnap = findViewById(R.id.menu_opensnapchat);
 
         setupClock();
-        fabcustom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                PickTime();
-            }
+        fabcustom.setOnClickListener(view -> PickTime());
+        fabnow.setOnClickListener(view -> {
+            Context c = getApplicationContext();
+            Time.ResetTime(c);
+            NotificationManage.CancelNotif(c);
+            enableService();
+            setupClock();
         });
-        fabnow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Context c = getApplicationContext();
-                Time.ResetTime(c);
-                NotificationManage.CancelNotif(c);
-                enableService();
-                setupClock();
-            }
-        });
-        fabsnap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
-                if (launchIntent != null) {
-                    startActivity(launchIntent);
-                } else {
-                    Snackbar.make(view, R.string.nosnapapp, Snackbar.LENGTH_SHORT).show();
-                }
+        fabsnap.setOnClickListener(view -> {
+            Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
+            if (launchIntent != null) {
+                startActivity(launchIntent);
+            } else {
+                Snackbar.make(view, R.string.nosnapapp, Snackbar.LENGTH_SHORT).show();
             }
         });
 
@@ -223,41 +212,28 @@ public class MainActivity extends AppCompatActivity {
                 false,
                 false,
                 null,
-                new NumberPicker.Formatter() {
-                    @Override
-                    public String format(int value) {
-                        return value + " " + (getResources().getQuantityString(R.plurals.snapbefore_hours, value));
-                    }
-                }
+                value -> value + " " + (getResources().getQuantityString(R.plurals.snapbefore_hours, value))
         );
 
         new AlertDialog.Builder(this)
                 .setTitle(getString(R.string.snapbefore_title))
                 .setView(numberPicker)
-                .setPositiveButton(getString(android.R.string.ok), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Context c = getApplicationContext();
-                        int hoursago = numberPicker.getValue();
-                        int interval = Time.IntInterval(c);
-                        if (hoursago >= interval){
-                            Snackbar.make(findViewById(R.id.menu), getString(R.string.picker_invalid_time), 5000).show();
-                        }
-                        else if (hoursago > 0){
-                            long setTime = System.currentTimeMillis() - (hoursago * 1000 * 60 * 60 + 2160000);
-                            Time.SetTime(c,setTime);
-                            NotificationManage.CancelNotif(c);
-                            enableService();
-                            setupClock();
-                        }
+                .setPositiveButton(getString(android.R.string.ok), (dialog, which) -> {
+                    Context c = getApplicationContext();
+                    int hoursago = numberPicker.getValue();
+                    int interval = Time.IntInterval(c);
+                    if (hoursago >= interval){
+                        Snackbar.make(findViewById(R.id.menu), getString(R.string.picker_invalid_time), 5000).show();
                     }
-                })
-                .setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
+                    else if (hoursago > 0){
+                        long setTime = System.currentTimeMillis() - (hoursago * 1000 * 60 * 60 + 2160000);
+                        Time.SetTime(c,setTime);
+                        NotificationManage.CancelNotif(c);
+                        enableService();
                         setupClock();
                     }
                 })
+                .setNegativeButton(getString(android.R.string.cancel), (dialogInterface, i) -> setupClock())
                 .show();
     }
 
@@ -296,30 +272,22 @@ public class MainActivity extends AppCompatActivity {
                 false,
                 false,
                 null,
-                new NumberPicker.Formatter() {
-                    @Override
-                    public String format(int value) {
-                        return value + " " + getResources().getQuantityString(R.plurals.snapbefore_hours, value);
-                    }
-                }
+                value -> value + " " + getResources().getQuantityString(R.plurals.snapbefore_hours, value)
         );
         new AlertDialog.Builder(this)
                 .setTitle(getString(R.string.interval_title))
                 .setView(numberPicker)
-                .setPositiveButton(getString(android.R.string.ok), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Context c = getApplicationContext();
-                        Time.SetInterval(c, numberPicker.getValue());
-                        int s = Time.IntInterval(c);
-                        setupClock();
-                        if (readService()) {
-                            NotificationManage.CancelNotif(c);
-                            enableService();
-                            Snackbar.make(findViewById(R.id.menu), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set, s, s)), 5000).show();
-                        } else {
-                            Snackbar.make(findViewById(R.id.menu), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set_disabled, s, s)), 5000).show();
-                        }
+                .setPositiveButton(getString(android.R.string.ok), (dialog, which) -> {
+                    Context c = getApplicationContext();
+                    Time.SetInterval(c, numberPicker.getValue());
+                    int s = Time.IntInterval(c);
+                    setupClock();
+                    if (readService()) {
+                        NotificationManage.CancelNotif(c);
+                        enableService();
+                        Snackbar.make(findViewById(R.id.menu), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set, s, s)), 5000).show();
+                    } else {
+                        Snackbar.make(findViewById(R.id.menu), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set_disabled, s, s)), 5000).show();
                     }
                 })
                 .show();
@@ -362,10 +330,8 @@ public class MainActivity extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(getString(R.string.chineseHK_title))
                     .setMessage(getString(R.string.chineseHK_content))
-                    .setPositiveButton(R.string.snapbefore_ok, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            //nothing here...
-                        }
+                    .setPositiveButton(R.string.snapbefore_ok, (dialog, which) -> {
+                        //nothing here...
                     })
                     .show();
 
@@ -384,15 +350,12 @@ public class MainActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setTitle(getString(R.string.snooze_length_title))
                 .setView(np)
-                .setPositiveButton(getString(android.R.string.ok), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Context c = getApplicationContext();
-                        Time.setSnooze(c, np.getValue());
-                        int mins = Time.getSnooze(c);
-                        Snackbar.make(findViewById(R.id.menu), convertToEnglishDigits.convert(getString(R.string.snooze_set, mins)), Snackbar.LENGTH_LONG).show();
-                        setupClock();
-                    }
+                .setPositiveButton(getString(android.R.string.ok), (dialog, which) -> {
+                    Context c = getApplicationContext();
+                    Time.setSnooze(c, np.getValue());
+                    int mins = Time.getSnooze(c);
+                    Snackbar.make(findViewById(R.id.menu), convertToEnglishDigits.convert(getString(R.string.snooze_set, mins)), Snackbar.LENGTH_LONG).show();
+                    setupClock();
                 })
                 .show();
     }

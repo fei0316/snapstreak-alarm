@@ -75,7 +75,7 @@ import java.util.List;
  * <p>
  * @author Markus Deutsch @moopat
  */
-public class BatteryOptimizationUtil {
+class BatteryOptimizationUtil {
 
     /**
      * Get the battery optimization dialog.
@@ -117,23 +117,17 @@ public class BatteryOptimizationUtil {
         return new AlertDialog.Builder(context)
                 .setTitle(R.string.dialog_battery_title)
                 .setMessage(R.string.dialog_battery_message)
-                .setNegativeButton(R.string.dialog_battery_button_negative, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (negativeCallback != null)
-                            negativeCallback.onBatteryOptimizationCanceled();
-                    }
+                .setNegativeButton(R.string.dialog_battery_button_negative, (dialog, which) -> {
+                    if (negativeCallback != null)
+                        negativeCallback.onBatteryOptimizationCanceled();
                 })
-                .setPositiveButton(R.string.dialog_battery_button_positive, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (positiveCallback != null)
-                            positiveCallback.onBatteryOptimizationAccepted();
+                .setPositiveButton(R.string.dialog_battery_button_positive, (dialog, which) -> {
+                    if (positiveCallback != null)
+                        positiveCallback.onBatteryOptimizationAccepted();
 
-                        final Intent intent = new Intent();
-                        intent.setComponent(componentName);
-                        context.startActivity(intent);
-                    }
+                    final Intent intent = new Intent();
+                    intent.setComponent(componentName);
+                    context.startActivity(intent);
                 }).create();
     }
 
@@ -179,7 +173,7 @@ public class BatteryOptimizationUtil {
         return names;
     }
 
-    public interface OnBatteryOptimizationAccepted {
+    interface OnBatteryOptimizationAccepted {
 
         /**
          * Called if the user clicks the "OK" button of the battery optimization dialog. This does
@@ -190,7 +184,7 @@ public class BatteryOptimizationUtil {
 
     }
 
-    public interface OnBatteryOptimizationCanceled {
+    interface OnBatteryOptimizationCanceled {
 
         /**
          * Called if the user clicks the "Cancel" button of the battery optimization dialog.

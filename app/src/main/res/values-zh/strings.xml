@@ -42,7 +42,7 @@
     <string name="main_service_enable">提示功能已啓用。</string>
     <string name="main_service_disable">提示功能已停用。發送 Snap 後使用下方的按鈕以啓用。</string>
     <string name="main_setinterval_prompt">請使用上方功能鍵設定提示間隔。</string>
-    <string name="main_long_ago">太久以前...</string>
+    <string name="main_long_ago">太久以前…</string>
     <string name="main_reset_time">重設時間！</string>
     <plurals name="interval_set_disabled">
         <item quantity="other">提示已關閉。提示間隔設定爲 %1$d 小時。</item>

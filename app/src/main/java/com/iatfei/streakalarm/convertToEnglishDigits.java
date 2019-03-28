@@ -1,6 +1,6 @@
 package com.iatfei.streakalarm;
 
-public class convertToEnglishDigits {
+class convertToEnglishDigits {
     public static String convert(String value)
     {
         return value

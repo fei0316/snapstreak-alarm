@@ -34,6 +34,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 
 import java.util.List;
+import java.util.Objects;
 
 public class NewAboutActivity extends AppCompatActivity {
     @Override
@@ -65,24 +66,24 @@ public class NewAboutActivity extends AppCompatActivity {
         }
         return mDelegate;
     }
-    public static class AboutFragment extends PreferenceFragmentCompat {
+    static class AboutFragment extends PreferenceFragmentCompat {
         @Override
         public void onCreatePreferences(Bundle bundle, String s) {
             addPreferencesFromResource(R.xml.about);
             Preference ver = findPreference("edit_text_preference_2");
-            ver.setSummary(BuildConfig.VERSION_NAME);
+            Objects.requireNonNull(ver).setSummary(BuildConfig.VERSION_NAME);
             Preference license = findPreference("edit_text_preference_6");
-            license.setIntent(new Intent(getActivity(),OpenSourceActivity.class));
+            Objects.requireNonNull(license).setIntent(new Intent(getActivity(),OpenSourceActivity.class));
 
             Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
             emailIntent.setType("text/html");
-            PackageManager packageManager = getActivity().getPackageManager();
+            PackageManager packageManager = Objects.requireNonNull(getActivity()).getPackageManager();
 
             List<ResolveInfo> list = packageManager.queryIntentActivities(emailIntent, 0);
 
             if(list.size() == 0){
                 Preference mail = findPreference("edit_text_preference_8");
-                mail.setIntent(null);
+                Objects.requireNonNull(mail).setIntent(null);
             }
 
             Intent webpageIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"));
@@ -91,7 +92,7 @@ public class NewAboutActivity extends AppCompatActivity {
 
             if(wlist.size() == 0) {
                 Preference web = findPreference("edit_text_preference_4");
-                web.setIntent(null);
+                Objects.requireNonNull(web).setIntent(null);
             }
         }
     }
