@@ -75,7 +75,7 @@ import java.util.List;
  * <p>
  * @author Markus Deutsch @moopat
  */
-class BatteryOptimizationUtil {
+public class BatteryOptimizationUtil {
 
     /**
      * Get the battery optimization dialog.
@@ -173,7 +173,7 @@ class BatteryOptimizationUtil {
         return names;
     }
 
-    interface OnBatteryOptimizationAccepted {
+    public interface OnBatteryOptimizationAccepted {
 
         /**
          * Called if the user clicks the "OK" button of the battery optimization dialog. This does
@@ -184,7 +184,7 @@ class BatteryOptimizationUtil {
 
     }
 
-    interface OnBatteryOptimizationCanceled {
+    public interface OnBatteryOptimizationCanceled {
 
         /**
          * Called if the user clicks the "Cancel" button of the battery optimization dialog.

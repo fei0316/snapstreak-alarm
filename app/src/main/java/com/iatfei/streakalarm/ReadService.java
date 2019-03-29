@@ -24,7 +24,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 
-class ReadService {
+public class ReadService {
     public static boolean status (Context c) {
         return ((PendingIntent.getBroadcast(c, 0,
                 new Intent(c, AlarmReceiver.class),
