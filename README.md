@@ -3,7 +3,7 @@ Reminds you to keep streaks by firing notification at user-defined intervals. On
 Never lose streaks again with Streak Alarm!
 
 <a href='https://play.google.com/store/apps/details?id=com.iatfei.streakalarm.play'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height=60/></a>
-<a href='http://www.amazon.com/gp/mas/dl/android?p=com.iatfei.streakalarm'><img alt='Get it on Amazon Appstore' src='https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png' height=50/></a>
+
 [<img src="https://f-droid.org/badge/get-it-on.png"       alt="Get it on F-Droid"       height="80">](https://f-droid.org/app/com.iatfei.streakalarm)
 
 
@@ -14,10 +14,10 @@ Note:
 
  * Google Play releases have a different package name than other releases. You can install both at the same time, but there are no planned functional differences other than supporting me by paying. 
 
- * Amazon, GitHub, and F-Droid releases have the same package name, but they are signed by different keys and cannot cross-update without removing the app first.
+ * GitHub and F-Droid releases have the same package name, but they are signed by different keys and cannot cross-update without the app removed.
 
 
-My first app project :) At least I got it done before 18!
+My first app project :) Got it done before 18!
 
 ## Features
 * Custom reminder interval from 1 to 22 hours
@@ -30,6 +30,7 @@ My first app project :) At least I got it done before 18!
 * Drop me an email if you have any suggestions!
 
 ## Want to help?
+* Support me by buying the app on Google Play!
 * Open issues for anything weird.
 * Add new features by forking it and opening a pull request
 * Help me translate this app into different languages
