@@ -4,25 +4,18 @@
 
     <item
         android:id="@+id/menu_stopalarm"
-        android:checkable="false"
-        android:title="@string/menu_cancel" />
+        android:title="@string/menu_cancel"
+        android:textSize="18sp"/>
     <item
         android:id="@+id/menu_setinterval"
-        android:title="@string/menu_remindinterval" />
+        android:title="@string/menu_remindinterval"
+        android:textSize="18sp" />
     <item
         android:id="@+id/menu_snooze"
-        android:title="@string/menu_snooze" />
+        android:title="@string/menu_snooze"
+        android:textSize="18sp" />
     <item
         android:id="@+id/about"
-        android:title="@string/title_activity_about" />
-    <!--<item android:title="Ðébúg">
-        <menu>
-            <item
-                android:id="@+id/debug_1"
-                android:title="§þá®þ §é®ví©é" />
-            <item
-                android:id="@+id/debug_2"
-                android:title="§þóö §é®ví©é" />
-        </menu>
-    </item>-->
+        android:title="@string/title_activity_about"
+        android:textSize="18sp" />
 </menu>

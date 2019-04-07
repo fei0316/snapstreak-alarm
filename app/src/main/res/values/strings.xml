@@ -15,7 +15,7 @@
     <string name="restart" translatable="false">The past is in the past.</string>
     <string name="menu_justnow">Sent streak just now</string>
     <string name="menu_customtime">Sent streak some time earlier</string>
-    <string name="menu_remindinterval">Set reminder interval</string>
+    <string name="menu_remindinterval">Set Reminder Interval</string>
     <string name="menu_opensnapchat">Open Snapchat</string>
     <string name="nosnapapp">Snapchat not installed!</string>
     <string name="snapbefore_title">How long ago? (as shown on Snapchat)</string>
@@ -96,7 +96,7 @@
     <string name="main_long_ago">Long ago…</string>
     <string name="main_new">Unknown</string>
     <string name="notif_snooze">Snooze</string>
-    <string name="menu_snooze">Set snooze duration</string>
+    <string name="menu_snooze">Set Snooze Duration</string>
     <string name="snooze_length_title">How long should snooze last (in minutes)?</string>
     <string name="snooze_set">Your reminder will be deferred for %1$d minutes when you press the Snooze button.</string>
 </resources>

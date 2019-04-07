@@ -24,6 +24,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
@@ -70,8 +71,9 @@ public class NewAboutActivity extends AppCompatActivity {
         @Override
         public void onCreatePreferences(Bundle bundle, String s) {
             addPreferencesFromResource(R.xml.about);
+            String version = BuildConfig.VERSION_NAME + "-" + BuildConfig.FLAVOR + " v" + BuildConfig.VERSION_CODE;
             Preference ver = findPreference("edit_text_preference_2");
-            Objects.requireNonNull(ver).setSummary(BuildConfig.VERSION_NAME);
+            Objects.requireNonNull(ver).setSummary(version);
             Preference license = findPreference("edit_text_preference_6");
             Objects.requireNonNull(license).setIntent(new Intent(getActivity(),OpenSourceActivity.class));
 
