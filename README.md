@@ -4,7 +4,7 @@ Never lose streaks again with Streak Alarm!
 
 <a href='https://play.google.com/store/apps/details?id=com.iatfei.streakalarm.play'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height=60/></a>
 
-[<img src="https://f-droid.org/badge/get-it-on.png"       alt="Get it on F-Droid"       height="80">](https://f-droid.org/app/com.iatfei.streakalarm)
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"       alt="Get it on F-Droid"       height="80">](https://f-droid.org/app/com.iatfei.streakalarm)
 
 
 GitHub free download: <a href='https://github.com/fei0316/snapstreak-alarm/releases'>https://github.com/fei0316/snapstreak-alarm/releases</a>
@@ -12,7 +12,7 @@ GitHub free download: <a href='https://github.com/fei0316/snapstreak-alarm/relea
 
 Note:
 
- * Google Play releases have a different package name than other releases. You can install both at the same time, but there are no planned functional differences other than supporting me by paying. 
+ * Google Play releases have a different package name than others. You can install both at the same time, but there are no planned functional differences other than supporting me by paying. 
 
  * GitHub and F-Droid releases have the same package name, but they are signed by different keys and cannot cross-update without the app removed.
 
