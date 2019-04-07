@@ -2,12 +2,17 @@
 Reminds you to keep streaks by firing notification at user-defined intervals. Only works if you have friends.
 Never lose streaks again with Streak Alarm!
 
-<a href='https://play.google.com/store/apps/details?id=com.iatfei.streakalarm.play'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height=60/></a>
+<a href='https://play.google.com/store/apps/details?id=com.iatfei.streakalarm.play'>
+   <img alt='Get it on Google Play' 
+        src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' 
+        height=60/>
+</a>
+<a href="https://f-droid.org/app/com.iatfei.streakalarm">
+    <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+         alt="Get it on F-Droid" height="60">
+</a>
 
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"       alt="Get it on F-Droid"       height="80">](https://f-droid.org/app/com.iatfei.streakalarm)
-
-
-GitHub free download: <a href='https://github.com/fei0316/snapstreak-alarm/releases'>https://github.com/fei0316/snapstreak-alarm/releases</a>
+GitHub Releases: <a href='https://github.com/fei0316/snapstreak-alarm/releases'>https://github.com/fei0316/snapstreak-alarm/releases</a>
 
 
 Note:
