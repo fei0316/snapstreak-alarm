@@ -33,6 +33,11 @@ public class resetService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         Time.ResetTime(getApplicationContext());
         NotificationManage.CancelNotif(getApplicationContext());
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         NotificationManage.MakeNotif(getApplicationContext());
     }
 }
