@@ -56,7 +56,7 @@ public class Time extends MainActivity {
         count++;
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt("notifcount", count);
-        editor.apply();
+        editor.commit();
     }
 
     public static void setTally(Context c, int count) {
@@ -93,7 +93,7 @@ public class Time extends MainActivity {
         SharedPreferences.Editor editor = pref.edit();
         editor.putLong("lastsnaptime", millis);
         editor.putInt("notifcount", 1);
-        editor.apply();
+        editor.commit();
     }
 
     public static int NotifTime(Context c) {

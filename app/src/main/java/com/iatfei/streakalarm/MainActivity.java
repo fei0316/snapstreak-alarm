@@ -21,11 +21,11 @@
 package com.iatfei.streakalarm;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AlertDialog;
@@ -74,8 +74,11 @@ public class MainActivity extends AppCompatActivity {
             Context c = getApplicationContext();
             Time.ResetTime(c);
             NotificationManage.CancelNotif(c);
-            enableService();
-            setupClock();
+            final Handler handler = new Handler();
+            handler.postDelayed(() -> {
+                enableService();
+                setupClock();
+            }, 200);
         });
         fabsnap.setOnClickListener(view -> {
             Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
@@ -160,8 +163,9 @@ public class MainActivity extends AppCompatActivity {
         boolean actualEnabled = readService();
         if (configEnabled && !actualEnabled){
             final AlertDialog dialog = BatteryOptimizationUtil.getBatteryOptimizationDialog(this);
-            if(dialog != null)
+            if(dialog != null) {
                 dialog.show();
+            }
         }
         else if (!configEnabled && actualEnabled){
             SharedPreferences.Editor edit = settings.edit();
@@ -229,8 +233,11 @@ public class MainActivity extends AppCompatActivity {
                         long setTime = System.currentTimeMillis() - (hoursago * 1000 * 60 * 60 + 2160000);
                         Time.SetTime(c,setTime);
                         NotificationManage.CancelNotif(c);
-                        enableService();
-                        setupClock();
+                        final Handler handler = new Handler();
+                        handler.postDelayed(() -> {
+                            enableService();
+                            setupClock();
+                        }, 200);
                     }
                 })
                 .setNegativeButton(getString(android.R.string.cancel), (dialogInterface, i) -> setupClock())
@@ -281,10 +288,13 @@ public class MainActivity extends AppCompatActivity {
                     Context c = getApplicationContext();
                     Time.SetInterval(c, numberPicker.getValue());
                     int s = Time.IntInterval(c);
-                    setupClock();
                     if (readService()) {
                         NotificationManage.CancelNotif(c);
-                        enableService();
+                        final Handler handler = new Handler();
+                        handler.postDelayed(() -> {
+                            enableService();
+                            setupClock();
+                        }, 200);
                         Snackbar.make(findViewById(R.id.menu), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set, s, s)), 5000).show();
                     } else {
                         Snackbar.make(findViewById(R.id.menu), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set_disabled, s, s)), 5000).show();
@@ -317,7 +327,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void aggresiveWarning() {
         String deviceMan = android.os.Build.MANUFACTURER;
-        if (deviceMan.equalsIgnoreCase("huawei")){
+        if (deviceMan.equalsIgnoreCase("huawei")) {
             final AlertDialog dialog = BatteryOptimizationUtil.getBatteryOptimizationDialog(this);
             if(dialog != null)
                 dialog.show();

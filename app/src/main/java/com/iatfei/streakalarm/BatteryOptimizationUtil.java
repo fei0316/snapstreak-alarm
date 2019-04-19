@@ -51,7 +51,6 @@ package com.iatfei.streakalarm;
 
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import androidx.annotation.Nullable;
@@ -102,7 +101,7 @@ public class BatteryOptimizationUtil {
      * @return the dialog or null if battery optimization is not available on this device
      */
     @Nullable
-    private static AlertDialog getBatteryOptimizationDialog(
+    public static AlertDialog getBatteryOptimizationDialog(
             final Context context,
             @Nullable final OnBatteryOptimizationAccepted positiveCallback,
             @Nullable final OnBatteryOptimizationCanceled negativeCallback) {
@@ -131,17 +130,19 @@ public class BatteryOptimizationUtil {
                 }).create();
     }
 
-    /**
-     * Find out if battery optimization settings are available on this device.
-     *
-     * @param context Context
-     * @return true if battery optimization is available
-     */
-
-    // commented out by Fei during code cleanup
-    //public static boolean isBatteryOptimizationAvailable(final Context context) {
-    //    return getResolveableComponentName(context) != null;
-    //}
+// --Commented out by Inspection START (4/19/19 1:16 AM):
+//    /**
+//     * Find out if battery optimization settings are available on this device.
+//     *
+//     * @param context Context
+//     * @return true if battery optimization is available
+//     */
+//
+//    //commented out by Fei during code cleanup undone
+//    public static boolean isBatteryOptimizationAvailable(final Context context) {
+//        return getResolveableComponentName(context) != null;
+//    }
+// --Commented out by Inspection STOP (4/19/19 1:16 AM)
 
     @Nullable
     private static ComponentName getResolveableComponentName(final Context context) {
@@ -169,7 +170,11 @@ public class BatteryOptimizationUtil {
         names.add(new ComponentName("com.coloros.safecenter", "com.coloros.safecenter.permission.startup.StartupAppListActivity"));
         names.add(new ComponentName("com.oppo.safe", "com.oppo.safe.permission.startup.StartupAppListActivity"));
         names.add(new ComponentName("com.coloros.safecenter", "com.coloros.safecenter.startupapp.StartupAppListActivity"));
-
+        names.add(new ComponentName("com.samsung.android.lool", "com.samsung.android.sm.ui.battery.BatteryActivity"));
+        names.add(new ComponentName("com.iqoo.secure", "com.iqoo.secure.ui.phoneoptimize.AddWhiteListActivity"));
+        names.add(new ComponentName("com.vivo.permissionmanager", "com.vivo.permissionmanager.activity.BgStartUpManagerActivity"));
+        names.add(new ComponentName("com.htc.pitroad", "com.htc.pitroad.landingpage.activity.LandingPageActivity"));
+        names.add(new ComponentName("com.asus.mobilemanager", "com.asus.mobilemanager.MainActivity"));
         return names;
     }
 
