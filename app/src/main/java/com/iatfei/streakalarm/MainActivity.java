@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity {
                         NotificationManage.CancelNotif(c);
                         final Handler handler = new Handler();
                         handler.postDelayed(() -> {
-                            enableService();
+                            NotificationManage.MakeNotif(this);
                             setupClock();
                         }, 200);
                         Snackbar.make(findViewById(R.id.menu), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set, s, s)), 5000).show();
