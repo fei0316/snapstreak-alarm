@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Streak Alarm</string>
+    <string name="last_streak">上一次 Snap：</string>
+    <string name="title_activity_about">关于</string>
+    <string name="app_description">帮你保着 Snap 连环炮。有朋友才能发挥效用。</string>
+    <string name="text_version">版本</string>
+    <string name="about_opensource">开放原代码</string>
+    <string name="about_mysite">我的网站</string>
+    <string name="about_license">开放原代码授权</string>
+    <string name="title_developed">开发</string>
+    <string name="developed_by">由 Fei 在 KDE neon 和 Manjaro 运行的 Android Studio 开发。</string>
+    <string name="menu_justnow">刚刚才发送的 Snap</string>
+    <string name="menu_customtime">之前发送的 Snap</string>
+    <string name="menu_remindinterval">设置提示间隔</string>
+    <string name="menu_opensnapchat">开启 Snapchat</string>
+    <string name="menu_cancel">关闭提示</string>
+    <string name="nosnapapp">没有安装 Snapchat！</string>
+    <string name="snapbefore_title">Snapchat 显示多久之前？</string>
+    <string name="snapbefore_cancel">取消</string>
+    <string name="snapbefore_ok">确定</string>
+    <plurals name="snapbefore_hours">
+        <item quantity="other"> 小时</item>
+    </plurals>
+    <plurals name="notif_body_one">
+        <item quantity="other">请现在发送 Snap，将在 %1$d 小时后失去 Snap 连环炮。</item>
+    </plurals>
+    <string name="notif_title">是时候发送 Snap 啦！</string>
+    <string name="channel_description">提醒你保着 Snap 连环炮</string>
+    <string name="channel_name">Snap 连环炮提示</string>
+    <string name="main_tip">请使用下方按钮及功能菜单操作。</string>
+    <string name="picker_invalid_time">太久以前了！先发个 Snap 吧！</string>
+    <string name="interval_title">提示间隔（小时）</string>
+    <plurals name="interval_set">
+        <item quantity="other">你将会每 %1$d 小时收到提示，直至你发送了 Snap。（或已经失去 Snap 连环炮）</item>
+    </plurals>
+    <plurals name="main_interval">
+        <item quantity="other">你将会每 %1$d 小时收到 Snap 连环炮通知。</item>
+    </plurals>
+    <string name="menu_service_disable">提示功能已停用。</string>
+    <string name="menu_service_enabled">已设置时间。提示功能已启用。</string>
+    <string name="main_service_enable">提示功能已启用。</string>
+    <string name="main_service_disable">提示功能已停用。发送 Snap 后使用下方的按钮以启用。</string>
+    <string name="main_setinterval_prompt">请使用上方功能键设置提示间隔。</string>
+    <string name="main_long_ago">太久以前…</string>
+    <string name="main_reset_time">重设时间！</string>
+    <plurals name="interval_set_disabled">
+        <item quantity="other">提示已关闭。提示间隔设置为 %1$d 小时。</item>
+    </plurals>
+    <plurals name="notif_body_two">
+        <item quantity="other">你错过了一个通知！将在 %1$d 小时后失去 Snap 连环炮。</item>
+    </plurals>
+    <plurals name="notif_body_multi">
+        <item quantity="other">你已经错过了 %1$d 通知！将在 %2$d 小时后失去 Snap 连环炮。</item>
+    </plurals>
+    <plurals name="notif_body_delay_unusedfornow">
+        <item quantity="other">别忘了发送 Snap！将在 %1$d 小时后失去 Snap 连环炮。</item>
+    </plurals>
+    <string name="notif_body_almost">将要失去 Snap 连环炮！！立即发送 Snap！</string>
+    <string name="notif_body_already">可能已经失去 Snap 连环炮。立即发送 Snap 或者关闭提示功能。</string>
+    <string name="notif_sent">已发送 Snap</string>
+    <string name="tutor_menu_title">其他设置</string>
+    <string name="tutor_menu_content">使用此功能表来关闭 Snap 连环炮提示和设置通知的频率。缺省是八小时。</string>
+    <string name="tutor_button_title">由此开始！</string>
+    <string name="tutor_button_content">每次发送 Snap 后请按此按钮。也可以使用通知里的按钮。</string>
+    <string name="notif_lost_streak_title">失去 Snap 连环炮！！</string>
+    <string name="notif_lost_streak_content">可能已经失去 Snap 连环炮。立即发送 Snap！</string>
+    <string name="about_contact">联系我</string>
+    <string name="about_this_license">原代码</string>
+    <string name="about_this_license_details">本软件以 GNU 通用公共许可证条款第三版发布（或更新版本）。你可以在此条款下重新发布和修改本软件。请点击以进入本程序的 GitHub 页面获得原代码和版权信息。</string>
+    <string name="about_app">关于此软件</string>
+    <string name="about_developer">开发</string>
+    <string name="about_opensource_logolicense_title">图标授权条款</string>
+    <string name="dialog_battery_title">提示功能可能会不稳定</string>
+    <string name="dialog_battery_message">你的设备设置使本软件不能准确地发送通知。请前往设置关闭本软件的电池优化功能（白名单）。如果你的设备刚刚重新启动或更新本软体，请忽略此警告。</string>
+    <string name="dialog_battery_button_negative">忽略</string>
+    <string name="dialog_battery_button_positive">前往设置</string>
+    <string name="notif_turnoff_reminder">关闭提示</string>
+    <string name="main_new">不明</string>
+    <string name="notif_snooze">稍后通知</string>
+    <string name="menu_snooze">设置稍后通知时长</string>
+    <string name="snooze_length_title">按下稍后通知后，多久后再提示？（分钟）</string>
+    <string name="snooze_set">按下「稍后提醒」按钮时，会在 %1$d 分钟后再提醒你。</string>
+</resources>
