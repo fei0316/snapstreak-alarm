@@ -20,6 +20,7 @@
 
 package com.iatfei.streakalarm;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -31,6 +32,7 @@ public class Time extends MainActivity {
 
     //todo:Implement RTL instead of disabling it
 
+    @SuppressLint("ApplySharedPref")
     public static void ResetTime(Context c) {
         long saveLongTime = System.currentTimeMillis();
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
@@ -50,6 +52,7 @@ public class Time extends MainActivity {
         return settings.getInt("notifcount", 1);
     }
 
+    @SuppressLint("ApplySharedPref")
     public static void NotifCountTally(Context c) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
         int count = settings.getInt("notifcount", 0);
@@ -59,6 +62,7 @@ public class Time extends MainActivity {
         editor.commit();
     }
 
+    @SuppressLint("ApplySharedPref")
     public static void setTally(Context c, int count) {
         //Only for reboot/update to prevent excessive notifications count
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
@@ -88,6 +92,7 @@ public class Time extends MainActivity {
         return formatted;
     }
 
+    @SuppressLint("ApplySharedPref")
     public static void SetTime(Context c, long millis) {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
         SharedPreferences.Editor editor = pref.edit();
@@ -104,6 +109,7 @@ public class Time extends MainActivity {
         return (int) Hours;
     }
 
+    @SuppressLint("ApplySharedPref")
     public static void SetInterval(Context c, int hours) {
         long Lhours = hours * 1000 * 60 * 60;
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
@@ -123,6 +129,7 @@ public class Time extends MainActivity {
         return pref.getLong("intervalLong", 28800000);
     }
 
+    @SuppressLint("ApplySharedPref")
     public static void setSnooze(Context c, int halfhrs) {
         int mins = (halfhrs * 30 + 30);
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);

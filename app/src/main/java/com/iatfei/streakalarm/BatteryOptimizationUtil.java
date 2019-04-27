@@ -53,6 +53,8 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 
@@ -84,7 +86,7 @@ public class BatteryOptimizationUtil {
      * @param context Context
      * @return the dialog or null if battery optimization is not available on this device
      */
-    @Nullable
+    @NonNull
     public static AlertDialog getBatteryOptimizationDialog(final Context context) {
         return getBatteryOptimizationDialog(context, null, null);
     }
@@ -100,7 +102,7 @@ public class BatteryOptimizationUtil {
      * @param negativeCallback additional callback for the negative button. can be null.
      * @return the dialog or null if battery optimization is not available on this device
      */
-    @Nullable
+    @NonNull
     public static AlertDialog getBatteryOptimizationDialog(
             final Context context,
             @Nullable final OnBatteryOptimizationAccepted positiveCallback,
@@ -111,8 +113,6 @@ public class BatteryOptimizationUtil {
          * resolvable components twice.
          */
         final ComponentName componentName = getResolveableComponentName(context);
-
-        //todo:if (componentName == null) return null;
 
         AlertDialog.Builder temp = new AlertDialog.Builder(context)
                 .setTitle(R.string.dialog_battery_title)
