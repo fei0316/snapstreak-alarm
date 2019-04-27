@@ -35,7 +35,7 @@
         <item quantity="other">你將會每 %1$d 小時收到提示，直至你發送了 Snap。（或已經失去 Snap 連環炮）</item>
     </plurals>
     <plurals name="main_interval">
-        <item quantity="other">你將會每 %1$d 小時收到 Snap 連環炮通知。</item>
+        <item quantity="other">你將會每 %1$d 小時收到 Snap 連環炮通知。稍後通知功能延遲 %2$d 分鐘。</item>
     </plurals>
     <string name="menu_service_disable">提示功能已停用。</string>
     <string name="menu_service_enabled">已設定時間。提示功能已啓用。</string>

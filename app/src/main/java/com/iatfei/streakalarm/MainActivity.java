@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
             edit.putBoolean("previous_started", Boolean.TRUE);
             edit.apply();
             showHelp();
-            aggresiveWarning();
+            aggressiveWarning();
             chineseWarning();
         }
     }
@@ -325,7 +325,7 @@ public class MainActivity extends AppCompatActivity {
         return ReadService.status(this);
     }
 
-    private void aggresiveWarning() {
+    private void aggressiveWarning() {
         String deviceMan = android.os.Build.MANUFACTURER;
         if (deviceMan.equalsIgnoreCase("huawei")) {
             final AlertDialog dialog = BatteryOptimizationUtil.getBatteryOptimizationDialog(this);
