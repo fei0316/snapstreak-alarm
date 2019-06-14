@@ -22,7 +22,7 @@ Note:
  * GitHub and F-Droid releases have the same package name, but they are signed by different keys and cannot cross-update without the app removed.
 
 
-My first app project :) Got it done before 18!
+My first app project! :) Got it done before I turn 18.
 
 ## Features
 * Custom reminder interval from 1 to 22 hours
@@ -63,3 +63,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ```
+## Legal
+...
+This app is not sponsored or endorsed by, or affiliated with, Snap Inc.
+...
