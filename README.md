@@ -19,7 +19,7 @@ Note:
 
  * Google Play releases have a different package name than others. You can install both at the same time, but there are no planned functional differences other than supporting me by paying. 
 
- * GitHub and F-Droid releases have the same package name, but they are signed by different keys and cannot cross-update without the app removed.
+ * GitHub and F-Droid releases have the same package name, but they are signed by different keys (my own key vs. F-Droid key) so cross-update is not possible without first removing it.
 
 
 My first app project! :) Got it done before I turn 18.
@@ -28,9 +28,9 @@ My first app project! :) Got it done before I turn 18.
 * Custom reminder interval from 1 to 22 hours
 * Notification stays until streaks are sent so you won't miss it
 * Snooze reminder for custom amount of time
-* Mark streaks sent (directly in notification)
+* Mark streaks sent directly in notification and close reminder
 * Mark streaks sent some time earlier
-* Open Snapchat (also in notification)
+* Open Snapchat directly from notification)
 * Automatically disable notifications if ignored for long time
 * Drop me an email if you have any suggestions!
 
