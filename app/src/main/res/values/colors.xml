@@ -10,5 +10,7 @@
     <color name="half_black">#555555</color>
     <color name="orange_warning">#FF6D00</color>
     <color name="red_warning">#D50000</color>
+    <color name="snapYellow">#FFFC00</color>
+    <color name="snapYellowAccent">#C8C500</color>
 
 </resources>

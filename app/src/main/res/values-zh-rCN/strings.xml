@@ -81,4 +81,7 @@
     <string name="menu_snooze">设置稍后通知时长</string>
     <string name="snooze_length_title">按下稍后通知后，多久后再提示？（分钟）</string>
     <string name="snooze_set">按下「稍后提醒」按钮时，会在 %1$d 分钟后再提醒你。</string>
+    <string name="shortcut_sent_long">刚刚才发送的 Snap</string>
+    <string name="shortcut_sent_short">已发送 Snap</string>
+    <string name="shortcut_sent_toast">刚发送了 Snap。</string>
 </resources>

@@ -2,32 +2,53 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.iatfei.streakalarm">
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
 
     <application
         android:allowBackup="false"
-        tools:replace="android:allowBackup,android:supportsRtl"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:allowBackup,android:supportsRtl">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
         </activity>
-        <activity android:name=".NewAboutActivity" android:label="@string/title_activity_about"
-                android:parentActivityName=".MainActivity" >
+
+        <activity android:name=".ResetCloseActivity" android:parentActivityName=".MainActivity" android:exported="true">
+        </activity>
+
+        <activity android:name=".ShortcutActivity" android:label="@string/shortcut_sent_short">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".NewAboutActivity"
+            android:label="@string/title_activity_about"
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
-        <activity android:name=".OpenSourceActivity" android:label="@string/about_license">
+        <activity
+            android:name=".OpenSourceActivity"
+            android:label="@string/about_license">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".NewAboutActivity" />
@@ -36,22 +57,20 @@
         <receiver
             android:name=".AlarmReceiver"
             android:enabled="true" />
-
         <receiver
             android:name=".BootBroadcastReceiver"
-            android:enabled="true" >
+            android:enabled="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-                <category android:name="android.intent.category.LAUNCHER"/>
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </receiver>
 
-        <service android:name=".resetService"/>
-        <service android:name=".reminderOff"/>
-        <service android:name=".SnoozeService"/>
-
+        <service android:name=".resetService" />
+        <service android:name=".reminderOff" />
+        <service android:name=".SnoozeService" />
     </application>
-
 
 </manifest>
