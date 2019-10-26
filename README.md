@@ -29,6 +29,7 @@ My first app project! :) Got it done before I turn 18.
 * Notification stays until streaks are sent so you won't miss it
 * Snooze reminder for custom amount of time
 * Mark streaks sent directly in notification and close reminder
+* Mark streaks sent directly through home screen shortcut
 * Mark streaks sent some time earlier
 * Open Snapchat directly from notification)
 * Automatically disable notifications if ignored for long time
