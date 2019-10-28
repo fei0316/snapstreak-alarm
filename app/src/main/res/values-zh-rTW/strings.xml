@@ -5,7 +5,6 @@
     <string name="title_activity_about">關於</string>
     <string name="app_description">幫你保著 Snap 連環炮。有朋友才能發揮效用。</string>
     <string name="text_version">版本</string>
-    <string name="about_opensource">開放原始碼</string>
     <string name="about_mysite">我的網站</string>
     <string name="about_license">開放原始碼授權</string>
     <string name="title_developed">開發</string>
@@ -17,7 +16,6 @@
     <string name="menu_cancel">關閉提示</string>
     <string name="nosnapapp">沒有安裝 Snapchat！</string>
     <string name="snapbefore_title">Snapchat 顯示多久之前？</string>
-    <string name="snapbefore_cancel">取消</string>
     <string name="snapbefore_ok">確定</string>
     <plurals name="snapbefore_hours">
         <item quantity="other"> 小時</item>
@@ -28,7 +26,6 @@
     <string name="notif_title">是時候發送 Snap 啦！</string>
     <string name="channel_description">提醒你保著 Snap 連環炮</string>
     <string name="channel_name">Snap 連環炮提示</string>
-    <string name="main_tip">請使用下方按鈕及功能選單操作。</string>
     <string name="picker_invalid_time">太久以前了！先發個 Snap 吧！</string>
     <string name="interval_title">提示間隔（小時）</string>
     <plurals name="interval_set">
@@ -64,7 +61,6 @@
     <string name="tutor_button_title">由此開始！</string>
     <string name="tutor_button_content">每次發送 Snap 後請按此按鈕。也可以使用通知裏的按鈕。</string>
     <string name="notif_lost_streak_title">失去 Snap 連環炮！！</string>
-    <string name="notif_lost_streak_content">可能已經失去 Snap 連環炮。立即發送 Snap！</string>
     <string name="about_contact">聯絡我</string>
     <string name="about_this_license">原始碼</string>
     <string name="about_this_license_details">本軟件以 GNU 通用公共許可證條款第三版發佈（或更新版本）。你可以在此條款下重新發佈和修改本軟件。請點選以進入本程式的 GitHub 頁面獲得原始碼和版權資訊。</string>

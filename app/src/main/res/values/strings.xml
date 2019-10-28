@@ -4,8 +4,7 @@
     <string name="title_activity_about">About</string>
     <string name="app_description">Helps you keep streaks. Only works if you have friends.</string>
     <string name="text_version">Version</string>
-    <string name="about_opensource">Source Code</string>
-    <string name="github_link" translatable="false">https://github.com/fei0316/snapstreak-alarm</string>
+    <string name="github_link" translatable="false" tools:keep="@string/github_link">https://github.com/fei0316/snapstreak-alarm</string>
     <string name="about_mysite">Visit my site</string>
     <string name="iatfei_link" translatable="false">https://iatfei.com</string>
     <string name="about_license">Open Source Licenses</string>
@@ -19,7 +18,6 @@
     <string name="menu_opensnapchat">Open Snapchat</string>
     <string name="nosnapapp">Snapchat not installed!</string>
     <string name="snapbefore_title">How long ago? (as shown on Snapchat)</string>
-    <string name="snapbefore_cancel">Cancel</string>
     <string name="snapbefore_ok">OK</string>
     <plurals name="snapbefore_hours">
         <item quantity="one"> Hour</item>
@@ -32,7 +30,6 @@
     <string name="notif_title">Time to Streak!</string>
     <string name="channel_description">Reminds you to Keep Streaks</string>
     <string name="channel_name">Streak Reminder</string>
-    <string name="main_tip">Please use the button below and menu above to get started.</string>
     <string name="picker_invalid_time">Too long ago! Send a streak now!</string>
     <string name="interval_title">How often to be reminded (hours)</string>
     <plurals name="interval_set">
@@ -61,7 +58,7 @@
         <item quantity="one">You already missed %1$d notifications! Losing Streak in %2$d hour.</item>
         <item quantity="other">You already missed %1$d notifications! Losing Streak in %2$d hours.</item>
     </plurals>
-    <plurals name="notif_body_delay_unusedfornow">
+    <plurals name="notif_body_delay_unusedfornow" tools:keep="@plurals/notif_body_delay_unusedfornow">
         <item quantity="one">Don\'t forget to send streaks! Losing streaks in %1$d hour.</item>
         <item quantity="other">Don\'t forget to send streaks! Losing streaks in %1$d hours.</item>
     </plurals>
@@ -73,7 +70,6 @@
     <string name="tutor_button_title">Start Here!</string>
     <string name="tutor_button_content">Press this button after you sent every streaks. You can also do it in notifications that pop up.</string>
     <string name="notif_lost_streak_title">Lost Streaks!</string>
-    <string name="notif_lost_streak_content">You may have lost your streaks. Please send it immediately.</string>
     <string name="about_contact">Contact me</string>
     <string name="about_email" translatable="false">kuan@iatfei.com</string>
     <string name="about_this_license">Source Code</string>

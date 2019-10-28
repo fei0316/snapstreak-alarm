@@ -22,6 +22,8 @@ package com.iatfei.streakalarm;
 
 import android.app.IntentService;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 public class resetService extends IntentService {
 
@@ -39,5 +41,9 @@ public class resetService extends IntentService {
             e.printStackTrace();
         }
         NotificationManage.MakeNotif(getApplicationContext());
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean("serviceEnabled", true);
+        editor.apply();
     }
 }

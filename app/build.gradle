@@ -8,8 +8,8 @@ android {
         applicationId "com.iatfei.streakalarm"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 21
-        versionName "1.1.8"
+        versionCode 22
+        versionName "1.2.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -21,8 +21,8 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig null
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
             debuggable true
