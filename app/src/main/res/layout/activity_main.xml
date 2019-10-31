@@ -135,11 +135,13 @@
         fab:menu_shadowYOffset="3dp"
         fab:menu_showShadow="true">
 
+        <!--todo:change camera to black-->
+
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_opensnapchat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_camera_alt_black_24dp"
+            android:src="@drawable/camera_outline"
             app:fab_colorNormal="@color/snapYellow"
             app:fab_colorPressed="@color/snapYellow"
             app:fab_colorRipple="@color/snapYellowAccent"
