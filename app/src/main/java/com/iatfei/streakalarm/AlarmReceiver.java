@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 Fei Kuan.
+ * Copyright (c) 2017-2020 Fei Kuan.
  *
  * This file is part of Streak Alarm
  * (see <https://github.com/fei0316/snapstreak-alarm>).

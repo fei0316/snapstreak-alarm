@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019 Fei Kuan.
+ * Copyright (c) 2017-2020 Fei Kuan.
  *
  * This file is part of Streak Alarm
  * (see <https://github.com/fei0316/snapstreak-alarm>).
@@ -77,21 +77,15 @@ public class NewAboutActivity extends AppCompatActivity {
             Objects.requireNonNull(license).setIntent(new Intent(getActivity(),OpenSourceActivity.class));
 
             Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
-            emailIntent.setType("text/html");
+            emailIntent.setType("*/*");
             PackageManager packageManager = Objects.requireNonNull(getActivity()).getPackageManager();
-
-            List<ResolveInfo> list = packageManager.queryIntentActivities(emailIntent, 0);
-
-            if(list.size() == 0){
+            if(emailIntent.resolveActivity(packageManager) == null){
                 Preference mail = findPreference("edit_text_preference_8");
                 Objects.requireNonNull(mail).setIntent(null);
             }
 
-            Intent webpageIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"));
-
-            List<ResolveInfo> wlist = packageManager.queryIntentActivities(webpageIntent, 0);
-
-            if(wlist.size() == 0) {
+            Intent webpageIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.example.com"));
+            if(webpageIntent.resolveActivity(packageManager) == null) {
                 Preference web = findPreference("edit_text_preference_4");
                 Objects.requireNonNull(web).setIntent(null);
             }
