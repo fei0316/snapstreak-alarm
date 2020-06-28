@@ -44,6 +44,8 @@ import android.widget.Toast;
 import com.github.clans.fab.FloatingActionButton;
 
 import com.github.stephenvinouze.materialnumberpickercore.MaterialNumberPicker;
+import com.leinardi.android.speeddial.SpeedDialActionItem;
+import com.leinardi.android.speeddial.SpeedDialView;
 
 import java.util.Locale;
 
@@ -63,29 +65,54 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.inflateMenu(R.menu.main_menu);
 
-        //fab-related
-        FloatingActionButton fabcustom = findViewById(R.id.menu_customtime);
-        FloatingActionButton fabnow = findViewById(R.id.menu_justnow);
-        FloatingActionButton fabsnap = findViewById(R.id.menu_opensnapchat);
+        //new fab
+        SpeedDialView speedDialView = findViewById(R.id.speedDial1);
+        speedDialView.addActionItem(
+                new SpeedDialActionItem.Builder(R.id.fab_justnow, R.drawable.ic_done_black_24dp)
+                        .setFabBackgroundColor(getResources().getColor(R.color.colorAccent))
+                        .setLabel(R.string.menu_justnow)
+                        .create());
+        speedDialView.addActionItem(
+                new SpeedDialActionItem.Builder(R.id.fab_sometimeago, R.drawable.ic_access_time_black_24dp)
+                        .setFabBackgroundColor(getResources().getColor(R.color.colorAccent))
+                        .setLabel(R.string.menu_customtime)
+                        .create());
+        speedDialView.addActionItem(
+                new SpeedDialActionItem.Builder(R.id.fab_snapchat, R.drawable.ic_camera_alt_black_24dp)
+                        .setFabBackgroundColor(getResources().getColor(R.color.snapYellow))
+                        .setLabel(R.string.menu_opensnapchat)
+                        .create());
 
         setupClock();
-        fabcustom.setOnClickListener(view -> PickTime());
-        fabnow.setOnClickListener(view -> {
-            Context c = getApplicationContext();
-            Time.ResetTime(c);
-            NotificationManage.CancelNotif(c);
-            final Handler handler = new Handler();
-            handler.postDelayed(() -> {
-                enableService();
-                setupClock();
-            }, 200);
-        });
-        fabsnap.setOnClickListener(view -> {
-            Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
-            if (launchIntent != null) {
-                startActivity(launchIntent);
-            } else {
-                Snackbar.make(view, R.string.nosnapapp, Snackbar.LENGTH_SHORT).show();
+
+        speedDialView.setOnActionSelectedListener(new SpeedDialView.OnActionSelectedListener() {
+            @Override
+            public boolean onActionSelected (SpeedDialActionItem speedDialActionItem) {
+                switch (speedDialActionItem.getId()) {
+                    case R.id.fab_justnow:
+                        Context c = getApplicationContext();
+                        Time.ResetTime(c);
+                        NotificationManage.CancelNotif(c);
+                        final Handler handler = new Handler();
+                        handler.postDelayed(() -> {
+                            enableService();
+                            setupClock();
+                        }, 200);
+                        return false;
+                    case R.id.fab_sometimeago:
+                        PickTime();
+                        return false;
+                    case R.id.fab_snapchat:
+                        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
+                        if (launchIntent != null) {
+                            startActivity(launchIntent);
+                        } else {
+                            Snackbar.make(findViewById(R.id.speedDial1), R.string.nosnapapp, Snackbar.LENGTH_SHORT).show();
+                        }
+                        return false;
+                    default:
+                        return false;
+                }
             }
         });
 
@@ -135,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
         else if ((now-longtime) > 72000000)
             clock.setTextColor(getResources().getColor(R.color.orange_warning));
         else
-            clock.setTextColor(Color.BLACK);
+            clock.setTextColor(getResources().getColor(R.color.timeText));
 
         TextView interval = findViewById(R.id.textView4);
         if (Time.IntInterval(c) != 0)
@@ -195,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
 
         new MaterialTapTargetSequence()
                 .addPrompt(new MaterialTapTargetPrompt.Builder(this)
-                    .setTarget(R.id.menu_justnow)
+                    .setTarget(R.id.speedDial1)
                     .setPrimaryText(this.getString(R.string.tutor_button_title))
                     .setSecondaryText(this.getString(R.string.tutor_button_content))
                     .create())
@@ -227,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
                     int hoursago = numberPicker.getValue();
                     int interval = Time.IntInterval(c);
                     if (hoursago >= interval){
-                        Snackbar.make(findViewById(R.id.menu), getString(R.string.picker_invalid_time), 5000).show();
+                        Snackbar.make(findViewById(R.id.speedDial1), getString(R.string.picker_invalid_time), 5000).show();
                     }
                     else if (hoursago > 0){
                         long setTime = System.currentTimeMillis() - (hoursago * 1000 * 60 * 60 + 2160000);
@@ -273,7 +300,7 @@ public class MainActivity extends AppCompatActivity {
                 22,
                 8,
                 Color.TRANSPARENT, //separator color
-                Color.BLACK, //textcolor
+                getResources().getColor(R.color.timeText), //textcolor
                 35,
                 Typeface.NORMAL,
                 false,
@@ -295,9 +322,9 @@ public class MainActivity extends AppCompatActivity {
                             NotificationManage.MakeNotif(this);
                             setupClock();
                         }, 200);
-                        Snackbar.make(findViewById(R.id.menu), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set, s, s)), 5000).show();
+                        Snackbar.make(findViewById(R.id.speedDial1), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set, s, s)), 5000).show();
                     } else {
-                        Snackbar.make(findViewById(R.id.menu), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set_disabled, s, s)), 5000).show();
+                        Snackbar.make(findViewById(R.id.speedDial1), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set_disabled, s, s)), 5000).show();
                     }
                 })
                 .show();
@@ -305,7 +332,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void enableService() {
             NotificationManage.MakeNotif(this);
-            Snackbar.make(findViewById(R.id.menu), R.string.menu_service_enabled, Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(findViewById(R.id.speedDial1), R.string.menu_service_enabled, Snackbar.LENGTH_SHORT).show();
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = pref.edit();
             editor.putBoolean("serviceEnabled", true);
@@ -314,7 +341,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void disableService() {
             NotificationManage.CancelNotif(this);
-            Snackbar.make(findViewById(R.id.menu), R.string.menu_service_disable, Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(findViewById(R.id.speedDial1), R.string.menu_service_disable, Snackbar.LENGTH_SHORT).show();
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = pref.edit();
             editor.putBoolean("serviceEnabled", false);
@@ -364,7 +391,7 @@ public class MainActivity extends AppCompatActivity {
                     Context c = getApplicationContext();
                     Time.setSnooze(c, np.getValue());
                     int mins = Time.getSnooze(c);
-                    Snackbar.make(findViewById(R.id.menu), convertToEnglishDigits.convert(getString(R.string.snooze_set, mins)), Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(findViewById(R.id.speedDial1), convertToEnglishDigits.convert(getString(R.string.snooze_set, mins)), Snackbar.LENGTH_LONG).show();
                     setupClock();
                 })
                 .show();

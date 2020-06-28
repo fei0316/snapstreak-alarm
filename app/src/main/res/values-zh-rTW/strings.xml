@@ -29,7 +29,7 @@
     <string name="picker_invalid_time">太久以前了！先發個 Snap 吧！</string>
     <string name="interval_title">提示間隔（小時）</string>
     <plurals name="interval_set">
-        <item quantity="other">你將會每 %1$d 小時收到提示，直至你發送了 Snap。（或已經失去 Snap 連環炮）</item>
+        <item quantity="other">你將會每 %1$d 小時收到提示，直至你發送了 Snap 或已經失去 Snap 連環炮。</item>
     </plurals>
     <plurals name="main_interval">
         <item quantity="other">你將會每 %1$d 小時收到 Snap 連環炮通知。稍後通知功能延遲 %2$d 分鐘。</item>

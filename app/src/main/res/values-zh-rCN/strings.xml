@@ -29,7 +29,7 @@
     <string name="picker_invalid_time">太久以前了！先发个 Snap 吧！</string>
     <string name="interval_title">提示间隔（小时）</string>
     <plurals name="interval_set">
-        <item quantity="other">你将会每 %1$d 小时收到提示，直至你发送了 Snap。（或已经失去 Snap 连环炮）</item>
+        <item quantity="other">你将会每 %1$d 小时收到提示，直至你发送了 Snap 或已经失去 Snap 连环炮。</item>
     </plurals>
     <plurals name="main_interval">
         <item quantity="other">你将会每 %1$d 小时收到 Snap 连环炮通知。稍后通知功能延迟 %2$d 分钟。</item>
@@ -68,7 +68,7 @@
     <string name="about_developer">开发</string>
     <string name="about_opensource_logolicense_title">图标授权条款</string>
     <string name="dialog_battery_title">提示功能可能会不稳定</string>
-    <string name="dialog_battery_message">你的设备设置使本软件不能准确地发送通知。请前往设置关闭本软件的电池优化功能（白名单）。如果你的设备刚刚重新启动或更新本软体，请忽略此警告。</string>
+    <string name="dialog_battery_message">你的设备设置使本软件不能准确地发送通知。请前往设置关闭本软件的电池优化功能（白名单）。如果你的设备刚刚重新启动或更新本软件，请忽略此警告。</string>
     <string name="dialog_battery_button_negative">忽略</string>
     <string name="dialog_battery_button_positive">前往设置</string>
     <string name="notif_turnoff_reminder">关闭提示</string>

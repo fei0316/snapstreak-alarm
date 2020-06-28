@@ -111,7 +111,15 @@
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.github.clans.fab.FloatingActionMenu
+
+    <com.leinardi.android.speeddial.SpeedDialView
+        android:id="@+id/speedDial1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        app:sdMainFabClosedSrc="@drawable/ic_keyboard_arrow_up_black_24dp" />
+
+    <!--<com.github.clans.fab.FloatingActionMenu
         android:id="@+id/menu"
 
         android:layout_width="wrap_content"
@@ -135,7 +143,7 @@
         fab:menu_shadowYOffset="3dp"
         fab:menu_showShadow="true">
 
-        <!--todo:change camera to black-->
+        &lt;!&ndash;todo:change camera to black&ndash;&gt;
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_opensnapchat"
@@ -191,7 +199,7 @@
             app:fab_showShadow="true"
             app:fab_size="mini" />
 
-    </com.github.clans.fab.FloatingActionMenu>
+    </com.github.clans.fab.FloatingActionMenu>-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

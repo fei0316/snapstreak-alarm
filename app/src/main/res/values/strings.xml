@@ -13,7 +13,7 @@
     <string name="about_restart" translatable="false">RE:START #1</string>
     <string name="restart" translatable="false">The past is in the past.</string>
     <string name="menu_justnow">Sent streak just now</string>
-    <string name="menu_customtime">Sent streak some time earlier</string>
+    <string name="menu_customtime">Some time earlier</string>
     <string name="menu_remindinterval">Set Reminder Interval</string>
     <string name="menu_opensnapchat">Open Snapchat</string>
     <string name="nosnapapp">Snapchat not installed!</string>
@@ -87,8 +87,8 @@
     <string name="legal" translatable="false">Legal</string>
     <string name="about_trademark" translatable="false">Endorsement</string>
     <string name="trademark" translatable="false">This app is not sponsored or endorsed by, or affiliated with, Snap Inc.</string>
-    <string name="chineseHK_title" translatable="false">不是儲火嗎？</string>
-    <string name="chineseHK_content" translatable="false">如果你使用香港澳門中文，你將你的語言設定爲台灣中文了，建議在設定改爲香港中文，否則用語可能比較奇怪。</string>
+    <string name="chineseHK_title" translatable="false">如果你是港澳用戶...</string>
+    <string name="chineseHK_content" translatable="false">你將設備的語言設定爲台灣或簡體中文了，建議在設定改爲香港中文，否則用語可能比較奇怪。</string>
     <string name="main_long_ago">Long ago…</string>
     <string name="main_new">Unknown</string>
     <string name="notif_snooze">Snooze</string>

@@ -12,5 +12,5 @@
     <color name="red_warning">#D50000</color>
     <color name="snapYellow">#FFFC00</color>
     <color name="snapYellowAccent">#C8C500</color>
-
+    <color name="timeText">#000000</color>
 </resources>
