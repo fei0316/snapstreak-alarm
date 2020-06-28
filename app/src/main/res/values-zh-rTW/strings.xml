@@ -59,7 +59,7 @@
     <string name="tutor_menu_title">其他設定</string>
     <string name="tutor_menu_content">使用此功能表來關閉 Snap 連環炮提示和設定通知的頻率。預設是八小時。</string>
     <string name="tutor_button_title">由此開始！</string>
-    <string name="tutor_button_content">每次發送 Snap 後請按此按鈕。也可以使用通知裏的按鈕。</string>
+    <string name="tutor_button_content">每次發送 Snap 後請使用此功能表。也可以使用通知裏的按鈕。</string>
     <string name="notif_lost_streak_title">失去 Snap 連環炮！！</string>
     <string name="about_contact">聯絡我</string>
     <string name="about_this_license">原始碼</string>

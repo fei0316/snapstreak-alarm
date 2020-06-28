@@ -68,7 +68,7 @@
     <string name="tutor_menu_title">Other options</string>
     <string name="tutor_menu_content">Disable reminder or set how often to be reminded here. The default is 8 hours.</string>
     <string name="tutor_button_title">Start Here!</string>
-    <string name="tutor_button_content">Press this button after you sent every streaks. You can also do it in notifications that pop up.</string>
+    <string name="tutor_button_content">Use this menu after you send every streak. You can also do it in notifications that pop up.</string>
     <string name="notif_lost_streak_title">Lost Streaks!</string>
     <string name="about_contact">Contact me</string>
     <string name="about_email" translatable="false">kuan@iatfei.com</string>

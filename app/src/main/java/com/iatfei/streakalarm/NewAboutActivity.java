@@ -22,7 +22,6 @@ package com.iatfei.streakalarm;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.preference.Preference;
@@ -33,7 +32,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 
-import java.util.List;
 import java.util.Objects;
 
 public class NewAboutActivity extends AppCompatActivity {
@@ -78,7 +76,7 @@ public class NewAboutActivity extends AppCompatActivity {
 
             Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
             emailIntent.setType("*/*");
-            PackageManager packageManager = Objects.requireNonNull(getActivity()).getPackageManager();
+            PackageManager packageManager = requireActivity().getPackageManager();
             if(emailIntent.resolveActivity(packageManager) == null){
                 Preference mail = findPreference("edit_text_preference_8");
                 Objects.requireNonNull(mail).setIntent(null);

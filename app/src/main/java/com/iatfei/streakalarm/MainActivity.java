@@ -41,15 +41,12 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.github.clans.fab.FloatingActionButton;
-
 import com.github.stephenvinouze.materialnumberpickercore.MaterialNumberPicker;
 import com.leinardi.android.speeddial.SpeedDialActionItem;
 import com.leinardi.android.speeddial.SpeedDialView;
 
 import java.util.Locale;
 
-import androidx.core.content.ContextCompat;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetSequence;
 
@@ -78,41 +75,38 @@ public class MainActivity extends AppCompatActivity {
                         .setLabel(R.string.menu_customtime)
                         .create());
         speedDialView.addActionItem(
-                new SpeedDialActionItem.Builder(R.id.fab_snapchat, R.drawable.ic_camera_alt_black_24dp)
+                new SpeedDialActionItem.Builder(R.id.fab_snapchat, R.drawable.camera_outline)
                         .setFabBackgroundColor(getResources().getColor(R.color.snapYellow))
                         .setLabel(R.string.menu_opensnapchat)
                         .create());
 
         setupClock();
 
-        speedDialView.setOnActionSelectedListener(new SpeedDialView.OnActionSelectedListener() {
-            @Override
-            public boolean onActionSelected (SpeedDialActionItem speedDialActionItem) {
-                switch (speedDialActionItem.getId()) {
-                    case R.id.fab_justnow:
-                        Context c = getApplicationContext();
-                        Time.ResetTime(c);
-                        NotificationManage.CancelNotif(c);
-                        final Handler handler = new Handler();
-                        handler.postDelayed(() -> {
-                            enableService();
-                            setupClock();
-                        }, 200);
-                        return false;
-                    case R.id.fab_sometimeago:
-                        PickTime();
-                        return false;
-                    case R.id.fab_snapchat:
-                        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
-                        if (launchIntent != null) {
-                            startActivity(launchIntent);
-                        } else {
-                            Snackbar.make(findViewById(R.id.speedDial1), R.string.nosnapapp, Snackbar.LENGTH_SHORT).show();
-                        }
-                        return false;
-                    default:
-                        return false;
-                }
+        speedDialView.setOnActionSelectedListener(speedDialActionItem -> {
+            switch (speedDialActionItem.getId()) {
+                case R.id.fab_justnow:
+                    Context c = getApplicationContext();
+                    Time.ResetTime(c);
+                    NotificationManage.CancelNotif(c);
+                    final Handler handler = new Handler();
+                    handler.postDelayed(() -> {
+                        enableService();
+                        setupClock();
+                    }, 200);
+                    return false;
+                case R.id.fab_sometimeago:
+                    PickTime();
+                    return false;
+                case R.id.fab_snapchat:
+                    Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
+                    if (launchIntent != null) {
+                        startActivity(launchIntent);
+                    } else {
+                        Snackbar.make(findViewById(R.id.speedDial1), R.string.nosnapapp, Snackbar.LENGTH_SHORT).show();
+                    }
+                    return false;
+                default:
+                    return false;
             }
         });
 
@@ -236,8 +230,8 @@ public class MainActivity extends AppCompatActivity {
                 1,
                 24,
                 2,
-                ContextCompat.getColor(this, R.color.colorPrimaryDark), //separator color
-                Color.BLACK, //textcolor
+                Color.TRANSPARENT, //separator color
+                getResources().getColor(R.color.timeText), //textcolor
                 35,
                 Typeface.NORMAL,
                 false,
