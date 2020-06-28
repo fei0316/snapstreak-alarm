@@ -24,6 +24,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.annotation.NonNull;
@@ -77,7 +79,7 @@ public class NewAboutActivity extends AppCompatActivity {
             }
 
             Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
-            emailIntent.setType("*/*");
+            emailIntent.setData(Uri.parse("mailto:"));
             PackageManager packageManager = requireActivity().getPackageManager();
             if(emailIntent.resolveActivity(packageManager) == null){
                 Preference mail = findPreference("edit_text_preference_8");
