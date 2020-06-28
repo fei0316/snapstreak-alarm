@@ -1,7 +1,10 @@
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
     <shortcut
+        android:shortcutId="sent"
         android:enabled="true"
-        android:icon="@mipmap/ic_shortcut_sent">
+        android:icon="@mipmap/ic_shortcut_sent"
+        android:shortcutShortLabel="@string/shortcut_sent_short"
+        android:shortcutLongLabel="@string/shortcut_sent_long">
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="${applicationId}"
