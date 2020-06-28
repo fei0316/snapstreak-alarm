@@ -18,55 +18,37 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.iatfei.streakalarm;
+package com.iatfei.streakalarm
 
-import android.os.Bundle;
-import android.view.MenuItem;
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import com.mikepenz.aboutlibraries.LibsBuilder
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+class NewOpenSourceActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.about_frame)
 
-import com.mikepenz.aboutlibraries.LibsBuilder;
-import com.mikepenz.aboutlibraries.ui.LibsSupportFragment;
+        val toolbar = findViewById<Toolbar>(R.id.toolbar_bar)
+        setSupportActionBar(toolbar)
+        val actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
 
-public class OpenSourceActivity extends AppCompatActivity {
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.about_frame);
-        //setupActionBar();
-
-        final Toolbar toolbar = findViewById(R.id.toolbar_bar);
-        setSupportActionBar(toolbar);
-
-        ActionBar ab = getSupportActionBar();
-        if (ab != null) {
-            ab.setDisplayHomeAsUpEnabled(true);
-        }
-
-        LibsSupportFragment fragment = new LibsBuilder()
-                .withFields(R.string.class.getFields())
-                .withLicenseShown(true)
+        val fragment = LibsBuilder()
+                .withFields(R.string::class.java.fields) // in some cases it may be needed to provide the R class, if it can not be automatically resolved
                 .withAboutIconShown(true)
                 .withAboutVersionShown(true)
+                .withLicenseShown(true)
+                .withAboutAppName(getString(R.string.app_name))
                 .withAboutSpecial1(getResources().getString(R.string.about_opensource_logolicense_title))
                 .withAboutSpecial1Description("The graphics used in this app are from or adapted from: <br><b>Material Design icons by Google</b>, released under the Apache License Version 2.0. <br><b>Material Design Icons</b> by Austin Andrews (@templarian), released under the MIT License.")
                 .withAboutDescription("I'm impressed you would actually click into this! I hope you enjoy my first app.<br>Drop me an email!<br><br>¯\\_(ツ)_/¯<br>讓一切成爲往事。")
-                .supportFragment();
+                .supportFragment()
 
-        getSupportFragmentManager().beginTransaction()
+        supportFragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)
-                .commit();
-    }
+                .commit()
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

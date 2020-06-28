@@ -47,8 +47,9 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".OpenSourceActivity"
-            android:label="@string/about_license">
+            android:name=".NewOpenSourceActivity"
+            android:label="@string/about_license"
+            android:theme="@style/MaterialAppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".NewAboutActivity" />

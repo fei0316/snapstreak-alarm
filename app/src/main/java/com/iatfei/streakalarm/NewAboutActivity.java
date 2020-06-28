@@ -32,8 +32,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 
-import java.util.Objects;
-
 public class NewAboutActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,22 +68,30 @@ public class NewAboutActivity extends AppCompatActivity {
             addPreferencesFromResource(R.xml.about);
             String version = BuildConfig.VERSION_NAME + "-" + BuildConfig.FLAVOR + " v" + BuildConfig.VERSION_CODE;
             Preference ver = findPreference("edit_text_preference_2");
-            Objects.requireNonNull(ver).setSummary(version);
+            if (ver != null) {
+                ver.setSummary(version);
+            }
             Preference license = findPreference("edit_text_preference_6");
-            Objects.requireNonNull(license).setIntent(new Intent(getActivity(),OpenSourceActivity.class));
+            if (license != null) {
+                license.setIntent(new Intent(getContext(),NewOpenSourceActivity.class));
+            }
 
             Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
             emailIntent.setType("*/*");
             PackageManager packageManager = requireActivity().getPackageManager();
             if(emailIntent.resolveActivity(packageManager) == null){
                 Preference mail = findPreference("edit_text_preference_8");
-                Objects.requireNonNull(mail).setIntent(null);
+                if (mail != null) {
+                    mail.setIntent(null);
+                }
             }
 
             Intent webpageIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.example.com"));
             if(webpageIntent.resolveActivity(packageManager) == null) {
                 Preference web = findPreference("edit_text_preference_4");
-                Objects.requireNonNull(web).setIntent(null);
+                if (web != null) {
+                    web.setIntent(null);
+                }
             }
         }
     }
