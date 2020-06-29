@@ -142,4 +142,82 @@ public class Time extends MainActivity {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
         return pref.getInt("snoozeInt", 60);
     }
+
+    public static String getFormatTime(Context c, long time) {
+        String formatted;
+        long mins, hours;
+        if (TimeUnit.MILLISECONDS.toHours(time) < 0)
+            hours = 0;
+        else
+            hours = TimeUnit.MILLISECONDS.toHours(time);
+
+        if (TimeUnit.MILLISECONDS.toMinutes(time) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time)) < 0)
+            mins = 0;
+        else
+            mins = TimeUnit.MILLISECONDS.toMinutes(time) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time));
+
+        formatted = String.format(
+            Locale.ENGLISH,
+            "%02d:%02d",
+            hours,
+            mins); //todo:not RTL/Arabic/Israeli friendly!
+        return formatted;
+    }
+
+    public static String readFormatTimeNoSec(Context c) {
+        String formatted;
+        long time_last = ReadTime(c);
+        long time_till = System.currentTimeMillis() - time_last;
+        if (time_last == 2)
+            formatted = c.getResources().getString(R.string.main_new);
+        else if (time_till > 172800000)
+            formatted = c.getResources().getString(R.string.main_long_ago);
+        else if (time_till < 0)
+            formatted = c.getResources().getString(R.string.main_reset_time);
+        else {
+            long hours, mins;
+            if (TimeUnit.MILLISECONDS.toHours(time_till) < 0)
+                hours = 0;
+            else
+                hours = TimeUnit.MILLISECONDS.toHours(time_till);
+
+            if (TimeUnit.MILLISECONDS.toMinutes(time_till) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time_till)) < 0)
+                mins = 0;
+            else
+                mins = TimeUnit.MILLISECONDS.toMinutes(time_till) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time_till));
+
+            formatted = String.format(
+                    Locale.ENGLISH,"%02d:%02d", hours, mins); //todo:not RTL/Arabic/Israeli friendly!
+        }
+        return formatted;
+    }
+
+    public static String readLosingTime(Context c) {
+        String formatted;
+        long time_last = ReadTime(c);
+        long time_to_send = (time_last + 86400000) - System.currentTimeMillis();
+
+        long hours, mins;
+        if (TimeUnit.MILLISECONDS.toHours(time_to_send) < 0)
+            hours = 0;
+        else
+            hours = TimeUnit.MILLISECONDS.toHours(time_to_send);
+        if (TimeUnit.MILLISECONDS.toMinutes(time_to_send) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time_to_send)) < 0)
+            mins = 0;
+        else
+            mins = TimeUnit.MILLISECONDS.toMinutes(time_to_send) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time_to_send));
+
+        formatted = String.format(
+            Locale.ENGLISH, "%02d:%02d",hours, mins); //todo:not RTL/Arabic/Israeli friendly!
+        return formatted;
+    }
+
+    /*
+    SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
+        long time_last = pref.getLong("lastsnaptime", 0);
+        long time_to_send = (time_last + 86700000) - System.currentTimeMillis();
+        double Hours = (double) (time_to_send / 1000 / 60 / 60);
+        return (int) Hours;
+     */
+
 }

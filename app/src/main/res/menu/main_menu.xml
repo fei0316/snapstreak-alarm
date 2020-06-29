@@ -15,6 +15,10 @@
         android:title="@string/menu_snooze"
         android:textSize="18sp" />
     <item
+        android:id="@+id/menu_notifsched"
+        android:title="@string/menu_notifsched"
+        android:textSize="18sp" />
+    <item
         android:id="@+id/about"
         android:title="@string/title_activity_about"
         android:textSize="18sp" />

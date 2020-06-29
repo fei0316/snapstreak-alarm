@@ -5,7 +5,7 @@
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
 
     <application
         android:allowBackup="false"
@@ -16,6 +16,12 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup,android:supportsRtl">
+        <activity
+            android:name=".NotifScheduleActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme"
+            android:label="@string/notifsched_title"
+            />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -27,17 +33,18 @@
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
         </activity>
-
-        <activity android:name=".ResetCloseActivity" android:parentActivityName=".MainActivity" android:exported="true">
-        </activity>
-
-        <activity android:name=".ShortcutActivity" android:label="@string/shortcut_sent_short">
+        <activity
+            android:name=".ResetCloseActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ShortcutActivity"
+            android:label="@string/shortcut_sent_short">
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".NewAboutActivity"
             android:label="@string/title_activity_about"

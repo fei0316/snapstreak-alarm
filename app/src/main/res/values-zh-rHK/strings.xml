@@ -11,7 +11,7 @@
     <string name="developed_by">由 Fei 在 KDE neon 和 Manjaro 運行的 Android Studio 開發。</string>
     <string name="menu_justnow">剛剛才發送儲火</string>
     <string name="menu_customtime">之前發送的儲火</string>
-    <string name="menu_remindinterval">設定提示間隔</string>
+    <string name="menu_remindinterval">設定提示時間</string>
     <string name="menu_opensnapchat">開啓 Snapchat</string>
     <string name="menu_cancel">關閉提示</string>
     <string name="nosnapapp">沒有安裝 Snapchat！</string>
@@ -27,28 +27,28 @@
     <string name="channel_description">提醒你儲火</string>
     <string name="channel_name">儲火提示</string>
     <string name="picker_invalid_time">太久以前了！先儲火吧！</string>
-    <string name="interval_title">提示間隔（小時）</string>
+    <string name="interval_title">提示時間（小時）</string>
     <plurals name="interval_set">
-        <item quantity="other">你將會每 %1$d 小時收到提示，直至你發送了儲火或已經斷火。</item>
+        <item quantity="other">你將會在儲火後 %1$d 小時收到提示。請使用「查看預定通知」功能查看詳情。</item>
     </plurals>
     <plurals name="main_interval">
-        <item quantity="other">每 %1$d 小時發送儲火通知。\n稍後通知功能延遲 %2$d 分鐘。</item>
+        <item quantity="other">儲火後 %1$d 小時發送儲火通知。\n稍後通知功能延遲 %2$d 分鐘。</item>
     </plurals>
     <string name="menu_service_disable">提示功能已停用。</string>
     <string name="menu_service_enabled">已設定時間。提示功能已啓用。</string>
     <string name="main_service_enable">提示功能已啓用。</string>
     <string name="main_service_disable">提示功能已停用。發送 Snap 後使用下方的按鈕以啓用。</string>
-    <string name="main_setinterval_prompt">請使用上方功能鍵設定提示間隔。</string>
+    <string name="main_setinterval_prompt">請使用上方功能鍵設定提示時間。</string>
     <string name="main_long_ago">太久以前…</string>
     <string name="main_reset_time">重設時間！</string>
     <plurals name="interval_set_disabled">
-        <item quantity="other">提示已關閉。提示間隔設定爲 %1$d 小時。</item>
+        <item quantity="other">提示已關閉。提示時間設定爲 %1$d 小時。</item>
     </plurals>
     <plurals name="notif_body_two">
         <item quantity="other">你錯過了一個通知！將在 %1$d 小時後斷火。</item>
     </plurals>
     <plurals name="notif_body_multi">
-        <item quantity="other">你已經錯過了 %1$d 通知！將在 %2$d 小時後斷火。</item>
+        <item quantity="other">你已經錯過了 %1$d 個通知！將在 %2$d 小時後斷火。</item>
     </plurals>
     <plurals name="notif_body_delay_unusedfornow">
         <item quantity="other">別忘了儲火！將在 %1$d 小時後斷火。</item>
@@ -57,7 +57,7 @@
     <string name="notif_body_already">可能已經斷火。立即發送 Snap 或者關閉提示功能。</string>
     <string name="notif_sent">已儲火</string>
     <string name="tutor_menu_title">其他設定</string>
-    <string name="tutor_menu_content">使用此功能表來關閉儲火提示和設定通知的頻率。預設是八小時。</string>
+    <string name="tutor_menu_content">使用此功能表來關閉儲火提示和設定通知的時間。預設是八小時。</string>
     <string name="tutor_button_title">由此開始！</string>
     <string name="tutor_button_content">每次發送儲火 Snap 後請使用此功能表。也可以使用通知裏的按鈕。</string>
     <string name="notif_lost_streak_title">斷火！！</string>
@@ -80,4 +80,6 @@
     <string name="shortcut_sent_long">剛剛才發送儲火</string>
     <string name="shortcut_sent_short">已儲火</string>
     <string name="shortcut_sent_toast">剛剛已儲火。</string>
+    <string name="menu_notifsched">查看預定通知</string>
+    <string name="notifsched_title">預定通知</string>
 </resources>

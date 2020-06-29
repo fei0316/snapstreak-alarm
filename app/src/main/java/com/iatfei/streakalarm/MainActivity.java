@@ -143,6 +143,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void intentNotifSched() {
+        Intent intent = new Intent(this, NotifScheduleActivity.class);
+        startActivity(intent);
+    }
+
     private void setupClock() {
         Context c = getApplicationContext();
         String time = Time.ReadFormatTime(c);
@@ -282,6 +287,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.about:
                 intentAbout();
                 return true;
+            case R.id.menu_notifsched:
+                intentNotifSched();
+                return true;
             default:
                 return super.onOptionsItemSelected(menuItem);
         }
@@ -318,6 +326,7 @@ public class MainActivity extends AppCompatActivity {
                         }, 200);
                         Snackbar.make(findViewById(R.id.speedDial1), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set, s, s)), 5000).show();
                     } else {
+                        setupClock();
                         Snackbar.make(findViewById(R.id.speedDial1), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set_disabled, s, s)), 5000).show();
                     }
                 })
