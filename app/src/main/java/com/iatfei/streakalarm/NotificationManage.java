@@ -105,7 +105,11 @@ public class NotificationManage extends MainActivity {
 
         long snoozeTime = (System.currentTimeMillis() + 1000 * 60 * snoozeduration);
 
-        am.set(AlarmManager.RTC_WAKEUP, snoozeTime, pendingSnooze);
+        if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            am.set(AlarmManager.RTC_WAKEUP, snoozeTime, pendingSnooze);
+        } else {
+            am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, snoozeTime, pendingSnooze);
+        }
 
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
         SharedPreferences.Editor editor = settings.edit();
