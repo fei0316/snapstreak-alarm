@@ -82,4 +82,13 @@
     <string name="shortcut_sent_toast">剛發送了 Snap。</string>
     <string name="menu_notifsched">查看預定通知</string>
     <string name="notifsched_title">預定通知</string>
+    <string name="notifsched_lastfire">上次 Snap 連環炮：</string>
+    <string name="notifsched_losestreak">失去 Snap 連環炮時間：</string>
+    <string name="notifsched_firstnotif">第一個通知：</string>
+    <string name="notifsched_secondnotif">一半時間通知：</string>
+    <string name="notifsched_225">22.5 小時通知：</string>
+    <string name="notifsched_235">23.5 小時通知：</string>
+    <string name="notifsched_last">最後通知：</string>
+    <string name="notifsched_snooze_disabled">沒有稍後提醒的通知。</string>
+    <string name="notifsched_snooze_enabled">稍後提醒通知：%1s</string>
 </resources>

@@ -51,7 +51,7 @@ public class NotificationManage extends MainActivity {
 
         fire225 = (long) (laststreak + 1000 * 60 * 60 * 22.5);
         fire235 = (long) (laststreak + 1000 * 60 * 60 * 23.5);
-        fire245 = (long) (laststreak + 1000 * 60 * 60 * 24.5);;
+        fire245 = (long) (laststreak + 1000 * 60 * 60 * 24.5);
 
         /*
         nextFire is the first notification shown to user. Usually x hours after streak sent time. nextFire = currentTimeMillis() when the notification should already be fired when MakeNotif was called (e.g. when booting after original notification is missed).
@@ -61,6 +61,7 @@ public class NotificationManage extends MainActivity {
          */
 
         Intent intent1 = new Intent(c, AlarmReceiver.class);
+        intent1.putExtra("snooze", 0);
         AlarmManager am = (AlarmManager) c.getSystemService(ALARM_SERVICE);
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(c, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -90,6 +91,8 @@ public class NotificationManage extends MainActivity {
 
     public static void Snooze (Context c) {
         Intent intent = new Intent(c, AlarmReceiver.class);
+        intent.putExtra("snooze", 1);
+
         AlarmManager am = (AlarmManager) c.getSystemService(ALARM_SERVICE);
         int snoozeduration = Time.getSnooze(c);
         PendingIntent pendingSnooze = PendingIntent.getBroadcast(c, 5, intent, PendingIntent.FLAG_UPDATE_CURRENT);

@@ -143,7 +143,7 @@ public class Time extends MainActivity {
         return pref.getInt("snoozeInt", 60);
     }
 
-    public static String getFormatTime(Context c, long time) {
+    public static String getFormatTime(long time) {
         String formatted;
         long mins, hours;
         if (TimeUnit.MILLISECONDS.toHours(time) < 0)
@@ -169,11 +169,11 @@ public class Time extends MainActivity {
         long time_last = ReadTime(c);
         long time_till = System.currentTimeMillis() - time_last;
         if (time_last == 2)
-            formatted = c.getResources().getString(R.string.main_new);
+            formatted = "00:00";
         else if (time_till > 172800000)
-            formatted = c.getResources().getString(R.string.main_long_ago);
+            formatted = "00:00";
         else if (time_till < 0)
-            formatted = c.getResources().getString(R.string.main_reset_time);
+            formatted = "00:00";
         else {
             long hours, mins;
             if (TimeUnit.MILLISECONDS.toHours(time_till) < 0)
@@ -208,16 +208,7 @@ public class Time extends MainActivity {
             mins = TimeUnit.MILLISECONDS.toMinutes(time_to_send) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time_to_send));
 
         formatted = String.format(
-            Locale.ENGLISH, "%02d:%02d",hours, mins); //todo:not RTL/Arabic/Israeli friendly!
+            Locale.ENGLISH, "%02d:%02d", hours, mins); //todo:not RTL/Arabic/Israeli friendly!
         return formatted;
     }
-
-    /*
-    SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
-        long time_last = pref.getLong("lastsnaptime", 0);
-        long time_to_send = (time_last + 86700000) - System.currentTimeMillis();
-        double Hours = (double) (time_to_send / 1000 / 60 / 60);
-        return (int) Hours;
-     */
-
 }

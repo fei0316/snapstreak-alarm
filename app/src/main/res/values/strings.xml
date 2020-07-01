@@ -100,7 +100,6 @@
     <string name="shortcut_sent_toast">Sent Streak just now. Time Set.</string>
     <string name="menu_notifsched">Notification Schedule</string>
     <string name="notifsched_title">Notification Schedule</string>
-    <string name="notifsched_explainer">"Time in "</string>
     <string name="notifsched_lastfire">Last streak sent (ago):</string>
     <string name="notifsched_losestreak">Losing streaks in:</string>
     <string name="notifsched_firstnotif">First notification in:</string>
@@ -108,4 +107,6 @@
     <string name="notifsched_225">22.5 hour notification in:</string>
     <string name="notifsched_235">23.5 hour notification in:</string>
     <string name="notifsched_last">Last notification in:</string>
+    <string name="notifsched_snooze_disabled">No snoozed notifications.</string>
+    <string name="notifsched_snooze_enabled">Snoozed notficiation in: %1s</string>
 </resources>

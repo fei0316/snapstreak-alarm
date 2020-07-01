@@ -29,6 +29,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Build;
+
 import androidx.preference.PreferenceManager;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
@@ -45,6 +46,17 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         int showHours = Time.NotifTime(context);
         int notifCount = Time.ReadNotifCount(context);
+
+        int snoozeExtra;
+        if (intent.getExtras() != null) {
+            snoozeExtra = intent.getExtras().getInt("snooze");
+            if (snoozeExtra == 1) {
+                SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putLong("snoozeTime", 0);
+                editor.apply();
+            }
+        }
 
         if (showHours <= -5){
             NotificationManage.CancelNotif(context);

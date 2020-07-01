@@ -324,10 +324,16 @@ public class MainActivity extends AppCompatActivity {
                             NotificationManage.MakeNotif(this);
                             setupClock();
                         }, 200);
-                        Snackbar.make(findViewById(R.id.speedDial1), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set, s, s)), 5000).show();
+                        Snackbar.make(findViewById(R.id.speedDial1),
+                                convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set, s, s)),
+                                5000)
+                                .show();
                     } else {
                         setupClock();
-                        Snackbar.make(findViewById(R.id.speedDial1), convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set_disabled, s, s)), 5000).show();
+                        Snackbar.make(findViewById(R.id.speedDial1),
+                                convertToEnglishDigits.convert(getResources().getQuantityString(R.plurals.interval_set_disabled, s, s)),
+                                5000)
+                                .show();
                     }
                 })
                 .show();
