@@ -93,7 +93,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        app:sdMainFabClosedSrc="@drawable/ic_keyboard_arrow_up_black_24dp" />
+        app:sdMainFabClosedSrc="@drawable/ic_keyboard_arrow_up_black_24dp"
+        app:sdMainFabOpenedSrc="@drawable/ic_baseline_keyboard_arrow_down_24" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
