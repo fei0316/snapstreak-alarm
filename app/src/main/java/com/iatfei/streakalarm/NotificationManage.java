@@ -26,6 +26,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 
 import androidx.preference.PreferenceManager;
 
@@ -65,19 +66,24 @@ public class NotificationManage extends MainActivity {
         AlarmManager am = (AlarmManager) c.getSystemService(ALARM_SERVICE);
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(c, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        am.set(AlarmManager.RTC_WAKEUP, nextFire, pendingIntent);
-
         PendingIntent pendingIntentSecond = PendingIntent.getBroadcast(c, 4, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        am.set(AlarmManager.RTC_WAKEUP, secondFire, pendingIntentSecond);
-
         PendingIntent pendingIntent225 = PendingIntent.getBroadcast(c, 1, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        am.set(AlarmManager.RTC_WAKEUP, fire225, pendingIntent225);
-
         PendingIntent pendingIntent235 = PendingIntent.getBroadcast(c, 2, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        am.set(AlarmManager.RTC_WAKEUP, fire235, pendingIntent235);
-
         PendingIntent pendingIntent245 = PendingIntent.getBroadcast(c, 3, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-        am.set(AlarmManager.RTC_WAKEUP, fire245, pendingIntent245);
+
+        if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            am.set(AlarmManager.RTC_WAKEUP, nextFire, pendingIntent);
+            am.set(AlarmManager.RTC_WAKEUP, secondFire, pendingIntentSecond);
+            am.set(AlarmManager.RTC_WAKEUP, fire225, pendingIntent225);
+            am.set(AlarmManager.RTC_WAKEUP, fire235, pendingIntent235);
+            am.set(AlarmManager.RTC_WAKEUP, fire245, pendingIntent245);
+        } else {
+            am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, nextFire, pendingIntent);
+            am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, secondFire, pendingIntentSecond);
+            am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, fire225, pendingIntent225);
+            am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, fire235, pendingIntent235);
+            am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, fire245, pendingIntent245);
+        }
 
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
         SharedPreferences.Editor editor = settings.edit();

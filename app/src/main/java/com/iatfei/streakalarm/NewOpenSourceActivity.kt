@@ -41,7 +41,7 @@ class NewOpenSourceActivity : AppCompatActivity() {
                 .withAboutVersionShown(true)
                 .withLicenseShown(true)
                 .withAboutAppName(getString(R.string.app_name))
-                .withAboutSpecial1(getResources().getString(R.string.about_opensource_logolicense_title))
+                .withAboutSpecial1(resources.getString(R.string.about_opensource_logolicense_title))
                 .withAboutSpecial1Description("The graphics used in this app are from or adapted from: <br><b>Material Design icons by Google</b>, released under the Apache License Version 2.0. <br><b>Material Design Icons</b> by Austin Andrews (@templarian), released under the MIT License.")
                 .withAboutDescription("I'm impressed you would actually click into this! I hope you enjoy my first app.<br>Drop me an email!<br><br>¯\\_(ツ)_/¯<br>讓一切成爲往事。")
                 .supportFragment()
