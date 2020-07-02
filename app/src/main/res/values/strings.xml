@@ -1,28 +1,27 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="PluralsCandidate">
+
     <string name="app_name">Streak Alarm</string>
+
+    <!--Main Activity-->
     <string name="last_streak">Time since last streak:</string>
+    <string name="main_service_enable">Reminder Enabled.</string>
+    <string name="main_service_disable">Reminder Disabled. Send a streak and use the menu below to enable.</string>
+    <string name="main_setinterval_prompt">Please set when to be reminded using the menu above.</string>
+    <string name="main_reset_time">Reset Time!</string>
+
+    <!--Menu and FAB-->
     <string name="title_activity_about">About</string>
-    <string name="app_description">Helps you keep streaks. Only works if you have friends.</string>
-    <string name="text_version">Version</string>
-    <string name="github_link" translatable="false" tools:keep="@string/github_link">https://github.com/fei0316/snapstreak-alarm</string>
-    <string name="about_mysite">Visit my site</string>
-    <string name="iatfei_link" translatable="false">https://iatfei.com</string>
-    <string name="about_license">Open Source Licenses</string>
-    <string name="title_developed">Developed by</string>
-    <string name="developed_by">Fei Kuan on Android Studio.</string>
-    <string name="about_restart" translatable="false">RE:START #1</string>
-    <string name="restart" translatable="false">The past is in the past.</string>
     <string name="menu_justnow">Sent streak just now</string>
     <string name="menu_customtime">Some time earlier</string>
     <string name="menu_remindinterval">Set Reminder Time</string>
     <string name="menu_opensnapchat">Open Snapchat</string>
-    <string name="nosnapapp">Snapchat not installed!</string>
-    <string name="snapbefore_title">How long ago? (as shown on Snapchat)</string>
-    <string name="snapbefore_ok">OK</string>
-    <plurals name="snapbefore_hours">
-        <item quantity="one"> Hour</item>
-        <item quantity="other"> Hours</item>
-    </plurals>
+    <string name="menu_notifsched">Notification Schedule</string>
+    <string name="menu_snooze">Set Snooze Duration</string>
+    <string name="main_long_ago">Long ago…</string>
+    <string name="main_new">Unknown</string>
+    <string name="menu_cancel">Stop Reminder</string>
+
+    <!--Notifications-->
     <plurals name="notif_body_one">
         <item quantity="one">Send streaks now. Losing Streak in %1$d hour.</item>
         <item quantity="other">Send streaks now. Losing Streak in %1$d hours.</item>
@@ -30,26 +29,6 @@
     <string name="notif_title">Time to Streak!</string>
     <string name="channel_description">Reminds you to Keep Streaks</string>
     <string name="channel_name">Streak Reminder</string>
-    <string name="picker_invalid_time">Too long ago! Send a streak now!</string>
-    <string name="interval_title">When to be reminded (hours)</string>
-    <plurals name="interval_set">
-        <item quantity="one">You will be reminded for streaks one hour after you send one. Use the Notification Schedule option for details.</item>
-        <item quantity="other">You will be reminded for streaks %1$d hours after you send one. Use the Notification Schedule option for details.</item>
-    </plurals>
-    <plurals name="main_interval">
-        <item quantity="one">Reminder an hour after streaks sent. \nSnooze lasts %2$d minutes.</item>
-        <item quantity="other">Reminder %1$d hours after streaks sent. \nSnooze lasts %2$d minutes.</item>
-    </plurals>
-    <string name="menu_service_disable">Reminder Deactivated.</string>
-    <string name="menu_service_enabled">Time Set. Reminder Activated.</string>
-    <string name="main_service_enable">Reminder Enabled.</string>
-    <string name="main_service_disable">Reminder Disabled. Send a streak and use the menu below to enable.</string>
-    <string name="main_setinterval_prompt">Please set when to be using the menu above.</string>
-    <string name="main_reset_time">Reset Time!</string>
-    <plurals name="interval_set_disabled">
-        <item quantity="one">Reminder not on. Reminder interval is set to %1$d hour.</item>
-        <item quantity="other">Reminder not on. Reminder interval is set to %1$d hours.</item>
-    </plurals>
     <plurals name="notif_body_two">
         <item quantity="one">You missed a notification! Losing Streak in %1$d hour!</item>
         <item quantity="other">You missed a notification! Losing Streak in %1$d hours!</item>
@@ -64,12 +43,55 @@
     </plurals>
     <string name="notif_body_almost">You are about to lose your streaks!! Send streaks now!</string>
     <string name="notif_body_already">You may have lost your streaks. Send a Snap now or stop the reminder.</string>
+    <string name="notif_snooze">Snooze</string>
     <string name="notif_sent">Snap Sent</string>
-    <string name="tutor_menu_title">Other options</string>
-    <string name="tutor_menu_content">Disable reminder or set when to be reminded here. The default is 8 hours.</string>
-    <string name="tutor_button_title">Start Here!</string>
-    <string name="tutor_button_content">Use this menu after you send your streaks. You can also do it in notifications that pop up.</string>
     <string name="notif_lost_streak_title">Lost Streaks!</string>
+    <string name="notif_turnoff_reminder">Disable Reminder</string>
+
+    <!--Dialog-->
+    <string name="snapbefore_title">How long ago? (as shown on Snapchat)</string>
+    <string name="snapbefore_ok">OK</string>
+    <plurals name="snapbefore_hours">
+        <item quantity="one"> Hour</item>
+        <item quantity="other"> Hours</item>
+    </plurals>
+    <string name="nosnapapp">Snapchat not installed!</string>
+    <string name="picker_invalid_time">Too long ago! Send a streak now!</string>
+    <string name="interval_title">When to be reminded (hours)</string>
+    <plurals name="interval_set">
+        <item quantity="one">You will be reminded for streaks one hour after you send one. Use the Notification Schedule option for details.</item>
+        <item quantity="other">You will be reminded for streaks %1$d hours after you send one. Use the Notification Schedule option for details.</item>
+    </plurals>
+    <plurals name="main_interval">
+        <item quantity="one">Reminder appears 1 hour after each streaks. \nSnooze lasts %2$d minutes.</item>
+        <item quantity="other">Reminder appears %1$d hours after each streaks. \nSnooze lasts %2$d minutes.</item>
+    </plurals>
+    <string name="menu_service_disable">Reminder Deactivated.</string>
+    <string name="menu_service_enabled">Time Set. Reminder Activated.</string>
+    <string name="snooze_length_title">How long should snooze last (in minutes)?</string>
+    <string name="snooze_set">Your reminder will be deferred for %1$d minutes when you press the Snooze button.</string>
+    <string name="chineseHK_title" translatable="false">如果你是港澳用戶...</string>
+    <string name="chineseHK_content" translatable="false">你將設備的語言設定爲台灣或簡體中文了，建議在設定改爲香港中文，否則用語可能比較奇怪。</string>
+    <plurals name="interval_set_disabled">
+        <item quantity="one">Reminder not on. Reminder interval is set to %1$d hour.</item>
+        <item quantity="other">Reminder not on. Reminder interval is set to %1$d hours.</item>
+    </plurals>
+
+
+    <!--About-->
+    <string name="app_description">Helps you keep streaks. Only works if you have friends.</string>
+    <string name="text_version">Version</string>
+    <string name="github_link" translatable="false" tools:keep="@string/github_link">https://github.com/fei0316/snapstreak-alarm</string>
+    <string name="about_mysite">Visit my site</string>
+    <string name="iatfei_link" translatable="false">https://iatfei.com</string>
+    <string name="about_license">Open Source Licenses</string>
+    <string name="title_developed">Developed by</string>
+    <string name="developed_by">Fei Kuan on Android Studio.</string>
+    <string name="about_restart" translatable="false">RE:START #1</string>
+    <string name="restart" translatable="false">The past is in the past.</string>
+    <string name="legal" translatable="false">Legal</string>
+    <string name="about_trademark" translatable="false">Endorsement</string>
+    <string name="trademark" translatable="false">This app is not sponsored or endorsed by, or affiliated with, Snap Inc.</string>
     <string name="about_contact">Contact me</string>
     <string name="about_email" translatable="false">kuan@iatfei.com</string>
     <string name="about_this_license">Source Code</string>
@@ -77,28 +99,9 @@
     <string name="about_app">About this App</string>
     <string name="about_developer">Development</string>
     <string name="about_restart_title" translatable="false">RE:START</string>
-    <string name="menu_cancel">Stop Reminder</string>
     <string name="about_opensource_logolicense_title">Logo Licenses</string>
-    <string name="dialog_battery_title">Reminders can be unreliable</string>
-    <string name="dialog_battery_message">Your device is preventing Streak Alarm from reminding you of streaks accurately. Please go to Settings to disable battery optimization by whitelisting this app. If you have just rebooted or updated this app, please ignore this warning.</string>
-    <string name="dialog_battery_button_negative">Ignore</string>
-    <string name="dialog_battery_button_positive">Go to Settings</string>
-    <string name="notif_turnoff_reminder">Disable Reminder</string>
-    <string name="legal" translatable="false">Legal</string>
-    <string name="about_trademark" translatable="false">Endorsement</string>
-    <string name="trademark" translatable="false">This app is not sponsored or endorsed by, or affiliated with, Snap Inc.</string>
-    <string name="chineseHK_title" translatable="false">如果你是港澳用戶...</string>
-    <string name="chineseHK_content" translatable="false">你將設備的語言設定爲台灣或簡體中文了，建議在設定改爲香港中文，否則用語可能比較奇怪。</string>
-    <string name="main_long_ago">Long ago…</string>
-    <string name="main_new">Unknown</string>
-    <string name="notif_snooze">Snooze</string>
-    <string name="menu_snooze">Set Snooze Duration</string>
-    <string name="snooze_length_title">How long should snooze last (in minutes)?</string>
-    <string name="snooze_set">Your reminder will be deferred for %1$d minutes when you press the Snooze button.</string>
-    <string name="shortcut_sent_short">Streak Sent</string>
-    <string name="shortcut_sent_long">Streak sent just now</string>
-    <string name="shortcut_sent_toast">Sent Streak just now. Time Set.</string>
-    <string name="menu_notifsched">Notification Schedule</string>
+
+    <!--Notification Schedule-->
     <string name="notifsched_title">Notification Schedule</string>
     <string name="notifsched_lastfire">Last streak sent (ago):</string>
     <string name="notifsched_losestreak">Losing streaks in:</string>
@@ -109,4 +112,21 @@
     <string name="notifsched_last">Last notification in:</string>
     <string name="notifsched_snooze_disabled">No snoozed notifications.</string>
     <string name="notifsched_snooze_enabled">Snoozed notficiation in: %1s</string>
+
+    <!--Shortcut-->
+    <string name="shortcut_sent_short">Streak Sent</string>
+    <string name="shortcut_sent_long">Streak sent just now</string>
+    <string name="shortcut_sent_toast">Sent Streak just now. Time Set.</string>
+
+    <!--Tutorial-->
+    <string name="tutor_menu_title">Other options</string>
+    <string name="tutor_menu_content">Manage and customize your notifications in this menu.</string>
+    <string name="tutor_button_title">Start Here!</string>
+    <string name="tutor_button_content">Use this menu after you send your streaks. You can also do it in notifications that pop up.</string>
+
+    <!--Battery Prompt-->
+    <string name="dialog_battery_title">Reminders can be unreliable</string>
+    <string name="dialog_battery_message">Your device is preventing Streak Alarm from reminding you of streaks accurately. Please go to Settings to disable battery optimization by whitelisting this app. If you have just rebooted or updated this app, please ignore this warning.</string>
+    <string name="dialog_battery_button_negative">Ignore</string>
+    <string name="dialog_battery_button_positive">Go to Settings</string>
 </resources>
