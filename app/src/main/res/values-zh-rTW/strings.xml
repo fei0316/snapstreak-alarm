@@ -78,7 +78,7 @@
     <string name="snooze_length_title">按下稍後通知後，多久後再提示？（分鐘）</string>
     <string name="snooze_set">按下「稍後提醒」按鈕時，會在 %1$d 分鐘後再提醒你。</string>
     <string name="shortcut_sent_long">剛剛才發送的 Snap</string>
-    <string name="shortcut_sent_short">已發送 Snap</string>
+    <string name="shortcut_sent_short">發送 Snap</string>
     <string name="shortcut_sent_toast">剛發送了 Snap。</string>
     <string name="menu_notifsched">查看預定通知</string>
     <string name="notifsched_title">預定通知</string>
@@ -91,4 +91,7 @@
     <string name="notifsched_last">最後通知：</string>
     <string name="notifsched_snooze_disabled">沒有稍後提醒的通知。</string>
     <string name="notifsched_snooze_enabled">稍後提醒通知：%1s</string>
+    <string name="menu_add_shortcut">增加捷徑到主畫面</string>
+    <string name="menu_cant_shortcut">啟動器不支援建立捷徑。</string>
+    <string name="menu_shortcut_added_legacy">已新增捷徑。</string>
 </resources>

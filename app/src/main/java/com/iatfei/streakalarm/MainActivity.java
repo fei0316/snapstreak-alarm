@@ -20,12 +20,18 @@
 
 package com.iatfei.streakalarm;
 
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ShortcutInfo;
+
+import android.content.pm.ShortcutManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Handler;
+
 import androidx.preference.PreferenceManager;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AlertDialog;
@@ -290,6 +296,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_notifsched:
                 intentNotifSched();
                 return true;
+            case R.id.menu_addsc:
+                makeShortcut();
+                return true;
             default:
                 return super.onOptionsItemSelected(menuItem);
         }
@@ -404,5 +413,45 @@ public class MainActivity extends AppCompatActivity {
                     setupClock();
                 })
                 .show();
+    }
+
+    private void makeShortcut() {
+        Context context = getApplicationContext();
+        if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            Intent.ShortcutIconResource icon =
+                    Intent.ShortcutIconResource.fromContext(this, R.mipmap.ic_shortcut_sent);
+
+            Intent launchIntent = new Intent(this, ResetCloseActivity.class);
+
+            Intent intent = new Intent();
+            intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, launchIntent);
+            intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, getString(R.string.shortcut_sent_short));
+            intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, icon);
+            intent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
+            context.sendBroadcast(intent);
+
+            Toast.makeText(this, getString(R.string.menu_shortcut_added_legacy), Toast.LENGTH_SHORT)
+                    .show();
+        } else {
+            ShortcutManager shortcutManager =
+                    context.getSystemService(ShortcutManager.class);
+
+            if (shortcutManager.isRequestPinShortcutSupported()) {
+                ShortcutInfo pinShortcutInfo =
+                        new ShortcutInfo.Builder(context, "sent").build();
+
+                Intent pinnedShortcutCallbackIntent =
+                        shortcutManager.createShortcutResultIntent(pinShortcutInfo);
+
+                PendingIntent successCallback = PendingIntent.getBroadcast(context, /* request code */ 0,
+                        pinnedShortcutCallbackIntent, /* flags */ 0);
+
+                shortcutManager.requestPinShortcut(pinShortcutInfo,
+                        successCallback.getIntentSender());
+            } else {
+                Snackbar.make(findViewById(R.id.speedDial1), R.string.menu_cant_shortcut, Snackbar.LENGTH_SHORT).show();
+            }
+        }
+
     }
 }
