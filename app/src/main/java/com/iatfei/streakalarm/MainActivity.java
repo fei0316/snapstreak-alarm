@@ -381,7 +381,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void chineseWarning() {
         String loca = Locale.getDefault().toString();
-        if (loca.contains("zh_TW") || loca.contains("zh_CN")) {
+        if (loca.contains("zh_TW")) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(getString(R.string.chineseHK_title))
                     .setMessage(getString(R.string.chineseHK_content))
