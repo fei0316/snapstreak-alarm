@@ -95,7 +95,7 @@
     <string name="about_trademark" translatable="false">Endorsement</string>
     <string name="trademark" translatable="false">This app is not sponsored or endorsed by, or affiliated with, Snap Inc.</string>
     <string name="about_contact">Contact me</string>
-    <string name="about_email" translatable="false">kuan@iatfei.com</string>
+    <string name="about_email" translatable="false">apps@iatfei.com</string>
     <string name="about_this_license">Source Code</string>
     <string name="about_this_license_details">This application is licensed under the GNU General Public License Version 3 or later. You are free to redistribute and/or modify it under this license. Click to visit my GitHub page for source code and license details.</string>
     <string name="about_app">About this App</string>
