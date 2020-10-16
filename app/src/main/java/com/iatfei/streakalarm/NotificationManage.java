@@ -34,6 +34,9 @@ import java.util.Objects;
 
 public class NotificationManage extends MainActivity {
 
+    private static final long DAY = 24 * 60 * 60 * 1000;
+    private static final long HOUR = 60 * 60 * 1000;
+
     public static void MakeNotif (Context c) {
         long laststreak = Time.ReadTime(c);
         long notifint = Time.LongInterval(c);
@@ -42,23 +45,23 @@ public class NotificationManage extends MainActivity {
         long nextFire, secondFire, fire225, fire235, fire245;
         if ((System.currentTimeMillis() - laststreak) < notifint) {
             nextFire = laststreak + notifint;
-            secondFire = laststreak + notifint + ( ((24 * 60 * 60 * 1000) - notifint) / 2);
+            secondFire = laststreak + notifint + ( (DAY - notifint) / 2);
         }
         else {
             long now = System.currentTimeMillis();
             nextFire = now;
-            secondFire = now + (( (24 * 60 * 60 * 1000) + laststreak - now) / 2);
+            secondFire = now + (( DAY + laststreak - now) / 2);
         }
 
-        fire225 = (long) (laststreak + 1000 * 60 * 60 * 22.5);
-        fire235 = (long) (laststreak + 1000 * 60 * 60 * 23.5);
-        fire245 = (long) (laststreak + 1000 * 60 * 60 * 24.5);
+        fire225 = (long) (laststreak + HOUR * 22.5);
+        fire235 = (long) (laststreak + HOUR * 23.5);
+        fire245 = (long) (laststreak + HOUR * 24.5);
 
         /*
         nextFire is the first notification shown to user. Usually x hours after streak sent time. nextFire = currentTimeMillis() when the notification should already be fired when MakeNotif was called (e.g. when booting after original notification is missed).
         secondFire is the second notification shown to user. It is halfway between the first notification and the time streaks will be lost (24hours + streak sent time)
         fire225/235/245 are the third/fourth/fifth notifications shown. They are 22.5/23.5/24.5 hours after streak sent time. They are meant to be last-minute warnings.
-        Content of the notifications are determined in AlarmReceiver depending on the time left.
+        Content of the notifications are determined in AlarmReceiver depending on the time left and number of notifications sent.
          */
 
         Intent intent1 = new Intent(c, AlarmReceiver.class);

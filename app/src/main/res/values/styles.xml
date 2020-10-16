@@ -25,7 +25,6 @@
     </style>
 
     <style name="NotifSchedContent" parent="@android:style/TextAppearance.Material.Subhead">
-
     </style>
 
 </resources>

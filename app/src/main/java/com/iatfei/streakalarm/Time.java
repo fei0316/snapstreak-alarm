@@ -164,6 +164,27 @@ public class Time extends MainActivity {
         return formatted;
     }
 
+    public static String getTextTime(long time) {
+        String formatted;
+        long mins, hours;
+        if (TimeUnit.MILLISECONDS.toHours(time) < 0)
+            hours = 0;
+        else
+            hours = TimeUnit.MILLISECONDS.toHours(time);
+
+        if (TimeUnit.MILLISECONDS.toMinutes(time) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time)) < 0)
+            mins = 0;
+        else
+            mins = TimeUnit.MILLISECONDS.toMinutes(time) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time));
+
+        formatted = String.format(
+                Locale.ENGLISH,
+                "%02dh %02dm",
+                hours,
+                mins);
+        return formatted;
+    }
+
     public static String readFormatTimeNoSec(Context c) {
         String formatted;
         long time_last = ReadTime(c);

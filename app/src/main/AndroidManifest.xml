@@ -18,17 +18,18 @@
         tools:replace="android:allowBackup,android:supportsRtl">
         <activity
             android:name=".NotifScheduleActivity"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme"
             android:label="@string/notifsched_title"
-            />
-
-        <activity android:name=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
@@ -42,13 +43,15 @@
             android:label="@string/shortcut_sent_short">
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".NewAboutActivity"
             android:label="@string/title_activity_about"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
@@ -56,6 +59,7 @@
         <activity
             android:name=".NewOpenSourceActivity"
             android:label="@string/about_license"
+            android:screenOrientation="portrait"
             android:theme="@style/MaterialAppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

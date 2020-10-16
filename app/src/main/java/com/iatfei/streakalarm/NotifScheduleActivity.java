@@ -53,13 +53,13 @@ public class NotifScheduleActivity extends AppCompatActivity {
             tvh.setText(getString(R.string.notifsched_snooze_disabled));
         else
             tvh.setText(getString(R.string.notifsched_snooze_enabled, Time.getFormatTime(snooze - now)));
-
-        tv1.setText(Time.readFormatTimeNoSec(c));
-        tv2.setText(Time.readLosingTime(c));
-        tv3.setText(Time.getFormatTime(next - now));
-        tv4.setText(Time.getFormatTime(second - now));
-        tv5.setText(Time.getFormatTime(fire225 - now));
-        tv6.setText(Time.getFormatTime(fire235 - now));
-        tv7.setText(Time.getFormatTime(fire245 - now));
+//todo:use actual time instead? Or make it look like it's not referring to clock time
+        tv1.setText(Time.readFormatTimeNoSec(c) + getText(R.string.notifsched_before));
+        tv2.setText(Time.getTextTime((Time.ReadTime(c) + 86400000) - now));
+        tv3.setText(Time.getTextTime(next - now));
+        tv4.setText(Time.getTextTime(second - now));
+        tv5.setText(Time.getTextTime(fire225 - now));
+        tv6.setText(Time.getTextTime(fire235 - now));
+        tv7.setText(Time.getTextTime(fire245 - now));
     }
 }
