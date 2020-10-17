@@ -32,7 +32,7 @@
         <item quantity="other">你将会每此发送 Snap 后 %1$d 小时收到提示。请使用「查看预定通知」功能查看详情。</item>
     </plurals>
     <plurals name="main_interval">
-        <item quantity="other">发送 Snap 后 %1$d 小时会收到通知。\n稍后通知功能延迟 %2$d 分钟。</item>
+        <item quantity="other">发送 Snap 后 %1$d 小时提醒。\n稍后通知功能延迟 %2$d 分钟。</item>
     </plurals>
     <string name="menu_service_disable">提示功能已停用。</string>
     <string name="menu_service_enabled">已设置时间。提示功能已启用。</string>
@@ -80,7 +80,7 @@
     <string name="shortcut_sent_long">刚刚才发送的 Snap</string>
     <string name="shortcut_sent_short">发送 Snap</string>
     <string name="shortcut_sent_toast">刚发送了 Snap。</string>
-    <string name="menu_notifsched">查看预定通知</string>
+    <string name="menu_notifsched">通知排程</string>
     <string name="notifsched_title">预定通知</string>
     <string name="notifsched_lastfire">上一个 Snap</string>
     <string name="notifsched_losestreak">失去 Snap 连环炮</string>
@@ -91,7 +91,8 @@
     <string name="notifsched_last">最后通知</string>
     <string name="notifsched_snooze_disabled">没有稍后提醒的通知。</string>
     <string name="notifsched_snooze_enabled">稍后提醒通知：%1s</string>
-    <string name="notifsched_before"> 前</string>
+    <string name="notifsched_before">前</string>
+    <string name="notifsched_timeformat">%2d小时 %2d分钟</string>
     <string name="menu_add_shortcut">增加捷径到主画面</string>
     <string name="menu_cant_shortcut">启动器不支持建立捷径。</string>
     <string name="menu_shortcut_added_legacy">已新增捷径。</string>

@@ -8,6 +8,10 @@
     <string name="main_service_disable">Reminder Disabled. Send a streak and use the menu below to enable.</string>
     <string name="main_setinterval_prompt">Please set when to be reminded using the menu above.</string>
     <string name="main_reset_time">Reset Time!</string>
+    <plurals name="main_interval">
+        <item quantity="one">Reminder appears 1 hour after each streaks. \nSnooze lasts %2$d minutes.</item>
+        <item quantity="other">Reminder appears %1$d hours after each streaks. \nSnooze lasts %2$d minutes.</item>
+    </plurals>
 
     <!--Menu and FAB-->
     <string name="title_activity_about">About</string>
@@ -64,10 +68,6 @@
         <item quantity="one">You will be reminded for streaks one hour after you send one. Use the Notification Schedule option for details.</item>
         <item quantity="other">You will be reminded for streaks %1$d hours after you send one. Use the Notification Schedule option for details.</item>
     </plurals>
-    <plurals name="main_interval">
-        <item quantity="one">Reminder appears 1 hour after each streaks. \nSnooze lasts %2$d minutes.</item>
-        <item quantity="other">Reminder appears %1$d hours after each streaks. \nSnooze lasts %2$d minutes.</item>
-    </plurals>
     <string name="menu_service_disable">Reminder Deactivated.</string>
     <string name="menu_service_enabled">Time Set. Reminder Activated.</string>
     <string name="snooze_length_title">How long should snooze last (in minutes)?</string>
@@ -105,7 +105,7 @@
 
     <!--Notification Schedule-->
     <string name="notifsched_title">Notification Schedule</string>
-    <string name="notifsched_lastfire">Last streak sent (ago)</string>
+    <string name="notifsched_lastfire">Last streak sent</string>
     <string name="notifsched_losestreak">Losing streaks in</string>
     <string name="notifsched_firstnotif">First notification in</string>
     <string name="notifsched_secondnotif">Halfway notification in</string>
@@ -114,7 +114,8 @@
     <string name="notifsched_last">Last notification in</string>
     <string name="notifsched_snooze_disabled">No snoozed notifications.</string>
     <string name="notifsched_snooze_enabled">Snoozed notficiation in: %1s</string>
-    <string name="notifsched_before"> ago</string>
+    <string name="notifsched_before">\u0020ago</string>
+    <string name="notifsched_timeformat">%2dh %2dm</string>
 
     <!--Shortcut-->
     <string name="shortcut_sent_short">Streak Sent</string>

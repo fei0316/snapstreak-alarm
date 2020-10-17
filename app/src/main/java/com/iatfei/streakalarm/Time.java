@@ -164,7 +164,7 @@ public class Time extends MainActivity {
         return formatted;
     }
 
-    public static String getTextTime(long time) {
+    public static String getTextTime(long time, Context c) {
         String formatted;
         long mins, hours;
         if (TimeUnit.MILLISECONDS.toHours(time) < 0)
@@ -179,7 +179,7 @@ public class Time extends MainActivity {
 
         formatted = String.format(
                 Locale.ENGLISH,
-                "%02dh %02dm",
+                c.getString(R.string.notifsched_timeformat),
                 hours,
                 mins);
         return formatted;

@@ -8,6 +8,9 @@
     <string name="main_service_disable">提示功能已停用。發送 Snap 後使用下方的按鈕以啓用。</string>
     <string name="main_setinterval_prompt">請使用上方功能鍵設定提示時間。</string>
     <string name="main_reset_time">重設時間！</string>
+    <plurals name="main_interval">
+        <item quantity="other">儲火後 %1$d 小時發送儲火通知。\n稍後通知功能延遲 %2$d 分鐘。</item>
+    </plurals>
 
     <!--Menu and FAB-->
     <string name="main_long_ago">太久以前…</string>
@@ -18,9 +21,9 @@
     <string name="menu_opensnapchat">開啓 Snapchat</string>
     <string name="menu_cancel">關閉提示</string>
     <string name="menu_snooze">設定稍後通知時長</string>
-    <string name="menu_notifsched">查看預定通知</string>
+    <string name="menu_notifsched">通知排程</string>
     <string name="menu_add_shortcut">增加捷徑到主畫面</string>
-    <string name="menu_cant_shortcut">啟動器不支援建立捷徑。</string>
+    <string name="menu_cant_shortcut">啓動器不支援建立捷徑。</string>
     <string name="menu_shortcut_added_legacy">已新增捷徑。</string>
     <string name="main_new">不明</string>
 
@@ -59,9 +62,6 @@
     <plurals name="interval_set">
         <item quantity="other">你將會在儲火後 %1$d 小時收到提示。請使用「查看預定通知」功能查看詳情。</item>
     </plurals>
-    <plurals name="main_interval">
-        <item quantity="other">儲火後 %1$d 小時發送儲火通知。\n稍後通知功能延遲 %2$d 分鐘。</item>
-    </plurals>
     <string name="menu_service_disable">提示功能已停用。</string>
     <string name="menu_service_enabled">已設定時間。提示功能已啓用。</string>
     <string name="snooze_length_title">按下稍後通知後，多久後再提示？（分鐘）</string>
@@ -88,7 +88,7 @@
     <!--Notification Schedule-->
     <string name="notifsched_title">預定通知</string>
     <string name="notifsched_lastfire">上次儲火</string>
-    <string name="notifsched_losestreak">斷火時間</string>
+    <string name="notifsched_losestreak">斷火</string>
     <string name="notifsched_firstnotif">第一個通知</string>
     <string name="notifsched_secondnotif">一半時間通知</string>
     <string name="notifsched_225">22.5 小時通知</string>
@@ -96,7 +96,8 @@
     <string name="notifsched_last">最後通知</string>
     <string name="notifsched_snooze_disabled">沒有稍後提醒的通知。</string>
     <string name="notifsched_snooze_enabled">稍後提醒通知：%1s</string>
-    <string name="notifsched_before"> 前</string>
+    <string name="notifsched_before">前</string>
+    <string name="notifsched_timeformat">%2d小時 %2d分鐘</string>
 
     <!--Shortcut-->
     <string name="shortcut_sent_long">剛剛才發送儲火</string>
