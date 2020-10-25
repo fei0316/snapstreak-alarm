@@ -96,4 +96,7 @@
     <string name="menu_add_shortcut">增加捷径到主画面</string>
     <string name="menu_cant_shortcut">启动器不支持建立捷径。</string>
     <string name="menu_shortcut_added_legacy">已新增捷径。</string>
+
+    <!--Changelog-->
+    <string name="changelog_title">更新內容</string>
 </resources>

@@ -51,6 +51,8 @@ import com.github.stephenvinouze.materialnumberpickercore.MaterialNumberPicker;
 import com.leinardi.android.speeddial.SpeedDialActionItem;
 import com.leinardi.android.speeddial.SpeedDialView;
 
+import net.furkanakdemir.noticeboard.NoticeBoard;
+
 import java.util.Locale;
 
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
@@ -126,6 +128,9 @@ public class MainActivity extends AppCompatActivity {
             aggressiveWarning();
             chineseWarning();
         }
+
+        //Changelog
+        ChangelogDisplay.Companion.display(this, getApplicationContext());
     }
 
 

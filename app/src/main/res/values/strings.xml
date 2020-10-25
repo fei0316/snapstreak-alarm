@@ -134,4 +134,7 @@
     <string name="dialog_battery_button_negative">Ignore</string>
     <string name="dialog_battery_button_positive">Go to Settings</string>
     <string name="menu_cant_shortcut">Your launcher does not allow shortcuts.</string>
+
+    <!--Changelog-->
+    <string name="changelog_title">What\'s New</string>
 </resources>
