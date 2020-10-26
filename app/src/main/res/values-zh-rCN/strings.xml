@@ -99,4 +99,8 @@
 
     <!--Changelog-->
     <string name="changelog_title">更新內容</string>
+    <string name="changelog_140_1">更改了发送通知的安排，处于省电模式时仍能运作。请使用「预定通知」功能查看新的通知安排。</string>
+    <string name="changelog_140_2">在主功能表增加了预定通知的功能。</string>
+    <string name="changelog_140_3">在主功能表增加了加入捷径的功能。</string>
+    <string name="changelog_bugfixes">错误修正及使用界面改善。</string>
 </resources>

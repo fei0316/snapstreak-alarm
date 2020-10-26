@@ -137,4 +137,8 @@
 
     <!--Changelog-->
     <string name="changelog_title">What\'s New</string>
+    <string name="changelog_140_1">Changed notification behavior. Notifications now show in battery saving mode. Please check Notification Schedule for the new arrangement.</string>
+    <string name="changelog_140_2">Added Notification Schedule in menu.</string>
+    <string name="changelog_140_3">Added Shortcut feature in menu.</string>
+    <string name="changelog_bugfixes">Bugfixes and interface improvements.</string>
 </resources>

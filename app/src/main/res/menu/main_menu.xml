@@ -23,6 +23,10 @@
         android:title="@string/menu_add_shortcut"
         android:textSize="18sp" />
     <item
+        android:id="@+id/menu_changelog"
+        android:title="@string/changelog_title"
+        android:textSize="18sp" />
+    <item
         android:id="@+id/about"
         android:title="@string/title_activity_about"
         android:textSize="18sp" />

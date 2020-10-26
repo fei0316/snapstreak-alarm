@@ -51,8 +51,6 @@ import com.github.stephenvinouze.materialnumberpickercore.MaterialNumberPicker;
 import com.leinardi.android.speeddial.SpeedDialActionItem;
 import com.leinardi.android.speeddial.SpeedDialView;
 
-import net.furkanakdemir.noticeboard.NoticeBoard;
-
 import java.util.Locale;
 
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
@@ -130,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //Changelog
-        ChangelogDisplay.Companion.display(this, getApplicationContext());
+        ChangelogDisplay.Companion.display(this, getApplicationContext(), false);
     }
 
 
@@ -304,6 +302,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_addsc:
                 makeShortcut();
                 return true;
+            case R.id.menu_changelog:
+                ChangelogDisplay.Companion.display(this, getApplicationContext(), true);
             default:
                 return super.onOptionsItemSelected(menuItem);
         }
