@@ -20,16 +20,19 @@ class ChangelogDisplay : MainActivity() {
                 showRule(rule)
                 source(Source.Dynamic(
                         listOf(
-                                Release("1 Nov 2020", "1.4.0",
+                                Release("26/10/2020", "1.4.0",
                                         listOf(
                                                 Release.Change(c.getString(R.string.changelog_140_1), ChangeType.CHANGED),
                                                 Release.Change(c.getString(R.string.changelog_140_2), ChangeType.ADDED),
                                                 Release.Change(c.getString(R.string.changelog_140_3), ChangeType.ADDED),
+                                                Release.Change(c.getString(R.string.changelog_140_4), ChangeType.FIXED),
                                                 Release.Change(c.getString(R.string.changelog_bugfixes), ChangeType.FIXED)
                                         )
                                 )
                         )
                 ))
+                val customColorProvider = ChangelogColorProvider(c)
+                colorProvider(customColorProvider)
             }
         }
     }
