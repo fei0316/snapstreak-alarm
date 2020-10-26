@@ -125,10 +125,9 @@ public class MainActivity extends AppCompatActivity {
             showHelp();
             aggressiveWarning();
             chineseWarning();
+        } else {
+            ChangelogDisplay.Companion.display(this, getApplicationContext(), false);
         }
-
-        //Changelog
-        ChangelogDisplay.Companion.display(this, getApplicationContext(), false);
     }
 
 
