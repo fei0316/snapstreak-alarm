@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+  <string name="app_name">Alarma de racha</string>
+  <string name="last_streak">Tiempo desde la última racha:</string>
+  <string name="main_service_enable">Recordatorio habilitado.</string>
+  <string name="main_service_disable">Recordatorio desactivado. Envía una racha y usa el menú a continuación para habilitar.</string>
+  <string name="main_setinterval_prompt">Por favor, establezca cuándo se le recordará en el menú de arriba.</string>
+  <string name="main_reset_time">¡Restablece el tiempo!</string>
+  <plurals name="main_interval">
+    <item quantity="one"></item>
+    <item quantity="other"></item>
+  </plurals>
+  <string name="title_activity_about">Acerca de</string>
+  <string name="menu_justnow">Envió racha justo ahora</string>
+  <string name="menu_customtime">Hace poco tiempo.</string>
+  <string name="menu_remindinterval">Establece hora de recordatorio</string>
+  <string name="menu_opensnapchat">Abrir Snapchat</string>
+  <string name="menu_notifsched">Calendario de notificaciones</string>
+  <string name="menu_snooze">Establece la duración de la repetición</string>
+  <string name="main_long_ago">Hace mucho tiempo…</string>
+  <string name="main_new">Desconocido</string>
+  <string name="menu_cancel">Detener recordatorio</string>
+  <string name="menu_add_shortcut">Agregar acceso directo a la pantalla de inicio</string>
+  <string name="menu_shortcut_added_legacy">Atajo agregado.</string>
+  <plurals name="notif_body_one">
+    <item quantity="one">¡Envía racha ahora! Perderás tu racha en %1$d hora.</item>
+    <item quantity="other">¡Envía tu racha ahora! Perderás la racha en %1$d horas.</item>
+  </plurals>
+  <string name="notif_title">¡Hora de la racha!</string>
+  <string name="channel_description">Te recuerda mantener las rachas</string>
+  <string name="channel_name">Recordatorio de racha</string>
+  <plurals name="notif_body_two">
+    <item quantity="one"></item>
+    <item quantity="other"></item>
+  </plurals>
+  <plurals name="notif_body_multi">
+    <item quantity="one"></item>
+    <item quantity="other"></item>
+  </plurals>
+  <plurals name="notif_body_delay_unusedfornow" tools:keep="@plurals/notif_body_delay_unusedfornow">
+    <item quantity="one"></item>
+    <item quantity="other"></item>
+  </plurals>
+  <string name="notif_body_almost"></string>
+  <string name="notif_body_already"></string>
+  <string name="notif_snooze"></string>
+  <string name="notif_sent"></string>
+  <string name="notif_lost_streak_title"></string>
+  <string name="notif_turnoff_reminder"></string>
+  <string name="snapbefore_title">¿Hace cuánto tiempo? (como se muestra en Snapchat)</string>
+  <string name="snapbefore_ok">Okay</string>
+  <plurals name="snapbefore_hours">
+    <item quantity="one"></item>
+    <item quantity="other"></item>
+  </plurals>
+  <string name="nosnapapp"></string>
+  <string name="picker_invalid_time"></string>
+  <string name="interval_title"></string>
+  <plurals name="interval_set">
+    <item quantity="one"></item>
+    <item quantity="other"></item>
+  </plurals>
+  <string name="menu_service_disable">Recordatorio desactivado.</string>
+  <string name="menu_service_enabled">Tiempo establecido. Recordatorio activado.</string>
+  <string name="snooze_length_title">¿Cuánto tiempo debe durar la repetición (en minutos)?</string>
+  <string name="snooze_set">Su recordatorio se aplazará %1$d minutos cuando presione el botón Posponer.</string>
+  <plurals name="interval_set_disabled">
+    <item quantity="one"></item>
+    <item quantity="other"></item>
+  </plurals>
+  <string name="app_description">Te ayuda a mantener las rachas. Solo funciona si tienes amigos.</string>
+  <string name="text_version"></string>
+  <string name="about_mysite"></string>
+  <string name="about_license"></string>
+  <string name="title_developed">Desarrollado por</string>
+  <string name="developed_by">Fei Kuan en Android Studio.</string>
+  <string name="about_contact">Contáctame</string>
+  <string name="about_this_license">Código fuente</string>
+  <string name="about_this_license_details"></string>
+  <string name="about_app">Acerca de esta aplicación</string>
+  <string name="about_developer">Desarrollo</string>
+  <string name="about_opensource_logolicense_title">Licencias de logotipos</string>
+  <string name="notifsched_title">Calendario de notificaciones</string>
+  <string name="notifsched_lastfire">Última racha enviada</string>
+  <string name="notifsched_losestreak">Perderá las rachas en</string>
+  <string name="notifsched_firstnotif">Primera notificación en</string>
+  <string name="notifsched_secondnotif">Notificación de medio tiempo en</string>
+  <string name="notifsched_225">Notificación de 22,5 horas en</string>
+  <string name="notifsched_235">Notificación de 23,5 horas en</string>
+  <string name="notifsched_last">Última notificación en</string>
+  <string name="notifsched_snooze_disabled">No hay notificaciones .</string>
+  <string name="notifsched_snooze_enabled">Notificación aplazada en: %1s</string>
+  <string name="notifsched_before">Hace \u0020 </string>
+  <string name="notifsched_timeformat" formatted="false">%2d h %2d min</string>
+  <string name="shortcut_sent_short">Racha enviada</string>
+  <string name="shortcut_sent_long">Racha enviada justo ahora</string>
+  <string name="shortcut_sent_toast">Envié racha justo ahora. Tiempo establecido.</string>
+  <string name="tutor_menu_title">Otras opciones</string>
+  <string name="tutor_menu_content">Administre y personalice sus notificaciones en este menú.</string>
+  <string name="tutor_button_title">¡Empieza aquí!</string>
+  <string name="tutor_button_content">Utilice este menú después de enviar sus rachas. También puede hacerlo en las notificaciones que le aparecen.</string>
+  <string name="dialog_battery_title">Los recordatorios pueden ser poco fiables</string>
+  <string name="dialog_battery_message">Su dispositivo impide que Streak Alarm le recuerde las rachas con precisión. Por favor ya, vaya a Configuraciones para deshabilitar la optimización de la batería al incluir esta aplicación en la lista blanca. Si acaba de reiniciar o actualizar esta aplicación, ignore esta advertencia.</string>
+  <string name="dialog_battery_button_negative">Ignorar</string>
+  <string name="dialog_battery_button_positive">Ir a ajustes</string>
+  <string name="menu_cant_shortcut"></string>
+  <string name="changelog_title">¿Qué hay de nuevo?</string>
+  <string name="changelog_140_1">Comportamiento de notificación modificado.</string>
+  <string name="changelog_140_2">Se agregó el calendario de notificaciones en el menú. Revise la nueva estructura de las notificaciones.</string>
+  <string name="changelog_140_3">Se agregó la función de acceso directo en el menú.</string>
+  <string name="changelog_140_4">Los recordatorios ahora funcionan en modo de ahorro de batería.</string>
+  <string name="changelog_bugfixes">Corrección de errores y mejoras de la interfaz.</string>
+</resources>
