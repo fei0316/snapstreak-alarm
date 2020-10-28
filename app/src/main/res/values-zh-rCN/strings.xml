@@ -8,7 +8,7 @@
     <string name="about_mysite">我的网站</string>
     <string name="about_license">开放原代码授权</string>
     <string name="title_developed">开发</string>
-    <string name="developed_by">由 Fei 在 KDE neon 和 Manjaro 运行的 Android Studio 开发。</string>
+    <string name="developed_by">由 Fei Kuan 在 Android Studio 开发。</string>
     <string name="menu_justnow">刚刚才发送的 Snap</string>
     <string name="menu_customtime">之前发送的 Snap</string>
     <string name="menu_remindinterval">设置提示时间</string>
@@ -96,6 +96,8 @@
     <string name="menu_add_shortcut">增加捷径到主画面</string>
     <string name="menu_cant_shortcut">启动器不支持建立捷径。</string>
     <string name="menu_shortcut_added_legacy">已新增捷径。</string>
+    <string name="about_special_thanks_title">贡献者</string>
+    <string name="about_special_thanks_content">拉丁美洲西班牙语翻译：\n韩语翻译：</string>
 
     <!--Changelog-->
     <string name="changelog_title">更新內容</string>

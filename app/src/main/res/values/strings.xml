@@ -102,6 +102,8 @@
     <string name="about_developer">Development</string>
     <string name="about_restart_title" translatable="false">RE:START</string>
     <string name="about_opensource_logolicense_title">Logo Licenses</string>
+    <string name="about_special_thanks_title">Contributors</string>
+    <string name="about_special_thanks_content">Spanish (Latin America) translation by: AUREA PUT YOUR NAME HERE!!! \nKorean translation by: </string>
 
     <!--Notification Schedule-->
     <string name="notifsched_title">Notification Schedule</string>
@@ -113,7 +115,7 @@
     <string name="notifsched_235">23.5 hour notification in</string>
     <string name="notifsched_last">Last notification in</string>
     <string name="notifsched_snooze_disabled">No snoozed notifications.</string>
-    <string name="notifsched_snooze_enabled">Snoozed notficiation in: %1s</string>
+    <string name="notifsched_snooze_enabled">Snoozed notification in: %1s</string>
     <string name="notifsched_before">\u0020ago</string>
     <string name="notifsched_timeformat">%2dh %2dm</string>
 
