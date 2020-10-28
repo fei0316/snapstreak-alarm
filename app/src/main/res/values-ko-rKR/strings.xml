@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="PluralsCandidate">
+    <string name="app_name">Streak Alarm</string>
+    <!--Main Activity-->
+    <string name="last_streak">Time since last streak:</string>
+    <string name="main_service_enable">Reminder Enabled.</string>
+    <string name="main_service_disable">Reminder Disabled. Send a streak and use the menu below to enable.</string>
+    <string name="main_setinterval_prompt">Please set when to be reminded using the menu above.</string>
+    <string name="main_reset_time">Reset Time!</string>
+    <plurals name="main_interval">
+        <item quantity="other">Reminder appears %1$d hours after each streaks. \nSnooze lasts %2$d minutes.</item>
+    </plurals>
+    <!--Menu and FAB-->
+    <string name="title_activity_about">About</string>
+    <string name="menu_justnow">Sent streak just now</string>
+    <string name="menu_customtime">Some time earlier</string>
+    <string name="menu_remindinterval">Set Reminder Time</string>
+    <string name="menu_opensnapchat">Open Snapchat</string>
+    <string name="menu_notifsched">Notification Schedule</string>
+    <string name="menu_snooze">Set Snooze Duration</string>
+    <string name="main_long_ago">Long ago…</string>
+    <string name="main_new">Unknown</string>
+    <string name="menu_cancel">Stop Reminder</string>
+    <string name="menu_add_shortcut">Add Shortcut to Home Screen</string>
+    <string name="menu_shortcut_added_legacy">Shortcut added.</string>
+    <!--Notifications-->
+    <plurals name="notif_body_one">
+        <item quantity="other">Send streaks now. Losing Streak in %1$d hours.</item>
+    </plurals>
+    <string name="notif_title">Time to Streak!</string>
+    <string name="channel_description">Reminds you to Keep Streaks</string>
+    <string name="channel_name">Streak Reminder</string>
+    <plurals name="notif_body_two">
+        <item quantity="other">You missed a notification! Losing Streak in %1$d hours!</item>
+    </plurals>
+    <plurals name="notif_body_multi">
+        <item quantity="other">You already missed %1$d notifications! Losing Streak in %2$d hours.</item>
+    </plurals>
+    <plurals name="notif_body_delay_unusedfornow" tools:keep="@plurals/notif_body_delay_unusedfornow">
+        <item quantity="other">Don\'t forget to send streaks! Losing streaks in %1$d hours.</item>
+    </plurals>
+    <string name="notif_body_almost">You are about to lose your streaks!! Send streaks now!</string>
+    <string name="notif_body_already">You may have lost your streaks. Send a Snap now or stop the reminder.</string>
+    <string name="notif_snooze">Snooze</string>
+    <string name="notif_sent">Snap Sent</string>
+    <string name="notif_lost_streak_title">Lost Streaks!</string>
+    <string name="notif_turnoff_reminder">Disable Reminder</string>
+    <!--Dialog-->
+    <string name="snapbefore_title">How long ago? (as shown on Snapchat)</string>
+    <string name="snapbefore_ok">OK</string>
+    <plurals name="snapbefore_hours">
+        <item quantity="other"> Hours</item>
+    </plurals>
+    <string name="nosnapapp">Snapchat not installed!</string>
+    <string name="picker_invalid_time">Too long ago! Send a streak now!</string>
+    <string name="interval_title">When to be reminded (hours)</string>
+    <plurals name="interval_set">
+        <item quantity="other">You will be reminded for streaks %1$d hours after you send one. Use the Notification Schedule option for details.</item>
+    </plurals>
+    <string name="menu_service_disable">Reminder Deactivated.</string>
+    <string name="menu_service_enabled">Time Set. Reminder Activated.</string>
+    <string name="snooze_length_title">How long should snooze last (in minutes)?</string>
+    <string name="snooze_set">Your reminder will be deferred for %1$d minutes when you press the Snooze button.</string>
+    <plurals name="interval_set_disabled">
+        <item quantity="other">Reminder not on. Reminder interval is set to %1$d hours.</item>
+    </plurals>
+    <!--About-->
+    <string name="app_description">Helps you keep streaks. Only works if you have friends.</string>
+    <string name="text_version">Version</string>
+    <string name="about_mysite">Visit my site</string>
+    <string name="about_license">Open Source Licenses</string>
+    <string name="title_developed">Developed by</string>
+    <string name="developed_by">Fei Kuan on Android Studio.</string>
+    <string name="about_contact">Contact me</string>
+    <string name="about_this_license">Source Code</string>
+    <string name="about_this_license_details">This application is licensed under the GNU General Public License Version 3 or later. You are free to redistribute and/or modify it under this license. Click to visit my GitHub page for source code and license details.</string>
+    <string name="about_app">About this App</string>
+    <string name="about_developer">Development</string>
+    <string name="about_opensource_logolicense_title">Logo Licenses</string>
+    <!--Notification Schedule-->
+    <string name="notifsched_title">Notification Schedule</string>
+    <string name="notifsched_lastfire">Last streak sent</string>
+    <string name="notifsched_losestreak">Losing streaks in</string>
+    <string name="notifsched_firstnotif">First notification in</string>
+    <string name="notifsched_secondnotif">Halfway notification in</string>
+    <string name="notifsched_225">22.5 hour notification in</string>
+    <string name="notifsched_235">23.5 hour notification in</string>
+    <string name="notifsched_last">Last notification in</string>
+    <string name="notifsched_snooze_disabled">No snoozed notifications.</string>
+    <string name="notifsched_snooze_enabled">Snoozed notficiation in: %1s</string>
+    <string name="notifsched_before">\u0020ago</string>
+    <string name="notifsched_timeformat">%2dh %2dm</string>
+    <!--Shortcut-->
+    <string name="shortcut_sent_short">Streak Sent</string>
+    <string name="shortcut_sent_long">Streak sent just now</string>
+    <string name="shortcut_sent_toast">Sent Streak just now. Time Set.</string>
+    <!--Tutorial-->
+    <string name="tutor_menu_title">Other options</string>
+    <string name="tutor_menu_content">Manage and customize your notifications in this menu.</string>
+    <string name="tutor_button_title">Start Here!</string>
+    <string name="tutor_button_content">Use this menu after you send your streaks. You can also do it in notifications that pop up.</string>
+    <!--Battery Prompt-->
+    <string name="dialog_battery_title">Reminders can be unreliable</string>
+    <string name="dialog_battery_message">Your device is preventing Streak Alarm from reminding you of streaks accurately. Please go to Settings to disable battery optimization by whitelisting this app. If you have just rebooted or updated this app, please ignore this warning.</string>
+    <string name="dialog_battery_button_negative">Ignore</string>
+    <string name="dialog_battery_button_positive">Go to Settings</string>
+    <string name="menu_cant_shortcut">Your launcher does not allow shortcuts.</string>
+    <!--Changelog-->
+    <string name="changelog_title">What\'s New</string>
+    <string name="changelog_140_1">Changed notification behavior. </string>
+    <string name="changelog_140_2">Added Notification Schedule in menu. Please check the new notifications arrangement.</string>
+    <string name="changelog_140_3">Added Shortcut feature in menu.</string>
+    <string name="changelog_140_4">Reminders now work in battery saving mode.</string>
+    <string name="changelog_bugfixes">Bugfixes and interface improvements.</string>
+</resources>
