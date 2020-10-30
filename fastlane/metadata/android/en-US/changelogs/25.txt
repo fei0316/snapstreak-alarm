@@ -1,0 +1,6 @@
+New notification behavior. 5 reminders will be sent in 24 hours. Check Notification Schedule for details.
+Notification now works properly in Battery Saver mode
+Added Notification Schedule feature
+Added What's New feature (changelog)
+Added shortcut feature in app
+UX improvements

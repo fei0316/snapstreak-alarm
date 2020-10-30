@@ -1,0 +1,30 @@
+有朋友才能正常运作。
+
+和朋友断火？和女朋友断火？装了这个app就不会再发生！
+每隔一段时间就会提示你储火，还可以直接在弹出通知打开 Snapchat 并关闭通知。
+
+我第一个app嚟架 :)
+
+---------------- 
+
+功能：
+ -  自定通知间隔
+ -  延后通知功能
+ -  直接在主畫面或通知選擇已發送 Snap。
+ -  未完成储火的通知会保留直至完成储火为止
+ -  之前发送的储火补回登记
+ -  直接打开 Snapchat
+ -  还有甚么好主意就Email我吧！
+
+---------------- 
+
+
+Streak Alarm 是我的第一个软件，希望你会喜欢！
+
+出现奇怪问题吗？发送邮件到 apps@iatfei.com 我就会处理。
+有兴趣的话还可以发送 pull request :)
+
+This app is not sponsored or endorsed by, or affiliated with, Snap Inc.
+
+Streak Alarm 是一开源软件，原代码以 GNU 通用公共授权条款 版本3或以后 发布。
+原代码：https://github.com/fei0316/snapstreak-alarm/

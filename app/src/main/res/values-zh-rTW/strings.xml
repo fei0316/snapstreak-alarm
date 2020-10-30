@@ -97,7 +97,7 @@
     <string name="notifsched_last">最後通知</string>
     <string name="notifsched_snooze_disabled">沒有稍後提醒的通知。</string>
     <string name="notifsched_snooze_enabled">稍後提醒通知：%1s</string>
-    <string name="notifsched_before">前</string>
+    <string name="notifsched_before">%1s前</string>
     <string name="notifsched_timeformat">%2d小時 %2d分鐘</string>
 
     <!--Shortcut-->

@@ -116,7 +116,7 @@
     <string name="notifsched_last">Last notification in</string>
     <string name="notifsched_snooze_disabled">No snoozed notifications.</string>
     <string name="notifsched_snooze_enabled">Snoozed notification in: %1s</string>
-    <string name="notifsched_before">\u0020ago</string>
+    <string name="notifsched_before">%1s ago</string>
     <string name="notifsched_timeformat">%2dh %2dm</string>
 
     <!--Shortcut-->
