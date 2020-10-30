@@ -8,11 +8,14 @@ This is my first app! :)
 
 Features:
  -  Custom reminder interval from 1 to 22 hours
- -  Snooze reminders
  -  Notification stays until streaks are sent so you won't miss it
- -  Mark streaks sent directly in notification or home screen.
+ -  Snooze reminder for custom amount of time
+ -  Show when reminders are displayed in Notification Schedule
+ -  Mark streaks sent directly in notification and close reminder
+ -  Mark streaks sent directly through home screen shortcut
  -  Mark streaks sent some time earlier
- -  Open Snapchat directly in notification
+ -  Open Snapchat directly from notification
+ -  Automatically disable notifications if ignored for long time
  -  ...more coming!
 
 ---------------------
@@ -24,5 +27,5 @@ Tech-savvy enough? Drop me a pull request and it will be in the next release!
 
 This app is not sponsored or endorsed by, or affiliated with, Snap Inc.
 
-Streak Alarm is an open-source app, where its source code is released under the GNU GPL3.0 or later.
+Streak Alarm is an open-source app, where its source code is released under the GNU GPL 3.0 or later.
 Source Code: https://github.com/fei0316/snapstreak-alarm/

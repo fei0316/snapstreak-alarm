@@ -28,10 +28,11 @@ My first app project! :) Got it done before I turn 18.
 * Custom reminder interval from 1 to 22 hours
 * Notification stays until streaks are sent so you won't miss it
 * Snooze reminder for custom amount of time
+* Show when reminders are displayed in Notification Schedule
 * Mark streaks sent directly in notification and close reminder
 * Mark streaks sent directly through home screen shortcut
 * Mark streaks sent some time earlier
-* Open Snapchat directly from notification)
+* Open Snapchat directly from notification
 * Automatically disable notifications if ignored for long time
 * Drop me an email if you have any suggestions!
 
