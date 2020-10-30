@@ -11,3 +11,4 @@
 pc-api.json
 
 .idea/caches/build_file_checksums.ser
+fastlane/.env

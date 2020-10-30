@@ -35,4 +35,25 @@ platform :android do
     gradle(task: "clean assembleRelease")
     upload_to_play_store
   end
+  
+  desc "Download metadata from Lokalise"
+  lane :lokalise_download do
+	lokalise_metadata(
+	platform: "android",
+    action: "download_from_lokalise",
+	release_number: 25,
+	)
+  end
+  
+  desc "Upload metadata to Lokalise"
+  lane :lokalise_upload do
+	lokalise_metadata(
+	platform: "android",
+    action: "upload_to_lokalise",
+    add_languages: true,
+    override_translation: true,
+	release_number: 25,
+	)
+  end
+  
 end

@@ -103,7 +103,7 @@
     <string name="about_restart_title" translatable="false">RE:START</string>
     <string name="about_opensource_logolicense_title">Logo Licenses</string>
     <string name="about_special_thanks_title">Contributors</string>
-    <string name="about_special_thanks_content">Spanish (Latin America) translation by: AUREA PUT YOUR NAME HERE!!! \nKorean translation by: </string>
+    <string name="about_special_thanks_content">Spanish (Latin America) translation by: (PUT YOUR NAME HERE!!!) \nKorean translation by: (PUT YOUR NAME HERE!!!)</string>
 
     <!--Notification Schedule-->
     <string name="notifsched_title">Notification Schedule</string>
