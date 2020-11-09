@@ -59,6 +59,7 @@
         <activity
             android:name=".NewOpenSourceActivity"
             android:label="@string/about_license"
+            android:parentActivityName=".NewAboutActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MaterialAppTheme">
             <meta-data

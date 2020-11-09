@@ -213,7 +213,8 @@ public class MainActivity extends AppCompatActivity {
         final MaterialTapTargetPrompt.Builder menuHelpBuilder = new MaterialTapTargetPrompt.Builder(this)
                 .setPrimaryText(this.getString(R.string.tutor_menu_title))
                 .setSecondaryText(this.getString(R.string.tutor_menu_content))
-                .setIcon(R.drawable.ic_more_vert_black_24dp);
+                .setIcon(R.drawable.ic_more_vert_black_24dp)
+                .setBackgroundColour(getResources().getColor(R.color.colorPrimary));
         final Toolbar tb = this.findViewById(R.id.toolbar);
         final View child = tb.getChildAt(2);
         if (child instanceof ActionMenuView)
@@ -232,6 +233,7 @@ public class MainActivity extends AppCompatActivity {
                     .setTarget(R.id.speedDial1)
                     .setPrimaryText(this.getString(R.string.tutor_button_title))
                     .setSecondaryText(this.getString(R.string.tutor_button_content))
+                    .setBackgroundColour(getResources().getColor(R.color.colorPrimary))
                     .create())
                 .addPrompt(menuHelpBuilder)
                 .show();

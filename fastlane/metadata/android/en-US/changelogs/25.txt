@@ -3,4 +3,4 @@ Notification now works properly in Battery Saver mode
 Added Notification Schedule feature
 Added What's New feature (changelog)
 Added shortcut feature in app
-UX improvements
+User interface improvements

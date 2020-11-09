@@ -74,7 +74,12 @@ public class NotifScheduleActivity extends AppCompatActivity {
         else
             tvh.setText(getString(R.string.notifsched_snooze_enabled, Time.getFormatTime(snooze - now)));
 
-        tv1.setText(getString(R.string.notifsched_before, Time.getTextTime(Math.abs(Time.ReadTime(c) - now), c)));
+        long absLastFire = Math.abs(Time.ReadTime(c) - now);
+
+        if (absLastFire > 172800000)
+            tv1.setText(getString(R.string.notifsched_toolong));
+        else
+            tv1.setText(getString(R.string.notifsched_before, Time.getTextTime(absLastFire, c)));
         tv2.setText(Time.getTextTime((Time.ReadTime(c) + 86400000) - now, c));
         tv3.setText(Time.getTextTime(next - now, c));
         tv4.setText(Time.getTextTime(second - now, c));

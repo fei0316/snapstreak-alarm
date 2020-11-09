@@ -23,6 +23,7 @@ package com.iatfei.streakalarm;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
+
 import androidx.preference.PreferenceManager;
 
 import java.util.Locale;
@@ -157,16 +158,17 @@ public class Time extends MainActivity {
             mins = TimeUnit.MILLISECONDS.toMinutes(time) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time));
 
         formatted = String.format(
-            Locale.ENGLISH,
-            "%02d:%02d",
-            hours,
-            mins); //todo:not RTL/Arabic/Israeli friendly!
+                Locale.ENGLISH,
+                "%02d:%02d",
+                hours,
+                mins); //todo:not RTL/Arabic/Israeli friendly!
         return formatted;
     }
 
     public static String getTextTime(long time, Context c) {
         String formatted;
         long mins, hours;
+
         if (TimeUnit.MILLISECONDS.toHours(time) < 0)
             hours = 0;
         else
@@ -208,7 +210,7 @@ public class Time extends MainActivity {
                 mins = TimeUnit.MILLISECONDS.toMinutes(time_till) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time_till));
 
             formatted = String.format(
-                    Locale.ENGLISH,"%02d:%02d", hours, mins); //todo:not RTL/Arabic/Israeli friendly!
+                    Locale.ENGLISH, "%02d:%02d", hours, mins); //todo:not RTL/Arabic/Israeli friendly!
         }
         return formatted;
     }
@@ -229,7 +231,7 @@ public class Time extends MainActivity {
             mins = TimeUnit.MILLISECONDS.toMinutes(time_to_send) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time_to_send));
 
         formatted = String.format(
-            Locale.ENGLISH, "%02d:%02d", hours, mins); //todo:not RTL/Arabic/Israeli friendly!
+                Locale.ENGLISH, "%02d:%02d", hours, mins); //todo:not RTL/Arabic/Israeli friendly!
         return formatted;
     }
 }
