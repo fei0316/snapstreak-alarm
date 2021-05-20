@@ -25,7 +25,7 @@ Note:
 My first app project! :) Got it done before I turn 18.
 
 ## Features
-* Custom reminder interval from 1 to 22 hours
+* Custom reminder interval from 1 to 23 hours
 * Notification stays until streaks are sent so you won't miss it
 * Snooze reminder for custom amount of time
 * Show when reminders are displayed in Notification Schedule
@@ -36,21 +36,37 @@ My first app project! :) Got it done before I turn 18.
 * Automatically disable notifications if ignored for long time
 * Drop me an email if you have any suggestions!
 
+## Supported Languages
+* English (United States)
+* Chinese (Hong Kong)
+* Chinese (Taiwan)
+* Chinese (China)
+* Coming soon:
+    * Korean 
+    * Spanish (Latin American)
+    * Hindi
+
+
+
 ## Want to help?
-* Support me by buying the app on Google Play!
+* Support me by purchasing the app on Google Play!
 * Open issues for anything weird.
 * Add new features by forking it and opening a pull request
-* Help me translate this app into different languages
+* Help me translate this app into different languages (please contact via email)
 
 ## How to build
 Just clone the repository and open it in Android Studio. It *should* work...
 
+## Special Thanks
+<a href="https://lokalise.com/">
+    <img src="https://fei0316.github.io/Lokalise_logo_colour_black_text.png"
+         alt="Lokalise Logo" height="40">
+</a><br>
+Lokalise for supporting our project by providing us with a professional translation platform for free.
+c
 ## Licenses
 ```
-Copyright (c) 2017-2020 Fei Kuan.
-
-This file is part of Streak Alarm
-(see <https://github.com/fei0316/snapstreak-alarm>).
+Copyright (c) 2017-2021 Fei Kuan.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

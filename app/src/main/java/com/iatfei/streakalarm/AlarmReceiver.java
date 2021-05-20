@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2020 Fei Kuan.
+ * Copyright (c) 2017-2021 Fei Kuan.
  *
  * This file is part of Streak Alarm
  * (see <https://github.com/fei0316/snapstreak-alarm>).
@@ -58,7 +58,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             }
         }
 
-        if (showHours <= -5){
+        if (showHours <= -8){
             NotificationManage.CancelNotif(context);
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
             SharedPreferences.Editor editor = pref.edit();

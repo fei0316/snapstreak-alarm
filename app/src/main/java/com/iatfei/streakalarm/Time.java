@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2020 Fei Kuan.
+ * Copyright (c) 2017-2021 Fei Kuan.
  *
  * This file is part of Streak Alarm
  * (see <https://github.com/fei0316/snapstreak-alarm>).
@@ -29,7 +29,11 @@ import androidx.preference.PreferenceManager;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
+
 public class Time extends MainActivity {
+
+    private static final long DAY = 24 * 60 * 60 * 1000;
+    private static final long HOUR = 60 * 60 * 1000;
 
     //todo:Implement RTL instead of disabling it
 
@@ -78,7 +82,7 @@ public class Time extends MainActivity {
         long time_till = System.currentTimeMillis() - time_last;
         if (time_last == 2)
             formatted = c.getResources().getString(R.string.main_new);
-        else if (time_till > 172800000)
+        else if (time_till > 2 * DAY)
             formatted = c.getResources().getString(R.string.main_long_ago);
         else if (time_till < 0)
             formatted = c.getResources().getString(R.string.main_reset_time);
@@ -105,14 +109,14 @@ public class Time extends MainActivity {
     public static int NotifTime(Context c) {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
         long time_last = pref.getLong("lastsnaptime", 0);
-        long time_to_send = (time_last + 86700000) - System.currentTimeMillis();
-        double Hours = (double) (time_to_send / 1000 / 60 / 60);
+        long time_to_send = (time_last + DAY) - System.currentTimeMillis();
+        double Hours = (double) (time_to_send / (HOUR));
         return (int) Hours;
     }
 
     @SuppressLint("ApplySharedPref")
     public static void SetInterval(Context c, int hours) {
-        long Lhours = hours * 1000 * 60 * 60;
+        long Lhours = hours * HOUR;
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
         SharedPreferences.Editor editor = pref.edit();
         editor.putLong("intervalLong", Lhours);
@@ -193,7 +197,7 @@ public class Time extends MainActivity {
         long time_till = System.currentTimeMillis() - time_last;
         if (time_last == 2)
             formatted = "00:00";
-        else if (time_till > 172800000)
+        else if (time_till > 2 * DAY)
             formatted = "00:00";
         else if (time_till < 0)
             formatted = "00:00";
@@ -218,7 +222,7 @@ public class Time extends MainActivity {
     public static String readLosingTime(Context c) {
         String formatted;
         long time_last = ReadTime(c);
-        long time_to_send = (time_last + 86400000) - System.currentTimeMillis();
+        long time_to_send = (time_last + DAY) - System.currentTimeMillis();
 
         long hours, mins;
         if (TimeUnit.MILLISECONDS.toHours(time_to_send) < 0)

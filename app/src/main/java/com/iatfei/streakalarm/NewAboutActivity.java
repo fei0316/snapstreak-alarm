@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2020 Fei Kuan.
+ * Copyright (c) 2017-2021 Fei Kuan.
  *
  * This file is part of Streak Alarm
  * (see <https://github.com/fei0316/snapstreak-alarm>).
@@ -48,7 +48,7 @@ public class NewAboutActivity extends AppCompatActivity {
         }
 
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.container, new AboutFragment())
+                .replace(R.id.container, new AboutFragment())
                 .commit();
     }
 

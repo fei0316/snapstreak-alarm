@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2020 Fei Kuan.
+ * Copyright (c) 2017-2021 Fei Kuan.
  *
  * This file is part of Streak Alarm
  * (see <https://github.com/fei0316/snapstreak-alarm>).
@@ -36,6 +36,18 @@ public class ReadService {
                         new Intent(c, AlarmReceiver.class),
                         PendingIntent.FLAG_NO_CREATE) != null)
                 || (PendingIntent.getBroadcast(c, 3,
+                        new Intent(c, AlarmReceiver.class),
+                        PendingIntent.FLAG_NO_CREATE) != null)
+                || (PendingIntent.getBroadcast(c, 4,
+                        new Intent(c, AlarmReceiver.class),
+                        PendingIntent.FLAG_NO_CREATE) != null)
+                || (PendingIntent.getBroadcast(c, 5,
+                        new Intent(c, AlarmReceiver.class),
+                        PendingIntent.FLAG_NO_CREATE) != null)
+                || (PendingIntent.getBroadcast(c, 6,
+                        new Intent(c, AlarmReceiver.class),
+                        PendingIntent.FLAG_NO_CREATE) != null)
+                || (PendingIntent.getBroadcast(c, 7,
                         new Intent(c, AlarmReceiver.class),
                         PendingIntent.FLAG_NO_CREATE) != null));
     }

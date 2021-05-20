@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2017-2021 Fei Kuan.
+  ~
+  ~ This file is part of Streak Alarm
+  ~ (see <https://github.com/fei0316/snapstreak-alarm>).
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <resources>
     <string name="app_name">Streak Alarm</string>
     <string name="last_streak">上一次 Snap：</string>
@@ -59,7 +79,7 @@
     <string name="tutor_menu_title">其他设置</string>
     <string name="tutor_menu_content">使用此功能表来管理和设置通知。</string>
     <string name="tutor_button_title">由此开始！</string>
-    <string name="tutor_button_content">每次发送 Snap 后请使用此菜单。也可以使用通知里的按钮。</string>
+    <string name="tutor_button_content">每次发送 Snap 后请使用此菜单。也可以使用通知里的按钮或主画面捷径。</string>
     <string name="notif_lost_streak_title">失去 Snap 连环炮！！</string>
     <string name="about_contact">联系我</string>
     <string name="about_this_license">原代码</string>
@@ -84,20 +104,20 @@
     <string name="notifsched_title">预定通知</string>
     <string name="notifsched_lastfire">上一个 Snap</string>
     <string name="notifsched_losestreak">失去 Snap 连环炮</string>
-    <string name="notifsched_firstnotif">第一个通知</string>
-    <string name="notifsched_secondnotif">一半时间通知</string>
+    <string name="notifsched_firstnotif">第一次通知</string>
+    <string name="notifsched_secondnotif">第二次通知</string>
     <string name="notifsched_225">22.5 小时通知</string>
     <string name="notifsched_235">23.5 小时通知</string>
     <string name="notifsched_last">最后通知</string>
     <string name="notifsched_snooze_disabled">没有稍后提醒的通知。</string>
     <string name="notifsched_snooze_enabled">稍后提醒通知：%1s</string>
     <string name="notifsched_before">%1s前</string>
-    <string name="notifsched_timeformat">%2d小时 %2d分钟</string>
+    <string name="notifsched_timeformat">%02d小时 %02d分钟</string>
     <string name="menu_add_shortcut">增加捷径到主画面</string>
     <string name="menu_cant_shortcut">启动器不支持建立捷径。</string>
     <string name="menu_shortcut_added_legacy">已新增捷径。</string>
     <string name="about_special_thanks_title">贡献者</string>
-    <string name="about_special_thanks_content">拉丁美洲西班牙语翻译：\n韩语翻译：</string>
+    <string name="about_special_thanks_content">拉丁美洲西班牙语翻译：Aurea\n韩语翻译：Han\n印地语翻译：Radha\n特别感谢 Lokalise 免费贈送使用專業網上翻译管理系統。</string>
 
     <!--Changelog-->
     <string name="changelog_title">更新內容</string>
@@ -105,5 +125,11 @@
     <string name="changelog_140_2">在主功能表增加了预定通知的功能。請查看新的通知安排。</string>
     <string name="changelog_140_3">在主功能表增加了加入捷径的功能。</string>
     <string name="changelog_140_4">处于省电模式时仍能运作。</string>
+    <string name="changelog_150_4">更改了发送通知的安排。請查看新的通知安排。</string>
+    <string name="changelog_150_5">现已支持设置23小时后通知。</string>
     <string name="changelog_bugfixes">错误修正及使用界面改善。</string>
+    <string name="notifsched_thirdnotif">第三次通知</string>
+    <string name="notifsched_toolong">很久以前</string>
+    <string name="notifsched_desc">24小时内会发送四个通知。第一个通知发送于指定的通知时间；在第一个通知及失去 Snap 连环炮时间的一半及75%的时间将会发送第二及第三个通知；最后一个通知发送于失去 Snap 连环炮后半小时。</string>
+    <string name="notifsched_example">举例来说，如果通知时间设为12小时并于凌晨发送 Snap，你将会在中午12时、下午六时、下午九时及第二天凌晨收到共四个通知。</string>
 </resources>

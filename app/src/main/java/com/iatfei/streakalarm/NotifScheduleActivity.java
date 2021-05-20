@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2020 Fei Kuan.
+ * Copyright (c) 2017-2021 Fei Kuan.
  *
  * This file is part of Streak Alarm
  * (see <https://github.com/fei0316/snapstreak-alarm>).
@@ -32,6 +32,9 @@ import android.widget.TextView;
 
 public class NotifScheduleActivity extends AppCompatActivity {
 
+    private static final long DAY = 24 * 60 * 60 * 1000;
+    private static final long HOUR = 60 * 60 * 1000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,15 +51,18 @@ public class NotifScheduleActivity extends AppCompatActivity {
         Context c = getApplicationContext();
         long now = System.currentTimeMillis();
 
-        TextView tvh, tv1, tv2, tv3, tv4, tv5, tv6, tv7;
+        TextView tvh, tv1, tv2, tv3, tv4, tv6, tv7;
+        // tv5
 
-        long next, second, fire225, fire235, fire245, snooze;
+        long next, second, third, fire245, snooze;
+        // fire225, fire235
 
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(c);
         next = settings.getLong("nextFire", 0);
         second = settings.getLong("secondFire", 0);
-        fire225 = settings.getLong("fire225", 0);
-        fire235 = settings.getLong("fire235", 0);
+        third = settings.getLong("thirdFire", 0);
+//        fire225 = settings.getLong("fire225", 0);
+//        fire235 = settings.getLong("fire235", 0);
         fire245 = settings.getLong("fire245", 0);
         snooze = settings.getLong("snoozeTime", 0);
 
@@ -65,7 +71,7 @@ public class NotifScheduleActivity extends AppCompatActivity {
         tv2 = findViewById(R.id.textViewContent2);
         tv3 = findViewById(R.id.textViewContent3);
         tv4 = findViewById(R.id.textViewContent4);
-        tv5 = findViewById(R.id.textViewContent5);
+//        tv5 = findViewById(R.id.textViewContent5);
         tv6 = findViewById(R.id.textViewContent6);
         tv7 = findViewById(R.id.textViewContent7);
 
@@ -76,15 +82,16 @@ public class NotifScheduleActivity extends AppCompatActivity {
 
         long absLastFire = Math.abs(Time.ReadTime(c) - now);
 
-        if (absLastFire > 172800000)
+        if (absLastFire > 2 * DAY)
             tv1.setText(getString(R.string.notifsched_toolong));
         else
             tv1.setText(getString(R.string.notifsched_before, Time.getTextTime(absLastFire, c)));
-        tv2.setText(Time.getTextTime((Time.ReadTime(c) + 86400000) - now, c));
+        tv2.setText(Time.getTextTime((Time.ReadTime(c) + DAY) - now, c));
         tv3.setText(Time.getTextTime(next - now, c));
         tv4.setText(Time.getTextTime(second - now, c));
-        tv5.setText(Time.getTextTime(fire225 - now, c));
-        tv6.setText(Time.getTextTime(fire235 - now, c));
+//        tv5.setText(Time.getTextTime(fire225 - now, c));
+//        tv6.setText(Time.getTextTime(fire235 - now, c));
+        tv6.setText(Time.getTextTime(third - now, c));
         tv7.setText(Time.getTextTime(fire245 - now, c));
     }
 }

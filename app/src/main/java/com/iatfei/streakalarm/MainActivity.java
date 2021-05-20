@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2020 Fei Kuan.
+ * Copyright (c) 2017-2021 Fei Kuan.
  *
  * This file is part of Streak Alarm
  * (see <https://github.com/fei0316/snapstreak-alarm>).
@@ -57,6 +57,10 @@ import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetSequence;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final long DAY = 24 * 60 * 60 * 1000;
+    private static final long HOUR = 60 * 60 * 1000;
+    private static final long EXPIRING_DAY = 20 * 60 * 60 * 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
         boolean previouslyStarted = prefs.getBoolean("previous_started", false);
         if(!previouslyStarted) {
             SharedPreferences.Editor edit = prefs.edit();
-            edit.putBoolean("previous_started", Boolean.TRUE);
+            edit.putBoolean("previous_started", true);
             edit.apply();
             showHelp();
             aggressiveWarning();
@@ -163,10 +167,10 @@ public class MainActivity extends AppCompatActivity {
         long now = System.currentTimeMillis();
         TextView clock = findViewById(R.id.textView2);
         clock.setText(time);
-        if (( now - longtime ) >= 86400000){
+        if (( now - longtime ) >= DAY){
             clock.setTextColor(getResources().getColor(R.color.red_warning));
         }
-        else if ((now-longtime) > 72000000)
+        else if ((now-longtime) > EXPIRING_DAY)
             clock.setTextColor(getResources().getColor(R.color.orange_warning));
         else
             clock.setTextColor(getResources().getColor(R.color.timeText));
@@ -266,7 +270,7 @@ public class MainActivity extends AppCompatActivity {
                         Snackbar.make(findViewById(R.id.speedDial1), getString(R.string.picker_invalid_time), 5000).show();
                     }
                     else if (hoursago > 0){
-                        long setTime = System.currentTimeMillis() - (hoursago * 1000 * 60 * 60 + 2160000);
+                        long setTime = System.currentTimeMillis() - (hoursago * HOUR + HOUR/2);
                         Time.SetTime(c,setTime);
                         NotificationManage.CancelNotif(c);
                         final Handler handler = new Handler();
@@ -314,7 +318,7 @@ public class MainActivity extends AppCompatActivity {
         final MaterialNumberPicker numberPicker = new MaterialNumberPicker(
                 this,
                 1,
-                22,
+                23,
                 8,
                 Color.TRANSPARENT, //separator color
                 getResources().getColor(R.color.timeText), //textcolor
@@ -378,10 +382,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void aggressiveWarning() {
         String deviceMan = android.os.Build.MANUFACTURER;
-        if (deviceMan.equalsIgnoreCase("huawei")) {
+        if (deviceMan.equalsIgnoreCase("huawei")
+                //todo:new warning for Chinese non-global ROM
+//                ||
+//                deviceMan.equalsIgnoreCase("xiaomi") ||
+//                deviceMan.equalsIgnoreCase("oppo") ||
+//                deviceMan.equalsIgnoreCase("oppo") ||
+//                deviceMan.equalsIgnoreCase("oppo") ||
+//                deviceMan.equalsIgnoreCase("oppo")
+        ) {
             final AlertDialog dialog = BatteryOptimizationUtil.getBatteryOptimizationDialog(this);
-            if(dialog != null)
-                dialog.show();
+            dialog.show();
         }
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2020 Fei Kuan.
+ * Copyright (c) 2017-2021 Fei Kuan.
  *
  * This file is part of Streak Alarm
  * (see <https://github.com/fei0316/snapstreak-alarm>).
@@ -36,15 +36,25 @@ class ChangelogDisplay : MainActivity() {
             NoticeBoard(act).pin {
                 title(c.getString(R.string.changelog_title))
                 displayIn(DisplayOptions.ACTIVITY)
-                tag("1.4.0")
+                tag("1.5.0")
                 showRule(rule)
                 source(Source.Dynamic(
                         listOf(
+                                Release("24/05/2021", "1.5.0",
+                                        listOf(
+                                                Release.Change(c.getString(R.string.changelog_150_5), ChangeType.ADDED),
+                                                Release.Change(c.getString(R.string.changelog_150_1), ChangeType.ADDED),
+                                                Release.Change(c.getString(R.string.changelog_150_2), ChangeType.ADDED),
+                                                Release.Change(c.getString(R.string.changelog_150_3), ChangeType.ADDED),
+                                                Release.Change(c.getString(R.string.changelog_150_4), ChangeType.CHANGED),
+                                                Release.Change(c.getString(R.string.changelog_bugfixes), ChangeType.FIXED)
+                                        )
+                                ),
                                 Release("26/10/2020", "1.4.0",
                                         listOf(
-                                                Release.Change(c.getString(R.string.changelog_140_1), ChangeType.CHANGED),
                                                 Release.Change(c.getString(R.string.changelog_140_2), ChangeType.ADDED),
                                                 Release.Change(c.getString(R.string.changelog_140_3), ChangeType.ADDED),
+                                                Release.Change(c.getString(R.string.changelog_140_1), ChangeType.CHANGED),
                                                 Release.Change(c.getString(R.string.changelog_140_4), ChangeType.FIXED),
                                                 Release.Change(c.getString(R.string.changelog_bugfixes), ChangeType.FIXED)
                                         )

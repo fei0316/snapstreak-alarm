@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2020 Fei Kuan.
+ * Copyright (c) 2017-2021 Fei Kuan.
  *
  * This file is part of Streak Alarm
  * (see <https://github.com/fei0316/snapstreak-alarm>).
@@ -34,7 +34,7 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
 
         if (isEnabled){
             int count = Time.ReadNotifCount(context);
-            if (count != 1)
+            if (count > 1)
                 Time.setTally(context, (count-1));
             NotificationManage.MakeNotif(context);
         }
