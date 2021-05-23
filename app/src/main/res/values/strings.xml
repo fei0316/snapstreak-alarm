@@ -26,6 +26,7 @@
     <string name="menu_cancel">Stop Reminder</string>
     <string name="menu_add_shortcut">Add Shortcut to Home Screen</string>
     <string name="menu_shortcut_added_legacy">Shortcut added.</string>
+    <string name="menu_fab_description">Main Menu</string>
 
     <!--Notifications-->
     <plurals name="notif_body_one">
@@ -103,25 +104,28 @@
     <string name="about_restart_title" translatable="false">RE:START</string>
     <string name="about_opensource_logolicense_title">Logo Licenses</string>
     <string name="about_special_thanks_title">Contributors</string>
-    <string name="about_special_thanks_content">Spanish (Latin America) translation by: Aurea\nKorean translation by: Han\nHindi translation by: Radha\nSpecial Thanks to Lokalise for providing a professional translation platform for free.</string>
+    <string name="about_special_thanks_content">(FEEL FREE TO CHANGE YOUR NAME INTO WHATEVER YOU WANT TO BE KNOWN FOR!! For example Full name/nickname/twitter handle/anonymous/etc etc)Spanish (Latin America) translation by: Aurea\nKorean translation by: Han\nHindi translation by: Radha\nJapanese translation by: Nico\nSpecial Thanks to Lokalise for providing a professional translation platform for free.</string>
+    <string name="about_privacy_policy">Privacy Policy</string>
 
     <!--Notification Schedule-->
     <string name="notifsched_title">Notification Schedule</string>
     <string name="notifsched_lastfire">Streak sent</string>
     <string name="notifsched_losestreak">Lose streaks</string>
-    <string name="notifsched_firstnotif">First notification in</string>
-    <string name="notifsched_secondnotif">Second notification in</string>
-    <string name="notifsched_thirdnotif">Third notification in</string>
-    <string name="notifsched_225">22.5 hour notification in</string>
-    <string name="notifsched_235">23.5 hour notification in</string>
-    <string name="notifsched_last">Last notification in</string>
+    <string name="notifsched_firstnotif">First notification</string>
+    <string name="notifsched_secondnotif">Second notification</string>
+    <string name="notifsched_thirdnotif">Third notification</string>
+    <string name="notifsched_225">22.5 hour notification</string>
+    <string name="notifsched_235">23.5 hour notification</string>
+    <string name="notifsched_last">Last notification</string>
     <string name="notifsched_snooze_disabled">No snoozed notifications.</string>
     <string name="notifsched_snooze_enabled">Snoozed notification in: %1s</string>
     <string name="notifsched_before">%1s ago</string>
     <string name="notifsched_timeformat">%02dh %02dm</string>
     <string name="notifsched_toolong">Too long ago</string>
-    <string name="notifsched_desc">4 notifications are sent in 24 hours: one at the specified time, one halfway and one 75% between the specified time and the time you will lose streaks, and one final reminder after 24 hours.</string>
-    <string name="notifsched_example">For example, if notification time is set to 12 hours and you sent a streak at midnight, you get a notification at noon, a notification at 6pm, a notification at 9pm, and a final notification half past midnight of the next day.</string>
+    <string name="notifsched_notif_sent">Sent</string>
+    <string name="notifsched_streaks_lost">Streaks Lost</string>
+    <string name="notifsched_help">Help</string>
+    <string name="notifsched_desc">First notification shows at the specified time.\n\nSecond and Third notifications show when halfway and three-quarters between the specified time and lose streaks time respectively.\n\nLast notification shows after 24 hours.\n\nFor example, if notification time is set to 12 hours and you sent a streak at midnight, you get a notification at noon, a notification at 6pm, a notification at 9pm, and a final notification after midnight of the next day.</string>
 
     <!--Shortcut-->
     <string name="shortcut_sent_short">Streak Sent</string>
@@ -147,11 +151,14 @@
     <string name="changelog_140_2">Added Notification Schedule in menu. Please check the new notifications arrangement.</string>
     <string name="changelog_140_3">Added Shortcut feature in menu.</string>
     <string name="changelog_140_4">Reminders now work in battery saving mode.</string>
-    <string name="changelog_150_1" translatable="false">(Something like "hello/welcome, we speak Korean now!" in Korean). Korean is now supported!</string>
-    <string name="changelog_150_2" translatable="false">(Something like "hello/welcome, we speak Spanish now!" in Spanish). Spanish (Latin America) is now supported!</string>
-    <string name="changelog_150_3" translatable="false">(Something like "hello/welcome, we speak Hindi now!" in Hindi). Hindi is now supported!</string>
-    <string name="changelog_150_4">Changed notification behavior. Please check Notification Schedule for details.</string>
-    <string name="changelog_150_5">23 hours notification time is now supported.</string>
+    <string name="changelog_150_1">Changed notification behavior. Please check Notification Schedule for details.</string>
+    <string name="changelog_150_2">23 hours notification time is now supported.</string>
+    <string name="changelog_150_3">Landscape mode supported.</string>
+    <string name="changelog_screenreader_compat">Now fully compatible with screen readers.</string>
+    <string name="changelog_kor_added" translatable="false">(Something like "hello/welcome, we speak Korean now!" in Korean). Korean is now supported!</string>
+    <string name="changelog_esp_added" translatable="false">(Something like "hello/welcome, we speak Spanish now!" in Spanish). Spanish (Latin America) is now supported!</string>
+    <string name="changelog_hin_added" translatable="false">(Something like "hello/welcome, we speak Hindi now!" in Hindi). Hindi is now supported!</string>
+    <string name="changelog_jap_added" translatable="false">(Something like "hello/welcome, we speak Japanese now!" in Japanese). Japanese is now supported!</string>
 
     <string name="changelog_bugfixes">Bugfixes and interface improvements.</string>
 </resources>

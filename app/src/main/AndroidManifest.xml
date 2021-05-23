@@ -22,8 +22,7 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait">
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -50,8 +49,7 @@
         <activity
             android:name=".NewAboutActivity"
             android:label="@string/title_activity_about"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait">
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
@@ -60,7 +58,6 @@
             android:name=".NewOpenSourceActivity"
             android:label="@string/about_license"
             android:parentActivityName=".NewAboutActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/MaterialAppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

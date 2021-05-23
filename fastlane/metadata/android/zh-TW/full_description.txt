@@ -1,6 +1,6 @@
 有朋友才能正常運作。
 
-失去了 Snap 連環炮？裝了這個app就不會再發生！
+又失去了 Snap 連環炮？裝了這個app就不會再發生！
 每隔一段時間就會提示你發送 Snap，還可以直接在彈出通知打開 Snapchat 並關閉通知。
 
 我的第一個 app :)
@@ -8,7 +8,7 @@
 ---------------- 
 
 功能：
- -  自定通知間隔
+ -  從 1 到 23 小時自定通知間隔
  -  通知會保留直至發送 Snap爲止
  -  延後通知功能
  -  通知排程顯示
@@ -25,6 +25,8 @@ Streak Alarm 是我的第一個軟件，希望你會喜歡！
 
 出現奇怪問題嗎？發送郵件到 apps@iatfei.com 我就會處理。
 有興趣的話還可以發送 pull request :)
+
+特別感謝 Lokalise 免費提供使用線上專業翻譯平臺。
 
 This app is not sponsored or endorsed by, or affiliated with, Snap Inc.
 

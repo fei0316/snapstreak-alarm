@@ -1,0 +1,6 @@
+(Something like "hello/welcome, we speak Korean now!" in Korean). Korean is now supported!
+(Something like "hello/welcome, we speak Spanish now!" in Spanish). Spanish (Latin America) is now supported!
+(Something like "hello/welcome, we speak Hindi now!" in Hindi). Hindi is now supported!
+更改了發送通知的安排。請查看新的通知安排。
+現已支援 23 小時後發送通知。
+錯誤修正及使用界面改善。

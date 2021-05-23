@@ -60,7 +60,7 @@ public class NotificationManage extends MainActivity {
 //        fire225 = (long) (laststreak + HOUR * 22.5);
 //        fire235 = (long) (laststreak + HOUR * 23.5);
         fire245 = (long) (laststreak + HOUR * 24.5);
-        cancelFire = (long) (laststreak + HOUR * 36);
+        cancelFire = (laststreak + HOUR * 36);
 
         /*
         nextFire is the first notification shown to user. Usually x hours after streak sent time. nextFire = currentTimeMillis() when the notification should already be fired when MakeNotif was called (e.g. when booting after original notification is missed).

@@ -1,13 +1,13 @@
 Only works if you have friends.
 
-Ever lost streaks with your friends or loved ones? Not anymore with this app! It reminds you of streaks as often as you like, and allows you to open Snapchat and close the reminder right within the reminder.
+Lost streaks again? Not anymore with this app! It reminds you of streaks as often as you like, and allows you to open Snapchat and close the reminder right within the notification.
 
 This is my first app! :)
 
 ---------------------
 
 Features:
- -  Custom reminder interval from 1 to 22 hours
+ -  Customizable reminder interval from 1 to 23 hours
  -  Notification stays until streaks are sent so you won't miss it
  -  Snooze reminder for custom amount of time
  -  Show when reminders are displayed in Notification Schedule
@@ -18,12 +18,24 @@ Features:
  -  Automatically disable notifications if ignored for long time
  -  ...more coming!
 
+Supported Languages:
+ -  English (United States)
+ -  Chinese (Hong Kong)
+ -  Chinese (Taiwan)
+ -  Chinese (China)
+ -  Coming soon:
+    -  Korean
+    -  Spanish (Latin American)
+    -  Hindi
+
 ---------------------
 
-Streak Alarm is my first app, hope you will like it.
+Streak Alarm is my first app. I hope you will like it.
 
 Anything weird in my app? Contact me at apps@iatfei.com and I will figure it out.
-Tech-savvy enough? Drop me a pull request and it will be in the next release!
+Wanted to help? Drop me a pull request and it will be in the next release!
+
+Special thanks to Lokalise for providing us wiht a professional translation platform, free of charge.
 
 This app is not sponsored or endorsed by, or affiliated with, Snap Inc.
 

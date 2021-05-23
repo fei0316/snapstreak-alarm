@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: "de.timfreiheit.resourceplaceholders"
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.mikepenz.aboutlibraries.plugin'
 
 android {
@@ -50,11 +49,10 @@ resourcePlaceholders {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.32'
     implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.preference:preference:1.1.1'
+    implementation 'androidx.preference:preference-ktx:1.1.1'
     testImplementation 'junit:junit:4.13.1'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'com.github.StephenVinouze:MaterialNumberPicker:1.1.0'

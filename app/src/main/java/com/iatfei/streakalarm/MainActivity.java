@@ -72,52 +72,57 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.inflateMenu(R.menu.main_menu);
 
-        //new fab
-        SpeedDialView speedDialView = findViewById(R.id.speedDial1);
+        final SpeedDialView speedDialView = findViewById(R.id.speedDial1);
+        speedDialView.setContentDescription(getString(R.string.menu_fab_description));
         speedDialView.addActionItem(
-                new SpeedDialActionItem.Builder(R.id.fab_justnow, R.drawable.ic_done_black_24dp)
+                new SpeedDialActionItem
+                        .Builder(R.id.fab_justnow, R.drawable.ic_done_black_24dp)
                         .setFabBackgroundColor(getResources().getColor(R.color.colorAccent))
+//                        .setContentDescription(R.string.menu_justnow)
                         .setLabel(R.string.menu_justnow)
                         .create());
         speedDialView.addActionItem(
-                new SpeedDialActionItem.Builder(R.id.fab_sometimeago, R.drawable.ic_access_time_black_24dp)
+                new SpeedDialActionItem
+                        .Builder(R.id.fab_sometimeago, R.drawable.ic_access_time_black_24dp)
                         .setFabBackgroundColor(getResources().getColor(R.color.colorAccent))
+//                        .setContentDescription(R.string.menu_customtime)
                         .setLabel(R.string.menu_customtime)
                         .create());
         speedDialView.addActionItem(
-                new SpeedDialActionItem.Builder(R.id.fab_snapchat, R.drawable.camera_outline)
+                new SpeedDialActionItem
+                        .Builder(R.id.fab_snapchat, R.drawable.camera_outline)
                         .setFabBackgroundColor(getResources().getColor(R.color.snapYellow))
+//                        .setContentDescription(R.string.menu_opensnapchat)
                         .setLabel(R.string.menu_opensnapchat)
                         .create());
 
         setupClock();
 
         speedDialView.setOnActionSelectedListener(speedDialActionItem -> {
-            switch (speedDialActionItem.getId()) {
-                case R.id.fab_justnow:
-                    Context c = getApplicationContext();
-                    Time.ResetTime(c);
-                    NotificationManage.CancelNotif(c);
-                    final Handler handler = new Handler();
-                    handler.postDelayed(() -> {
-                        enableService();
-                        setupClock();
-                    }, 200);
-                    return false;
-                case R.id.fab_sometimeago:
-                    PickTime();
-                    return false;
-                case R.id.fab_snapchat:
-                    Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
-                    if (launchIntent != null) {
-                        startActivity(launchIntent);
-                    } else {
-                        Snackbar.make(findViewById(R.id.speedDial1), R.string.nosnapapp, Snackbar.LENGTH_SHORT).show();
-                    }
-                    return false;
-                default:
-                    return false;
+            int id = speedDialActionItem.getId();
+            if (id == R.id.fab_justnow) {
+                Context c = getApplicationContext();
+                Time.ResetTime(c);
+                NotificationManage.CancelNotif(c);
+                final Handler handler = new Handler();
+                handler.postDelayed(() -> {
+                    enableService();
+                    setupClock();
+                }, 200);
+                return false;
+            } else if (id == R.id.fab_sometimeago) {
+                PickTime();
+                return false;
+            } else if (id == R.id.fab_snapchat) {
+                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
+                if (launchIntent != null) {
+                    startActivity(launchIntent);
+                } else {
+                    Snackbar.make(findViewById(R.id.speedDial1), R.string.nosnapapp, Snackbar.LENGTH_SHORT).show();
+                }
+                return false;
             }
+            return false;
         });
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
@@ -147,6 +152,8 @@ public class MainActivity extends AppCompatActivity {
         boolean serviceEnabled = readService();
         MenuItem stopAlarm = menu.findItem(R.id.menu_stopalarm);
         stopAlarm.setEnabled(serviceEnabled);
+        MenuItem notifSched = menu.findItem(R.id.menu_notifsched);
+        notifSched.setEnabled(serviceEnabled);
         return true;
     }
 
@@ -201,9 +208,7 @@ public class MainActivity extends AppCompatActivity {
         boolean actualEnabled = readService();
         if (configEnabled && !actualEnabled){
             final AlertDialog dialog = BatteryOptimizationUtil.getBatteryOptimizationDialog(this);
-            if(dialog != null) {
-                dialog.show();
-            }
+            dialog.show();
         }
         else if (!configEnabled && actualEnabled){
             SharedPreferences.Editor edit = settings.edit();
@@ -287,31 +292,32 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
-        switch (menuItem.getItemId()) {
-            case R.id.menu_stopalarm:
-                disableService();
-                setupClock();
-                return true;
-            case R.id.menu_setinterval:
-                IntSelMake();
-                return true;
-            case R.id.menu_snooze:
-                SnoozeLengthSet();
-                return true;
-            case R.id.about:
-                intentAbout();
-                return true;
-            case R.id.menu_notifsched:
-                intentNotifSched();
-                return true;
-            case R.id.menu_addsc:
-                makeShortcut();
-                return true;
-            case R.id.menu_changelog:
-                ChangelogDisplay.Companion.display(this, getApplicationContext(), true);
-            default:
-                return super.onOptionsItemSelected(menuItem);
+        int itemId = menuItem.getItemId();
+        if (itemId == R.id.menu_stopalarm) {
+            disableService();
+            setupClock();
+            return true;
+        } else if (itemId == R.id.menu_setinterval) {
+            IntSelMake();
+            return true;
+        } else if (itemId == R.id.menu_snooze) {
+            SnoozeLengthSet();
+            return true;
+        } else if (itemId == R.id.about) {
+            intentAbout();
+            return true;
+        } else if (itemId == R.id.menu_notifsched) {
+            intentNotifSched();
+            return true;
+        } else if (itemId == R.id.menu_addsc) {
+            makeShortcut();
+            return true;
+        } else if (itemId == R.id.menu_changelog) {
+            ChangelogDisplay.Companion.display(this, getApplicationContext(), true);
+
+            return super.onOptionsItemSelected(menuItem);
         }
+        return super.onOptionsItemSelected(menuItem);
     }
 
     private void IntSelMake() {

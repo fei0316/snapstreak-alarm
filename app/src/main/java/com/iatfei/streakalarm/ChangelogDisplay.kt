@@ -42,11 +42,12 @@ class ChangelogDisplay : MainActivity() {
                         listOf(
                                 Release("24/05/2021", "1.5.0",
                                         listOf(
-                                                Release.Change(c.getString(R.string.changelog_150_5), ChangeType.ADDED),
-                                                Release.Change(c.getString(R.string.changelog_150_1), ChangeType.ADDED),
                                                 Release.Change(c.getString(R.string.changelog_150_2), ChangeType.ADDED),
                                                 Release.Change(c.getString(R.string.changelog_150_3), ChangeType.ADDED),
-                                                Release.Change(c.getString(R.string.changelog_150_4), ChangeType.CHANGED),
+//                                                Release.Change(c.getString(R.string.changelog_150_1), ChangeType.ADDED),
+//                                                Release.Change(c.getString(R.string.changelog_150_2), ChangeType.ADDED),
+//                                                Release.Change(c.getString(R.string.changelog_150_3), ChangeType.ADDED),
+                                                Release.Change(c.getString(R.string.changelog_150_1), ChangeType.CHANGED),
                                                 Release.Change(c.getString(R.string.changelog_bugfixes), ChangeType.FIXED)
                                         )
                                 ),
@@ -61,7 +62,7 @@ class ChangelogDisplay : MainActivity() {
                                 )
                         )
                 ))
-                val customColorProvider = ChangelogColorProvider(c)
+                val customColorProvider = ChangelogColorProvider()
                 colorProvider(customColorProvider)
             }
         }

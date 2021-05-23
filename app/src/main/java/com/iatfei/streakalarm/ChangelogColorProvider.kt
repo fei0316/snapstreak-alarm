@@ -20,10 +20,9 @@
 
 package com.iatfei.streakalarm
 
-import android.content.Context
 import net.furkanakdemir.noticeboard.util.color.NoticeBoardColorProvider
 
-class ChangelogColorProvider(private val context: Context) : NoticeBoardColorProvider() {
+class ChangelogColorProvider : NoticeBoardColorProvider() {
     override var colorAdded: Int = R.color.colorAccent
     override var colorChanged: Int = R.color.colorAccentDark
     override var colorDeprecated: Int = R.color.colorPrimary

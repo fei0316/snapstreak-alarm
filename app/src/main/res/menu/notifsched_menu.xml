@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.iatfei.streakalarm">
-    <!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) 2017-2021 Fei Kuan.
   ~
   ~ This file is part of Streak Alarm
@@ -21,15 +18,11 @@
   ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<!-- Allows unlocking your device and activating its screen so UI tests can succeed -->
-<uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
-<uses-permission android:name="android.permission.WAKE_LOCK"/>
-
-    <!-- Allows for storing and retrieving screenshots -->
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-    <!-- Allows changing locales -->
-<uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
-
-</manifest>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_help"
+        android:icon="@drawable/ic_baseline_help_24"
+        android:title="@string/notifsched_help"
+        app:showAsAction="ifRoom"/>
+</menu>

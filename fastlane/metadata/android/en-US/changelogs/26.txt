@@ -1,0 +1,6 @@
+(Something like "hello/welcome, we speak Korean now!" in Korean). Korean is now supported!
+(Something like "hello/welcome, we speak Spanish now!" in Spanish). Spanish (Latin America) is now supported!
+(Something like "hello/welcome, we speak Hindi now!" in Hindi). Hindi is now supported!
+Changed notification behavior. Please check Notification Schedule for details.
+23 hours notification time is now supported.
+Bugfixes and interface improvements.

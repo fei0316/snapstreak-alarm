@@ -26,6 +26,7 @@
     <string name="menu_shortcut_added_legacy">已新增捷徑。</string>
     <string name="main_new">不明</string>
     <string name="main_long_ago">太久以前…</string>
+    <string name="menu_fab_description">主目錄</string>
 
     <!--Notifications-->
     <plurals name="notif_body_one">
@@ -84,7 +85,8 @@
     <string name="about_developer">開發</string>
     <string name="about_opensource_logolicense_title">圖示授權條款</string>
     <string name="about_special_thanks_title">貢獻者</string>
-    <string name="about_special_thanks_content">拉丁美洲西班牙文翻譯：Aurea\n韓文翻譯：Han\n印地語翻譯：Radha\n特別感謝 Lokalise 免費贈送使用線上專業翻譯平臺。</string>
+    <string name="about_special_thanks_content">拉丁美洲西班牙文翻譯：Aurea\n韓文翻譯：Han\n印地語翻譯：Radha\n特別感謝 Lokalise 免費提供使用線上專業翻譯平臺。</string>
+    <string name="about_privacy_policy">隱私政策</string>
 
     <!--Notification Schedule-->
     <string name="notifsched_title">預定通知</string>
@@ -100,7 +102,11 @@
     <string name="notifsched_snooze_disabled">沒有稍後提醒的通知。</string>
     <string name="notifsched_snooze_enabled">稍後提醒通知：%1s</string>
     <string name="notifsched_before">%1s前</string>
+    <string name="notifsched_notif_sent">已發送</string>
+    <string name="notifsched_streaks_lost">已失去</string>
     <string name="notifsched_timeformat">%02d小時 %02d分鐘</string>
+    <string name="notifsched_help">説明</string>
+    <string name="notifsched_desc">第一個通知發送於指定的通知時間。\n\n在第一個通知及失去 Snap 連環炮時間的一半及四分之三的時間將會發送第二及第三個通知。\n\n最後一個通知發送於失去 Snap 連環炮後半小時。\n\n舉例來説，如果通知時間設為12小時並於午夜 00:00 發送 Snap，你將會在中午12時、下午六時、下午九時及第二天午夜 00:30 收到共四個通知。</string>
 
     <!--Shortcut-->
     <string name="shortcut_sent_long">剛剛才發送的 Snap</string>
@@ -125,9 +131,9 @@
     <string name="changelog_140_2">在主功能表增加了預定通知的功能。請查看新的通知安排。</string>
     <string name="changelog_140_3">在主功能表增加了加入捷徑的功能。</string>
     <string name="changelog_140_4">處於省電模式時仍能運作。</string>
-    <string name="changelog_150_4">更改了發送通知的安排。請查看新的通知安排。</string>
-    <string name="changelog_150_5">現已支援23小時後發送通知。</string>
+    <string name="changelog_150_1">更改了發送通知的安排。請查看新的通知安排。</string>
+    <string name="changelog_150_2">現已支援23小時後發送通知。</string>
+    <string name="changelog_150_3">現已支援橫向模式。</string>
+    <string name="changelog_screenreader_compat">現已全面兼容熒幕閱讀器。</string>
     <string name="changelog_bugfixes">錯誤修正及使用界面改善。</string>
-    <string name="notifsched_desc">24小時內會發送四個通知。第一個通知發送於指定的通知時間；在第一個通知及失去 Snap 連環炮時間的一半及75%的時間將會發送第二及第三個通知；最後一個通知發送於失去 Snap 連環炮後半小時。</string>
-    <string name="notifsched_example">舉例來説，如果通知時間設為12小時並於凌晨發送 Snap，你將會在中午12時、下午六時、下午九時及第二天凌晨收到共四個通知。</string>
 </resources>

@@ -29,14 +29,19 @@ import androidx.preference.PreferenceManager;
 public class BootBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-        boolean isEnabled = settings.getBoolean("serviceEnabled", false);
+        String intentString = intent.getAction();
+        if (intentString != null) {
+            if (intentString.equals(Intent.ACTION_BOOT_COMPLETED) || intentString.equals(Intent.ACTION_MY_PACKAGE_REPLACED)) {
+                SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
+                boolean isEnabled = settings.getBoolean("serviceEnabled", false);
 
-        if (isEnabled){
-            int count = Time.ReadNotifCount(context);
-            if (count > 1)
-                Time.setTally(context, (count-1));
-            NotificationManage.MakeNotif(context);
+                if (isEnabled) {
+                    int count = Time.ReadNotifCount(context);
+                    if (count > 1)
+                        Time.setTally(context, (count - 1));
+                    NotificationManage.MakeNotif(context);
+                }
+            }
         }
     }
 }

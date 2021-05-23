@@ -55,7 +55,7 @@ My first app project! :) Got it done before I turn 18.
 * Help me translate this app into different languages (please contact via email)
 
 ## How to build
-Just clone the repository and open it in Android Studio. It *should* work...
+Just clone the repository and open it in Android Studio. It should work...
 
 ## Special Thanks
 <a href="https://lokalise.com/">

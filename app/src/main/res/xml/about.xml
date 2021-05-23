@@ -103,6 +103,18 @@
         android:title="@string/about_special_thanks_title" >
     </Preference>
 -->
+<!--    <Preference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="Default value"
+        android:key="edit_text_preference_11"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        app:iconSpaceReserved="false"
+        android:title="@string/about_privacy_policy" >
+        <intent android:action="android.intent.action.VIEW"
+            android:data="https://apps-gh.iatfei.com/privacy_app.html" />
+    </Preference>-->
     <Preference
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

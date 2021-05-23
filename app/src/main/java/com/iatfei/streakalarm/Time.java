@@ -173,15 +173,8 @@ public class Time extends MainActivity {
         String formatted;
         long mins, hours;
 
-        if (TimeUnit.MILLISECONDS.toHours(time) < 0)
-            hours = 0;
-        else
-            hours = TimeUnit.MILLISECONDS.toHours(time);
-
-        if (TimeUnit.MILLISECONDS.toMinutes(time) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time)) < 0)
-            mins = 0;
-        else
-            mins = TimeUnit.MILLISECONDS.toMinutes(time) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time));
+        hours = TimeUnit.MILLISECONDS.toHours(time);
+        mins = TimeUnit.MILLISECONDS.toMinutes(time) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time));
 
         formatted = String.format(
                 Locale.ENGLISH,
@@ -191,51 +184,55 @@ public class Time extends MainActivity {
         return formatted;
     }
 
-    public static String readFormatTimeNoSec(Context c) {
-        String formatted;
-        long time_last = ReadTime(c);
-        long time_till = System.currentTimeMillis() - time_last;
-        if (time_last == 2)
-            formatted = "00:00";
-        else if (time_till > 2 * DAY)
-            formatted = "00:00";
-        else if (time_till < 0)
-            formatted = "00:00";
-        else {
-            long hours, mins;
-            if (TimeUnit.MILLISECONDS.toHours(time_till) < 0)
-                hours = 0;
-            else
-                hours = TimeUnit.MILLISECONDS.toHours(time_till);
+// --Commented out by Inspection START (21/05/2021 18:43):
+//    public static String readFormatTimeNoSec(Context c) {
+//        String formatted;
+//        long time_last = ReadTime(c);
+//        long time_till = System.currentTimeMillis() - time_last;
+//        if (time_last == 2)
+//            formatted = "00:00";
+//        else if (time_till > 2 * DAY)
+//            formatted = "00:00";
+//        else if (time_till < 0)
+//            formatted = "00:00";
+//        else {
+//            long hours, mins;
+//            if (TimeUnit.MILLISECONDS.toHours(time_till) < 0)
+//                hours = 0;
+//            else
+//                hours = TimeUnit.MILLISECONDS.toHours(time_till);
+//
+//            if (TimeUnit.MILLISECONDS.toMinutes(time_till) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time_till)) < 0)
+//                mins = 0;
+//            else
+//                mins = TimeUnit.MILLISECONDS.toMinutes(time_till) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time_till));
+//
+//            formatted = String.format(
+//                    Locale.ENGLISH, "%02d:%02d", hours, mins); //todo:not RTL/Arabic/Israeli friendly!
+//        }
+//        return formatted;
+//    }
+// --Commented out by Inspection STOP (21/05/2021 18:43)
 
-            if (TimeUnit.MILLISECONDS.toMinutes(time_till) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time_till)) < 0)
-                mins = 0;
-            else
-                mins = TimeUnit.MILLISECONDS.toMinutes(time_till) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time_till));
-
-            formatted = String.format(
-                    Locale.ENGLISH, "%02d:%02d", hours, mins); //todo:not RTL/Arabic/Israeli friendly!
-        }
-        return formatted;
-    }
-
-    public static String readLosingTime(Context c) {
-        String formatted;
-        long time_last = ReadTime(c);
-        long time_to_send = (time_last + DAY) - System.currentTimeMillis();
-
-        long hours, mins;
-        if (TimeUnit.MILLISECONDS.toHours(time_to_send) < 0)
-            hours = 0;
-        else
-            hours = TimeUnit.MILLISECONDS.toHours(time_to_send);
-        if (TimeUnit.MILLISECONDS.toMinutes(time_to_send) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time_to_send)) < 0)
-            mins = 0;
-        else
-            mins = TimeUnit.MILLISECONDS.toMinutes(time_to_send) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time_to_send));
-
-        formatted = String.format(
-                Locale.ENGLISH, "%02d:%02d", hours, mins); //todo:not RTL/Arabic/Israeli friendly!
-        return formatted;
-    }
+// --Commented out by Inspection START (21/05/2021 18:44):
+//    public static String readLosingTime(Context c) {
+//        String formatted;
+//        long time_last = ReadTime(c);
+//        long time_to_send = (time_last + DAY) - System.currentTimeMillis();
+//
+//        long hours, mins;
+//        if (TimeUnit.MILLISECONDS.toHours(time_to_send) < 0)
+//            hours = 0;
+//        else
+//            hours = TimeUnit.MILLISECONDS.toHours(time_to_send);
+//        if (TimeUnit.MILLISECONDS.toMinutes(time_to_send) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time_to_send)) < 0)
+//            mins = 0;
+//        else
+//            mins = TimeUnit.MILLISECONDS.toMinutes(time_to_send) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time_to_send));
+//
+//        formatted = String.format(
+//                Locale.ENGLISH, "%02d:%02d", hours, mins); //todo:not RTL/Arabic/Israeli friendly!
+//        return formatted;
+//    }
+// --Commented out by Inspection STOP (21/05/2021 18:44)
 }

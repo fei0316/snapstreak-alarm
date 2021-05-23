@@ -21,6 +21,7 @@
 package com.iatfei.streakalarm;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.preference.PreferenceManager;
@@ -28,12 +29,14 @@ import androidx.preference.PreferenceManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 public class NotifScheduleActivity extends AppCompatActivity {
 
     private static final long DAY = 24 * 60 * 60 * 1000;
-    private static final long HOUR = 60 * 60 * 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,7 @@ public class NotifScheduleActivity extends AppCompatActivity {
 
         final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.inflateMenu(R.menu.notifsched_menu);
 
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
@@ -75,23 +79,66 @@ public class NotifScheduleActivity extends AppCompatActivity {
         tv6 = findViewById(R.id.textViewContent6);
         tv7 = findViewById(R.id.textViewContent7);
 
+        long absLastFire = Math.abs(Time.ReadTime(c) - now);
+        long loseStreaksTime = (Time.ReadTime(c) + DAY) - now;
+        long firstNotifTime = next - now;
+        long secondNotifTime = second - now;
+        long thirdNotifTime = third - now;
+        long lastNotifTime = fire245 - now;
+        String notifSent = getString(R.string.notifsched_notif_sent);
+
         if (snooze == 0)
             tvh.setText(getString(R.string.notifsched_snooze_disabled));
         else
             tvh.setText(getString(R.string.notifsched_snooze_enabled, Time.getFormatTime(snooze - now)));
 
-        long absLastFire = Math.abs(Time.ReadTime(c) - now);
 
         if (absLastFire > 2 * DAY)
             tv1.setText(getString(R.string.notifsched_toolong));
         else
             tv1.setText(getString(R.string.notifsched_before, Time.getTextTime(absLastFire, c)));
-        tv2.setText(Time.getTextTime((Time.ReadTime(c) + DAY) - now, c));
-        tv3.setText(Time.getTextTime(next - now, c));
-        tv4.setText(Time.getTextTime(second - now, c));
+        if (loseStreaksTime > 0)
+            tv2.setText(Time.getTextTime(loseStreaksTime, c));
+        else
+            tv2.setText(getString(R.string.notifsched_streaks_lost));
+        if (firstNotifTime > 0)
+            tv3.setText(Time.getTextTime(firstNotifTime, c));
+        else
+            tv3.setText(notifSent);
+        if (secondNotifTime > 0)
+            tv4.setText(Time.getTextTime(secondNotifTime, c));
+        else
+            tv4.setText(notifSent);
 //        tv5.setText(Time.getTextTime(fire225 - now, c));
 //        tv6.setText(Time.getTextTime(fire235 - now, c));
-        tv6.setText(Time.getTextTime(third - now, c));
-        tv7.setText(Time.getTextTime(fire245 - now, c));
+        if (thirdNotifTime > 0)
+            tv6.setText(Time.getTextTime(thirdNotifTime, c));
+        else
+            tv6.setText(notifSent);
+        if (lastNotifTime > 0)
+            tv7.setText(Time.getTextTime(lastNotifTime, c));
+        else
+            tv7.setText(notifSent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.notifsched_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_help)  {
+            AlertDialog alertDialog = new AlertDialog.Builder(NotifScheduleActivity.this).create();
+            alertDialog.setTitle(getString(R.string.notifsched_help));
+            alertDialog.setMessage(getString(R.string.notifsched_desc));
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    (dialog, which) -> dialog.dismiss());
+            alertDialog.show();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
