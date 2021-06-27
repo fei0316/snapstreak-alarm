@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+  <string name="app_name">Streak Alarm</string>
+  <string name="last_streak">前回のストリークから経過した時間:</string>
+  <string name="main_service_enable">リマインダーが有効になりました。</string>
+  <string name="main_service_disable">リマインダーを無効にしました。ストリークを送信し、以下のメニューを使用してリマインダーを有効にしてください。</string>
+  <string name="main_setinterval_prompt">上記のメニューを使用して、いつ通知を受け取るかかを設定してください。</string>
+  <string name="main_reset_time">時間をリセットする！</string>
+  <plurals name="main_interval">
+    <item quantity="other">%1$d時間後にリマインダー通知が表示されます。スヌーズ期間は%2$dに設定されています。</item>
+  </plurals>
+  <string name="title_activity_about">このアプリについて</string>
+  <string name="menu_justnow">たった今ストリークを送信しました。</string>
+  <string name="menu_customtime">少し前に</string>
+  <string name="menu_remindinterval">リマインダー時間を設定する</string>
+  <string name="menu_opensnapchat">Snapchatを開く</string>
+  <string name="menu_notifsched">通知スケジュール</string>
+  <string name="menu_snooze">スヌーズ期間を設定する</string>
+  <string name="main_long_ago">随分前…</string>
+  <string name="main_new">不明</string>
+  <string name="menu_cancel">アラームを停止する</string>
+  <string name="menu_add_shortcut">ホーム画面にショートカットを追加する</string>
+  <string name="menu_shortcut_added_legacy">ショートカットが追加されました。</string>
+  <plurals name="notif_body_one">
+    <item quantity="other">今すぐストリークを送信してください！%1$d時間後にストリークが消えます。</item>
+  </plurals>
+  <string name="notif_title">ストリークする時間です！</string>
+  <string name="channel_description">ストリークを維持するように通知します</string>
+  <string name="channel_name">ストリークリマインダー</string>
+  <plurals name="notif_body_two">
+    <item quantity="other">１件の通知を逃しました！%1$d時間後にストリークが消えます。</item>
+  </plurals>
+  <plurals name="notif_body_multi">
+    <item quantity="other">%1$d件の通知を逃しました！%2$d時間後にストリークが消えます。</item>
+  </plurals>
+  <plurals name="notif_body_delay_unusedfornow" tools:keep="@plurals/notif_body_delay_unusedfornow">
+    <item quantity="other">ストリーク送信を忘れないでね！%1$d時間後にストリークが消えます。</item>
+  </plurals>
+  <string name="notif_body_almost">もうすぐストリークが消えるよ！今すぐストリークを送信!</string>
+  <string name="notif_body_already">ストリークを失ったかもしれません。今すぐSnapを送信するか、リマインダーを停止してください。</string>
+  <string name="notif_snooze">スヌーズ</string>
+  <string name="notif_sent">スナップ送信</string>
+  <string name="notif_lost_streak_title">ストリークが失われました！</string>
+  <string name="notif_turnoff_reminder">リマインダーを無効にする</string>
+  <string name="snapbefore_title">どのくらい前？(Snapchatでの表示)</string>
+  <string name="snapbefore_ok">OK</string>
+  <plurals name="snapbefore_hours">
+    <item quantity="other"> 時間</item>
+  </plurals>
+  <string name="nosnapapp">Snapchatがインストールされていません。</string>
+  <string name="picker_invalid_time">懐かしすぎる！今すぐストリークを送信してください！</string>
+  <string name="interval_title">いつ通知を表示しますか（時間）</string>
+  <plurals name="interval_set">
+    <item quantity="other">ストリークを送信してから%1$d時間後に通知します。詳しくは「通知スケジュール」をご覧ください。</item>
+  </plurals>
+  <string name="menu_service_disable">リマインダーが解除されました。</string>
+  <string name="menu_service_enabled">時間セット。リマインダーが有効になりました。</string>
+  <string name="snooze_length_title">スヌーズの持続時間（分）を教えてください。</string>
+  <string name="snooze_set">スヌーズボタンを押すと、リマインダーが%1$d分間延期されます。</string>
+  <plurals name="interval_set_disabled">
+    <item quantity="other">通知をオフにしました。通知間隔は%1$d時間に設定されました。</item>
+  </plurals>
+  <string name="app_description">ストリークを維持するために開発されました。友達がいないと使えません。</string>
+  <string name="text_version">バージョン</string>
+  <string name="about_mysite">個人サイト</string>
+  <string name="about_license">オープンソースライセンス</string>
+  <string name="title_developed">開発者</string>
+  <string name="about_contact">お問い合わせ</string>
+  <string name="about_this_license">ソースコード</string>
+  <string name="about_this_license_details">このアプリケーションは、GNU General Public Licenseバージョン3以降でライセンスされています。このライセンスに基づいて、自由に再配布および/または変更することができます。ソースコードとライセンスの詳細については、GitHubページをご覧ください。</string>
+  <string name="about_app">このアプリについて</string>
+  <string name="about_developer">開発</string>
+  <string name="about_opensource_logolicense_title">ロゴライセンス</string>
+  <string name="notifsched_title">通知スケジュール</string>
+  <string name="notifsched_lastfire">最後のストリーク送信</string>
+  <string name="notifsched_losestreak">ストリークを失うまで</string>
+  <string name="notifsched_firstnotif">最初の通知まで</string>
+  <string name="notifsched_secondnotif">2回目の通知まで</string>
+  <string name="notifsched_225">22.5時間の通知</string>
+  <string name="notifsched_235">23.5時間の通知まで</string>
+  <string name="notifsched_last">最終通知まで</string>
+  <string name="notifsched_snooze_disabled">スヌーズされた通知はありません。</string>
+  <string name="notifsched_snooze_enabled">通知のスヌーズ: %1s</string>
+  <string name="notifsched_before">%1s前</string>
+  <string name="notifsched_timeformat" formatted="false">%02d時間%02d分</string>
+  <string name="shortcut_sent_short">ストリーク送信</string>
+  <string name="shortcut_sent_long">たった今ストリークを送信しました。</string>
+  <string name="shortcut_sent_toast">たった今ストリークを送信しました。タイムセット。</string>
+  <string name="tutor_menu_title">その他のオプション</string>
+  <string name="tutor_menu_content">このメニューでは、通知の管理とカスタマイズができます。ショートカットを追加してみましょう！</string>
+  <string name="tutor_button_title">ここから始めましょう!</string>
+  <string name="tutor_button_content">ストリークを送信した後にこのメニューを使います。また、通知やショートカットからも行えます。</string>
+  <string name="dialog_battery_title">リマインダーは信頼できない場合があります</string>
+  <string name="dialog_battery_message">お使いのデバイスが、Streak Alarmが正確にストリークを通知することを妨げています。「設定」でこのアプリをホワイトリストに登録して、バッテリーの最適化を無効にしてください。このアプリを再起動またはアップデートしたばかりの場合は、この警告を無視してください。</string>
+  <string name="dialog_battery_button_negative">無視する</string>
+  <string name="dialog_battery_button_positive">設定画面へ</string>
+  <string name="menu_cant_shortcut">ランチャーではショートカットが許可されていません。</string>
+  <string name="changelog_title">新機能</string>
+  <string name="changelog_140_1">通知の動作を変更しました。</string>
+  <string name="changelog_140_2">メニューに通知スケジュールを追加しました。新しい通知の配置を確認してください。</string>
+  <string name="changelog_140_3">メニューにショートカット機能を追加しました。</string>
+  <string name="changelog_140_4">リマインダーはバッテリー節約モードで動作するようになりました。</string>
+  <string name="changelog_bugfixes">不具合修正とインターフェースの改善。</string>
+  <string name="about_special_thanks_title">貢献者</string>
+  <string name="about_special_thanks_content">スペイン語（ラテンアメリカ）翻訳：Aurea\n韓国語翻訳： Han\nヒンディー語翻訳：Radha\n日本語翻訳：Nico\nスペシャル感謝：翻訳プラットフォームLokalise</string>
+  <string name="notifsched_toolong">ずっと前</string>
+  <string name="menu_fab_description">メインメニュー</string>
+  <string name="about_privacy_policy">プライバシーポリシー</string>
+  <string name="notifsched_thirdnotif">3回目の通知</string>
+  <string name="notifsched_notif_sent">送信済み</string>
+  <string name="notifsched_streaks_lost">ストリークが失われました</string>
+  <string name="notifsched_help">ヘルプ</string>
+  <string name="notifsched_desc">最初の通知は指定された時間に表示されます。 \n\n2回目と3回目の通知は、指定された時間とストリークを失った時の中間と4分の3の時に表示されます。 \n\n最後の通知は24時間後に表示されます。 \n\n例えば、通知時間が12時間に設定されていて、深夜にストリークを送信した場合、正午に通知、午後6時に通知、午後9時に通知、そして翌日の午前0時３０分に最終通知が表示されます。</string>
+  <string name="changelog_150_1">通知の動作を変更しました。詳しくは通知スケジュールをご確認ください。</string>
+  <string name="changelog_150_2">23時間の通知時間がサポートされるようになりました。</string>
+  <string name="changelog_150_3">ランドスケープモードがサポートされています。</string>
+  <string name="changelog_screenreader_compat">スクリーンリーダーに対応しました。</string>
+</resources>
