@@ -73,26 +73,29 @@ public class MainActivity extends AppCompatActivity {
         toolbar.inflateMenu(R.menu.main_menu);
 
         final SpeedDialView speedDialView = findViewById(R.id.speedDial1);
-        speedDialView.setContentDescription(getString(R.string.menu_fab_description));
+//        speedDialView.setContentDescription(getString(R.string.menu_fab_description));
         speedDialView.addActionItem(
                 new SpeedDialActionItem
                         .Builder(R.id.fab_justnow, R.drawable.ic_done_black_24dp)
                         .setFabBackgroundColor(getResources().getColor(R.color.colorAccent))
-//                        .setContentDescription(R.string.menu_justnow)
+                        .setFabImageTintColor(getResources().getColor(R.color.white))
+                        .setContentDescription(R.string.menu_justnow)
                         .setLabel(R.string.menu_justnow)
                         .create());
         speedDialView.addActionItem(
                 new SpeedDialActionItem
                         .Builder(R.id.fab_sometimeago, R.drawable.ic_access_time_black_24dp)
                         .setFabBackgroundColor(getResources().getColor(R.color.colorAccent))
-//                        .setContentDescription(R.string.menu_customtime)
+                        .setFabImageTintColor(getResources().getColor(R.color.white))
+                        .setContentDescription(R.string.menu_customtime)
                         .setLabel(R.string.menu_customtime)
                         .create());
         speedDialView.addActionItem(
                 new SpeedDialActionItem
                         .Builder(R.id.fab_snapchat, R.drawable.camera_outline)
                         .setFabBackgroundColor(getResources().getColor(R.color.snapYellow))
-//                        .setContentDescription(R.string.menu_opensnapchat)
+                        .setFabImageTintColor(getResources().getColor(R.color.timeText))
+                        .setContentDescription(R.string.menu_opensnapchat)
                         .setLabel(R.string.menu_opensnapchat)
                         .create());
 
@@ -111,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 }, 200);
                 return false;
             } else if (id == R.id.fab_sometimeago) {
-                PickTime();
+//                PickTime();
                 return false;
             } else if (id == R.id.fab_snapchat) {
                 Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.snapchat.android");

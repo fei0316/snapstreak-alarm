@@ -28,7 +28,6 @@
     <string name="about_mysite">我的网站</string>
     <string name="about_license">开放原代码授权</string>
     <string name="title_developed">开发</string>
-    <string name="developed_by">由 Fei Kuan 在 Android Studio 开发。</string>
     <string name="menu_justnow">刚刚才发送的 Snap</string>
     <string name="menu_customtime">之前发送的 Snap</string>
     <string name="menu_remindinterval">设置提示时间</string>

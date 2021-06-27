@@ -78,7 +78,6 @@
     <string name="about_mysite">我的網站</string>
     <string name="about_license">開放原始碼授權</string>
     <string name="title_developed">開發</string>
-    <string name="developed_by">由 Fei Kuan 在 Android Studio 開發。</string>
     <string name="about_contact">聯絡我</string>
     <string name="about_this_license">原始碼</string>
     <string name="about_this_license_details">本軟件以 GNU 通用公共許可證條款第三版發佈（或更新版本）。你可以在此條款下重新發佈和修改本軟件。請點選以進入本程式的 GitHub 頁面獲得原始碼和版權資訊。</string>

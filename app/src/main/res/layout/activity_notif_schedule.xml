@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
-            app:theme="@style/ToolBarStyle">
+            android:theme="@style/ToolBarStyle">
 
             <androidx.appcompat.widget.ActionMenuView
                 android:id="@+id/amv"

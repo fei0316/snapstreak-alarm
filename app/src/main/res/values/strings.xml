@@ -89,7 +89,7 @@
     <string name="iatfei_link" translatable="false">https://iatfei.com</string>
     <string name="about_license">Open Source Licenses</string>
     <string name="title_developed">Developed by</string>
-    <string name="developed_by">Fei Kuan on Android Studio.</string>
+    <string name="developed_by" translatable="false">Fei Kuan</string>
     <string name="about_restart" translatable="false">RE:START #1</string>
     <string name="restart" translatable="false">The past is in the past.</string>
     <string name="legal" translatable="false">Legal</string>
