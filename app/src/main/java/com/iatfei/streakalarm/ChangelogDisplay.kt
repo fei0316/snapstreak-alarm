@@ -40,11 +40,11 @@ class ChangelogDisplay : MainActivity() {
                 showRule(rule)
                 source(Source.Dynamic(
                         listOf(
-                                Release("24/05/2021", "1.5.0",
+                                Release("02/07/2021", "1.5.0",
                                         listOf(
                                                 Release.Change(c.getString(R.string.changelog_150_2), ChangeType.ADDED),
                                                 Release.Change(c.getString(R.string.changelog_150_3), ChangeType.ADDED),
-//                                                Release.Change(c.getString(R.string.changelog_150_1), ChangeType.ADDED),
+                                                Release.Change(c.getString(R.string.changelog_jap_added), ChangeType.ADDED),
 //                                                Release.Change(c.getString(R.string.changelog_150_2), ChangeType.ADDED),
 //                                                Release.Change(c.getString(R.string.changelog_150_3), ChangeType.ADDED),
                                                 Release.Change(c.getString(R.string.changelog_150_1), ChangeType.CHANGED),

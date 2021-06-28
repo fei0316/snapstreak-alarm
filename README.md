@@ -41,6 +41,7 @@ My first app project! :) Got it done before I turn 18.
 * Chinese (Hong Kong)
 * Chinese (Taiwan)
 * Chinese (China)
+* Japanese - thanks Nico!
 * Coming soon:
     * Korean 
     * Spanish (Latin American)

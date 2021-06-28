@@ -104,7 +104,7 @@
     <string name="about_restart_title" translatable="false">RE:START</string>
     <string name="about_opensource_logolicense_title">Logo Licenses</string>
     <string name="about_special_thanks_title">Contributors</string>
-    <string name="about_special_thanks_content">(FEEL FREE TO CHANGE YOUR NAME INTO WHATEVER YOU WANT TO BE KNOWN FOR!! For example Full name/nickname/twitter handle/anonymous/etc etc)Spanish (Latin America) translation by: Aurea\nKorean translation by: Han\nHindi translation by: Radha\nJapanese translation by: Nico\nSpecial Thanks to Lokalise for providing a professional translation platform for free.</string>
+    <string name="about_special_thanks_content">Spanish (Latin America) translation by: Aurea\nKorean translation by: Han\nHindi translation by: Radha\nJapanese translation by: Nico\nSpecial Thanks to Lokalise for providing a professional translation platform for free.</string>
     <string name="about_privacy_policy">Privacy Policy</string>
 
     <!--Notification Schedule-->
@@ -158,7 +158,7 @@
     <string name="changelog_kor_added" translatable="false">(Something like "hello/welcome, we speak Korean now!" in Korean). Korean is now supported!</string>
     <string name="changelog_esp_added" translatable="false">(Something like "hello/welcome, we speak Spanish now!" in Spanish). Spanish (Latin America) is now supported!</string>
     <string name="changelog_hin_added" translatable="false">(Something like "hello/welcome, we speak Hindi now!" in Hindi). Hindi is now supported!</string>
-    <string name="changelog_jap_added" translatable="false">(Something like "hello/welcome, we speak Japanese now!" in Japanese). Japanese is now supported!</string>
+    <string name="changelog_jap_added" translatable="false">日本語がサポートされるようになりました！Japanese is now supported!</string>
 
     <string name="changelog_bugfixes">Bugfixes and interface improvements.</string>
 </resources>

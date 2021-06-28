@@ -26,6 +26,7 @@
     <color name="colorAccentLight">#AEE571</color>
     <color name="colorAccentDark">#4B830D</color>
     <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
     <color name="white_pressed">#999999</color>
     <color name="half_black">#555555</color>
     <color name="orange_warning">#FF6D00</color>

@@ -90,7 +90,6 @@
             android:data="mailto:apps@iatfei.com" />
 
     </Preference>
-<!--
     <Preference
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -102,7 +101,6 @@
         android:summary="@string/about_special_thanks_content"
         android:title="@string/about_special_thanks_title" >
     </Preference>
--->
 <!--    <Preference
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

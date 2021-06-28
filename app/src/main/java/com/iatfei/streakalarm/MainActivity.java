@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 new SpeedDialActionItem
                         .Builder(R.id.fab_snapchat, R.drawable.camera_outline)
                         .setFabBackgroundColor(getResources().getColor(R.color.snapYellow))
-                        .setFabImageTintColor(getResources().getColor(R.color.timeText))
+                        .setFabImageTintColor(getResources().getColor(R.color.black))
                         .setContentDescription(R.string.menu_opensnapchat)
                         .setLabel(R.string.menu_opensnapchat)
                         .create());
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 }, 200);
                 return false;
             } else if (id == R.id.fab_sometimeago) {
-//                PickTime();
+                PickTime();
                 return false;
             } else if (id == R.id.fab_snapchat) {
                 Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
