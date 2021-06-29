@@ -1,36 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ Copyright (c) 2017-2021 Fei Kuan.
-  ~
-  ~ This file is part of Streak Alarm
-  ~ (see <https://github.com/fei0316/snapstreak-alarm>).
-  ~
-  ~ This program is free software: you can redistribute it and/or modify
-  ~ it under the terms of the GNU General Public License as published by
-  ~ the Free Software Foundation, either version 3 of the License, or
-  ~ (at your option) any later version.
-  ~
-  ~ This program is distributed in the hope that it will be useful,
-  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ~ GNU General Public License for more details.
-  ~
-  ~ You should have received a copy of the GNU General Public License
-  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-
 <resources xmlns:tools="http://schemas.android.com/tools">
   <string name="app_name">Streak Alarm</string>
-  <string name="last_streak">前回のストリークから経過した時間:</string>
+  <string name="last_streak">前回のスナップから:</string>
   <string name="main_service_enable">リマインダーが有効になりました。</string>
-  <string name="main_service_disable">リマインダーを無効にしました。ストリークを送信し、以下のメニューを使用してリマインダーを有効にしてください。</string>
+  <string name="main_service_disable">リマインダーを無効した。ストリークを送信して下のメニューで有効にしてください。</string>
   <string name="main_setinterval_prompt">上記のメニューを使用して、いつ通知を受け取るかかを設定してください。</string>
   <string name="main_reset_time">時間をリセットする！</string>
   <plurals name="main_interval">
-    <item quantity="other">%1$d時間後にリマインダー通知が表示されます。スヌーズ期間は%2$dに設定されています。</item>
+    <item quantity="other">%1$d時間後にリマインダー通知が表示されます。\nスヌーズ期間は%2$d分に設定されています。</item>
   </plurals>
   <string name="title_activity_about">このアプリについて</string>
-  <string name="menu_justnow">たった今ストリークを送信しました。</string>
+  <string name="menu_justnow">今ストリーク送信しました</string>
   <string name="menu_customtime">少し前に</string>
   <string name="menu_remindinterval">リマインダー時間を設定する</string>
   <string name="menu_opensnapchat">Snapchatを開く</string>
@@ -39,7 +19,7 @@
   <string name="main_long_ago">随分前…</string>
   <string name="main_new">不明</string>
   <string name="menu_cancel">アラームを停止する</string>
-  <string name="menu_add_shortcut">ホーム画面にショートカットを追加する</string>
+  <string name="menu_add_shortcut">ホーム画面にショートカットを追加</string>
   <string name="menu_shortcut_added_legacy">ショートカットが追加されました。</string>
   <plurals name="notif_body_one">
     <item quantity="other">今すぐストリークを送信してください！%1$d時間後にストリークが消えます。</item>
@@ -130,7 +110,7 @@
   <string name="notifsched_notif_sent">送信済み</string>
   <string name="notifsched_streaks_lost">ストリークが失われました</string>
   <string name="notifsched_help">ヘルプ</string>
-  <string name="notifsched_desc">最初の通知は指定された時間に表示されます。 \n\n2回目と3回目の通知は、指定された時間とストリークを失った時の中間と4分の3の時に表示されます。 \n\n最後の通知は24時間後に表示されます。 \n\n例えば、通知時間が12時間に設定されていて、深夜にストリークを送信した場合、正午に通知、午後6時に通知、午後9時に通知、そして翌日の午前0時３０分に最終通知が表示されます。</string>
+  <string name="notifsched_desc">最初の通知は指定された時間に表示されます。 \n\n2回目と3回目の通知は、指定された時間とストリークを失った時の中間と4分の3の時に表示されます。 \n\n最後の通知は24時間後に表示されます。 \n\n例えば、通知時間が12時間に設定されていて、深夜にストリークを送信した場合、正午に通知、午後6時に通知、午後9時に通知、そして翌日の午前0時30分に最終通知が表示されます。</string>
   <string name="changelog_150_1">通知の動作を変更しました。詳しくは通知スケジュールをご確認ください。</string>
   <string name="changelog_150_2">23時間の通知時間がサポートされるようになりました。</string>
   <string name="changelog_150_3">ランドスケープモードがサポートされています。</string>

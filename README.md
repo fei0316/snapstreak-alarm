@@ -64,7 +64,7 @@ Just clone the repository and open it in Android Studio. It should work...
          alt="Lokalise Logo" height="40">
 </a><br>
 Lokalise for supporting our project by providing us with a professional translation platform for free.
-c
+
 ## Licenses
 ```
 Copyright (c) 2017-2021 Fei Kuan.
