@@ -155,7 +155,7 @@
     <string name="changelog_150_2">23 hours notification time is now supported.</string>
     <string name="changelog_150_3">Landscape mode supported.</string>
     <string name="changelog_screenreader_compat">Now fully compatible with screen readers.</string>
-    <string name="changelog_kor_added" translatable="false">(Something like "hello/welcome, we speak Korean now!" in Korean). Korean is now supported!</string>
+    <string name="changelog_kor_added" translatable="false">이제 한국어 버전이 지원됩니다. Korean is now supported!</string>
     <string name="changelog_esp_added" translatable="false">(Something like "hello/welcome, we speak Spanish now!" in Spanish). Spanish (Latin America) is now supported!</string>
     <string name="changelog_hin_added" translatable="false">(Something like "hello/welcome, we speak Hindi now!" in Hindi). Hindi is now supported!</string>
     <string name="changelog_jap_added" translatable="false">日本語がサポートされるようになりました！Japanese is now supported!</string>
