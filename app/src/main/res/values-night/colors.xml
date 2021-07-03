@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="timeText">#ffffff</color>
+    <color name="red_warning">#ff1744</color>
+
+    <color name="colorAccent">#60ad5e</color>
+    <color name="colorAccentDark">#2e7d32</color>
+
+    <color name="changelogFixed">#005005</color>
+
+    <color name="backgroundColor">#303030</color>
 </resources>

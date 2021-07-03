@@ -82,7 +82,7 @@
   <string name="notifsched_snooze_disabled">スヌーズされた通知はありません。</string>
   <string name="notifsched_snooze_enabled">通知のスヌーズ: %1s</string>
   <string name="notifsched_before">%1s前</string>
-  <string name="notifsched_timeformat" formatted="false">%02d時間%02d分</string>
+  <string name="notifsched_timeformat">%02d時間%02d分</string>
   <string name="shortcut_sent_short">ストリーク送信</string>
   <string name="shortcut_sent_long">たった今ストリークを送信しました。</string>
   <string name="shortcut_sent_toast">たった今ストリークを送信しました。タイムセット。</string>

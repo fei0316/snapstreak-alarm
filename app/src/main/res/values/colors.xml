@@ -21,17 +21,31 @@
 
 <resources>
     <color name="colorPrimary">#00695C</color>
+    <color name="colorPrimaryLight">#439889</color>
     <color name="colorPrimaryDark">#003D33</color>
-    <color name="colorAccent">#7CB342</color>
-    <color name="colorAccentLight">#AEE571</color>
-    <color name="colorAccentDark">#4B830D</color>
+
+    <color name="colorAccent">#2e7d32</color>
+    <color name="colorAccentLight">#60ad5e</color>
+    <color name="colorAccentDark">#005005</color>
+
+    <color name="fabColor">#2e7d32</color>
+
+    <color name="changelogAdded">#2e7d32</color>
+    <color name="changelogChanged">#00695C</color>
+    <color name="changelogRemoved">#005005</color>
+    <color name="changelogFixed">#003D33</color>
+
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="white_pressed">#999999</color>
     <color name="half_black">#555555</color>
+
     <color name="orange_warning">#FF6D00</color>
     <color name="red_warning">#D50000</color>
+
     <color name="snapYellow">#FFFC00</color>
     <color name="snapYellowAccent">#C8C500</color>
+
     <color name="timeText">#000000</color>
+    <color name="backgroundColor">#FAFAFA</color>
 </resources>

@@ -34,6 +34,7 @@ class ChangelogDisplay : MainActivity() {
                 ShowRule.Always
 
             NoticeBoard(act).pin {
+                colorProvider(ChangelogColorProvider())
                 title(c.getString(R.string.changelog_title))
                 displayIn(DisplayOptions.ACTIVITY)
                 tag("1.5.0")
@@ -65,6 +66,7 @@ class ChangelogDisplay : MainActivity() {
                 val customColorProvider = ChangelogColorProvider()
                 colorProvider(customColorProvider)
             }
+
         }
     }
 }

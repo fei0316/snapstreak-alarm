@@ -74,10 +74,12 @@ public class MainActivity extends AppCompatActivity {
 
         final SpeedDialView speedDialView = findViewById(R.id.speedDial1);
 //        speedDialView.setContentDescription(getString(R.string.menu_fab_description));
+        speedDialView.setMainFabClosedBackgroundColor(getResources().getColor(R.color.fabColor));
+        speedDialView.setMainFabOpenedBackgroundColor(getResources().getColor(R.color.fabColor));
         speedDialView.addActionItem(
                 new SpeedDialActionItem
                         .Builder(R.id.fab_justnow, R.drawable.ic_done_black_24dp)
-                        .setFabBackgroundColor(getResources().getColor(R.color.colorAccent))
+                        .setFabBackgroundColor(getResources().getColor(R.color.fabColor))
                         .setFabImageTintColor(getResources().getColor(R.color.white))
                         .setContentDescription(R.string.menu_justnow)
                         .setLabel(R.string.menu_justnow)
@@ -85,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         speedDialView.addActionItem(
                 new SpeedDialActionItem
                         .Builder(R.id.fab_sometimeago, R.drawable.ic_access_time_black_24dp)
-                        .setFabBackgroundColor(getResources().getColor(R.color.colorAccent))
+                        .setFabBackgroundColor(getResources().getColor(R.color.fabColor))
                         .setFabImageTintColor(getResources().getColor(R.color.white))
                         .setContentDescription(R.string.menu_customtime)
                         .setLabel(R.string.menu_customtime)

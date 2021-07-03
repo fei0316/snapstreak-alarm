@@ -20,13 +20,43 @@
 
 package com.iatfei.streakalarm
 
-import net.furkanakdemir.noticeboard.util.color.NoticeBoardColorProvider
+import net.furkanakdemir.noticeboard.ChangeType
+import net.furkanakdemir.noticeboard.ChangeType.*
+import net.furkanakdemir.noticeboard.DisplayOptions
+import net.furkanakdemir.noticeboard.util.color.ColorProvider
 
-class ChangelogColorProvider : NoticeBoardColorProvider() {
-    override var colorAdded: Int = R.color.colorAccent
-    override var colorChanged: Int = R.color.colorAccentDark
-    override var colorDeprecated: Int = R.color.colorPrimary
-    override var colorRemoved: Int = R.color.colorPrimary
-    override var colorFixed: Int = R.color.colorPrimaryDark
-    override var colorSecurity: Int = R.color.colorPrimaryDark
+class ChangelogColorProvider : ColorProvider {
+    override fun getChangeTypeBackgroundColor(changeType: ChangeType): Int {
+        return when(changeType) {
+            ADDED -> { R.color.changelogAdded }
+            REMOVED -> { R.color.changelogRemoved }
+            CHANGED -> { R.color.changelogChanged }
+            FIXED -> { R.color.changelogFixed }
+            SECURITY -> { R.color.changelogFixed }
+            DEPRECATED -> { R.color.changelogRemoved }
+            UNRELEASED -> { R.color.changelogFixed }
+        }
+    }
+
+    override fun getBackgroundColor(): Int {
+        return R.color.backgroundColor
+    }
+
+    override fun getDescriptionColor(): Int {
+        return R.color.timeText
+    }
+
+    override fun getTitleColor(displayOptions: DisplayOptions): Int {
+        return R.color.white
+    }
+
 }
+
+//class ChangelogColorProvider : NoticeBoardColorProvider() {
+//    override var colorAdded: Int = R.color.colorAccent
+//    override var colorChanged: Int = R.color.colorAccentDark
+//    override var colorDeprecated: Int = R.color.colorPrimary
+//    override var colorRemoved: Int = R.color.colorPrimary
+//    override var colorFixed: Int = R.color.colorPrimaryDark
+//    override var colorSecurity: Int = R.color.colorPrimaryDark
+//}

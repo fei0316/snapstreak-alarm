@@ -47,7 +47,7 @@
     <style name="NotifSchedContent" parent="@android:style/TextAppearance.Material.Subhead">
     </style>
 
-    <style name="NoticeBoardTheme" parent="Theme.MaterialComponents.Light">
+    <style name="NoticeBoardTheme" parent="Theme.MaterialComponents.DayNight">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
