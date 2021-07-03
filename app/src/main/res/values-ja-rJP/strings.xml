@@ -10,16 +10,16 @@
     <item quantity="other">%1$d時間後にリマインダー通知が表示されます。\nスヌーズ期間は%2$d分に設定されています。</item>
   </plurals>
   <string name="title_activity_about">このアプリについて</string>
-  <string name="menu_justnow">今ストリーク送信しました</string>
+  <string name="menu_justnow">ストリーク送信済み</string>
   <string name="menu_customtime">少し前に</string>
-  <string name="menu_remindinterval">リマインダー時間を設定する</string>
+  <string name="menu_remindinterval">リマインダー時間を設定</string>
   <string name="menu_opensnapchat">Snapchatを開く</string>
   <string name="menu_notifsched">通知スケジュール</string>
-  <string name="menu_snooze">スヌーズ期間を設定する</string>
+  <string name="menu_snooze">スヌーズ期間を設定</string>
   <string name="main_long_ago">随分前…</string>
   <string name="main_new">不明</string>
-  <string name="menu_cancel">アラームを停止する</string>
-  <string name="menu_add_shortcut">ホーム画面にショートカットを追加</string>
+  <string name="menu_cancel">アラームを停止</string>
+  <string name="menu_add_shortcut">ショートカットを追加</string>
   <string name="menu_shortcut_added_legacy">ショートカットが追加されました。</string>
   <plurals name="notif_body_one">
     <item quantity="other">今すぐストリークを送信してください！%1$d時間後にストリークが消えます。</item>
@@ -36,13 +36,13 @@
   <plurals name="notif_body_delay_unusedfornow" tools:keep="@plurals/notif_body_delay_unusedfornow">
     <item quantity="other">ストリーク送信を忘れないでね！%1$d時間後にストリークが消えます。</item>
   </plurals>
-  <string name="notif_body_almost">もうすぐストリークが消えるよ！今すぐストリークを送信!</string>
+  <string name="notif_body_almost">もうすぐストリークが消えるよ！今すぐストリークを送信！</string>
   <string name="notif_body_already">ストリークを失ったかもしれません。今すぐSnapを送信するか、リマインダーを停止してください。</string>
   <string name="notif_snooze">スヌーズ</string>
   <string name="notif_sent">スナップ送信</string>
   <string name="notif_lost_streak_title">ストリークが失われました！</string>
   <string name="notif_turnoff_reminder">リマインダーを無効にする</string>
-  <string name="snapbefore_title">どのくらい前？(Snapchatでの表示)</string>
+  <string name="snapbefore_title">どのくらい前？（Snapchatでの表示）</string>
   <string name="snapbefore_ok">OK</string>
   <plurals name="snapbefore_hours">
     <item quantity="other"> 時間</item>
@@ -55,7 +55,7 @@
   </plurals>
   <string name="menu_service_disable">リマインダーが解除されました。</string>
   <string name="menu_service_enabled">時間セット。リマインダーが有効になりました。</string>
-  <string name="snooze_length_title">スヌーズの持続時間（分）を教えてください。</string>
+  <string name="snooze_length_title">スヌーズの持続時間（分）を教えてください</string>
   <string name="snooze_set">スヌーズボタンを押すと、リマインダーが%1$d分間延期されます。</string>
   <plurals name="interval_set_disabled">
     <item quantity="other">通知をオフにしました。通知間隔は%1$d時間に設定されました。</item>
@@ -82,7 +82,7 @@
   <string name="notifsched_snooze_disabled">スヌーズされた通知はありません。</string>
   <string name="notifsched_snooze_enabled">通知のスヌーズ: %1s</string>
   <string name="notifsched_before">%1s前</string>
-  <string name="notifsched_timeformat">%02d時間%02d分</string>
+  <string name="notifsched_timeformat" formatted="false">%02d時間%02d分</string>
   <string name="shortcut_sent_short">ストリーク送信</string>
   <string name="shortcut_sent_long">たった今ストリークを送信しました。</string>
   <string name="shortcut_sent_toast">たった今ストリークを送信しました。タイムセット。</string>
