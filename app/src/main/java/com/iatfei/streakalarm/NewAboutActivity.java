@@ -90,8 +90,12 @@ public class NewAboutActivity extends AppCompatActivity {
             Intent webpageIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.example.com"));
             if(webpageIntent.resolveActivity(packageManager) == null) {
                 Preference web = findPreference("edit_text_preference_4");
+                Preference github = findPreference("edit_text_preference_3");
                 if (web != null) {
                     web.setIntent(null);
+                }
+                if (github != null) {
+                    github.setIntent(null);
                 }
             }
         }

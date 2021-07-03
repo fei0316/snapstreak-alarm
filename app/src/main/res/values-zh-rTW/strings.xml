@@ -84,7 +84,8 @@
     <string name="about_developer">開發</string>
     <string name="about_opensource_logolicense_title">圖示授權條款</string>
     <string name="about_special_thanks_title">貢獻者</string>
-    <string name="about_special_thanks_content">拉丁美洲西班牙文翻譯：Aurea\n韓文翻譯：Han\n印地語翻譯：Radha\n日文翻譯：Nico\n特別感謝 Lokalise 免費提供使用線上專業翻譯平臺。</string>
+<!--    拉丁美洲西班牙文翻譯：Aurea\n印地語翻譯：Radha\n-->
+    <string name="about_special_thanks_content">日文翻譯：Nico\n韓文翻譯：Han\n特別感謝 Lokalise 免費提供使用線上專業翻譯平臺。</string>
     <string name="about_privacy_policy">隱私政策</string>
 
     <!--Notification Schedule-->

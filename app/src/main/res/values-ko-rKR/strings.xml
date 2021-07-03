@@ -82,7 +82,7 @@
   <string name="notifsched_snooze_disabled">스누즈된 알림이 없습니다.</string>
   <string name="notifsched_snooze_enabled">스누즈 알림: %1s 후</string>
   <string name="notifsched_before">%1s 전</string>
-  <string name="notifsched_timeformat" formatted="false">%02d시간 %02d분</string>
+  <string name="notifsched_timeformat">%02d시간 %02d분</string>
   <string name="shortcut_sent_short">스트릭 전송됨</string>
   <string name="shortcut_sent_long">방금 스트릭이 전송되었습니다</string>
   <string name="shortcut_sent_toast">방금 스트릭을 보냈습니다. 시간 설정.</string>
@@ -102,7 +102,8 @@
   <string name="changelog_140_4">이제 알림이 배터리 절약 모드에서도 작동합니다.</string>
   <string name="changelog_bugfixes">버그 수정 및 인터페이스 개선</string>
   <string name="about_special_thanks_title">참여자</string>
-  <string name="about_special_thanks_content">스페인어 (라틴 아메리카) 번역 : Aurea\n한국어 번역 : Han\n힌디어 번역 : Radha\n일본어 번역 : Nico\n전문 번역 플랫폼을 무료로 제공 한 Lokalise에게 특별히 감사드립니다.</string>
+<!--스페인어 (라틴 아메리카) 번역 : Aurea\n힌디어 번역 : Radha\n  -->
+  <string name="about_special_thanks_content">일본어 번역 : Nico\n한국어 번역 : Han\n전문 번역 플랫폼을 무료로 제공 한 Lokalise에게 특별히 감사드립니다.</string>
   <string name="notifsched_toolong">오래 전</string>
   <string name="menu_fab_description">메인 메뉴</string>
   <string name="about_privacy_policy">개인정보 처리방침</string>

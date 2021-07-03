@@ -104,7 +104,8 @@
     <string name="about_restart_title" translatable="false">RE:START</string>
     <string name="about_opensource_logolicense_title">Logo Licenses</string>
     <string name="about_special_thanks_title">Contributors</string>
-    <string name="about_special_thanks_content">Spanish (Latin America) translation by: Aurea\nKorean translation by: Han\nHindi translation by: Radha\nJapanese translation by: Nico\nSpecial Thanks to Lokalise for providing a professional translation platform for free.</string>
+<!--    Spanish (Latin America) translation by: Aurea\n\nHindi translation by: Radha-->
+    <string name="about_special_thanks_content">Japanese translation by: Nico\nKorean translation by: Han\nSpecial Thanks to Lokalise for providing a professional translation platform for free.</string>
     <string name="about_privacy_policy">Privacy Policy</string>
 
     <!--Notification Schedule-->
