@@ -39,7 +39,7 @@
   <string name="notif_body_almost">스트릭이 끊길 수도 있습니다! 지금 스트릭을 보내세요!</string>
   <string name="notif_body_already">스트릭이 끊겼을 수도 있습니다! 지금 스냅을 보내거나 알림을 중지하세요.</string>
   <string name="notif_snooze">스누즈</string>
-  <string name="notif_sent">스냅이 전송되었습니다.</string>
+  <string name="notif_sent">스냅이 전송되었습니다</string>
   <string name="notif_lost_streak_title">스트릭 실패!</string>
   <string name="notif_turnoff_reminder">알림 비활성화</string>
   <string name="snapbefore_title">얼마나 오래 전? (스냅챗에 표시된 대로)</string>
@@ -72,7 +72,7 @@
   <string name="about_developer">개발</string>
   <string name="about_opensource_logolicense_title">로고 라이선스</string>
   <string name="notifsched_title">알림 일정</string>
-  <string name="notifsched_lastfire">스트릭이 전송되었습니다.</string>
+  <string name="notifsched_lastfire">스트릭이 전송되었습니다</string>
   <string name="notifsched_losestreak">스트릭 연속 실패</string>
   <string name="notifsched_firstnotif">첫 번째 알림</string>
   <string name="notifsched_secondnotif">중간 알림</string>
