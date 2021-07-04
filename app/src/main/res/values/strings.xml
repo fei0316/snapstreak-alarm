@@ -104,7 +104,6 @@
     <string name="about_restart_title" translatable="false">RE:START</string>
     <string name="about_opensource_logolicense_title">Logo Licenses</string>
     <string name="about_special_thanks_title">Contributors</string>
-<!--    Spanish (Latin America) translation by: Aurea\n\nHindi translation by: Radha-->
     <string name="about_special_thanks_content">Japanese translation by: Nico\nKorean translation by: Han\nSpecial Thanks to Lokalise for providing a professional translation platform for free.</string>
     <string name="about_privacy_policy">Privacy Policy</string>
 
@@ -163,3 +162,14 @@
 
     <string name="changelog_bugfixes">Bugfixes and interface improvements.</string>
 </resources>
+
+<!--
+Special Thanks future contributors:
+
+Spanish (Latin America) translation by: Aurea\n\nHindi translation by: Radha
+スペイン語（ラテンアメリカ）翻訳：Aurea\nヒンディー語翻訳：Radha\n
+스페인어 (라틴 아메리카) 번역 : Aurea\n힌디어 번역 : Radha\n
+拉丁美洲西班牙语翻译：Aurea\n印地语翻译：Radha\n
+拉丁美洲西班牙文翻譯：Aurea\n印地文翻譯：Radha\n
+拉丁美洲西班牙文翻譯：Aurea\n印地語翻譯：Radha\n
+-->
