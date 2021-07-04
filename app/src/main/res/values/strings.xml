@@ -119,9 +119,9 @@
     <string name="notifsched_235">23.5 hour notification</string>
     <string name="notifsched_last">Last notification</string>
     <string name="notifsched_snooze_disabled">No snoozed notifications.</string>
-    <string name="notifsched_snooze_enabled">Snoozed notification in: %1s</string>
-    <string name="notifsched_before">%1s ago</string>
-    <string name="notifsched_timeformat">%02dh %02dm</string>
+    <string name="notifsched_snooze_enabled">Snoozed notification in: %1$s</string>
+    <string name="notifsched_before">%1$s ago</string>
+    <string name="notifsched_timeformat">%1$02dh %2$02dm</string>
     <string name="notifsched_toolong">Too long ago</string>
     <string name="notifsched_notif_sent">Sent</string>
     <string name="notifsched_streaks_lost">Streaks Lost</string>
