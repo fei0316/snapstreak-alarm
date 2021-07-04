@@ -110,7 +110,7 @@
   <string name="notifsched_notif_sent">전송되었습니다</string>
   <string name="notifsched_streaks_lost">스트릭 실패</string>
   <string name="notifsched_help">도움말</string>
-  <string name="notifsched_desc">지정된 시간에 첫 번째 알림이 표시됩니다. \n\n두 번째 및 세 번째 알림은 각각 지정된 시간의 중간 및 3/4 시간에 표시되고 스트릭을 잃을 때 표시됩니다. \n\n마지막 알림은 24시간 후에 표시됩니다.\n\n예를 들어 알림 시간이 12시간으로 설정되어 있고 자정에 연속으로 전송 한 경우 정오에 알림, 오후 6시에 알림, 오후 9시에 알림, 다음 날 자정 이후에 최종 알림을받습니다.</string>
+  <string name="notifsched_desc">지정된 시간에 첫 번째 알림이 표시됩니다. \n\n두 번째 및 세 번째 알림은 각각 지정된 시간의 중간 및 3/4 시간에 표시되고 스트릭을 잃을 때 표시됩니다. \n\n마지막 알림은 24시간 후에 표시됩니다. \n\n예를 들어 알림 시간이 12시간으로 설정되어 있고 자정에 연속으로 전송 한 경우 정오에 알림, 오후 6시에 알림, 오후 9시에 알림, 다음 날 자정 이후에 최종 알림을받습니다.</string>
   <string name="changelog_150_1">알림 동작이 변경되었습니다. 자세한 내용은 알림 일정을 확인하세요.</string>
   <string name="changelog_150_2">이제 23시간 알림 시간이 지원됩니다.</string>
   <string name="changelog_150_3">가로 모드가 지원됩니다.</string>
