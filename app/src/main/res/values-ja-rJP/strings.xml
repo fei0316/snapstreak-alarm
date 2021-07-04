@@ -80,9 +80,9 @@
   <string name="notifsched_235">23.5時間の通知まで</string>
   <string name="notifsched_last">最終通知まで</string>
   <string name="notifsched_snooze_disabled">スヌーズされた通知はありません。</string>
-  <string name="notifsched_snooze_enabled">通知のスヌーズ: %1s</string>
-  <string name="notifsched_before">%1s前</string>
-  <string name="notifsched_timeformat">%02d時間%02d分</string>
+  <string name="notifsched_snooze_enabled">通知のスヌーズ: %1$s</string>
+  <string name="notifsched_before">%1$s前</string>
+  <string name="notifsched_timeformat">%1$02d時間%2$02d分</string>
   <string name="shortcut_sent_short">ストリーク送信</string>
   <string name="shortcut_sent_long">たった今ストリークを送信しました。</string>
   <string name="shortcut_sent_toast">たった今ストリークを送信しました。タイムセット。</string>
@@ -102,8 +102,7 @@
   <string name="changelog_140_4">リマインダーはバッテリー節約モードで動作するようになりました。</string>
   <string name="changelog_bugfixes">不具合修正とインターフェースの改善。</string>
   <string name="about_special_thanks_title">貢献者</string>
-<!--  スペイン語（ラテンアメリカ）翻訳：Aurea\nヒンディー語翻訳：Radha\n-->
-  <string name="about_special_thanks_content">日本語翻訳：Nico\n韓国語翻訳： Han\nスペシャル感謝：翻訳プラットフォームLokalise</string>
+  <string name="about_special_thanks_content">スペイン語（ラテンアメリカ）翻訳：Aurea\n韓国語翻訳： Han\nヒンディー語翻訳：Radha\n日本語翻訳：Nico\nスペシャル感謝：翻訳プラットフォームLokalise</string>
   <string name="notifsched_toolong">ずっと前</string>
   <string name="menu_fab_description">メインメニュー</string>
   <string name="about_privacy_policy">プライバシーポリシー</string>
