@@ -109,9 +109,9 @@
     <string name="notifsched_235">23.5 小时通知</string>
     <string name="notifsched_last">最后通知</string>
     <string name="notifsched_snooze_disabled">没有稍后提醒的通知。</string>
-    <string name="notifsched_snooze_enabled">稍后提醒通知：%1s</string>
-    <string name="notifsched_before">%1s前</string>
-    <string name="notifsched_timeformat">%02d小时 %02d分钟</string>
+    <string name="notifsched_snooze_enabled">稍后提醒通知：%1$s</string>
+    <string name="notifsched_before">%1$s前</string>
+    <string name="notifsched_timeformat">%1$02d小时 %2$02d分钟</string>
     <string name="notifsched_help">帮助</string>
     <string name="menu_add_shortcut">增加捷径到主画面</string>
     <string name="menu_cant_shortcut">启动器不支持建立捷径。</string>
