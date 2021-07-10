@@ -37,13 +37,16 @@ import androidx.core.content.ContextCompat;
 import java.util.Objects;
 
 public class AlarmReceiver extends BroadcastReceiver {
+
+    private static final long HOUR = 60 * 60 * 1000;
+
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        long when = System.currentTimeMillis();
-
         initChannels(context);
 
+        long when = System.currentTimeMillis();
+        long losingTime = Time.NotifTimeLong(context);
         int showHours = Time.NotifTime(context);
         int notifCount = Time.ReadNotifCount(context);
 
@@ -58,14 +61,13 @@ public class AlarmReceiver extends BroadcastReceiver {
             }
         }
 
-        if (showHours <= -8){
+        if (losingTime <= (-8 * HOUR) ) {
             NotificationManage.CancelNotif(context);
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
             SharedPreferences.Editor editor = pref.edit();
             editor.putBoolean("serviceEnabled", false);
             editor.apply();
-        }
-        else {
+        } else {
             Intent openApp = new Intent(context, MainActivity.class);
             Intent openSnap = context.getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
             Intent resetTime = new Intent(context, resetService.class);
@@ -90,19 +92,19 @@ public class AlarmReceiver extends BroadcastReceiver {
             }
 
             nBuilder.addAction(R.drawable.ic_done_black_24dp, context.getString(R.string.notif_sent), pendingReset);
-            if(showHours > 0)
+            if (losingTime > 0)
                 nBuilder.addAction(R.drawable.ic_snooze_black_24dp, context.getString(R.string.notif_snooze), pendingSnooze);
 
             Resources res = context.getResources();
 
-            if (showHours <= 0) {
+            if (losingTime <= 0) {
                 Intent turnoffNotif = new Intent(context, reminderOff.class);
                 PendingIntent turnoffP = PendingIntent.getService(context, 2, turnoffNotif, PendingIntent.FLAG_UPDATE_CURRENT);
                 nBuilder.setContentText(context.getString(R.string.notif_body_already))
                         .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.notif_body_already)))
                         .setContentTitle(context.getString(R.string.notif_lost_streak_title))
                         .addAction(R.drawable.ic_close_black_24dp, context.getString(R.string.notif_turnoff_reminder), turnoffP);
-            } else if (showHours < 1.8) {
+            } else if (losingTime < 0.9*HOUR) {
                 nBuilder.setContentText(context.getString(R.string.notif_body_almost))
                         .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.notif_body_almost)));
             } else if (notifCount == 1) {

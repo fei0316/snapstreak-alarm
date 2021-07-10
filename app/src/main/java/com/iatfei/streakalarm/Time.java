@@ -114,6 +114,13 @@ public class Time extends MainActivity {
         return (int) Hours;
     }
 
+    public static long NotifTimeLong(Context c) {
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(c);
+        long time_last = pref.getLong("lastsnaptime", 0);
+        long time_to_send = (time_last + DAY) - System.currentTimeMillis();
+        return time_to_send;
+    }
+
     @SuppressLint("ApplySharedPref")
     public static void SetInterval(Context c, int hours) {
         long Lhours = hours * HOUR;
